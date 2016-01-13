@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "farmOS Documentation\n\n\nOfficial website: \nhttp://farmOS.org", 
+            "text": "farmOS Documentation\n\n\nOfficial website: \nhttp://farmOS.org\n\n\nA documentation initiative is currently underway. More detailed documentation\nwill be available here soon.\n\n\nIf you are interested in helping with documentation, please get in touch via the\n\nGithub issue queue\n, or by\nforking the \nrepository\n, making\nchanges, and creating a pull request.", 
             "title": "Home"
         }, 
         {
             "location": "/#farmos-documentation", 
-            "text": "Official website:  http://farmOS.org", 
+            "text": "Official website:  http://farmOS.org  A documentation initiative is currently underway. More detailed documentation\nwill be available here soon.  If you are interested in helping with documentation, please get in touch via the Github issue queue , or by\nforking the  repository , making\nchanges, and creating a pull request.", 
             "title": "farmOS Documentation"
         }
     ]
