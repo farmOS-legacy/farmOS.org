@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "farmOS Documentation\n\n\nOfficial website: \nhttp://farmOS.org", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#farmos-documentation", 
+            "text": "Official website:  http://farmOS.org", 
+            "title": "farmOS Documentation"
+        }
+    ]
+}
