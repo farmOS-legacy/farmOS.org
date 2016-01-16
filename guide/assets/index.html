@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.farmos.org/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="canonical" href="http://docs.farmos.org/guide/assets/">
+        <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>farmOS Documentation</title>
+	<title>Managing assets - farmOS Documentation</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">farmOS Documentation</a>
+            <a class="navbar-brand" href="../..">farmOS Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -61,34 +61,34 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Home</a>
+                <li >
+                    <a href="../..">Home</a>
                 </li>
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="guide/areas/">Mapping your farm</a>
+                            <a href="../areas/">Mapping your farm</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Managing assets</a>
                         </li>
                     
                         <li >
-                            <a href="guide/assets/">Managing assets</a>
+                            <a href="../logs/">Logging events</a>
                         </li>
                     
                         <li >
-                            <a href="guide/logs/">Logging events</a>
+                            <a href="../location/">Movements and location</a>
                         </li>
                     
                         <li >
-                            <a href="guide/location/">Movements and location</a>
-                        </li>
-                    
-                        <li >
-                            <a href="guide/roles/">Roles</a>
+                            <a href="../roles/">Roles</a>
                         </li>
                     
                     </ul>
@@ -101,11 +101,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="hosting/installing/">Installing</a>
+                            <a href="../../hosting/installing/">Installing</a>
                         </li>
                     
                         <li >
-                            <a href="hosting/updating/">Updating</a>
+                            <a href="../../hosting/updating/">Updating</a>
                         </li>
                     
                     </ul>
@@ -118,19 +118,19 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="development/projects/">Projects</a>
+                            <a href="../../development/projects/">Projects</a>
                         </li>
                     
                         <li >
-                            <a href="development/issue-queues/">Issue Queues</a>
+                            <a href="../../development/issue-queues/">Issue Queues</a>
                         </li>
                     
                         <li >
-                            <a href="development/architecture/">Architecture</a>
+                            <a href="../../development/architecture/">Architecture</a>
                         </li>
                     
                         <li >
-                            <a href="development/best-practice/">Best Practice</a>
+                            <a href="../../development/best-practice/">Best Practice</a>
                         </li>
                     
                     </ul>
@@ -139,7 +139,7 @@
             
             
                 <li >
-                    <a href="contribute/">Contribute</a>
+                    <a href="../../contribute/">Contribute</a>
                 </li>
             
             
@@ -147,13 +147,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../areas/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="guide/areas/">
+                    <a rel="prev" href="../logs/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -176,32 +176,64 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main active"><a href="#managing-assets">Managing assets</a></li>
         
-            <li><a href="#status">Status</a></li>
+            <li><a href="#asset-fields">Asset fields</a></li>
         
-            <li><a href="#license">License</a></li>
+            <li><a href="#asset-cluster-maps">Asset cluster maps</a></li>
         
-            <li><a href="#official-website">Official website</a></li>
+            <li><a href="#archiving-assets">Archiving assets</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>farmOS is a web-based application for farm management and planning.</p>
-<p>It is built on <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>, <a href="http://www.drupal.org/features/extend">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>.</p>
-<p><a href="http://openlayers.org">Openlayers</a> is used for mapping and geodata manipulation.</p>
-<h2 id="status">Status</h2>
-<p>farmOS is under active development, but is still relatively new. The focus right
-now is laying a strong <a href="./development/architecture">groundwork</a>, so that others can more easily join in and
-<a href="./contribute">contribute</a>.</p>
-<h2 id="license">License</h2>
-<p>Both Drupal and farmOS are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
-which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
-<h2 id="official-website">Official website</h2>
-<p><a href="http://farmos.org">http://farmOS.org</a></p></div>
+<h1 id="managing-assets">Managing assets</h1>
+<p>All the important and valuable things on your farm are represented as "assets"
+in farmOS. Assets include Plantings, Animals, Equipment, etc.</p>
+<p>Assets are organized into different sections in the farmOS interface, and can
+be accessed from the main menu. You can add assets from within each asset type's
+dashboard.</p>
+<h2 id="asset-fields">Asset fields</h2>
+<p>Each asset type will have it's own set of fields, but some of the common ones
+include:</p>
+<ul>
+<li><strong>Name</strong> (required) - The name of the asset.</li>
+<li><strong>Current location</strong> - This is actually not a real field. It is a shortcut for
+  creating movement logs to assign asset location. For more information see
+  <a href="../../guide/location">Movements and location</a>.</li>
+<li><strong>Photos</strong> - This field lets you attach photos to your asset.</li>
+<li><strong>Description</strong> - This is a simple text tield that you can use to describe
+  each asset in further detail. It can be used to take notes, but it is
+  recommended that any activities be recorded using logs instead, because they
+  have a timestamp associated with them.</li>
+</ul>
+<h2 id="asset-cluster-maps">Asset cluster maps</h2>
+<p>In the dashboard of each asset, there is an "asset cluster map" that displays
+counts of assets in a map, along with the geometries of their locations.</p>
+<p>They are called "cluster" maps because they use a feature of the
+<a href="http://openlayers.org">Openlayers mapping library</a> called a "Cluster source". This means that the
+location of all assets of a particular type (ie: animals) are loaded into a map
+at once, and they are "clustered" into points based on their proximity to one
+another.</p>
+<p>So if you have 20 animals all within the same relative area, you will see a
+single point with a "20" on it. You can click on that point to see a list of the
+animals, and if you zoom in, that point will automatically break up into
+multiple other cluster points, showing more precise locations.</p>
+<p>Here's a little more nitty-gritty on how this works: Movement logs are used to
+record the <a href="../../guide/location">location of assets in farmOS</a>, along with a geometry field for
+storing precise geodata about location. This geometry is being loaded into
+cluster maps twice. The first is to draw the actual geometry of the asset
+location. And the second is to generate the cluster points. The points
+themselves are just the "centroid" of the geometry itself - which basically
+means it's the average centerpoint, represented in latitude and longitude. So by
+displaying both the actual geometry, and the centroid points, you're able to get
+a very nice overview of exactly where assets are on your farm. Pretty cool huh?</p>
+<h2 id="archiving-assets">Archiving assets</h2>
+<p>Assets can be marked as "active" or "inactive". Inactive assets will not show up
+in farmOS unless you specifically want to see them. So for example, when you are
+done harvesting a planting, you can mark it as "inactive" to archive it.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -212,9 +244,9 @@ which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open sou
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
     </body>
 </html>

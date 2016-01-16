@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.farmos.org/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="canonical" href="http://docs.farmos.org/guide/logs/">
+        <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>farmOS Documentation</title>
+	<title>Logging events - farmOS Documentation</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">farmOS Documentation</a>
+            <a class="navbar-brand" href="../..">farmOS Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -61,34 +61,34 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Home</a>
+                <li >
+                    <a href="../..">Home</a>
                 </li>
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="guide/areas/">Mapping your farm</a>
+                            <a href="../areas/">Mapping your farm</a>
                         </li>
                     
                         <li >
-                            <a href="guide/assets/">Managing assets</a>
+                            <a href="../assets/">Managing assets</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Logging events</a>
                         </li>
                     
                         <li >
-                            <a href="guide/logs/">Logging events</a>
+                            <a href="../location/">Movements and location</a>
                         </li>
                     
                         <li >
-                            <a href="guide/location/">Movements and location</a>
-                        </li>
-                    
-                        <li >
-                            <a href="guide/roles/">Roles</a>
+                            <a href="../roles/">Roles</a>
                         </li>
                     
                     </ul>
@@ -101,11 +101,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="hosting/installing/">Installing</a>
+                            <a href="../../hosting/installing/">Installing</a>
                         </li>
                     
                         <li >
-                            <a href="hosting/updating/">Updating</a>
+                            <a href="../../hosting/updating/">Updating</a>
                         </li>
                     
                     </ul>
@@ -118,19 +118,19 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="development/projects/">Projects</a>
+                            <a href="../../development/projects/">Projects</a>
                         </li>
                     
                         <li >
-                            <a href="development/issue-queues/">Issue Queues</a>
+                            <a href="../../development/issue-queues/">Issue Queues</a>
                         </li>
                     
                         <li >
-                            <a href="development/architecture/">Architecture</a>
+                            <a href="../../development/architecture/">Architecture</a>
                         </li>
                     
                         <li >
-                            <a href="development/best-practice/">Best Practice</a>
+                            <a href="../../development/best-practice/">Best Practice</a>
                         </li>
                     
                     </ul>
@@ -139,7 +139,7 @@
             
             
                 <li >
-                    <a href="contribute/">Contribute</a>
+                    <a href="../../contribute/">Contribute</a>
                 </li>
             
             
@@ -147,13 +147,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../assets/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="guide/areas/">
+                    <a rel="prev" href="../location/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -176,32 +176,41 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main active"><a href="#logging-events">Logging events</a></li>
         
-            <li><a href="#status">Status</a></li>
+            <li><a href="#activities">Activities</a></li>
         
-            <li><a href="#license">License</a></li>
+            <li><a href="#movements">Movements</a></li>
         
-            <li><a href="#official-website">Official website</a></li>
+            <li><a href="#observations">Observations</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>farmOS is a web-based application for farm management and planning.</p>
-<p>It is built on <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>, <a href="http://www.drupal.org/features/extend">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>.</p>
-<p><a href="http://openlayers.org">Openlayers</a> is used for mapping and geodata manipulation.</p>
-<h2 id="status">Status</h2>
-<p>farmOS is under active development, but is still relatively new. The focus right
-now is laying a strong <a href="./development/architecture">groundwork</a>, so that others can more easily join in and
-<a href="./contribute">contribute</a>.</p>
-<h2 id="license">License</h2>
-<p>Both Drupal and farmOS are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
-which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
-<h2 id="official-website">Official website</h2>
-<p><a href="http://farmos.org">http://farmOS.org</a></p></div>
+<h1 id="logging-events">Logging events</h1>
+<p>Once you have your <a href="../../guide/areas">areas</a> and <a href="../../guide/assets">assets</a> in farmOS, you can start recording logs.</p>
+<p>Logs are records of all kinds of events. You can be as granular as you want: the
+more information you're recording, the more you can look back on and learn from
+in the future.</p>
+<p>There are a number of different type of logs in farmOS - each with it's own
+purpose and set of fields. Some of the general log types are described below,
+but there are also other log types that pertain to specific asset types.</p>
+<h2 id="activities">Activities</h2>
+<p>Activities are a sort of catch-all, or default, log type, which can be used for
+general planning and recordkeeping of activities that don't fit any of the
+other, more specific, log types.</p>
+<h2 id="movements">Movements</h2>
+<p>Movements are used to record the movement of a farm asset from one area to
+another. Movement logs are the primary way that an object's location is
+determined.</p>
+<h2 id="observations">Observations</h2>
+<p>Observations are used to record any kind of passive observation on the farm. For
+example, seeing that a planting has germinated is an observation. This is a very
+flexible log type that can be used for a lot of different things. It comes with
+it's own "Observation Type" vocabulary for defining your own custom
+categorizations.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -212,9 +221,9 @@ which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open sou
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
     </body>
 </html>

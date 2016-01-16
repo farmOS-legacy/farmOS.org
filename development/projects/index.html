@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.farmos.org/development/projects/">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+	<title>Projects - farmOS Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56974603-2', 'docs.farmos.org');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">farmOS Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../guide/areas/">Mapping your farm</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../guide/assets/">Managing assets</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../guide/logs/">Logging events</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../guide/location/">Movements and location</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../guide/roles/">Roles</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../hosting/installing/">Installing</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../hosting/updating/">Updating</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="./">Projects</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../issue-queues/">Issue Queues</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../architecture/">Architecture</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../best-practice/">Best Practice</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../../contribute/">Contribute</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../../hosting/updating/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../issue-queues/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/farmOS/documentation">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#projects">Projects</a></li>
+        
+            <li><a href="#distribution">Distribution</a></li>
+        
+            <li><a href="#modules">Modules</a></li>
+        
+            <li><a href="#theme">Theme</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="projects">Projects</h1>
+<p><a href="http://farmos.org">farmOS</a> is built as a set of separate but inter-dependent <a href="https://drupal.org">Drupal</a> projects.</p>
+<p>Drupal is a modular system, and farmOS follows in those footsteps by providing
+all of it's features as singularly-focused modules on top of Drupal core.</p>
+<p>All of these various modules, their dependencies, third-party libraries, and
+the official farmOS Drupal theme are packaged together into a
+<a href="https://drupal.org/project/farm">farm-focused Drupal distribution</a> that is collectively referred to as "farmOS".</p>
+<p>Distributions of Drupal are roughly analogous to distributions of Linux. They
+serve to collect various code and configuration together in an intentional way.
+More information can be found in the <a href="https://www.drupal.org/documentation/build/distributions">Drupal distribution documentation</a>.</p>
+<p>To learn more about Drupal in general, refer to the <a href="https://www.drupal.org/documentation">Drupal documentation</a>.</p>
+<h2 id="distribution">Distribution</h2>
+<ul>
+<li><a href="https://drupal.org/project/farm">farmOS Distribution</a></li>
+</ul>
+<p>If you are getting started with farmOS, downloading and installing the farmOS
+distribution is the recommended approach. Drupal.org has an automated packaging
+system, so you can be sure it's all built properly and everything is included.</p>
+<p>The purpose of the farmOS distribution is to collect all the modules in one
+package, along with some default configuration, theming, etc - so you can get up
+and running using farmOS the way it was intendend and designed to be used.</p>
+<p>You are not required to use the distribution. Each of the farmOS components is
+provided as a separate module, so you can install them individually on a
+non-farmOS Drupal website. This isn't recommended unless you're very comfortable
+with Drupal.</p>
+<h2 id="modules">Modules</h2>
+<h3 id="included-in-farmos">Included in farmOS</h3>
+<p>These modules are packaged with the farmOS distribution:</p>
+<ul>
+<li><a href="https://drupal.org/project/farm_access">Farm Access</a></li>
+<li><a href="https://drupal.org/project/farm_admin">Farm Admin</a></li>
+<li><a href="https://drupal.org/project/farm_area">Farm Area</a></li>
+<li><a href="https://drupal.org/project/farm_asset">Farm Asset</a></li>
+<li><a href="https://drupal.org/project/farm_crop">Farm Crop</a></li>
+<li><a href="https://drupal.org/project/farm_equipment">Farm Equipment</a></li>
+<li><a href="https://drupal.org/project/farm_fields">Farm Fields</a></li>
+<li><a href="https://drupal.org/project/farm_livestock">Farm Livestock</a></li>
+<li><a href="https://drupal.org/project/farm_log">Farm Log</a></li>
+<li><a href="https://drupal.org/project/farm_map">Farm Map</a></li>
+<li><a href="https://drupal.org/project/farm_mapknitter">Farm MapKnitter</a></li>
+<li><a href="https://drupal.org/project/farm_sensor">Farm Sensor</a></li>
+<li><a href="https://drupal.org/project/farm_soil">Farm Soil</a></li>
+<li><a href="https://drupal.org/project/farm_taxonomy">Farm Taxonomy</a></li>
+<li><a href="https://drupal.org/project/farm_tour">Farm Tour</a></li>
+</ul>
+<h3 id="other-modules">Other modules</h3>
+<p>These modules aren't packaged with the farmOS distribution, but they can be
+added to extend your farmOS functionality:</p>
+<ul>
+<li><a href="https://drupal.org/project/farm_maple">Farm Maple</a></li>
+<li><a href="https://drupal.org/project/farm_mushroom">Farm Mushroom</a></li>
+</ul>
+<h2 id="theme">Theme</h2>
+<p>The official farmOS theme is a Drupal theme based off of <a href="https://drupal.org/project/bootstrap">Bootstrap</a>.</p>
+<ul>
+<li><a href="https://drupal.org/project/farm_theme">Farm Theme</a></li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <center><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">farmOS Documentation</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</center>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

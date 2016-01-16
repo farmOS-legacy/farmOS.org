@@ -2,13 +2,298 @@
     "docs": [
         {
             "location": "/", 
-            "text": "farmOS Documentation\n\n\nOfficial website: \nhttp://farmOS.org\n\n\nA documentation initiative is currently underway. More detailed documentation\nwill be available here soon.\n\n\nIf you are interested in helping with documentation, please get in touch via the\n\nGithub issue queue\n, or by\nforking the \nrepository\n, making\nchanges, and creating a pull request.", 
+            "text": "Overview\n\n\nfarmOS is a web-based application for farm management and planning.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nLicense\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nOfficial website\n\n\nhttp://farmOS.org", 
             "title": "Home"
         }, 
         {
-            "location": "/#farmos-documentation", 
-            "text": "Official website:  http://farmOS.org  A documentation initiative is currently underway. More detailed documentation\nwill be available here soon.  If you are interested in helping with documentation, please get in touch via the Github issue queue , or by\nforking the  repository , making\nchanges, and creating a pull request.", 
-            "title": "farmOS Documentation"
+            "location": "/#overview", 
+            "text": "farmOS is a web-based application for farm management and planning.  It is built on  Drupal , which makes it  modular ,  extensible , and  secure .  Openlayers  is used for mapping and geodata manipulation.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#status", 
+            "text": "farmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong  groundwork , so that others can more easily join in and contribute .", 
+            "title": "Status"
+        }, 
+        {
+            "location": "/#license", 
+            "text": "Both Drupal and farmOS are licensed under the  GNU General Public License ,\nwhich means they are  open source .", 
+            "title": "License"
+        }, 
+        {
+            "location": "/#official-website", 
+            "text": "http://farmOS.org", 
+            "title": "Official website"
+        }, 
+        {
+            "location": "/guide/areas/", 
+            "text": "Mapping your farm\n\n\nfarmOS gives you the ability to organize all of the various places on (and off)\nyour farm. These places are referred to as \"Areas\" in farmOS, and they can be\nreferenced when you are \nlogging events\n. They are specifically useful in\nmovement logs for \nsetting location of assets\n.\n\n\nTo create an area, go to the Farm Dashboard and click the \"Add an area\" button.\nThis will take you to a form for defining an area. Here is a quick overview of\nthe fields available to you when you are describing an area:\n\n\n\n\nName\n - The first (and only) thing an area needs is a name. All the other\n  fields are optional.\n\n\nArea type\n - farmOS uses the concept of \"area type\" to organize and\n  color-code areas on a map. Some of the types available include: Property,\n  Building, Field, and Water. The area type field is not required, but if you do\n  not use it then the area will not be displayed on the main map.\n\n\nGeometry\n - The Geometry field lets you draw your area on a map, using\n  points, lines, and polygons (see a more detailed description below).\n\n\nDescription\n - This is a simple text tield that you can use to describe\n  each area in further detail. It can be used to take notes, but it is\n  recommended that any activities be recorded using logs instead, because they\n  have a timestamp associated with them.\n\n\nPhoto(s)\n - This field lets you attach photos to your area.\n\n\nFiles\n - This field lets you attach files to your area. You can also use\n  this to upload KML files and automatically import them into the Geometry field\n  above (see more information below).\n\n\nRelations\n - The \"Parent\" and \"Weight\" fields let you define a hierarchy\n  and order to your areas. You can edit these fields individually on each area,\n  or you can use the drag-and-drop hierarchy editor - which is much easier for\n  moving a lot of areas around at once (more details below).\n\n\n\n\nUsing geometry fields\n\n\nHere are some common things you will do with the geometry fields in farmOS:\n\n\nZooming\n\n\nThere are four ways to zoom in/out:\n\n\n\n\nOn touch screens, you can \"pinch zoom\" using two fingers.\n\n\nWith a computer mouse, you can use the scroll wheel to zoom in/out.\n\n\nThe plus (+) and minus (+) buttons in the top left of the map control zoom.\n\n\nThere is a \"Geolocate\" button in the upper left (looks like a bullseye) that\n   will automatically zoom in to your current location. On a computer this will\n   use your IP address, and on a mobile device it will use your GPS.\n\n\n\n\nDrawing\n\n\nThere are four buttons for drawing shapes:\n\n\n\n\nPoint\n: Click on the map to create a point.\n\n\nLine\n: Create a series of line segments by clicking points on the map, and\n   double-clicking when you're done. You can also hold shift to draw freehand.\n\n\nCircle\n: Create a circle by clicking where you want the center to be,\n   dragging the circle outward to expand it, and clicking again to finish.\n\n\nPolygon\n: A polygon works the same as a line, except it will create a\n   closed shape at the end, whereas a line will not be filled in.\n\n\n\n\nModifying\n\n\nThere are three buttons for modifying shapes:\n\n\n\n\nEdit\n: Click the edit button, and then click a shape to select it. You can\n   click and drag any of the vertices to modify the overall shape.\n\n\nMove\n: Click the edit button, and then click a shape to select it. Then\n   click and drag the shape to move it to a different position.\n\n\nClear\n: The clear button will clear ALL shapes from the map. If you do\n   accidentally click this, refresh the page WITHOUT saving, and you will revert\n   to the previously saved shapes. Note that this will also revert any other\n   changes to your area that you haven't saved.\n\n\n\n\nImporting a KML file\n\n\nKML files are special shape files that define a geometry on a map. They can be\ncreated with various GIS/mapping software. If you already have your farm mapped\nin another software (like \nGoogle Earth\n), you can export KML files for each\narea and then import them into farmOS's geometry fields.\n\n\nTo import a KML file, follow these steps:\n\n\n\n\nCreate a new area (or edit an existing one).\n\n\nScroll down to the Files field and upload your KML file.\n\n\nScroll up to the Geometry field, and just below the map you will see a button\n   labeled \"Find using Files field\". If you uploaded a valid KML file, you will\n   see the shape(s) appear in the map.\n\n\n\n\nRemember to save!\n\n\nWhen you're done modifying your area, remember to click the Save button at the\nbottom of the page to save your changes.\n\n\nOrganizing areas hierarchically\n\n\nThere are two ways to arrange areas hierarchically in farmOS\n\n\n\n\nWhen you are editing an individual area, click \"Relations\" at the bottom and\n   use the \"Parent\" and \"Weight\" values to define the area's relationship to\n   other areas.\n\n\nOr, you can click and drag all your areas at once into a hierachal list. To\n   do this, click on the Areas link in the main menu, and in the right column\n   you will see a list of all your areas with a heading of \"Hierachy (change)\".\n   Click \"(change)\" to be brought to the hierarchy editor. Click and drag the\n   areas up and down, and left and right to arrange them how you want, and then\n   click \"Save\" at the bottom of the page.", 
+            "title": "Mapping your farm"
+        }, 
+        {
+            "location": "/guide/areas/#mapping-your-farm", 
+            "text": "farmOS gives you the ability to organize all of the various places on (and off)\nyour farm. These places are referred to as \"Areas\" in farmOS, and they can be\nreferenced when you are  logging events . They are specifically useful in\nmovement logs for  setting location of assets .  To create an area, go to the Farm Dashboard and click the \"Add an area\" button.\nThis will take you to a form for defining an area. Here is a quick overview of\nthe fields available to you when you are describing an area:   Name  - The first (and only) thing an area needs is a name. All the other\n  fields are optional.  Area type  - farmOS uses the concept of \"area type\" to organize and\n  color-code areas on a map. Some of the types available include: Property,\n  Building, Field, and Water. The area type field is not required, but if you do\n  not use it then the area will not be displayed on the main map.  Geometry  - The Geometry field lets you draw your area on a map, using\n  points, lines, and polygons (see a more detailed description below).  Description  - This is a simple text tield that you can use to describe\n  each area in further detail. It can be used to take notes, but it is\n  recommended that any activities be recorded using logs instead, because they\n  have a timestamp associated with them.  Photo(s)  - This field lets you attach photos to your area.  Files  - This field lets you attach files to your area. You can also use\n  this to upload KML files and automatically import them into the Geometry field\n  above (see more information below).  Relations  - The \"Parent\" and \"Weight\" fields let you define a hierarchy\n  and order to your areas. You can edit these fields individually on each area,\n  or you can use the drag-and-drop hierarchy editor - which is much easier for\n  moving a lot of areas around at once (more details below).", 
+            "title": "Mapping your farm"
+        }, 
+        {
+            "location": "/guide/areas/#using-geometry-fields", 
+            "text": "Here are some common things you will do with the geometry fields in farmOS:  Zooming  There are four ways to zoom in/out:   On touch screens, you can \"pinch zoom\" using two fingers.  With a computer mouse, you can use the scroll wheel to zoom in/out.  The plus (+) and minus (+) buttons in the top left of the map control zoom.  There is a \"Geolocate\" button in the upper left (looks like a bullseye) that\n   will automatically zoom in to your current location. On a computer this will\n   use your IP address, and on a mobile device it will use your GPS.   Drawing  There are four buttons for drawing shapes:   Point : Click on the map to create a point.  Line : Create a series of line segments by clicking points on the map, and\n   double-clicking when you're done. You can also hold shift to draw freehand.  Circle : Create a circle by clicking where you want the center to be,\n   dragging the circle outward to expand it, and clicking again to finish.  Polygon : A polygon works the same as a line, except it will create a\n   closed shape at the end, whereas a line will not be filled in.   Modifying  There are three buttons for modifying shapes:   Edit : Click the edit button, and then click a shape to select it. You can\n   click and drag any of the vertices to modify the overall shape.  Move : Click the edit button, and then click a shape to select it. Then\n   click and drag the shape to move it to a different position.  Clear : The clear button will clear ALL shapes from the map. If you do\n   accidentally click this, refresh the page WITHOUT saving, and you will revert\n   to the previously saved shapes. Note that this will also revert any other\n   changes to your area that you haven't saved.   Importing a KML file  KML files are special shape files that define a geometry on a map. They can be\ncreated with various GIS/mapping software. If you already have your farm mapped\nin another software (like  Google Earth ), you can export KML files for each\narea and then import them into farmOS's geometry fields.  To import a KML file, follow these steps:   Create a new area (or edit an existing one).  Scroll down to the Files field and upload your KML file.  Scroll up to the Geometry field, and just below the map you will see a button\n   labeled \"Find using Files field\". If you uploaded a valid KML file, you will\n   see the shape(s) appear in the map.", 
+            "title": "Using geometry fields"
+        }, 
+        {
+            "location": "/guide/areas/#remember-to-save", 
+            "text": "When you're done modifying your area, remember to click the Save button at the\nbottom of the page to save your changes.", 
+            "title": "Remember to save!"
+        }, 
+        {
+            "location": "/guide/areas/#organizing-areas-hierarchically", 
+            "text": "There are two ways to arrange areas hierarchically in farmOS   When you are editing an individual area, click \"Relations\" at the bottom and\n   use the \"Parent\" and \"Weight\" values to define the area's relationship to\n   other areas.  Or, you can click and drag all your areas at once into a hierachal list. To\n   do this, click on the Areas link in the main menu, and in the right column\n   you will see a list of all your areas with a heading of \"Hierachy (change)\".\n   Click \"(change)\" to be brought to the hierarchy editor. Click and drag the\n   areas up and down, and left and right to arrange them how you want, and then\n   click \"Save\" at the bottom of the page.", 
+            "title": "Organizing areas hierarchically"
+        }, 
+        {
+            "location": "/guide/assets/", 
+            "text": "Managing assets\n\n\nAll the important and valuable things on your farm are represented as \"assets\"\nin farmOS. Assets include Plantings, Animals, Equipment, etc.\n\n\nAssets are organized into different sections in the farmOS interface, and can\nbe accessed from the main menu. You can add assets from within each asset type's\ndashboard.\n\n\nAsset fields\n\n\nEach asset type will have it's own set of fields, but some of the common ones\ninclude:\n\n\n\n\nName\n (required) - The name of the asset.\n\n\nCurrent location\n - This is actually not a real field. It is a shortcut for\n  creating movement logs to assign asset location. For more information see\n  \nMovements and location\n.\n\n\nPhotos\n - This field lets you attach photos to your asset.\n\n\nDescription\n - This is a simple text tield that you can use to describe\n  each asset in further detail. It can be used to take notes, but it is\n  recommended that any activities be recorded using logs instead, because they\n  have a timestamp associated with them.\n\n\n\n\nAsset cluster maps\n\n\nIn the dashboard of each asset, there is an \"asset cluster map\" that displays\ncounts of assets in a map, along with the geometries of their locations.\n\n\nThey are called \"cluster\" maps because they use a feature of the\n\nOpenlayers mapping library\n called a \"Cluster source\". This means that the\nlocation of all assets of a particular type (ie: animals) are loaded into a map\nat once, and they are \"clustered\" into points based on their proximity to one\nanother.\n\n\nSo if you have 20 animals all within the same relative area, you will see a\nsingle point with a \"20\" on it. You can click on that point to see a list of the\nanimals, and if you zoom in, that point will automatically break up into\nmultiple other cluster points, showing more precise locations.\n\n\nHere's a little more nitty-gritty on how this works: Movement logs are used to\nrecord the \nlocation of assets in farmOS\n, along with a geometry field for\nstoring precise geodata about location. This geometry is being loaded into\ncluster maps twice. The first is to draw the actual geometry of the asset\nlocation. And the second is to generate the cluster points. The points\nthemselves are just the \"centroid\" of the geometry itself - which basically\nmeans it's the average centerpoint, represented in latitude and longitude. So by\ndisplaying both the actual geometry, and the centroid points, you're able to get\na very nice overview of exactly where assets are on your farm. Pretty cool huh?\n\n\nArchiving assets\n\n\nAssets can be marked as \"active\" or \"inactive\". Inactive assets will not show up\nin farmOS unless you specifically want to see them. So for example, when you are\ndone harvesting a planting, you can mark it as \"inactive\" to archive it.", 
+            "title": "Managing assets"
+        }, 
+        {
+            "location": "/guide/assets/#managing-assets", 
+            "text": "All the important and valuable things on your farm are represented as \"assets\"\nin farmOS. Assets include Plantings, Animals, Equipment, etc.  Assets are organized into different sections in the farmOS interface, and can\nbe accessed from the main menu. You can add assets from within each asset type's\ndashboard.", 
+            "title": "Managing assets"
+        }, 
+        {
+            "location": "/guide/assets/#asset-fields", 
+            "text": "Each asset type will have it's own set of fields, but some of the common ones\ninclude:   Name  (required) - The name of the asset.  Current location  - This is actually not a real field. It is a shortcut for\n  creating movement logs to assign asset location. For more information see\n   Movements and location .  Photos  - This field lets you attach photos to your asset.  Description  - This is a simple text tield that you can use to describe\n  each asset in further detail. It can be used to take notes, but it is\n  recommended that any activities be recorded using logs instead, because they\n  have a timestamp associated with them.", 
+            "title": "Asset fields"
+        }, 
+        {
+            "location": "/guide/assets/#asset-cluster-maps", 
+            "text": "In the dashboard of each asset, there is an \"asset cluster map\" that displays\ncounts of assets in a map, along with the geometries of their locations.  They are called \"cluster\" maps because they use a feature of the Openlayers mapping library  called a \"Cluster source\". This means that the\nlocation of all assets of a particular type (ie: animals) are loaded into a map\nat once, and they are \"clustered\" into points based on their proximity to one\nanother.  So if you have 20 animals all within the same relative area, you will see a\nsingle point with a \"20\" on it. You can click on that point to see a list of the\nanimals, and if you zoom in, that point will automatically break up into\nmultiple other cluster points, showing more precise locations.  Here's a little more nitty-gritty on how this works: Movement logs are used to\nrecord the  location of assets in farmOS , along with a geometry field for\nstoring precise geodata about location. This geometry is being loaded into\ncluster maps twice. The first is to draw the actual geometry of the asset\nlocation. And the second is to generate the cluster points. The points\nthemselves are just the \"centroid\" of the geometry itself - which basically\nmeans it's the average centerpoint, represented in latitude and longitude. So by\ndisplaying both the actual geometry, and the centroid points, you're able to get\na very nice overview of exactly where assets are on your farm. Pretty cool huh?", 
+            "title": "Asset cluster maps"
+        }, 
+        {
+            "location": "/guide/assets/#archiving-assets", 
+            "text": "Assets can be marked as \"active\" or \"inactive\". Inactive assets will not show up\nin farmOS unless you specifically want to see them. So for example, when you are\ndone harvesting a planting, you can mark it as \"inactive\" to archive it.", 
+            "title": "Archiving assets"
+        }, 
+        {
+            "location": "/guide/logs/", 
+            "text": "Logging events\n\n\nOnce you have your \nareas\n and \nassets\n in farmOS, you can start recording logs.\n\n\nLogs are records of all kinds of events. You can be as granular as you want: the\nmore information you're recording, the more you can look back on and learn from\nin the future.\n\n\nThere are a number of different type of logs in farmOS - each with it's own\npurpose and set of fields. Some of the general log types are described below,\nbut there are also other log types that pertain to specific asset types.\n\n\nActivities\n\n\nActivities are a sort of catch-all, or default, log type, which can be used for\ngeneral planning and recordkeeping of activities that don't fit any of the\nother, more specific, log types.\n\n\nMovements\n\n\nMovements are used to record the movement of a farm asset from one area to\nanother. Movement logs are the primary way that an object's location is\ndetermined.\n\n\nObservations\n\n\nObservations are used to record any kind of passive observation on the farm. For\nexample, seeing that a planting has germinated is an observation. This is a very\nflexible log type that can be used for a lot of different things. It comes with\nit's own \"Observation Type\" vocabulary for defining your own custom\ncategorizations.", 
+            "title": "Logging events"
+        }, 
+        {
+            "location": "/guide/logs/#logging-events", 
+            "text": "Once you have your  areas  and  assets  in farmOS, you can start recording logs.  Logs are records of all kinds of events. You can be as granular as you want: the\nmore information you're recording, the more you can look back on and learn from\nin the future.  There are a number of different type of logs in farmOS - each with it's own\npurpose and set of fields. Some of the general log types are described below,\nbut there are also other log types that pertain to specific asset types.", 
+            "title": "Logging events"
+        }, 
+        {
+            "location": "/guide/logs/#activities", 
+            "text": "Activities are a sort of catch-all, or default, log type, which can be used for\ngeneral planning and recordkeeping of activities that don't fit any of the\nother, more specific, log types.", 
+            "title": "Activities"
+        }, 
+        {
+            "location": "/guide/logs/#movements", 
+            "text": "Movements are used to record the movement of a farm asset from one area to\nanother. Movement logs are the primary way that an object's location is\ndetermined.", 
+            "title": "Movements"
+        }, 
+        {
+            "location": "/guide/logs/#observations", 
+            "text": "Observations are used to record any kind of passive observation on the farm. For\nexample, seeing that a planting has germinated is an observation. This is a very\nflexible log type that can be used for a lot of different things. It comes with\nit's own \"Observation Type\" vocabulary for defining your own custom\ncategorizations.", 
+            "title": "Observations"
+        }, 
+        {
+            "location": "/guide/location/", 
+            "text": "Movements and location\n\n\nThe locations of all assets in farmOS are determined by \"Movement\" logs.\n\n\nWhen you create an asset, it will not be located anywhere until a movement log\nis added to it.\n\n\nfarmOS determines the \"current location\" of an asset by looking at the asset's \nmost recent movement log (with a date less than or equal to the present moment).\nEvery movement has a \"From\" and a \"To\" field on it (only the \"To\" field is\nrequired), and whatever area is referenced in the \"To\" field is considered to be\nthe asset's current location. Only movement logs that have been marked as \"done\"\nare taken into consideration.\n\n\nCreating movement logs\n\n\nThere are three ways that movement logs can be created:\n\n\n\n\nClick \"Add a Movement\" when you are viewing a single asset. This will present\n   you with a new movement log form, and automatically fill in the \"Assets\"\n   field with the asset you were looking at.\n\n\nSelect multiple assets in a list, and click the \"Move\" button at the bottom.\n   This allows you to move multiple assets at once. Similarly, this will present\n   you with a new movement log form, and automatically fill in the \"Assets\"\n   field with the assets you selected in the list.\n\n\nClick \"Add a Movement\" from the farmOS dashboard. This presents you with a\n   blank movement log form, which you can fill in however you'd like.\n\n\n\n\nThere is also a shortcut: when you are editing an asset, you will see a field\nlabeled \"Location\". This field will show the asset's current location, and if\nyou change it a new movement log will automatically be created in the background\nfor you. Doing this will set the date of the movement log to the moment you\nclick \"Save\", and the movement will be marked \"done\" immediately.\n\n\nMovement log fields\n\n\nHere is a quick summary of the fields on a movement log:\n\n\n\n\nDate\n - (required) When the movement took place, or when it will take place.\n\n\nAssets\n - (required) Specify the assets that are being moved.\n\n\nFrom\n - (optional) Allows you to reference a specific area that assets are\n  moving FROM. This is optional, and in some cases it's filled in automatically\n  for you. It is primarily intended for more accurate historical records, and to\n  help identify inconsistencies or missing data.\n\n\nTo\n - (required) This is the most important field on the movement log. The\n  area that is referenced with this field will be considered the asset's\n  location.\n\n\nGeometry\n - (optional) Similar to \nFarm Areas\n, movement logs have a\n  geometry field which can be used to describe exactly where the assets are\n  being moved to. If you leave this blank, the geometry will be automatically\n  copied from the area referenced in the \"To\" field (if available).", 
+            "title": "Movements and location"
+        }, 
+        {
+            "location": "/guide/location/#movements-and-location", 
+            "text": "The locations of all assets in farmOS are determined by \"Movement\" logs.  When you create an asset, it will not be located anywhere until a movement log\nis added to it.  farmOS determines the \"current location\" of an asset by looking at the asset's \nmost recent movement log (with a date less than or equal to the present moment).\nEvery movement has a \"From\" and a \"To\" field on it (only the \"To\" field is\nrequired), and whatever area is referenced in the \"To\" field is considered to be\nthe asset's current location. Only movement logs that have been marked as \"done\"\nare taken into consideration.", 
+            "title": "Movements and location"
+        }, 
+        {
+            "location": "/guide/location/#creating-movement-logs", 
+            "text": "There are three ways that movement logs can be created:   Click \"Add a Movement\" when you are viewing a single asset. This will present\n   you with a new movement log form, and automatically fill in the \"Assets\"\n   field with the asset you were looking at.  Select multiple assets in a list, and click the \"Move\" button at the bottom.\n   This allows you to move multiple assets at once. Similarly, this will present\n   you with a new movement log form, and automatically fill in the \"Assets\"\n   field with the assets you selected in the list.  Click \"Add a Movement\" from the farmOS dashboard. This presents you with a\n   blank movement log form, which you can fill in however you'd like.   There is also a shortcut: when you are editing an asset, you will see a field\nlabeled \"Location\". This field will show the asset's current location, and if\nyou change it a new movement log will automatically be created in the background\nfor you. Doing this will set the date of the movement log to the moment you\nclick \"Save\", and the movement will be marked \"done\" immediately.", 
+            "title": "Creating movement logs"
+        }, 
+        {
+            "location": "/guide/location/#movement-log-fields", 
+            "text": "Here is a quick summary of the fields on a movement log:   Date  - (required) When the movement took place, or when it will take place.  Assets  - (required) Specify the assets that are being moved.  From  - (optional) Allows you to reference a specific area that assets are\n  moving FROM. This is optional, and in some cases it's filled in automatically\n  for you. It is primarily intended for more accurate historical records, and to\n  help identify inconsistencies or missing data.  To  - (required) This is the most important field on the movement log. The\n  area that is referenced with this field will be considered the asset's\n  location.  Geometry  - (optional) Similar to  Farm Areas , movement logs have a\n  geometry field which can be used to describe exactly where the assets are\n  being moved to. If you leave this blank, the geometry will be automatically\n  copied from the area referenced in the \"To\" field (if available).", 
+            "title": "Movement log fields"
+        }, 
+        {
+            "location": "/guide/roles/", 
+            "text": "Roles\n\n\nfarmOS allows a farm to have multiple \"users\" accessing it, and each of those\nusers is assigned one or more \"roles\" to grant them different levels of\npermission.\n\n\nThree roles are provided with farmOS:\n\n\nFarm Manager\n\n\nFarm Managers have access to everything in farmOS. They can create areas, add\nassets, record logs, and change configuration.\n\n\nFarm Worker\n\n\nFarm Workers have most of the same permissions as Managers, but they cannot\nchange configuration.\n\n\nFarm Viewer\n\n\nFarm Viewers are limited to viewing farmOS areas, assets, and logs - but they\ncannot edit anything.\n\n\nThe Farm Viewer role is useful if you want to share your farm's activities with\nsomeone, but you don't want to give them the ability to make changes.\n\n\nFor example, if you are applying for Organic certification in the United States,\nyou can create a user with the Farm Viewer role for your certifying agent, so\nthey can log into your farmOS and see your records.", 
+            "title": "Roles"
+        }, 
+        {
+            "location": "/guide/roles/#roles", 
+            "text": "farmOS allows a farm to have multiple \"users\" accessing it, and each of those\nusers is assigned one or more \"roles\" to grant them different levels of\npermission.  Three roles are provided with farmOS:", 
+            "title": "Roles"
+        }, 
+        {
+            "location": "/guide/roles/#farm-manager", 
+            "text": "Farm Managers have access to everything in farmOS. They can create areas, add\nassets, record logs, and change configuration.", 
+            "title": "Farm Manager"
+        }, 
+        {
+            "location": "/guide/roles/#farm-worker", 
+            "text": "Farm Workers have most of the same permissions as Managers, but they cannot\nchange configuration.", 
+            "title": "Farm Worker"
+        }, 
+        {
+            "location": "/guide/roles/#farm-viewer", 
+            "text": "Farm Viewers are limited to viewing farmOS areas, assets, and logs - but they\ncannot edit anything.  The Farm Viewer role is useful if you want to share your farm's activities with\nsomeone, but you don't want to give them the ability to make changes.  For example, if you are applying for Organic certification in the United States,\nyou can create a user with the Farm Viewer role for your certifying agent, so\nthey can log into your farmOS and see your records.", 
+            "title": "Farm Viewer"
+        }, 
+        {
+            "location": "/hosting/installing/", 
+            "text": "Installation\n\n\nfarmOS is a \nDrupal distribution\n, so it is essentially a \nDrupal\n codebase that\ncombines \nDrupal core\n with a set of pre-selected contributed modules.\n\n\nRecomended release\n\n\nThe recommended approach is to download the latest release of the pre-packaged\n\nfarmOS distribution\n from Drupal.org.\n\n\nThe Drupal.org packaged release is pre-built and ready to go. Just drop it into\na hosted web server environment and it will work the same as Drupal. For more\ninformation on installing Drupal, see the official \nDrupal Installation Guide\n.\n\n\nDuring the installation, you will be given a choice of which \"Installation\nProfile\" you want your site to use. Choose \"farmOS\" and all the proper modules\nand configuration will be set up for you.\n\n\nRequirements\n\n\nYou will need a web server with all the basic \nrequirements of Drupal\n.\n\n\nThe only additional requirement is that you use PHP 5.3+.\n Drupal 7 itself\nonly requires PHP 5.2+, but farmOS makes heavy use of the \nOpenlayers module\n,\nwhich uses some newer features of PHP.", 
+            "title": "Installing"
+        }, 
+        {
+            "location": "/hosting/installing/#installation", 
+            "text": "farmOS is a  Drupal distribution , so it is essentially a  Drupal  codebase that\ncombines  Drupal core  with a set of pre-selected contributed modules.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/hosting/installing/#recomended-release", 
+            "text": "The recommended approach is to download the latest release of the pre-packaged farmOS distribution  from Drupal.org.  The Drupal.org packaged release is pre-built and ready to go. Just drop it into\na hosted web server environment and it will work the same as Drupal. For more\ninformation on installing Drupal, see the official  Drupal Installation Guide .  During the installation, you will be given a choice of which \"Installation\nProfile\" you want your site to use. Choose \"farmOS\" and all the proper modules\nand configuration will be set up for you.", 
+            "title": "Recomended release"
+        }, 
+        {
+            "location": "/hosting/installing/#requirements", 
+            "text": "You will need a web server with all the basic  requirements of Drupal .  The only additional requirement is that you use PHP 5.3+.  Drupal 7 itself\nonly requires PHP 5.2+, but farmOS makes heavy use of the  Openlayers module ,\nwhich uses some newer features of PHP.", 
+            "title": "Requirements"
+        }, 
+        {
+            "location": "/hosting/updating/", 
+            "text": "Updating farmOS\n\n\nNew versions of farmOS will be released on a regular basis, and it's important\nto stay up-to-date so that you can receive new features, bug fixes, and security\npatches when they become available.\n\n\nUpdating farmOS is basically the same process as \nupdating Drupal core\n.\n\n\nThe general procedure is:\n\n\n\n\nBackup your code and database! Always do this before making big changes. Be\n   ready and able to roll-back in the event that something goes wrong.\n\n\nDownload the new recommended release of farmOS from\n   \nhttps://drupal.org/project/farm\n\n\nUnzip the compressed folder, and replace everything in your Drupal codebase\n   EXCEPT the \n/sites/\n folder. The easiest way to do this is to unzip to a new\n   folder, move the \n/sites/\n folder from your old codebase to the new one, and\n   then rename the new folder so that it takes the place of your old codebase.\n   It's critical that you do not overwrite the \n/sites/\n folder, because that's\n   where your uploaded files are stored, as well as the configuration files that\n   tell Drupal how to connect to your database.\n\n\n\n\nClear your cache and rebuild your registry with \nDrush\n and\n   \nDrush Registry Rebuild\n. This isn't always necessary, but it doesn't hurt.\n\n\ndrush cc all\n\n\ndrush rr\n\n\n\n\n\n\nRun database updates by going to \nhttp://[my-farmOS-site]/update.php\n and\n   following the steps. These updates will ensure that your database structure\n   matches what your code expects.", 
+            "title": "Updating"
+        }, 
+        {
+            "location": "/hosting/updating/#updating-farmos", 
+            "text": "New versions of farmOS will be released on a regular basis, and it's important\nto stay up-to-date so that you can receive new features, bug fixes, and security\npatches when they become available.  Updating farmOS is basically the same process as  updating Drupal core .  The general procedure is:   Backup your code and database! Always do this before making big changes. Be\n   ready and able to roll-back in the event that something goes wrong.  Download the new recommended release of farmOS from\n    https://drupal.org/project/farm  Unzip the compressed folder, and replace everything in your Drupal codebase\n   EXCEPT the  /sites/  folder. The easiest way to do this is to unzip to a new\n   folder, move the  /sites/  folder from your old codebase to the new one, and\n   then rename the new folder so that it takes the place of your old codebase.\n   It's critical that you do not overwrite the  /sites/  folder, because that's\n   where your uploaded files are stored, as well as the configuration files that\n   tell Drupal how to connect to your database.   Clear your cache and rebuild your registry with  Drush  and\n    Drush Registry Rebuild . This isn't always necessary, but it doesn't hurt.  drush cc all  drush rr    Run database updates by going to  http://[my-farmOS-site]/update.php  and\n   following the steps. These updates will ensure that your database structure\n   matches what your code expects.", 
+            "title": "Updating farmOS"
+        }, 
+        {
+            "location": "/development/projects/", 
+            "text": "Projects\n\n\nfarmOS\n is built as a set of separate but inter-dependent \nDrupal\n projects.\n\n\nDrupal is a modular system, and farmOS follows in those footsteps by providing\nall of it's features as singularly-focused modules on top of Drupal core.\n\n\nAll of these various modules, their dependencies, third-party libraries, and\nthe official farmOS Drupal theme are packaged together into a\n\nfarm-focused Drupal distribution\n that is collectively referred to as \"farmOS\".\n\n\nDistributions of Drupal are roughly analogous to distributions of Linux. They\nserve to collect various code and configuration together in an intentional way.\nMore information can be found in the \nDrupal distribution documentation\n.\n\n\nTo learn more about Drupal in general, refer to the \nDrupal documentation\n.\n\n\nDistribution\n\n\n\n\nfarmOS Distribution\n\n\n\n\nIf you are getting started with farmOS, downloading and installing the farmOS\ndistribution is the recommended approach. Drupal.org has an automated packaging\nsystem, so you can be sure it's all built properly and everything is included.\n\n\nThe purpose of the farmOS distribution is to collect all the modules in one\npackage, along with some default configuration, theming, etc - so you can get up\nand running using farmOS the way it was intendend and designed to be used.\n\n\nYou are not required to use the distribution. Each of the farmOS components is\nprovided as a separate module, so you can install them individually on a\nnon-farmOS Drupal website. This isn't recommended unless you're very comfortable\nwith Drupal.\n\n\nModules\n\n\nIncluded in farmOS\n\n\nThese modules are packaged with the farmOS distribution:\n\n\n\n\nFarm Access\n\n\nFarm Admin\n\n\nFarm Area\n\n\nFarm Asset\n\n\nFarm Crop\n\n\nFarm Equipment\n\n\nFarm Fields\n\n\nFarm Livestock\n\n\nFarm Log\n\n\nFarm Map\n\n\nFarm MapKnitter\n\n\nFarm Sensor\n\n\nFarm Soil\n\n\nFarm Taxonomy\n\n\nFarm Tour\n\n\n\n\nOther modules\n\n\nThese modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:\n\n\n\n\nFarm Maple\n\n\nFarm Mushroom\n\n\n\n\nTheme\n\n\nThe official farmOS theme is a Drupal theme based off of \nBootstrap\n.\n\n\n\n\nFarm Theme", 
+            "title": "Projects"
+        }, 
+        {
+            "location": "/development/projects/#projects", 
+            "text": "farmOS  is built as a set of separate but inter-dependent  Drupal  projects.  Drupal is a modular system, and farmOS follows in those footsteps by providing\nall of it's features as singularly-focused modules on top of Drupal core.  All of these various modules, their dependencies, third-party libraries, and\nthe official farmOS Drupal theme are packaged together into a farm-focused Drupal distribution  that is collectively referred to as \"farmOS\".  Distributions of Drupal are roughly analogous to distributions of Linux. They\nserve to collect various code and configuration together in an intentional way.\nMore information can be found in the  Drupal distribution documentation .  To learn more about Drupal in general, refer to the  Drupal documentation .", 
+            "title": "Projects"
+        }, 
+        {
+            "location": "/development/projects/#distribution", 
+            "text": "farmOS Distribution   If you are getting started with farmOS, downloading and installing the farmOS\ndistribution is the recommended approach. Drupal.org has an automated packaging\nsystem, so you can be sure it's all built properly and everything is included.  The purpose of the farmOS distribution is to collect all the modules in one\npackage, along with some default configuration, theming, etc - so you can get up\nand running using farmOS the way it was intendend and designed to be used.  You are not required to use the distribution. Each of the farmOS components is\nprovided as a separate module, so you can install them individually on a\nnon-farmOS Drupal website. This isn't recommended unless you're very comfortable\nwith Drupal.", 
+            "title": "Distribution"
+        }, 
+        {
+            "location": "/development/projects/#modules", 
+            "text": "Included in farmOS  These modules are packaged with the farmOS distribution:   Farm Access  Farm Admin  Farm Area  Farm Asset  Farm Crop  Farm Equipment  Farm Fields  Farm Livestock  Farm Log  Farm Map  Farm MapKnitter  Farm Sensor  Farm Soil  Farm Taxonomy  Farm Tour   Other modules  These modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:   Farm Maple  Farm Mushroom", 
+            "title": "Modules"
+        }, 
+        {
+            "location": "/development/projects/#theme", 
+            "text": "The official farmOS theme is a Drupal theme based off of  Bootstrap .   Farm Theme", 
+            "title": "Theme"
+        }, 
+        {
+            "location": "/development/issue-queues/", 
+            "text": "Issue Queues\n\n\nDrupal.org\n\n\nAll farmOS development tasks, feature requests, bug reports, and general\nplanning/discussion takes place in the Drupal.org issue queues.\n\n\nfarmOS is comprised of many \nprojects\n, and each has its own issue queue. If you\naren't sure where a particular issue should be posted, just add it to the\n\nfarmOS Distribution issue queue\n, and someone will move it to the appropriate\nplace.\n\n\nGithub\n\n\nIf you're a Github user, you can also feel free to post issues in the\n\nGithub queues\n. They will either be addressed there, or copied to Drupal.org\nand integrated into the roadmap.", 
+            "title": "Issue Queues"
+        }, 
+        {
+            "location": "/development/issue-queues/#issue-queues", 
+            "text": "", 
+            "title": "Issue Queues"
+        }, 
+        {
+            "location": "/development/issue-queues/#drupalorg", 
+            "text": "All farmOS development tasks, feature requests, bug reports, and general\nplanning/discussion takes place in the Drupal.org issue queues.  farmOS is comprised of many  projects , and each has its own issue queue. If you\naren't sure where a particular issue should be posted, just add it to the farmOS Distribution issue queue , and someone will move it to the appropriate\nplace.", 
+            "title": "Drupal.org"
+        }, 
+        {
+            "location": "/development/issue-queues/#github", 
+            "text": "If you're a Github user, you can also feel free to post issues in the Github queues . They will either be addressed there, or copied to Drupal.org\nand integrated into the roadmap.", 
+            "title": "Github"
+        }, 
+        {
+            "location": "/development/architecture/", 
+            "text": "Entity types\n\n\nfarmOS is architected using four Drupal entity types:\n\n\n\n\nFarm Assets\n\n\nLogs\n\n\nTaxonomy Terms\n\n\nUsers\n\n\n\n\nThe Entity system in Drupal provides a standardized way of representing\ndifferent types of objects, and includes mechanisms and APIs for adding fields,\ncreating relationships to other entities, and performing actions when entities\nare created/displaued/updated/deleted. farmOS uses Drupal's entity system to\nrepresent all of its records.\n\n\nThe first three types (Farm Assets, Logs, and Taxonomy Terms) also use a Drupal\nconcept known as \"bundles\". Bundles are essentially sub-types. Each bundle can\nhave a unique set of input fields on it, which can be used to create different\ntypes of assets, logs, etc.\n\n\nTo learn more about how entity types and bundles work in Drupal, refer to\n\nAn Introduction to Entities\n in the drupal.org handbook.\n\n\nThe following is a brief overview of the entity types that farmOS uses.\n\n\nFarm Assets\n\n\nThe \"Farm Asset\" entity type is provided by the \nFarm Asset module\n, and is used\nto represent \"assets\" or \"things\" in the farm. farmOS comes with a core set of\nasset types, including Plantings, Animals, and Equipment - and more can be added\nvia contributed modules.\n\n\nLogs\n\n\nThe \"Log\" entity type is provided by the \nLog module\n, and is used to represent\nvarious types of events that are recorded on a farm (ie: activities, movements,\nobservations, harvests, etc). Logs have a timestamp, which means they happen at\na certain point in time (in the past or future). This is in contrast to assets,\nwhich represent a specific thing. Logs represent an event, and they can\nreference specific assets that they relate to.\n\n\nThe \nFarm Log module\n provides a \ncore set of log types\n that can apply to any\nkind of asset. Other modules can provide more specific log types - like the\n\"Seeding\" log type, which is provided by the \nFarm Crop module\n.\n\n\nTaxonomy Terms\n\n\nTaxonomy Terms are a core Drupal entity type, and they are generally used for\ncategorization and tagging of things. Taxonomy Terms are organized into\n\"Vocabularies\", and farmOS provides a number of different vocabulary types that\nare used throughout the system.\n\n\nUsers\n\n\nUsers are a core Drupal entity type, and they provide the mechanism through\nwhich you can log into the system and use it. They represent all the different\npeople who are involved with the farm, and they can be assigned roles to grant\nthem different \nlevels of permission\n.", 
+            "title": "Architecture"
+        }, 
+        {
+            "location": "/development/architecture/#entity-types", 
+            "text": "farmOS is architected using four Drupal entity types:   Farm Assets  Logs  Taxonomy Terms  Users   The Entity system in Drupal provides a standardized way of representing\ndifferent types of objects, and includes mechanisms and APIs for adding fields,\ncreating relationships to other entities, and performing actions when entities\nare created/displaued/updated/deleted. farmOS uses Drupal's entity system to\nrepresent all of its records.  The first three types (Farm Assets, Logs, and Taxonomy Terms) also use a Drupal\nconcept known as \"bundles\". Bundles are essentially sub-types. Each bundle can\nhave a unique set of input fields on it, which can be used to create different\ntypes of assets, logs, etc.  To learn more about how entity types and bundles work in Drupal, refer to An Introduction to Entities  in the drupal.org handbook.  The following is a brief overview of the entity types that farmOS uses.", 
+            "title": "Entity types"
+        }, 
+        {
+            "location": "/development/architecture/#farm-assets", 
+            "text": "The \"Farm Asset\" entity type is provided by the  Farm Asset module , and is used\nto represent \"assets\" or \"things\" in the farm. farmOS comes with a core set of\nasset types, including Plantings, Animals, and Equipment - and more can be added\nvia contributed modules.", 
+            "title": "Farm Assets"
+        }, 
+        {
+            "location": "/development/architecture/#logs", 
+            "text": "The \"Log\" entity type is provided by the  Log module , and is used to represent\nvarious types of events that are recorded on a farm (ie: activities, movements,\nobservations, harvests, etc). Logs have a timestamp, which means they happen at\na certain point in time (in the past or future). This is in contrast to assets,\nwhich represent a specific thing. Logs represent an event, and they can\nreference specific assets that they relate to.  The  Farm Log module  provides a  core set of log types  that can apply to any\nkind of asset. Other modules can provide more specific log types - like the\n\"Seeding\" log type, which is provided by the  Farm Crop module .", 
+            "title": "Logs"
+        }, 
+        {
+            "location": "/development/architecture/#taxonomy-terms", 
+            "text": "Taxonomy Terms are a core Drupal entity type, and they are generally used for\ncategorization and tagging of things. Taxonomy Terms are organized into\n\"Vocabularies\", and farmOS provides a number of different vocabulary types that\nare used throughout the system.", 
+            "title": "Taxonomy Terms"
+        }, 
+        {
+            "location": "/development/architecture/#users", 
+            "text": "Users are a core Drupal entity type, and they provide the mechanism through\nwhich you can log into the system and use it. They represent all the different\npeople who are involved with the farm, and they can be assigned roles to grant\nthem different  levels of permission .", 
+            "title": "Users"
+        }, 
+        {
+            "location": "/development/best-practice/", 
+            "text": "Best practice\n\n\nIn general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.\n\n\n\n\nDrupal best practices\n\n\nDrupal coding standards\n\n\n\n\nAvoiding divergence\n\n\nfarmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.\n\n\nThe danger of this comes when it's time to \nupgrade your farmOS\n instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.\n\n\nThink about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.\n\n\nWhen a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.\n\n\nSo, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect upgrades, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe \nfarmOS issue queue\n and suggest your changes for inclusion in the project!\n\n\nThis isn't meant to disuade you from experimenting! It is only meant to impart\nsome caution and practical strategy so you don't end up pulling your hair out...\nor worse: losing data.", 
+            "title": "Best Practice"
+        }, 
+        {
+            "location": "/development/best-practice/#best-practice", 
+            "text": "In general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.   Drupal best practices  Drupal coding standards", 
+            "title": "Best practice"
+        }, 
+        {
+            "location": "/development/best-practice/#avoiding-divergence", 
+            "text": "farmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.  The danger of this comes when it's time to  upgrade your farmOS  instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.  Think about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.  When a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.  So, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect upgrades, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe  farmOS issue queue  and suggest your changes for inclusion in the project!  This isn't meant to disuade you from experimenting! It is only meant to impart\nsome caution and practical strategy so you don't end up pulling your hair out...\nor worse: losing data.", 
+            "title": "Avoiding divergence"
+        }, 
+        {
+            "location": "/contribute/", 
+            "text": "Getting involved\n\n\nThere are lots of ways to get involved with the farmOS project.\n\n\nUse farmOS\n\n\nFirst and foremost: use farmOS! Get set up and start keeping track of your\nfarm's assets and activities! farmOS can become a new standard platform for farm\nplanning and recordkeeping - but only if a large community develops around it.\n\n\nIt may not be very pretty or intuitive right now, but it is a community-built\nsoftware platform, and it will continue to evolve and improve over time. Get\nstarted now and invest in a project that can become something great!\n\n\nShare ideas, report bugs, discuss development\n\n\nIf you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the \nissue queues\n.\n\n\nYou can also chat with people directly in the \n#farmOS IRC channel on Freenode\n.\n\n\nDocumentation\n\n\nIf you are interested in helping with documentation, please get in touch via the\n\nGithub issue queue\n, or by forking the \ndocumentation repository\n, making\nchanges, and creating a pull request.\n\n\nDevelopment\n\n\nAre you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done!", 
+            "title": "Contribute"
+        }, 
+        {
+            "location": "/contribute/#getting-involved", 
+            "text": "There are lots of ways to get involved with the farmOS project.", 
+            "title": "Getting involved"
+        }, 
+        {
+            "location": "/contribute/#use-farmos", 
+            "text": "First and foremost: use farmOS! Get set up and start keeping track of your\nfarm's assets and activities! farmOS can become a new standard platform for farm\nplanning and recordkeeping - but only if a large community develops around it.  It may not be very pretty or intuitive right now, but it is a community-built\nsoftware platform, and it will continue to evolve and improve over time. Get\nstarted now and invest in a project that can become something great!", 
+            "title": "Use farmOS"
+        }, 
+        {
+            "location": "/contribute/#share-ideas-report-bugs-discuss-development", 
+            "text": "If you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the  issue queues .  You can also chat with people directly in the  #farmOS IRC channel on Freenode .", 
+            "title": "Share ideas, report bugs, discuss development"
+        }, 
+        {
+            "location": "/contribute/#documentation", 
+            "text": "If you are interested in helping with documentation, please get in touch via the Github issue queue , or by forking the  documentation repository , making\nchanges, and creating a pull request.", 
+            "title": "Documentation"
+        }, 
+        {
+            "location": "/contribute/#development", 
+            "text": "Are you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done!", 
+            "title": "Development"
         }
     ]
 }

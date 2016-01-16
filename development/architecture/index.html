@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.farmos.org/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="canonical" href="http://docs.farmos.org/development/architecture/">
+        <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>farmOS Documentation</title>
+	<title>Architecture - farmOS Documentation</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">farmOS Documentation</a>
+            <a class="navbar-brand" href="../..">farmOS Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -61,8 +61,8 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Home</a>
+                <li >
+                    <a href="../..">Home</a>
                 </li>
             
             
@@ -72,23 +72,23 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="guide/areas/">Mapping your farm</a>
+                            <a href="../../guide/areas/">Mapping your farm</a>
                         </li>
                     
                         <li >
-                            <a href="guide/assets/">Managing assets</a>
+                            <a href="../../guide/assets/">Managing assets</a>
                         </li>
                     
                         <li >
-                            <a href="guide/logs/">Logging events</a>
+                            <a href="../../guide/logs/">Logging events</a>
                         </li>
                     
                         <li >
-                            <a href="guide/location/">Movements and location</a>
+                            <a href="../../guide/location/">Movements and location</a>
                         </li>
                     
                         <li >
-                            <a href="guide/roles/">Roles</a>
+                            <a href="../../guide/roles/">Roles</a>
                         </li>
                     
                     </ul>
@@ -101,11 +101,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="hosting/installing/">Installing</a>
+                            <a href="../../hosting/installing/">Installing</a>
                         </li>
                     
                         <li >
-                            <a href="hosting/updating/">Updating</a>
+                            <a href="../../hosting/updating/">Updating</a>
                         </li>
                     
                     </ul>
@@ -113,24 +113,24 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="development/projects/">Projects</a>
+                            <a href="../projects/">Projects</a>
                         </li>
                     
                         <li >
-                            <a href="development/issue-queues/">Issue Queues</a>
+                            <a href="../issue-queues/">Issue Queues</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">Architecture</a>
                         </li>
                     
                         <li >
-                            <a href="development/architecture/">Architecture</a>
-                        </li>
-                    
-                        <li >
-                            <a href="development/best-practice/">Best Practice</a>
+                            <a href="../best-practice/">Best Practice</a>
                         </li>
                     
                     </ul>
@@ -139,7 +139,7 @@
             
             
                 <li >
-                    <a href="contribute/">Contribute</a>
+                    <a href="../../contribute/">Contribute</a>
                 </li>
             
             
@@ -147,13 +147,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../issue-queues/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="guide/areas/">
+                    <a rel="prev" href="../best-practice/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -176,32 +176,66 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main active"><a href="#entity-types">Entity types</a></li>
         
-            <li><a href="#status">Status</a></li>
+            <li><a href="#farm-assets">Farm Assets</a></li>
         
-            <li><a href="#license">License</a></li>
+            <li><a href="#logs">Logs</a></li>
         
-            <li><a href="#official-website">Official website</a></li>
+            <li><a href="#taxonomy-terms">Taxonomy Terms</a></li>
+        
+            <li><a href="#users">Users</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>farmOS is a web-based application for farm management and planning.</p>
-<p>It is built on <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>, <a href="http://www.drupal.org/features/extend">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>.</p>
-<p><a href="http://openlayers.org">Openlayers</a> is used for mapping and geodata manipulation.</p>
-<h2 id="status">Status</h2>
-<p>farmOS is under active development, but is still relatively new. The focus right
-now is laying a strong <a href="./development/architecture">groundwork</a>, so that others can more easily join in and
-<a href="./contribute">contribute</a>.</p>
-<h2 id="license">License</h2>
-<p>Both Drupal and farmOS are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
-which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
-<h2 id="official-website">Official website</h2>
-<p><a href="http://farmos.org">http://farmOS.org</a></p></div>
+<h1 id="entity-types">Entity types</h1>
+<p>farmOS is architected using four Drupal entity types:</p>
+<ol>
+<li>Farm Assets</li>
+<li>Logs</li>
+<li>Taxonomy Terms</li>
+<li>Users</li>
+</ol>
+<p>The Entity system in Drupal provides a standardized way of representing
+different types of objects, and includes mechanisms and APIs for adding fields,
+creating relationships to other entities, and performing actions when entities
+are created/displaued/updated/deleted. farmOS uses Drupal's entity system to
+represent all of its records.</p>
+<p>The first three types (Farm Assets, Logs, and Taxonomy Terms) also use a Drupal
+concept known as "bundles". Bundles are essentially sub-types. Each bundle can
+have a unique set of input fields on it, which can be used to create different
+types of assets, logs, etc.</p>
+<p>To learn more about how entity types and bundles work in Drupal, refer to
+<a href="http://www.drupal.org/node/1261744">An Introduction to Entities</a> in the drupal.org handbook.</p>
+<p>The following is a brief overview of the entity types that farmOS uses.</p>
+<h2 id="farm-assets">Farm Assets</h2>
+<p>The "Farm Asset" entity type is provided by the <a href="https://drupal.org/project/farm_asset">Farm Asset module</a>, and is used
+to represent "assets" or "things" in the farm. farmOS comes with a core set of
+asset types, including Plantings, Animals, and Equipment - and more can be added
+via contributed modules.</p>
+<h2 id="logs">Logs</h2>
+<p>The "Log" entity type is provided by the <a href="https://drupal.org/project/log">Log module</a>, and is used to represent
+various types of events that are recorded on a farm (ie: activities, movements,
+observations, harvests, etc). Logs have a timestamp, which means they happen at
+a certain point in time (in the past or future). This is in contrast to assets,
+which represent a specific thing. Logs represent an event, and they can
+reference specific assets that they relate to.</p>
+<p>The <a href="https://drupal.org/project/farm_log">Farm Log module</a> provides a <a href="../../guide/logs">core set of log types</a> that can apply to any
+kind of asset. Other modules can provide more specific log types - like the
+"Seeding" log type, which is provided by the <a href="https://drupal.org/project/farm_crop">Farm Crop module</a>.</p>
+<h2 id="taxonomy-terms">Taxonomy Terms</h2>
+<p>Taxonomy Terms are a core Drupal entity type, and they are generally used for
+categorization and tagging of things. Taxonomy Terms are organized into
+"Vocabularies", and farmOS provides a number of different vocabulary types that
+are used throughout the system.</p>
+<h2 id="users">Users</h2>
+<p>Users are a core Drupal entity type, and they provide the mechanism through
+which you can log into the system and use it. They represent all the different
+people who are involved with the farm, and they can be assigned roles to grant
+them different <a href="../../guide/roles">levels of permission</a>.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -212,9 +246,9 @@ which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open sou
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
     </body>
 </html>

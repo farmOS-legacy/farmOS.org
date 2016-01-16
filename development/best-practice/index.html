@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://docs.farmos.org/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="canonical" href="http://docs.farmos.org/development/best-practice/">
+        <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>farmOS Documentation</title>
+	<title>Best Practice - farmOS Documentation</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">farmOS Documentation</a>
+            <a class="navbar-brand" href="../..">farmOS Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -61,8 +61,8 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Home</a>
+                <li >
+                    <a href="../..">Home</a>
                 </li>
             
             
@@ -72,23 +72,23 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="guide/areas/">Mapping your farm</a>
+                            <a href="../../guide/areas/">Mapping your farm</a>
                         </li>
                     
                         <li >
-                            <a href="guide/assets/">Managing assets</a>
+                            <a href="../../guide/assets/">Managing assets</a>
                         </li>
                     
                         <li >
-                            <a href="guide/logs/">Logging events</a>
+                            <a href="../../guide/logs/">Logging events</a>
                         </li>
                     
                         <li >
-                            <a href="guide/location/">Movements and location</a>
+                            <a href="../../guide/location/">Movements and location</a>
                         </li>
                     
                         <li >
-                            <a href="guide/roles/">Roles</a>
+                            <a href="../../guide/roles/">Roles</a>
                         </li>
                     
                     </ul>
@@ -101,11 +101,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="hosting/installing/">Installing</a>
+                            <a href="../../hosting/installing/">Installing</a>
                         </li>
                     
                         <li >
-                            <a href="hosting/updating/">Updating</a>
+                            <a href="../../hosting/updating/">Updating</a>
                         </li>
                     
                     </ul>
@@ -113,24 +113,24 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="development/projects/">Projects</a>
+                            <a href="../projects/">Projects</a>
                         </li>
                     
                         <li >
-                            <a href="development/issue-queues/">Issue Queues</a>
+                            <a href="../issue-queues/">Issue Queues</a>
                         </li>
                     
                         <li >
-                            <a href="development/architecture/">Architecture</a>
+                            <a href="../architecture/">Architecture</a>
                         </li>
                     
-                        <li >
-                            <a href="development/best-practice/">Best Practice</a>
+                        <li class="active">
+                            <a href="./">Best Practice</a>
                         </li>
                     
                     </ul>
@@ -139,7 +139,7 @@
             
             
                 <li >
-                    <a href="contribute/">Contribute</a>
+                    <a href="../../contribute/">Contribute</a>
                 </li>
             
             
@@ -147,13 +147,13 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="../architecture/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="guide/areas/">
+                    <a rel="prev" href="../../contribute/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -176,32 +176,45 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#overview">Overview</a></li>
+        <li class="main active"><a href="#best-practice">Best practice</a></li>
         
-            <li><a href="#status">Status</a></li>
-        
-            <li><a href="#license">License</a></li>
-        
-            <li><a href="#official-website">Official website</a></li>
+            <li><a href="#avoiding-divergence">Avoiding divergence</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="overview">Overview</h1>
-<p>farmOS is a web-based application for farm management and planning.</p>
-<p>It is built on <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>, <a href="http://www.drupal.org/features/extend">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>.</p>
-<p><a href="http://openlayers.org">Openlayers</a> is used for mapping and geodata manipulation.</p>
-<h2 id="status">Status</h2>
-<p>farmOS is under active development, but is still relatively new. The focus right
-now is laying a strong <a href="./development/architecture">groundwork</a>, so that others can more easily join in and
-<a href="./contribute">contribute</a>.</p>
-<h2 id="license">License</h2>
-<p>Both Drupal and farmOS are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
-which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
-<h2 id="official-website">Official website</h2>
-<p><a href="http://farmos.org">http://farmOS.org</a></p></div>
+<h1 id="best-practice">Best practice</h1>
+<p>In general, farmOS development follows the same best practices and coding
+standards set forth by the Drupal community.</p>
+<ul>
+<li><a href="https://www.drupal.org/best-practices">Drupal best practices</a></li>
+<li><a href="https://www.drupal.org/coding-standards">Drupal coding standards</a></li>
+</ul>
+<h2 id="avoiding-divergence">Avoiding divergence</h2>
+<p>farmOS is built on Drupal, which means that it is extremely flexible. If you
+are installing your own instance of farmOS, you have full control over the
+entities, fields, Views, etc. So you can change things that farmOS sets up by
+default. This is great! And it's part of the reason why farmOS can grow and
+evolve so quickly. But, with great power comes great responsibility.</p>
+<p>The danger of this comes when it's time to <a href="../../hosting/upgrading">upgrade your farmOS</a> instance to a
+new version. If you've made modifications to core fields or entity types, they
+may no longer be compatible with the "main line" of farmOS development.</p>
+<p>Think about it like this: when you make a change to the configuration of your
+system, you are essentially creating a new "branch" of farmOS. It's no longer
+default farmOS, in other words. It's your own unique configuration.</p>
+<p>When a new official version of farmOS is released, your modifications may
+conflict with those in the new release. Depending on what these changes are, it
+can be pretty easy to merge them together... or it can be a nightmare.</p>
+<p>So, as a general recommendation: if you are modifying the inner workings of
+farmOS, you should either be very familiar with what you're doing and how it
+will affect upgrades, or you shouldn't do it with your live data. Set up a
+second testing site, make some modifications, and then open up a new issue in
+the <a href="../../development/issue-queues">farmOS issue queue</a> and suggest your changes for inclusion in the project!</p>
+<p>This isn't meant to disuade you from experimenting! It is only meant to impart
+some caution and practical strategy so you don't end up pulling your hair out...
+or worse: losing data.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -212,9 +225,9 @@ which means they are <a href="http://en.wikipedia.org/wiki/Open_source">open sou
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
     </body>
 </html>
