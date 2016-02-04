@@ -195,12 +195,8 @@ patches when they become available.</p>
 <li>Download the new recommended release of farmOS from
    <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
 <li>Unzip the compressed folder, and replace everything in your Drupal codebase
-   EXCEPT the <code>/sites/</code> folder. The easiest way to do this is to unzip to a new
-   folder, move the <code>/sites/</code> folder from your old codebase to the new one, and
-   then rename the new folder so that it takes the place of your old codebase.
-   It's critical that you do not overwrite the <code>/sites/</code> folder, because that's
-   where your uploaded files are stored, as well as the configuration files that
-   tell Drupal how to connect to your database.</li>
+   EXCEPT the <code>/sites/</code> folder. Do not overwrite the <code>/sites/</code> folder, because
+   it contains content and configuration for your site.</li>
 <li>
 <p>Clear your cache and rebuild your registry with <a href="https://github.com/drush-ops/drush">Drush</a> and
    <a href="https://drupal.org/project/registry_rebuild">Drush Registry Rebuild</a>. This isn't always necessary, but it doesn't hurt.</p>
@@ -208,9 +204,7 @@ patches when they become available.</p>
 <p><code>drush rr</code></p>
 </li>
 <li>
-<p>Run database updates by going to <code>http://[my-farmOS-site]/update.php</code> and
-   following the steps. These updates will ensure that your database structure
-   matches what your code expects.</p>
+<p><a href="https://drupal.org/upgrade/running-update-php">Run database updates</a>!</p>
 </li>
 </ol></div>
         </div>
