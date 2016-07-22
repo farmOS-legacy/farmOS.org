@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n\n\nfarmOS is a web-based application for farm management and planning.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nLicense\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nOfficial website\n\n\nhttp://farmOS.org", 
+            "text": "Overview\n\n\nfarmOS is a web-based application for farm management, planning, and record\nkeeping.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nOpen Source\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nQuick Links\n\n\n\n\nDrupal.org: \nhttps://drupal.org/project/farm\n\n\nGithub: \nhttps://github.com/farmOS\n\n\nMonthly call: \nGoogle Hangout\n (2nd Wed of the month at 1pm Eastern)\n\n\nIRC: \n#farmOS on Freenode\n\n\n\n\nOfficial website\n\n\nhttp://farmOS.org", 
             "title": "Home"
         }, 
         {
             "location": "/#overview", 
-            "text": "farmOS is a web-based application for farm management and planning.  It is built on  Drupal , which makes it  modular ,  extensible , and  secure .  Openlayers  is used for mapping and geodata manipulation.", 
+            "text": "farmOS is a web-based application for farm management, planning, and record\nkeeping.  It is built on  Drupal , which makes it  modular ,  extensible , and  secure .  Openlayers  is used for mapping and geodata manipulation.", 
             "title": "Overview"
+        }, 
+        {
+            "location": "/#open-source", 
+            "text": "Both Drupal and farmOS are licensed under the  GNU General Public License ,\nwhich means they are  open source .", 
+            "title": "Open Source"
         }, 
         {
             "location": "/#status", 
@@ -16,9 +21,9 @@
             "title": "Status"
         }, 
         {
-            "location": "/#license", 
-            "text": "Both Drupal and farmOS are licensed under the  GNU General Public License ,\nwhich means they are  open source .", 
-            "title": "License"
+            "location": "/#quick-links", 
+            "text": "Drupal.org:  https://drupal.org/project/farm  Github:  https://github.com/farmOS  Monthly call:  Google Hangout  (2nd Wed of the month at 1pm Eastern)  IRC:  #farmOS on Freenode", 
+            "title": "Quick Links"
         }, 
         {
             "location": "/#official-website", 
@@ -37,8 +42,28 @@
         }, 
         {
             "location": "/guide/areas/#using-geometry-fields", 
-            "text": "Here are some common things you will do with the geometry fields in farmOS:  Zooming  There are four ways to zoom in/out:   On touch screens, you can \"pinch zoom\" using two fingers.  With a computer mouse, you can use the scroll wheel to zoom in/out.  The plus (+) and minus (+) buttons in the top left of the map control zoom.  There is a \"Geolocate\" button in the upper left (looks like a bullseye) that\n   will automatically zoom in to your current location. On a computer this will\n   use your IP address, and on a mobile device it will use your GPS.   Drawing  There are four buttons for drawing shapes:   Point : Click on the map to create a point.  Line : Create a series of line segments by clicking points on the map, and\n   double-clicking when you're done. You can also hold shift to draw freehand.  Circle : Create a circle by clicking where you want the center to be,\n   dragging the circle outward to expand it, and clicking again to finish.  Polygon : A polygon works the same as a line, except it will create a\n   closed shape at the end, whereas a line will not be filled in.   Modifying  There are three buttons for modifying shapes:   Edit : Click the edit button, and then click a shape to select it. You can\n   click and drag any of the vertices to modify the overall shape.  Move : Click the edit button, and then click a shape to select it. Then\n   click and drag the shape to move it to a different position.  Clear : The clear button will clear ALL shapes from the map. If you do\n   accidentally click this, refresh the page WITHOUT saving, and you will revert\n   to the previously saved shapes. Note that this will also revert any other\n   changes to your area that you haven't saved.   Importing a KML file  KML files are special shape files that define a geometry on a map. They can be\ncreated with various GIS/mapping software. If you already have your farm mapped\nin another software (like  Google Earth ), you can export KML files for each\narea and then import them into farmOS's geometry fields.  To import a KML file, follow these steps:   Create a new area (or edit an existing one).  Scroll down to the Files field and upload your KML file.  Scroll up to the Geometry field, and just below the map you will see a button\n   labeled \"Find using Files field\". If you uploaded a valid KML file, you will\n   see the shape(s) appear in the map.", 
+            "text": "Here are some common things you will do with the geometry fields in farmOS:", 
             "title": "Using geometry fields"
+        }, 
+        {
+            "location": "/guide/areas/#zooming", 
+            "text": "There are four ways to zoom in/out:   On touch screens, you can \"pinch zoom\" using two fingers.  With a computer mouse, you can use the scroll wheel to zoom in/out.  The plus (+) and minus (+) buttons in the top left of the map control zoom.  There is a \"Geolocate\" button in the upper left (looks like a bullseye) that\n   will automatically zoom in to your current location. On a computer this will\n   use your IP address, and on a mobile device it will use your GPS.", 
+            "title": "Zooming"
+        }, 
+        {
+            "location": "/guide/areas/#drawing", 
+            "text": "There are four buttons for drawing shapes:   Point : Click on the map to create a point.  Line : Create a series of line segments by clicking points on the map, and\n   double-clicking when you're done. You can also hold shift to draw freehand.  Circle : Create a circle by clicking where you want the center to be,\n   dragging the circle outward to expand it, and clicking again to finish.  Polygon : A polygon works the same as a line, except it will create a\n   closed shape at the end, whereas a line will not be filled in.", 
+            "title": "Drawing"
+        }, 
+        {
+            "location": "/guide/areas/#modifying", 
+            "text": "There are three buttons for modifying shapes:   Edit : Click the edit button, and then click a shape to select it. You can\n   click and drag any of the vertices to modify the overall shape.  Move : Click the edit button, and then click a shape to select it. Then\n   click and drag the shape to move it to a different position.  Clear : The clear button will clear ALL shapes from the map. If you do\n   accidentally click this, refresh the page WITHOUT saving, and you will revert\n   to the previously saved shapes. Note that this will also revert any other\n   changes to your area that you haven't saved.", 
+            "title": "Modifying"
+        }, 
+        {
+            "location": "/guide/areas/#importing-a-kml-file", 
+            "text": "KML files are special shape files that define a geometry on a map. They can be\ncreated with various GIS/mapping software. If you already have your farm mapped\nin another software (like  Google Earth ), you can export KML files for each\narea and then import them into farmOS's geometry fields.  To import a KML file, follow these steps:   Create a new area (or edit an existing one).  Scroll down to the Files field and upload your KML file.  Scroll up to the Geometry field, and just below the map you will see a button\n   labeled \"Find using Files field\". If you uploaded a valid KML file, you will\n   see the shape(s) appear in the map.", 
+            "title": "Importing a KML file"
         }, 
         {
             "location": "/guide/areas/#remember-to-save", 
@@ -177,7 +202,7 @@
         }, 
         {
             "location": "/development/projects/", 
-            "text": "Projects\n\n\nfarmOS\n is built as a set of separate but inter-dependent \nDrupal\n projects.\n\n\nDrupal is a modular system, and farmOS follows in those footsteps by providing\nall of it's features as singularly-focused modules on top of Drupal core.\n\n\nAll of these various modules, their dependencies, third-party libraries, and\nthe official farmOS Drupal theme are packaged together into a\n\nfarm-focused Drupal distribution\n that is collectively referred to as \"farmOS\".\n\n\nDistributions of Drupal are roughly analogous to distributions of Linux. They\nserve to collect various code and configuration together in an intentional way.\nMore information can be found in the \nDrupal distribution documentation\n.\n\n\nTo learn more about Drupal in general, refer to the \nDrupal documentation\n.\n\n\nDistribution\n\n\n\n\nfarmOS Distribution\n\n\n\n\nIf you are getting started with farmOS, downloading and installing the farmOS\ndistribution is the recommended approach. Drupal.org has an automated packaging\nsystem, so you can be sure it's all built properly and everything is included.\n\n\nThe purpose of the farmOS distribution is to collect all the modules in one\npackage, along with some default configuration, theming, etc - so you can get up\nand running using farmOS the way it was intendend and designed to be used.\n\n\nYou are not required to use the distribution. Each of the farmOS components is\nprovided as a separate module, so you can install them individually on a\nnon-farmOS Drupal website. This isn't recommended unless you're very comfortable\nwith Drupal.\n\n\nModules\n\n\nIncluded in farmOS\n\n\nThese modules are packaged with the farmOS distribution:\n\n\n\n\nFarm Access\n\n\nFarm Admin\n\n\nFarm Area\n\n\nFarm Asset\n\n\nFarm Crop\n\n\nFarm Equipment\n\n\nFarm Fields\n\n\nFarm Livestock\n\n\nFarm Log\n\n\nFarm Map\n\n\nFarm MapKnitter\n\n\nFarm Quantity\n\n\nFarm Sensor\n\n\nFarm Soil\n\n\nFarm Taxonomy\n\n\nFarm Tour\n\n\n\n\nOther modules\n\n\nThese modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:\n\n\n\n\nFarm Maple\n\n\nFarm Mushroom\n\n\n\n\nTheme\n\n\nThe official farmOS theme is a Drupal theme based off of \nBootstrap\n.\n\n\n\n\nFarm Theme", 
+            "text": "Projects\n\n\nfarmOS\n is built as a set of separate but inter-dependent \nDrupal\n projects.\n\n\nDrupal is a modular system, and farmOS follows in those footsteps by providing\nall of it's features as singularly-focused modules on top of Drupal core.\n\n\nAll of these various modules, their dependencies, third-party libraries, and\nthe official farmOS Drupal theme are packaged together into a\n\nfarm-focused Drupal distribution\n that is collectively referred to as \"farmOS\".\n\n\nDistributions of Drupal are roughly analogous to distributions of Linux. They\nserve to collect various code and configuration together in an intentional way.\nMore information can be found in the \nDrupal distribution documentation\n.\n\n\nTo learn more about Drupal in general, refer to the \nDrupal documentation\n.\n\n\nDistribution\n\n\n\n\nfarmOS Distribution\n\n\n\n\nIf you are getting started with farmOS, downloading and installing the farmOS\ndistribution is the recommended approach. Drupal.org has an automated packaging\nsystem, so you can be sure it's all built properly and everything is included.\n\n\nThe purpose of the farmOS distribution is to collect all the modules in one\npackage, along with some default configuration, theming, etc - so you can get up\nand running using farmOS the way it was intendend and designed to be used.\n\n\nYou are not required to use the distribution. Each of the farmOS components is\nprovided as a separate module, so you can install them individually on a\nnon-farmOS Drupal website. This isn't recommended unless you're very comfortable\nwith Drupal.\n\n\nModules\n\n\nIncluded in farmOS\n\n\nThese modules are packaged with the farmOS distribution:\n\n\n\n\nFarm Access\n\n\nFarm Admin\n\n\nFarm Area\n\n\nFarm Asset\n\n\nFarm Crop\n\n\nFarm Equipment\n\n\nFarm Fields\n\n\nFarm Livestock\n\n\nFarm Log\n\n\nFarm Map\n\n\nFarm MapKnitter\n\n\nFarm Quantity\n\n\nFarm Sensor\n\n\nFarm Soil\n\n\nFarm Taxonomy\n\n\nFarm Tour\n\n\n\n\nOther modules\n\n\nThese modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:\n\n\n\n\nFarm Bee\n\n\nFarm Maple\n\n\nFarm Mushroom\n\n\n\n\nTheme\n\n\nThe official farmOS theme is a Drupal theme based off of \nBootstrap\n.\n\n\n\n\nFarm Theme", 
             "title": "Projects"
         }, 
         {
@@ -192,8 +217,18 @@
         }, 
         {
             "location": "/development/projects/#modules", 
-            "text": "Included in farmOS  These modules are packaged with the farmOS distribution:   Farm Access  Farm Admin  Farm Area  Farm Asset  Farm Crop  Farm Equipment  Farm Fields  Farm Livestock  Farm Log  Farm Map  Farm MapKnitter  Farm Quantity  Farm Sensor  Farm Soil  Farm Taxonomy  Farm Tour   Other modules  These modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:   Farm Maple  Farm Mushroom", 
+            "text": "", 
             "title": "Modules"
+        }, 
+        {
+            "location": "/development/projects/#included-in-farmos", 
+            "text": "These modules are packaged with the farmOS distribution:   Farm Access  Farm Admin  Farm Area  Farm Asset  Farm Crop  Farm Equipment  Farm Fields  Farm Livestock  Farm Log  Farm Map  Farm MapKnitter  Farm Quantity  Farm Sensor  Farm Soil  Farm Taxonomy  Farm Tour", 
+            "title": "Included in farmOS"
+        }, 
+        {
+            "location": "/development/projects/#other-modules", 
+            "text": "These modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:   Farm Bee  Farm Maple  Farm Mushroom", 
+            "title": "Other modules"
         }, 
         {
             "location": "/development/projects/#theme", 
@@ -252,7 +287,7 @@
         }, 
         {
             "location": "/development/best-practice/", 
-            "text": "Best practice\n\n\nIn general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.\n\n\n\n\nDrupal best practices\n\n\nDrupal coding standards\n\n\n\n\nAvoiding divergence\n\n\nfarmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.\n\n\nThe danger of this comes when it's time to \nupgrade your farmOS\n instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.\n\n\nThink about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.\n\n\nWhen a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.\n\n\nSo, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect upgrades, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe \nfarmOS issue queue\n and suggest your changes for inclusion in the project!", 
+            "text": "Best practice\n\n\nIn general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.\n\n\n\n\nDrupal best practices\n\n\nDrupal coding standards\n\n\n\n\nAvoiding divergence\n\n\nfarmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.\n\n\nThe danger of this comes when it's time to \nupdate your farmOS\n instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.\n\n\nThink about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.\n\n\nWhen a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.\n\n\nSo, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe \nfarmOS issue queue\n and suggest your changes for inclusion in the project!", 
             "title": "Best Practice"
         }, 
         {
@@ -262,7 +297,7 @@
         }, 
         {
             "location": "/development/best-practice/#avoiding-divergence", 
-            "text": "farmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.  The danger of this comes when it's time to  upgrade your farmOS  instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.  Think about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.  When a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.  So, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect upgrades, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe  farmOS issue queue  and suggest your changes for inclusion in the project!", 
+            "text": "farmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.  The danger of this comes when it's time to  update your farmOS  instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.  Think about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.  When a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.  So, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe  farmOS issue queue  and suggest your changes for inclusion in the project!", 
             "title": "Avoiding divergence"
         }, 
         {
