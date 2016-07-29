@@ -108,6 +108,12 @@
     </url>
         
     <url>
+     <loc>http://farmos.org/community/farms/</loc>
+     <lastmod>2016-07-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>http://farmos.org/community/maintainers/</loc>
      <lastmod>2016-07-29</lastmod>
      <changefreq>daily</changefreq>
