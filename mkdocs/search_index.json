@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n\n\nfarmOS is a web-based application for farm management, planning, and record\nkeeping.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nOpen Source\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nQuick Links\n\n\n\n\nDrupal.org: \nhttps://drupal.org/project/farm\n\n\nGithub: \nhttps://github.com/farmOS\n\n\nMonthly call: \nGoogle Hangout\n (2nd Wed of the month at 1pm Eastern)\n\n\nIRC: \n#farmOS on Freenode\n\n\n\n\nOfficial website\n\n\nhttp://farmOS.org", 
+            "text": "Overview\n\n\nfarmOS is a web-based application for farm management, planning, and record\nkeeping.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nOpen Source\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nQuick Links\n\n\n\n\nDrupal.org: \nhttps://drupal.org/project/farm\n\n\nGithub: \nhttps://github.com/farmOS\n\n\nMonthly call: \nGoogle Hangout\n (2nd Wed of the month at 1pm Eastern)\n\n\nIRC: \n#farmOS on Freenode", 
             "title": "Home"
         }, 
         {
@@ -26,9 +26,24 @@
             "title": "Quick Links"
         }, 
         {
-            "location": "/#official-website", 
-            "text": "http://farmOS.org", 
-            "title": "Official website"
+            "location": "/guide/start/", 
+            "text": "Getting Started\n\n\nSince farmOS is a web application, it must be hosted on a web server. This is\ndifferent than most apps, which you simply install on your local computer or\ndevice. In contrast, farmOS is installed on a server, and you use your various\ndevices to access it over a network.\n\n\nThere are two ways to get started using farmOS:\n\n\n1. DIY (host it yourself)\n\n\nfarmOS is free software, which means you are free to download the code and host\nit yourself. You can also modify and extend it to fit your needs. It is built on\n\nDrupal\n, which is a free and open-source web application framework. Drupal runs\non a web server, so it can be served to the internet 24x7. If you're familiar\nwith websites and how to host them, you can set up a farmOS site just like a\nnormal Drupal site.\n\n\nFor more information, refer to the \nfarmOS Installation Documentation\n.\n\n\n2. Third-party hosting\n\n\nThe alternative to setting up farmOS yourself is to pay a third-party to host it\nfor you.\n\n\nFarmier\n is a farmOS hosting service started by the creator of farmOS. It is a\nsubscription based service that provides hosting, automatic updates, backups,\nSSL security and other features. The proceeds of this service help the \ndevelopers to contribute more time to the project.", 
+            "title": "Getting started"
+        }, 
+        {
+            "location": "/guide/start/#getting-started", 
+            "text": "Since farmOS is a web application, it must be hosted on a web server. This is\ndifferent than most apps, which you simply install on your local computer or\ndevice. In contrast, farmOS is installed on a server, and you use your various\ndevices to access it over a network.  There are two ways to get started using farmOS:", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/guide/start/#1-diy-host-it-yourself", 
+            "text": "farmOS is free software, which means you are free to download the code and host\nit yourself. You can also modify and extend it to fit your needs. It is built on Drupal , which is a free and open-source web application framework. Drupal runs\non a web server, so it can be served to the internet 24x7. If you're familiar\nwith websites and how to host them, you can set up a farmOS site just like a\nnormal Drupal site.  For more information, refer to the  farmOS Installation Documentation .", 
+            "title": "1. DIY (host it yourself)"
+        }, 
+        {
+            "location": "/guide/start/#2-third-party-hosting", 
+            "text": "The alternative to setting up farmOS yourself is to pay a third-party to host it\nfor you.  Farmier  is a farmOS hosting service started by the creator of farmOS. It is a\nsubscription based service that provides hosting, automatic updates, backups,\nSSL security and other features. The proceeds of this service help the \ndevelopers to contribute more time to the project.", 
+            "title": "2. Third-party hosting"
         }, 
         {
             "location": "/guide/areas/", 
@@ -201,6 +216,26 @@
             "title": "Updating farmOS"
         }, 
         {
+            "location": "/development/drupal/", 
+            "text": "Drupal\n\n\nfarmOS is built on top of \nDrupal\n, a free and open-source web application\nframework.\n\n\nBasic concepts\n\n\nIf you are new to Drupal, it is recommended that you first familiarize yourself\nwith some of the basic concepts.\n\n\n\n\nDrupal concepts\n\n\n\n\nBest practices\n\n\nIn general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.\n\n\n\n\nDrupal best practices\n\n\nDrupal coding standards", 
+            "title": "Drupal"
+        }, 
+        {
+            "location": "/development/drupal/#drupal", 
+            "text": "farmOS is built on top of  Drupal , a free and open-source web application\nframework.", 
+            "title": "Drupal"
+        }, 
+        {
+            "location": "/development/drupal/#basic-concepts", 
+            "text": "If you are new to Drupal, it is recommended that you first familiarize yourself\nwith some of the basic concepts.   Drupal concepts", 
+            "title": "Basic concepts"
+        }, 
+        {
+            "location": "/development/drupal/#best-practices", 
+            "text": "In general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.   Drupal best practices  Drupal coding standards", 
+            "title": "Best practices"
+        }, 
+        {
             "location": "/development/projects/", 
             "text": "Projects\n\n\nfarmOS\n is built as a set of separate but inter-dependent \nDrupal\n projects.\n\n\nDrupal is a modular system, and farmOS follows in those footsteps by providing\nall of it's features as singularly-focused modules on top of Drupal core.\n\n\nAll of these various modules, their dependencies, third-party libraries, and\nthe official farmOS Drupal theme are packaged together into a\n\nfarm-focused Drupal distribution\n that is collectively referred to as \"farmOS\".\n\n\nDistributions of Drupal are roughly analogous to distributions of Linux. They\nserve to collect various code and configuration together in an intentional way.\nMore information can be found in the \nDrupal distribution documentation\n.\n\n\nTo learn more about Drupal in general, refer to the \nDrupal documentation\n.\n\n\nDistribution\n\n\n\n\nfarmOS Distribution\n\n\n\n\nIf you are getting started with farmOS, downloading and installing the farmOS\ndistribution is the recommended approach. Drupal.org has an automated packaging\nsystem, so you can be sure it's all built properly and everything is included.\n\n\nThe purpose of the farmOS distribution is to collect all the modules in one\npackage, along with some default configuration, theming, etc - so you can get up\nand running using farmOS the way it was intendend and designed to be used.\n\n\nYou are not required to use the distribution. Each of the farmOS components is\nprovided as a separate module, so you can install them individually on a\nnon-farmOS Drupal website. This isn't recommended unless you're very comfortable\nwith Drupal.\n\n\nModules\n\n\nIncluded in farmOS\n\n\nThese modules are packaged with the farmOS distribution:\n\n\n\n\nFarm Access\n\n\nFarm Admin\n\n\nFarm Area\n\n\nFarm Asset\n\n\nFarm Crop\n\n\nFarm Equipment\n\n\nFarm Fields\n\n\nFarm Livestock\n\n\nFarm Log\n\n\nFarm Map\n\n\nFarm MapKnitter\n\n\nFarm Quantity\n\n\nFarm Sensor\n\n\nFarm Soil\n\n\nFarm Taxonomy\n\n\nFarm Tour\n\n\n\n\nOther modules\n\n\nThese modules aren't packaged with the farmOS distribution, but they can be\nadded to extend your farmOS functionality:\n\n\n\n\nFarm Bee\n\n\nFarm Maple\n\n\nFarm Mushroom\n\n\n\n\nTheme\n\n\nThe official farmOS theme is a Drupal theme based off of \nBootstrap\n.\n\n\n\n\nFarm Theme", 
             "title": "Projects"
@@ -286,49 +321,114 @@
             "title": "Users"
         }, 
         {
-            "location": "/development/best-practice/", 
-            "text": "Best practice\n\n\nIn general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.\n\n\n\n\nDrupal best practices\n\n\nDrupal coding standards\n\n\n\n\nAvoiding divergence\n\n\nfarmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.\n\n\nThe danger of this comes when it's time to \nupdate your farmOS\n instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.\n\n\nThink about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.\n\n\nWhen a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.\n\n\nSo, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe \nfarmOS issue queue\n and suggest your changes for inclusion in the project!", 
-            "title": "Best Practice"
+            "location": "/development/update-safety/", 
+            "text": "Developing with updates in mind\n\n\nfarmOS is \nbuilt on Drupal\n, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.\n\n\nThe danger of this comes when it's time to \nupdate your farmOS\n instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.\n\n\nThink about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.\n\n\nWhen a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.\n\n\nSo, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe \nfarmOS issue queues\n and suggest your changes for inclusion in the project!", 
+            "title": "Update Safety"
         }, 
         {
-            "location": "/development/best-practice/#best-practice", 
-            "text": "In general, farmOS development follows the same best practices and coding\nstandards set forth by the Drupal community.   Drupal best practices  Drupal coding standards", 
-            "title": "Best practice"
+            "location": "/development/update-safety/#developing-with-updates-in-mind", 
+            "text": "farmOS is  built on Drupal , which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.  The danger of this comes when it's time to  update your farmOS  instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.  Think about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.  When a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.  So, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe  farmOS issue queues  and suggest your changes for inclusion in the project!", 
+            "title": "Developing with updates in mind"
         }, 
         {
-            "location": "/development/best-practice/#avoiding-divergence", 
-            "text": "farmOS is built on Drupal, which means that it is extremely flexible. If you\nare installing your own instance of farmOS, you have full control over the\nentities, fields, Views, etc. So you can change things that farmOS sets up by\ndefault. This is great! And it's part of the reason why farmOS can grow and\nevolve so quickly. But, with great power comes great responsibility.  The danger of this comes when it's time to  update your farmOS  instance to a\nnew version. If you've made modifications to core fields or entity types, they\nmay no longer be compatible with the \"main line\" of farmOS development.  Think about it like this: when you make a change to the configuration of your\nsystem, you are essentially creating a new \"branch\" of farmOS. It's no longer\ndefault farmOS, in other words. It's your own unique configuration.  When a new official version of farmOS is released, your modifications may\nconflict with those in the new release. Depending on what these changes are, it\ncan be pretty easy to merge them together... or it can be a nightmare.  So, as a general recommendation: if you are modifying the inner workings of\nfarmOS, you should either be very familiar with what you're doing and how it\nwill affect updates, or you shouldn't do it with your live data. Set up a\nsecond testing site, make some modifications, and then open up a new issue in\nthe  farmOS issue queue  and suggest your changes for inclusion in the project!", 
-            "title": "Avoiding divergence"
-        }, 
-        {
-            "location": "/contribute/", 
-            "text": "Getting involved\n\n\nThere are lots of ways to get involved with the farmOS project.\n\n\nUse farmOS\n\n\nFirst and foremost: use farmOS! Get in the habit of tracking your farm's assets\nand activities!\n\n\nShare ideas, report bugs, discuss development\n\n\nIf you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the \nissue queues\n.\n\n\nYou can also chat with people directly in the \n#farmOS IRC channel on Freenode\n.\n\n\nDocumentation\n\n\nIf you are interested in helping with documentation, create a new issue in the\n\nGithub issue queue\n. Or, fork the \ndocumentation repository\n on Github, make\nchanges, and create a pull request.\n\n\nDevelopment\n\n\nAre you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done!", 
+            "location": "/community/contribute/", 
+            "text": "Contribute\n\n\nThere are many ways to get involved in the farmOS community! You don't need to\nbe a programmer.\n\n\nUse farmOS\n\n\nFirst and foremost: use farmOS!\n\n\nBuilding a critical mass of farmOS users is the best way for the project to grow\nand thrive.\n\n\nIf you are not already in the habit of tracking your farm's assets and\nactivities, farmOS is a great tool to get started with.\n\n\nOr, if you know farmers who are in need of a record keeping tool - tell them\nabout farmOS!\n\n\nFarmier\n offers farmOS hosting, and all proceeds go towards future development.\n\n\nFeature requests, Bug reports, etc\n\n\nIf you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the \nissue queues\n.\n\n\nPlanning and General Discussion\n\n\nThe farmOS developers host a \nfarmOS Monthly Call\n via Google Hangouts. Anyone\nis welcome to join. Calls are currently held on the second Wednesday of the\nmonth, at 1pm Eastern US time.\n\n\nYou can also chat with people any time in the \n#farmOS IRC channel on Freenode\n.\n\n\nSponsor Development\n\n\nIf you would like to see a specific feature in farmOS, consider sponsoring its\ndevelopment. Create a new support or feature request in the \nissue queues\n to\nget started.\n\n\nAll development thusfar has been done by volunteers in their free time. Showing\nsupport with a donation or other financial contribution is a great way to help\nthe project move forward.\n\n\nDocumentation\n\n\nIf you are interested in helping with documentation, create a new issue in the\n\nGithub issue queue\n. Or, fork the \nfarmOS.org repository\n on Github, make\nchanges, and create a pull request.\n\n\nDevelopment\n\n\nAre you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done! Feel free to jump into the \nissue queues\n to get started!", 
             "title": "Contribute"
         }, 
         {
-            "location": "/contribute/#getting-involved", 
-            "text": "There are lots of ways to get involved with the farmOS project.", 
-            "title": "Getting involved"
+            "location": "/community/contribute/#contribute", 
+            "text": "There are many ways to get involved in the farmOS community! You don't need to\nbe a programmer.", 
+            "title": "Contribute"
         }, 
         {
-            "location": "/contribute/#use-farmos", 
-            "text": "First and foremost: use farmOS! Get in the habit of tracking your farm's assets\nand activities!", 
+            "location": "/community/contribute/#use-farmos", 
+            "text": "First and foremost: use farmOS!  Building a critical mass of farmOS users is the best way for the project to grow\nand thrive.  If you are not already in the habit of tracking your farm's assets and\nactivities, farmOS is a great tool to get started with.  Or, if you know farmers who are in need of a record keeping tool - tell them\nabout farmOS!  Farmier  offers farmOS hosting, and all proceeds go towards future development.", 
             "title": "Use farmOS"
         }, 
         {
-            "location": "/contribute/#share-ideas-report-bugs-discuss-development", 
-            "text": "If you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the  issue queues .  You can also chat with people directly in the  #farmOS IRC channel on Freenode .", 
-            "title": "Share ideas, report bugs, discuss development"
+            "location": "/community/contribute/#feature-requests-bug-reports-etc", 
+            "text": "If you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the  issue queues .", 
+            "title": "Feature requests, Bug reports, etc"
         }, 
         {
-            "location": "/contribute/#documentation", 
-            "text": "If you are interested in helping with documentation, create a new issue in the Github issue queue . Or, fork the  documentation repository  on Github, make\nchanges, and create a pull request.", 
+            "location": "/community/contribute/#planning-and-general-discussion", 
+            "text": "The farmOS developers host a  farmOS Monthly Call  via Google Hangouts. Anyone\nis welcome to join. Calls are currently held on the second Wednesday of the\nmonth, at 1pm Eastern US time.  You can also chat with people any time in the  #farmOS IRC channel on Freenode .", 
+            "title": "Planning and General Discussion"
+        }, 
+        {
+            "location": "/community/contribute/#sponsor-development", 
+            "text": "If you would like to see a specific feature in farmOS, consider sponsoring its\ndevelopment. Create a new support or feature request in the  issue queues  to\nget started.  All development thusfar has been done by volunteers in their free time. Showing\nsupport with a donation or other financial contribution is a great way to help\nthe project move forward.", 
+            "title": "Sponsor Development"
+        }, 
+        {
+            "location": "/community/contribute/#documentation", 
+            "text": "If you are interested in helping with documentation, create a new issue in the Github issue queue . Or, fork the  farmOS.org repository  on Github, make\nchanges, and create a pull request.", 
             "title": "Documentation"
         }, 
         {
-            "location": "/contribute/#development", 
-            "text": "Are you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done!", 
+            "location": "/community/contribute/#development", 
+            "text": "Are you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done! Feel free to jump into the  issue queues  to get started!", 
             "title": "Development"
+        }, 
+        {
+            "location": "/community/maintainers/", 
+            "text": "Maintainers\n\n\n\n\nMichael Stenta\n\n\n\n\nDrupal.org: \nm.stenta\n\n\nGithub: \nmstenta", 
+            "title": "Maintainers"
+        }, 
+        {
+            "location": "/community/maintainers/#maintainers", 
+            "text": "", 
+            "title": "Maintainers"
+        }, 
+        {
+            "location": "/community/maintainers/#michael-stenta", 
+            "text": "Drupal.org:  m.stenta  Github:  mstenta", 
+            "title": "Michael Stenta"
+        }, 
+        {
+            "location": "/community/supporters/", 
+            "text": "Supporters\n\n\nThe farmOS project is made possible by many supporters.\n\n\nOrganizations\n\n\n\n\nFarmier\n\n\nFarm Hack\n\n\nGreen Start\n\n\nCornell Soil Health\n\n\nOpen Pipe Kit\n\n\nPublic Lab\n\n\nMapKnitter\n\n\nUSDA/NRCS Soil Survey\n\n\n\n\nIndividuals\n\n\n\n\nMichael Stenta\n\n\nDorn Cox\n\n\nRJ Steinert\n\n\nPol Dellaiera\n\n\nPhil Anzel\n\n\nJeff Warren\n\n\nSam Chapatwala", 
+            "title": "Supporters"
+        }, 
+        {
+            "location": "/community/supporters/#supporters", 
+            "text": "The farmOS project is made possible by many supporters.", 
+            "title": "Supporters"
+        }, 
+        {
+            "location": "/community/supporters/#organizations", 
+            "text": "Farmier  Farm Hack  Green Start  Cornell Soil Health  Open Pipe Kit  Public Lab  MapKnitter  USDA/NRCS Soil Survey", 
+            "title": "Organizations"
+        }, 
+        {
+            "location": "/community/supporters/#individuals", 
+            "text": "Michael Stenta  Dorn Cox  RJ Steinert  Pol Dellaiera  Phil Anzel  Jeff Warren  Sam Chapatwala", 
+            "title": "Individuals"
+        }, 
+        {
+            "location": "/community/press/", 
+            "text": "Press\n\n\nfarmOS has been featured in the following articles. If you would like to write\nabout farmOS, \ncontact m.stenta\n.\n\n\n2016\n\n\n2016 April 1st\n \nLancaster Farming: Using 'Big Data' Can Prevent Big Problems on the Farm\n\n\n2015\n\n\n2015 December 13th\n \nFarm Hack: FarmOS: A Drupal-based farm management solution\n\n\n2015 November 30th\n \nFarm Hack: Integrating Open Source: the Open Agriculture Learning Series\n\n\n2015 November 27th\n \nopensource.com: Top 5: Drupal-based farmOS, Blender for astrophysics, Qora cryptocurrency, and more\n\n\n2015 November 24th\n \nopensource.com: Drupal-based farmOS manages food, farmers, and community\n\n\n2015 November 16th\n \nMakery: Sensprout and Techrice, Japanese prototypes for agriculture\n\n\n2015 November 9th\n \nThe Greenhorns: it\u2019s like a csa \u2013 but with software\n\n\n2015 October 2nd\n \nHNGN: Robots, iPhones Now Make Tending Crops Easier For Farmers\n\n\n2015 September 22nd\n \nPopular Science: Let the Robots and iPhones Tend the Crops\n\n\n2015 April 19th\n \nThe Greenhorns: proving that not all farmers are luddites\n\n\n2015 March 30th\n \nThe Greenhorns: farmOS beta 1 release\n\n\n2014\n\n\n2014 December 25th\n \nOur World (United Nations University): Open Sauce/Source for the Food Revolution\n\n\n2014 November 27th\n \nopensource.com: The new food revolution is open", 
+            "title": "Press"
+        }, 
+        {
+            "location": "/community/press/#press", 
+            "text": "farmOS has been featured in the following articles. If you would like to write\nabout farmOS,  contact m.stenta .", 
+            "title": "Press"
+        }, 
+        {
+            "location": "/community/press/#2016", 
+            "text": "2016 April 1st   Lancaster Farming: Using 'Big Data' Can Prevent Big Problems on the Farm", 
+            "title": "2016"
+        }, 
+        {
+            "location": "/community/press/#2015", 
+            "text": "2015 December 13th   Farm Hack: FarmOS: A Drupal-based farm management solution  2015 November 30th   Farm Hack: Integrating Open Source: the Open Agriculture Learning Series  2015 November 27th   opensource.com: Top 5: Drupal-based farmOS, Blender for astrophysics, Qora cryptocurrency, and more  2015 November 24th   opensource.com: Drupal-based farmOS manages food, farmers, and community  2015 November 16th   Makery: Sensprout and Techrice, Japanese prototypes for agriculture  2015 November 9th   The Greenhorns: it\u2019s like a csa \u2013 but with software  2015 October 2nd   HNGN: Robots, iPhones Now Make Tending Crops Easier For Farmers  2015 September 22nd   Popular Science: Let the Robots and iPhones Tend the Crops  2015 April 19th   The Greenhorns: proving that not all farmers are luddites  2015 March 30th   The Greenhorns: farmOS beta 1 release", 
+            "title": "2015"
+        }, 
+        {
+            "location": "/community/press/#2014", 
+            "text": "2014 December 25th   Our World (United Nations University): Open Sauce/Source for the Food Revolution  2014 November 27th   opensource.com: The new food revolution is open", 
+            "title": "2014"
         }
     ]
 }
