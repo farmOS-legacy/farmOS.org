@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Overview\n\n\nfarmOS is a web-based application for farm management, planning, and record\nkeeping.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nFor more information, read through some of the \nFrequently Asked Questions\n.\n\n\nOpen Source\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nQuick Links\n\n\n\n\nDrupal.org: \nhttps://drupal.org/project/farm\n\n\nGithub: \nhttps://github.com/farmOS\n\n\nMonthly call: \nGoogle Hangout\n (2nd Wed of the month at 1pm Eastern)\n\n\nIRC: \n#farmOS on Freenode", 
+            "text": "Overview\n\n\nfarmOS is a web-based application for farm management, planning, and record\nkeeping.\n\n\nIt is built on \nDrupal\n, which makes it \nmodular\n, \nextensible\n, and \nsecure\n.\n\n\nOpenlayers\n is used for mapping and geodata manipulation.\n\n\nFor more information, read through some of the \nFrequently Asked Questions\n.\n\n\n2016 NOFA Summer Conference\n\n\nMichael Stenta presented a farmOS workshop at the 2016 \nNOFA Summer Conference\n.\nIt covers the core features of farmOS, how to get started, where to find help,\nand how to contribute back to the project.\n\n\nThe full workshop recording is available on YouTube:\n\nhttps://youtu.be/w0ZCu8NsWKE\n\n\n\n\n\nOpen Source\n\n\nBoth Drupal and farmOS are licensed under the \nGNU General Public License\n,\nwhich means they are \nopen source\n.\n\n\nStatus\n\n\nfarmOS is under active development, but is still relatively new. The focus right\nnow is laying a strong \ngroundwork\n, so that others can more easily join in and\n\ncontribute\n.\n\n\nQuick Links\n\n\n\n\nDrupal.org: \nhttps://drupal.org/project/farm\n\n\nGithub: \nhttps://github.com/farmOS\n\n\nMonthly call: \nGoogle Hangout\n (2nd Wed of the month at 1pm Eastern)\n\n\nIRC: \n#farmOS on Freenode", 
             "title": "Home"
         }, 
         {
             "location": "/#overview", 
             "text": "farmOS is a web-based application for farm management, planning, and record\nkeeping.  It is built on  Drupal , which makes it  modular ,  extensible , and  secure .  Openlayers  is used for mapping and geodata manipulation.  For more information, read through some of the  Frequently Asked Questions .", 
             "title": "Overview"
+        }, 
+        {
+            "location": "/#2016-nofa-summer-conference", 
+            "text": "Michael Stenta presented a farmOS workshop at the 2016  NOFA Summer Conference .\nIt covers the core features of farmOS, how to get started, where to find help,\nand how to contribute back to the project.  The full workshop recording is available on YouTube: https://youtu.be/w0ZCu8NsWKE", 
+            "title": "2016 NOFA Summer Conference"
         }, 
         {
             "location": "/#open-source", 
