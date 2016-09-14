@@ -337,7 +337,7 @@
         }, 
         {
             "location": "/community/contribute/", 
-            "text": "Contribute\n\n\nThere are many ways to get involved in the farmOS community! You don't need to\nbe a programmer.\n\n\nUse farmOS\n\n\nFirst and foremost: use farmOS!\n\n\nBuilding a critical mass of farmOS users is the best way for the project to grow\nand thrive.\n\n\nIf you are not already in the habit of tracking your farm's assets and\nactivities, farmOS is a great tool to get started with.\n\n\nOr, if you know farmers who are in need of a record keeping tool - tell them\nabout farmOS!\n\n\nFarmier\n offers farmOS hosting, and all proceeds go towards future development.\n\n\nFeature requests, Bug reports, etc\n\n\nIf you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the \nissue queues\n.\n\n\nPlanning and General Discussion\n\n\nThe farmOS developers host a \nfarmOS Monthly Call\n via Google Hangouts. Anyone\nis welcome to join. Calls are currently held on the second Wednesday of the\nmonth, at 1pm Eastern US time.\n\n\nYou can also chat with people any time in the \n#farmOS IRC channel on Freenode\n.\n\n\nSponsor Development\n\n\nIf you would like to see a specific feature in farmOS, consider sponsoring its\ndevelopment. Create a new support or feature request in the \nissue queues\n to\nget started.\n\n\nAll development thusfar has been done by volunteers in their free time. Showing\nsupport with a donation or other financial contribution is a great way to help\nthe project move forward.\n\n\nDocumentation\n\n\nIf you are interested in helping with documentation, create a new issue in the\n\nGithub issue queue\n. Or, fork the \nfarmOS.org repository\n on Github, make\nchanges, and create a pull request.\n\n\nDevelopment\n\n\nAre you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done! Feel free to jump into the \nissue queues\n to get started!", 
+            "text": "Contribute\n\n\nThere are many ways to get involved in the farmOS community! You don't need to\nbe a programmer.\n\n\nUse farmOS\n\n\nFirst and foremost: use farmOS!\n\n\nBuilding a critical mass of farmOS users is the best way for the project to grow\nand thrive.\n\n\nIf you are not already in the habit of tracking your farm's assets and\nactivities, farmOS is a great tool to get started with.\n\n\nOr, if you know farmers who are in need of a record keeping tool - tell them\nabout farmOS!\n\n\nFarmier\n offers farmOS hosting, and all proceeds go towards future development.\n\n\nFeature requests, Bug reports, etc\n\n\nIf you have ideas for new features or modules that can be built on farmOS, or\nif you find bugs, add them to the \nissue queues\n.\n\n\nPlanning and General Discussion\n\n\nThe farmOS community hosts a \nfarmOS Monthly Call\n via Google Hangouts. Anyone\nis welcome to join.\n\n\nYou can also chat with people any time in the \n#farmOS IRC channel on Freenode\n.\n\n\nSponsor Development\n\n\nIf you would like to see a specific feature in farmOS, consider sponsoring its\ndevelopment. Create a new support or feature request in the \nissue queues\n to\nget started.\n\n\nAll development thusfar has been done by volunteers in their free time. Showing\nsupport with a donation or other financial contribution is a great way to help\nthe project move forward.\n\n\nDocumentation\n\n\nIf you are interested in helping with documentation, create a new issue in the\n\nGithub issue queue\n. Or, fork the \nfarmOS.org repository\n on Github, make\nchanges, and create a pull request.\n\n\nDevelopment\n\n\nAre you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done! Feel free to jump into the \nissue queues\n to get started!", 
             "title": "Contribute"
         }, 
         {
@@ -357,7 +357,7 @@
         }, 
         {
             "location": "/community/contribute/#planning-and-general-discussion", 
-            "text": "The farmOS developers host a  farmOS Monthly Call  via Google Hangouts. Anyone\nis welcome to join. Calls are currently held on the second Wednesday of the\nmonth, at 1pm Eastern US time.  You can also chat with people any time in the  #farmOS IRC channel on Freenode .", 
+            "text": "The farmOS community hosts a  farmOS Monthly Call  via Google Hangouts. Anyone\nis welcome to join.  You can also chat with people any time in the  #farmOS IRC channel on Freenode .", 
             "title": "Planning and General Discussion"
         }, 
         {
@@ -374,6 +374,26 @@
             "location": "/community/contribute/#development", 
             "text": "Are you a Drupal developer? Or a front-end JS developer? Or just a farmer with\nsome free time this winter? Consider getting involved in the farmOS development\nprocess. There's a lot to do! And the more folks who can get involved, the more\nwe'll get done! Feel free to jump into the  issue queues  to get started!", 
             "title": "Development"
+        }, 
+        {
+            "location": "/community/monthly-call/", 
+            "text": "Monthly Call\n\n\nThe farmOS community hosts a monthly call via Google Hangouts to discuss\ndevelopment and direction of the project. Anyone is welcome to join. Refer to\nthe schedule below, and use the \"Join Hangout\" link to join the call.\n\n\nJoin Hangout\n\n\nCalls are currently held on the second Wednesday of the month, at 1pm Eastern US\ntime.\n\n\nNote that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that actual GMT times for\neach call.\n\n\n2016 Schedule\n\n\nFebruary 10th @ 1pm EST / 6pm UTC\n\n\nMarch 9th @ 1pm EST / 6pm UTC\n\n\nApril 13th @ 1pm EST / 5pm UTC\n\n\nMay 11th @ 1pm EST / 5pm UTC\n  Postponed because of \nDrupalCon\n\n\nMay 18th @ 1pm EST / 5pm UTC\n\n\nJune 8th @ 1pm EST / 5pm UTC\n\n\nJuly 13th @ 1pm EST / 5pm UTC\n\n\nAugust 10th @ 1pm EST / 5pm UTC\n\n\nSeptember 14th @ 1pm EST / 5pm UTC\n\n\nOctober 12th @ 1pm EST / 5pm UTC\n\n\nNovember 9th @ 1pm EST / 6pm UTC\n\n\nDecember 14th @ 1pm EST / 6pm UTC", 
+            "title": "Monthly Call"
+        }, 
+        {
+            "location": "/community/monthly-call/#monthly-call", 
+            "text": "The farmOS community hosts a monthly call via Google Hangouts to discuss\ndevelopment and direction of the project. Anyone is welcome to join. Refer to\nthe schedule below, and use the \"Join Hangout\" link to join the call.", 
+            "title": "Monthly Call"
+        }, 
+        {
+            "location": "/community/monthly-call/#join-hangout", 
+            "text": "Calls are currently held on the second Wednesday of the month, at 1pm Eastern US\ntime.  Note that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that actual GMT times for\neach call.", 
+            "title": "Join Hangout"
+        }, 
+        {
+            "location": "/community/monthly-call/#2016-schedule", 
+            "text": "February 10th @ 1pm EST / 6pm UTC  March 9th @ 1pm EST / 6pm UTC  April 13th @ 1pm EST / 5pm UTC  May 11th @ 1pm EST / 5pm UTC   Postponed because of  DrupalCon  May 18th @ 1pm EST / 5pm UTC  June 8th @ 1pm EST / 5pm UTC  July 13th @ 1pm EST / 5pm UTC  August 10th @ 1pm EST / 5pm UTC  September 14th @ 1pm EST / 5pm UTC  October 12th @ 1pm EST / 5pm UTC  November 9th @ 1pm EST / 6pm UTC  December 14th @ 1pm EST / 6pm UTC", 
+            "title": "2016 Schedule"
         }, 
         {
             "location": "/community/farms/", 
