@@ -321,26 +321,41 @@ the <code>FARMOS_DEV_BRANCH</code> variable. The <code>FARMOS_VERSION</code> var
 packaged release of farmOS will be downloaded from drupal.org and unpacked in
 the container. It will download the version specified in the <code>FARMOS_VERSION</code>
 variable. The <code>FARMOS_DEV_BRANCH</code> variable is ignored.</p>
-<h3 id="persistent-data">Persistent data</h3>
+<h3 id="rebuilding-the-codebase">Rebuilding the codebase</h3>
 <p>The farmOS Docker image assumes that the entire farmOS codebase (located in
 <code>/var/www/html</code> within the container) will be mounted on the host as a
 <a href="https://docs.docker.com/engine/tutorials/dockervolumes">Docker volume</a>. A Docker <code>ENTRYPOINT</code> script is included to ensure that the
-farmOS codebase is created within that volume.</p>
-<p>When the container is destroyed, everything in <code>/var/www/html</code> (the entire
-farmOS codebase) is preserved in the host. When a new container is created, the
-<code>docker-entrypoint.sh</code> script rebuilds the farmOS codebase based on the status
-of the environment variables described above. When this happens, everything in
-the codebase is wiped out and replaced automatically, with the exception of the
-<code>/var/www/html/sites</code> directory - which is preserved across the rebuild.</p>
-<p>This ensures that Drupal's <code>settings.php</code>, any uploaded files (in
-<code>sites/default/files</code>), and any additional modules that you add to
-<code>sites/*/modules</code> are not lost when the farmOS codebase is rebuilt.</p>
-<p><strong>WARNING:</strong> If you have a development environment (created with <code>FARMOS_DEV</code> set to
-<code>true</code>) and you have made changes to any of the working Git repositories in
-<code>/var/www/html/profiles/farm</code>, they will be overwritten when the container is
+farmOS codebase is created within that volume. When the container is destroyed,
+everything in <code>/var/www/html</code> persists in the host volume.</p>
+<p>Since the farmOS codebase is built in the <code>ENTRYPOINT</code> script, and not in the
+Dockerfile, that means that updating your Docker image will not necessarily
+update your farmOS codebase.</p>
+<p>Therefore, the <code>ENTRTYPOINT</code> script has logic to decide if/when the farmOS
+codebase should be rebuilt. Simply put, if you are running a packaged release of
+farmOS, and a new version of farmOS is released, all you have to do is pull an
+updated farmOS Docker image and rebuild your container to get the new version.</p>
+<p>If, on the other hand, you have a development build (<code>FARMOS_DEV</code> is <code>true</code>),
+then the only way to trigger a rebuild is to delete <code>profiles/farm/farm.info</code>.
+Then, stop and start your container and the farmOS development codebase will be
+rebuilt with <code>drush make</code>.</p>
+<p>More specifically, farmOS will be rebuilt if one of the following is true:</p>
+<ol>
+<li><code>profiles/farm/farm.info</code> is missing, or:</li>
+<li><code>FARMOS_DEV</code> is <code>false</code> and the version string in <code>profiles/farm/farm.info</code>
+does not match <code>FARMOS_VERSION</code> in the Dockerfile.</li>
+</ol>
+<p>When the codebase is rebuilt, everything in <code>/var/www/html</code> is wiped out and
+replaced automatically, with the exception of the <code>/var/www/html/sites</code>
+directory - which is preserved across the rebuild. This ensures that Drupal's
+<code>settings.php</code>, any uploaded files (in <code>sites/default/files</code>), and any
+additional modules that you add to <code>sites/*/modules</code> are not lost when the
+codebase is rebuilt.</p>
+<p><strong>WARNING:</strong> If you have a development environment (created with <code>FARMOS_DEV</code>
+set to <code>true</code>) and you have made changes to any of the working Git repositories
+in <code>/var/www/html/profiles/farm</code>, they will be overwritten when the codebase is
 rebuilt. The best way to avoid this is to copy any overridden modules/themes to
 the <code>sites/all/modules</code> or <code>sites/all/themes</code> directory so that they are
-preserved when the container is rebuilt.</p>
+preserved when the codebase is rebuilt.</p>
 <h2 id="local-development-with-docker-compose">Local development with Docker Compose</h2>
 <p>The recommended approach for local farmOS development in Docker is to use
 <a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MySQL database
@@ -407,15 +422,6 @@ with a fully-functioning farmOS instance running in a Docker container!</p>
 </code></pre>
 <p>To start your containers:</p>
 <pre><code>sudo docker-compose start
-</code></pre>
-<h3 id="upgraderebuild-containers">Upgrade/rebuild containers</h3>
-<p>When a new version of farmOS is released, or if you want to freshen up your
-development environment, you will need to rebuild the codebase in /var/www/html.</p>
-<p>This is done automatically when the containers are destroyed and rebuilt.</p>
-<pre><code>sudo docker-compose stop
-sudo docker-compose rm
-sudo docker pull farmos
-sudo docker-compose up
 </code></pre></div>
         </div>
 
