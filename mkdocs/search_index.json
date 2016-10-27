@@ -457,13 +457,18 @@
         }, 
         {
             "location": "/community/farms/", 
-            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
+            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
             "title": "Farms"
         }, 
         {
             "location": "/community/farms/#farms-using-farmos", 
             "text": "The following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to  this issue on Github .", 
             "title": "Farms using farmOS"
+        }, 
+        {
+            "location": "/community/farms/#fiji", 
+            "text": "Naitauba Gardens (Naitauba Island, Northern Lau Group)", 
+            "title": "Fiji"
         }, 
         {
             "location": "/community/farms/#jamaica", 
