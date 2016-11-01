@@ -366,13 +366,34 @@ by default, so it is intended only for development purposes at this time.</p>
 <p>First, install Docker and Docker Compose:</p>
 <ul>
 <li><a href="https://docs.docker.com/engine/installation">Install Docker</a><ul>
-<li>On Mac OS X, use "Docker for Mac" (not "Docker Toolbox")</li>
+<li>On Mac OS X, use "dlite" (not "Docker for Mac" or "Docker Toolbox")</li>
 <li>On Windows, use "Docker for Windows" (not "Docker Toolbox")</li>
 <li>On Linux, follow the directions on docker.com</li>
 </ul>
 </li>
 <li><a href="https://docs.docker.com/compose/install">Install Docker Compose</a></li>
 </ul>
+<h4 id="mac-specific-instructions">Mac Specific Instructions</h4>
+<p>Due to <a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound">performance issues</a> with shared volumes in Docker for Mac, <a href="https://github.com/nlf/dlite">dlite</a> is currently the suggested way to host Docker images. The following sections describe how to install dlite and start/stop containers:</p>
+<h5 id="installing">Installing</h5>
+<ol>
+<li>Download the latest release from <a href="https://github.com/nlf/dlite/releases">dlite</a> from github</li>
+<li>Extract dlite from the tarball and copy it to <code>/usr/local/bin/dlite</code></li>
+<li>Run: <code>chmod +x /usr/local/bin/dlite</code></li>
+<li>Initialize dlite by running: <code>dlite init</code></li>
+<li>Start dlite host by running: <code>dlite start</code></li>
+</ol>
+<h5 id="starting">Starting</h5>
+<ol>
+<li>Proceed with <a href="#create-containers">Create Containers</a></li>
+<li>Fix networking by running <code>docker network connect bridge farmos_www_1</code></li>
+<li>Proceed with <a href="#install-farmos">Install farmOS</a> at <a href="http://farmos_www_1.docker">http://farmos_www_1.docker</a></li>
+</ol>
+<h5 id="stopping">Stopping</h5>
+<ol>
+<li>Run: <code>docker-compose stop</code></li>
+<li>Remove networking: <code>docker network disconnect bridge farmos_www_1</code></li>
+</ol>
 <h3 id="create-containers">Create containers</h3>
 <p>To create the farmOS Docker containers, first clone the farmOS repository:</p>
 <pre><code>git clone https://github.com/farmOS/farmOS.git &amp;&amp; cd farmOS
