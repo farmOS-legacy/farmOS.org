@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://farmos.org/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,37 +13,37 @@
         
     <url>
      <loc>http://farmos.org/guide/start/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/guide/areas/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/guide/assets/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/guide/logs/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/guide/location/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/guide/roles/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -53,13 +53,13 @@
         
     <url>
      <loc>http://farmos.org/hosting/installing/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/hosting/updating/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -69,37 +69,37 @@
         
     <url>
      <loc>http://farmos.org/development/drupal/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/development/projects/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/development/issue-queues/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/development/architecture/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/development/update-safety/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/development/docker/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -109,37 +109,43 @@
         
     <url>
      <loc>http://farmos.org/community/contribute/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/community/monthly-call/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/community/farms/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/community/maintainers/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/community/supporters/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://farmos.org/community/press/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://farmos.org/community/trademark/</loc>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -148,7 +154,7 @@
     
     <url>
      <loc>http://farmos.org/faq/</loc>
-     <lastmod>2016-10-31</lastmod>
+     <lastmod>2016-11-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
