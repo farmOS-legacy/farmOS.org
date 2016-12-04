@@ -362,6 +362,10 @@ in <code>/var/www/html/profiles/farm</code>, they will be overwritten when the c
 rebuilt. The best way to avoid this is to copy any overridden modules/themes to
 the <code>sites/all/modules</code> or <code>sites/all/themes</code> directory so that they are
 preserved when the codebase is rebuilt.</p>
+<p><strong>ALSO NOTE:</strong> When the codebase is rebuilt, it does NOT automatically run
+update.php on the site. You must do this manually. See the <a href="../../hosting/updating">Updating farmOS</a>
+page (specifically the steps for clearing cache and running database updates)
+for more details.</p>
 <h2 id="local-development-with-docker-compose">Local development with Docker Compose</h2>
 <p>The recommended approach for local farmOS development in Docker is to use
 <a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MySQL database
