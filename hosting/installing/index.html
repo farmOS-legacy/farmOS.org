@@ -276,6 +276,8 @@
         
             <li><a href="#recomended-release">Recomended release</a></li>
         
+            <li><a href="#custom-build">Custom build</a></li>
+        
             <li><a href="#requirements">Requirements</a></li>
         
     
@@ -292,9 +294,16 @@ combines <a href="https://drupal.org/project/drupal">Drupal core</a> with a set 
 <p>The Drupal.org packaged release is pre-built and ready to go. Just drop it into
 a hosted web server environment and it will work the same as Drupal. For more
 information on installing Drupal, see the official <a href="https://drupal.org/documentation/install">Drupal Installation Guide</a>.</p>
-<p>During the installation, you will be given a choice of which "Installation
-Profile" you want your site to use. Choose "farmOS" and all the proper modules
-and configuration will be set up for you.</p>
+<h2 id="custom-build">Custom build</h2>
+<p>Alternatively, you can also build the distribution yourself using Drush Make.
+This is essentially what the drupal.org automatic packaging script does, so it
+is generally not necessary to do this unless you have a specific reason to.</p>
+<p>Simply checkout the [farmOS repository] and run the following command:</p>
+<pre><code>drush make build-farm.make farm
+</code></pre>
+<p>This will build the farmOS distribution in a directory called "farm". Point your
+server's webroot to this directory (or move the contents to your server's
+webroot) and open it in a browser to access farmOS.</p>
 <h2 id="requirements">Requirements</h2>
 <p>You will need a web server with all the basic <a href="https://drupal.org/requirements">requirements of Drupal</a>.</p>
 <p><strong>The only additional requirement is that you use PHP 5.3+.</strong> Drupal 7 itself
