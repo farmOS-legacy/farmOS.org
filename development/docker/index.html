@@ -368,7 +368,7 @@ page (specifically the steps for clearing cache and running database updates)
 for more details.</p>
 <h2 id="local-development-with-docker-compose">Local development with Docker Compose</h2>
 <p>The recommended approach for local farmOS development in Docker is to use
-<a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MySQL database
+<a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MariaDB database
 container.</p>
 <p>The <code>docker-compose.yml</code> file included with farmOS sets <code>FARMOS_DEV</code> to <code>true</code>
 by default, so it is intended only for development purposes at this time.</p>
@@ -413,7 +413,7 @@ describe how to install dlite and start/stop containers:</p>
 <p>Then, use <code>docker-compose up</code> to create the containers:</p>
 <pre><code>sudo docker-compose up
 </code></pre>
-<p>This will create two containers: a farmOS application container, and a MySQL
+<p>This will create two containers: a farmOS application container, and a MariaDB
 database container.</p>
 <p><strong>Note:</strong> It will take some time for the containers to start the first time.
 This is because the farmOS codebase needs to be built when the container is run
@@ -426,7 +426,7 @@ quick.</p>
 your host system:</p>
 <ul>
 <li><code>/var/html/www</code> from the farmOS application container</li>
-<li><code>/var/lib/mysql</code> from the MySQL database container</li>
+<li><code>/var/lib/mysql</code> from the MariaDB database container</li>
 </ul>
 <p>Both will be made available within a <code>.data</code> directory in the farmOS repository
 on the host. This is where you will be able to access the code for development
