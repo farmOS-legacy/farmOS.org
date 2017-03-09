@@ -78,6 +78,12 @@
 
                     
                         
+<li >
+    <a href="../dashboard/">Dashboard</a>
+</li>
+
+                    
+                        
 <li class="active">
     <a href="./">Mapping your farm</a>
 </li>
@@ -104,6 +110,12 @@
                         
 <li >
     <a href="../roles/">Roles</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../demos/">Demos</a>
 </li>
 
                     
@@ -244,7 +256,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../start/">
+                    <a rel="next" href="../dashboard/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -279,6 +291,8 @@
             <li><a href="#remember-to-save">Remember to save!</a></li>
         
             <li><a href="#organizing-areas-hierarchically">Organizing areas hierarchically</a></li>
+        
+            <li><a href="#generate-beds">Generate beds</a></li>
         
     
     </ul>
@@ -338,6 +352,10 @@ the fields available to you when you are describing an area:</p>
 <li><strong>Polygon</strong>: A polygon works the same as a line, except it will create a
    closed shape at the end, whereas a line will not be filled in.</li>
 </ol>
+<video width="100%" controls>
+  <source src="/img/demos/farmOS-mapping-areas.mp4" type="video/mp4">
+</video>
+
 <h3 id="modifying">Modifying</h3>
 <p>There are three buttons for modifying shapes:</p>
 <ol>
@@ -363,11 +381,15 @@ area and then import them into farmOS's geometry fields.</p>
    labeled "Find using Files field". If you uploaded a valid KML file, you will
    see the shape(s) appear in the map.</li>
 </ol>
+<video width="100%" controls>
+  <source src="/img/demos/farmOS-kml-import.mp4" type="video/mp4">
+</video>
+
 <h2 id="remember-to-save">Remember to save!</h2>
 <p>When you're done modifying your area, remember to click the Save button at the
 bottom of the page to save your changes.</p>
 <h2 id="organizing-areas-hierarchically">Organizing areas hierarchically</h2>
-<p>There are two ways to arrange areas hierarchically in farmOS</p>
+<p>There are two ways to arrange areas hierarchically in farmOS:</p>
 <ol>
 <li>When you are editing an individual area, click "Relations" at the bottom and
    use the "Parent" and "Weight" values to define the area's relationship to
@@ -378,7 +400,32 @@ bottom of the page to save your changes.</p>
    Click "(change)" to be brought to the hierarchy editor. Click and drag the
    areas up and down, and left and right to arrange them how you want, and then
    click "Save" at the bottom of the page.</li>
-</ol></div>
+</ol>
+<video width="100%" controls>
+  <source src="/img/demos/farmOS-area-hierarchy.mp4" type="video/mp4">
+</video>
+
+<h2 id="generate-beds">Generate beds</h2>
+<p>farmOS includes a special "Area Generator" module that makes it easy to
+automatically generate a whole bunch of areas in bulk. The original goal was to
+make it easier to generate parallel beds within a field, but it may provide
+additional possibilities in the future.</p>
+<p>To use the area generator to generate beds, follow these steps:</p>
+<ol>
+<li>Go to the "Areas" page (from the main menu) and click the "Area generator"
+   tab.</li>
+<li>Select the field that the beds will be created within.</li>
+<li>Set the "Area type" to "Bed".</li>
+<li>Enter the number of beds that should be generated within the field.</li>
+<li>Set the orientation of the beds, and use the "Preview" button to see how
+   they look.</li>
+<li>When you are satisfied with the preview, click the "Generate" button to
+   generate the beds.</li>
+</ol>
+<p>Beds will be numbered and labeled using the parent area's name.</p>
+<video width="100%" controls>
+  <source src="/img/demos/farmOS-area-generator.mp4" type="video/mp4">
+</video></div>
         </div>
 
         <footer class="col-md-12">
