@@ -140,6 +140,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../googlemaps/">Google Maps</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -318,9 +324,22 @@ server's webroot to this directory (or move the contents to your server's
 webroot) and open it in a browser to access farmOS.</p>
 <h2 id="requirements">Requirements</h2>
 <p>You will need a web server with all the basic <a href="https://drupal.org/requirements">requirements of Drupal</a>.</p>
-<p><strong>The only additional requirement is that you use PHP 5.3+.</strong> Drupal 7 itself
-only requires PHP 5.2+, but farmOS makes heavy use of the <a href="https://drupal.org/project/openlayers">Openlayers module</a>,
-which uses some newer features of PHP.</p></div>
+<p>In addition to Drupal's basic requirements, farmOS also needs the following:</p>
+<ul>
+<li><strong>PHP 5.4+.</strong> Drupal 7 itself only requires PHP 5.2+, but farmOS makes heavy
+  use of the <a href="https://drupal.org/project/openlayers">Openlayers module</a>, which uses some newer features of PHP.</li>
+<li><strong>A Google Maps API key</strong> is necessary for rendering the Google Maps layers
+  used in farmOS maps. See the <a href="../../hosting/googlemaps">Google Maps API Key</a> instructions for more
+  information about how to set this up.</li>
+<li><strong><a href="http://php.net/manual/en/book.bc.php">PHP BCMath extension</a></strong> is required for accurate geometric polygon area
+  calculations.</li>
+<li><strong><a href="https://trac.osgeo.org/geos">GEOS - Geometry Engine, Open Source</a></strong> is required by the Area Generator
+  module.</li>
+<li><strong>SSL</strong> Although not strictly a requirement, some features (like the
+  "Geolocate" button on maps) will only work when over a secure connection. SSL
+  is also recommended if you are using the Sensor Listener module to keep your
+  sensor's private key a secret.</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
