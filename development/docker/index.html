@@ -338,9 +338,10 @@ more detailed information about how this works below.</li>
 environments. The farmOS codebase will be set up differently, depending on the
 status of the <code>FARMOS_DEV</code> environment variable.</p>
 <p>When <code>FARMOS_DEV</code> is set to <code>true</code>, farmOS is built using <code>drush make</code> with the
-<code>--working-copy</code> flag. This ensures that working Git directories are checked out
-for each of the <a href="../../development/projects">farmOS projects</a>. It will use whatever branch is specified in
-the <code>FARMOS_DEV_BRANCH</code> variable. The <code>FARMOS_VERSION</code> variable is ignored.</p>
+<code>--working-copy</code> flag. This ensures that a working Git directory is checked out
+for the farmOS installation profile (in <code>profiles/farm</code> within the built
+codebase). It will use whatever branch is specified in the <code>FARMOS_DEV_BRANCH</code>
+variable. The <code>FARMOS_VERSION</code> variable is ignored.</p>
 <p>When <code>FARMOS_DEV</code> is set to <code>false</code> (this is the default), then the officially
 packaged release of farmOS will be downloaded from drupal.org and unpacked in
 the container. It will download the version specified in the <code>FARMOS_VERSION</code>
