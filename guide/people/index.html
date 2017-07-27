@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/guide/dashboard/">
+        <link rel="canonical" href="http://farmos.org/guide/people/">
         <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>Dashboard - farmOS.org</title>
+	<title>People - farmOS.org</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -73,13 +73,7 @@
                     
                         
 <li >
-    <a href="../start/">Getting started</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Dashboard</a>
+    <a href="../">Introduction</a>
 </li>
 
                     
@@ -91,14 +85,29 @@
                     
                         
 <li >
-    <a href="../assets/">Managing assets</a>
+    <a href="../logs/">Logging events</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Managing assets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../logs/">Logging events</a>
+    <a href="../assets/">Introduction</a>
 </li>
+
+        
+            
+<li >
+    <a href="../assets/plantings/">Plantings</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -108,8 +117,8 @@
 
                     
                         
-<li >
-    <a href="../roles/">Roles</a>
+<li class="active">
+    <a href="./">People</a>
 </li>
 
                     
@@ -127,6 +136,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../hosting/">Getting started</a>
+</li>
+
                     
                         
 <li >
@@ -262,12 +277,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../start/">
+                    <a rel="next" href="../location/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../areas/">
+                    <a rel="prev" href="../demos/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -290,24 +305,39 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#farmos-dashboard">farmOS Dashboard</a></li>
+        <li class="main active"><a href="#people">People</a></li>
+        
+            <li><a href="#roles">Roles</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="farmos-dashboard">farmOS Dashboard</h1>
-<p>The first thing you see when you log into farmOS is the dashboard.</p>
-<p>On the left is the farm map, where you will see any areas that you have
-mapped. You can use this to navigate to records within farmOS by clicking on
-an area and then clicking on the available links within the area popup.</p>
-<p>On the right are the todo lists. The "Plan" shows all upcoming tasks that need
-to be done. If you miss a task, a "Late tasks" list will also be displayed
-underneath.</p>
+<h1 id="people">People</h1>
+<p>farmOS allows a farm to have multiple "users" accessing it, and each of those
+users is assigned one or more "roles" to grant them different levels of
+permission.</p>
 <video width="100%" controls>
-  <source src="/img/demos/farmOS-dashboard.mp4" type="video/mp4">
-</video></div>
+  <source src="/demo/people.mp4" type="video/mp4">
+</video>
+
+<h2 id="roles">Roles</h2>
+<p>Three roles are provided with farmOS:</p>
+<h3 id="farm-manager">Farm Manager</h3>
+<p>Farm Managers have access to everything in farmOS. They can create areas, add
+assets, record logs, and change configuration.</p>
+<h3 id="farm-worker">Farm Worker</h3>
+<p>Farm Workers have most of the same permissions as Managers, but they cannot
+change configuration.</p>
+<h3 id="farm-viewer">Farm Viewer</h3>
+<p>Farm Viewers are limited to viewing farmOS areas, assets, and logs - but they
+cannot edit anything.</p>
+<p>The Farm Viewer role is useful if you want to share your farm's activities with
+someone, but you don't want to give them the ability to make changes.</p>
+<p>For example, if you are applying for Organic certification in the United States,
+you can create a user with the Farm Viewer role for your certifying agent, so
+they can log into your farmOS and see your records.</p></div>
         </div>
 
         <footer class="col-md-12">
