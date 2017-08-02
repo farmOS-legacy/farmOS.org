@@ -48,6 +48,12 @@
     </url>
         
     <url>
+     <loc>http://farmos.org/guide/export/</loc>
+     <lastmod>2017-08-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>http://farmos.org/guide/demos/</loc>
      <lastmod>2017-08-02</lastmod>
      <changefreq>daily</changefreq>

@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/development/update-safety/">
+        <link rel="canonical" href="http://farmos.org/guide/export/">
         <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>Update Safety - farmOS.org</title>
+	<title>Export - farmOS.org</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -67,25 +67,25 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../guide/">Introduction</a>
+    <a href="../">Introduction</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../guide/areas/">Mapping your farm</a>
+    <a href="../areas/">Mapping your farm</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../guide/logs/">Logging events</a>
+    <a href="../logs/">Logging events</a>
 </li>
 
                     
@@ -96,25 +96,25 @@
         
             
 <li >
-    <a href="../../guide/assets/">Introduction</a>
+    <a href="../assets/">Introduction</a>
 </li>
 
         
             
 <li >
-    <a href="../../guide/assets/plantings/">Plantings</a>
+    <a href="../assets/plantings/">Plantings</a>
 </li>
 
         
             
 <li >
-    <a href="../../guide/assets/equipment/">Equipment</a>
+    <a href="../assets/equipment/">Equipment</a>
 </li>
 
         
             
 <li >
-    <a href="../../guide/assets/sensors/">Sensors</a>
+    <a href="../assets/sensors/">Sensors</a>
 </li>
 
         
@@ -124,25 +124,25 @@
                     
                         
 <li >
-    <a href="../../guide/location/">Movements and location</a>
+    <a href="../location/">Movements and location</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../guide/people/">People</a>
+    <a href="../people/">People</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Export</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../guide/export/">Export</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../../guide/demos/">Demos</a>
+    <a href="../demos/">Demos</a>
 </li>
 
                     
@@ -184,43 +184,43 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../drupal/">Drupal</a>
+    <a href="../../development/drupal/">Drupal</a>
 </li>
 
                     
                         
 <li >
-    <a href="../projects/">Projects</a>
+    <a href="../../development/projects/">Projects</a>
 </li>
 
                     
                         
 <li >
-    <a href="../issue-queues/">Issue Queues</a>
+    <a href="../../development/issue-queues/">Issue Queues</a>
 </li>
 
                     
                         
 <li >
-    <a href="../architecture/">Architecture</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Update Safety</a>
+    <a href="../../development/architecture/">Architecture</a>
 </li>
 
                     
                         
 <li >
-    <a href="../docker/">Docker</a>
+    <a href="../../development/update-safety/">Update Safety</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../development/docker/">Docker</a>
 </li>
 
                     
@@ -295,12 +295,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../architecture/">
+                    <a rel="next" href="../people/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../docker/">
+                    <a rel="prev" href="../demos/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -323,33 +323,18 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#developing-with-updates-in-mind">Developing with updates in mind</a></li>
+        <li class="main active"><a href="#exporting-data">Exporting data</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="developing-with-updates-in-mind">Developing with updates in mind</h1>
-<p>farmOS is <a href="../../development/drupal">built on Drupal</a>, which means that it is extremely flexible. If you
-are installing your own instance of farmOS, you have full control over the
-entities, fields, Views, etc. So you can change things that farmOS sets up by
-default. This is great! And it's part of the reason why farmOS can grow and
-evolve so quickly. But, with great power comes great responsibility.</p>
-<p>The danger of this comes when it's time to <a href="../../hosting/updating">update your farmOS</a> instance to a
-new version. If you've made modifications to core fields or entity types, they
-may no longer be compatible with the "main line" of farmOS development.</p>
-<p>Think about it like this: when you make a change to the configuration of your
-system, you are essentially creating a new "branch" of farmOS. It's no longer
-default farmOS, in other words. It's your own unique configuration.</p>
-<p>When a new official version of farmOS is released, your modifications may
-conflict with those in the new release. Depending on what these changes are, it
-can be pretty easy to merge them together... or it can be a nightmare.</p>
-<p>So, as a general recommendation: if you are modifying the inner workings of
-farmOS, you should either be very familiar with what you're doing and how it
-will affect updates, or you shouldn't do it with your live data. Set up a
-second testing site, make some modifications, and then open up a new issue in
-the <a href="../../development/issue-queues">farmOS issue queues</a> and suggest your changes for inclusion in the project!</p></div>
+<h1 id="exporting-data">Exporting data</h1>
+<p>All <a href="../../guide/assets">asset</a> and <a href="../../guide/logs">log</a> lists in farmOS provide a <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> export button at the
+bottom that will generate and download a CSV file.</p>
+<p>Any sorts or filters that are applied to the list will be represented in the
+CSV output.</p></div>
         </div>
 
         <footer class="col-md-12">

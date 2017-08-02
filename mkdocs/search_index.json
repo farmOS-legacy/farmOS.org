@@ -291,6 +291,16 @@
             "title": "Farm Viewer"
         }, 
         {
+            "location": "/guide/export/", 
+            "text": "Exporting data\n\n\nAll \nasset\n and \nlog\n lists in farmOS provide a \nCSV\n export button at the\nbottom that will generate and download a CSV file.\n\n\nAny sorts or filters that are applied to the list will be represented in the\nCSV output.", 
+            "title": "Export"
+        }, 
+        {
+            "location": "/guide/export/#exporting-data", 
+            "text": "All  asset  and  log  lists in farmOS provide a  CSV  export button at the\nbottom that will generate and download a CSV file.  Any sorts or filters that are applied to the list will be represented in the\nCSV output.", 
+            "title": "Exporting data"
+        }, 
+        {
             "location": "/guide/demos/", 
             "text": "Demos\n\n\nSoil tests\n\n\n\n  \n\n\n\n\n\nEquipment management\n\n\n\n  \n\n\n\n\n\nSensors", 
             "title": "Demos"
