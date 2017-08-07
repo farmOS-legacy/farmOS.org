@@ -108,7 +108,19 @@
         
             
 <li >
+    <a href="../assets/animals/">Animals</a>
+</li>
+
+        
+            
+<li >
     <a href="../assets/equipment/">Equipment</a>
+</li>
+
+        
+            
+<li >
+    <a href="../assets/compost/">Compost</a>
 </li>
 
         
@@ -136,13 +148,13 @@
                     
                         
 <li >
-    <a href="../export/">Export</a>
+    <a href="../import/">Import</a>
 </li>
 
                     
                         
 <li >
-    <a href="../demos/">Demos</a>
+    <a href="../export/">Export</a>
 </li>
 
                     
@@ -325,7 +337,11 @@
     
         <li class="main active"><a href="#logging-events">Logging events</a></li>
         
-            <li><a href="#log-types">Log types</a></li>
+            <li><a href="#standard-log-types">Standard log types</a></li>
+        
+            <li><a href="#other-log-types">Other log types</a></li>
+        
+            <li><a href="#log-features">Log features</a></li>
         
     
     </ul>
@@ -340,7 +356,7 @@ in the future.</p>
   <source src="/demo/logs.mp4" type="video/mp4">
 </video>
 
-<h2 id="log-types">Log types</h2>
+<h2 id="standard-log-types">Standard log types</h2>
 <p>There are a number of different type of logs in farmOS - each with it's own
 purpose and set of fields. Some of the general log types are described below,
 but there are also other log types that pertain to specific <a href="../../guide/assets">asset types</a>.</p>
@@ -358,7 +374,45 @@ categorizations.</p>
 <p>Input logs are used to record resources that are put into an asset. Fertlizer
 (for plantings) or feed (for animals) can be recorded with input logs.</p>
 <h3 id="harvests">Harvests</h3>
-<p>Harvest logs are used to record harvests.</p></div>
+<p>Harvest logs are used to record harvests.</p>
+<h2 id="other-log-types">Other log types</h2>
+<p>In addition to the standard log types described above, there are a few other
+types provided for specific purposes. Note that these log types are provided by
+modules that may not be turned on by default in your farmOS. If you do not see
+these types in your farmOS, turn on the applicable module (or ask you farmOS
+host to do so for you).</p>
+<h3 id="soil-tests">Soil tests</h3>
+<p>Soil test logs can be used to record when you have a soil test performed. They
+can be linked to a specific field or area, and you can specify the exact points
+on a map where samples were taken from. Integration is also provided with the
+US NRCS Soil Survey API, which allows you to view soil type map overlays, as
+well as look up soil name for the specific sample points in your soil tests.</p>
+<video width="100%" controls>
+  <source src="/demo/soil.mp4" type="video/mp4">
+</video>
+
+<h3 id="water-tests">Water tests</h3>
+<p>Water test logs can be used to record when you have a water test performed.
+Similar to soil test logs, they can be linked to a specific field or area, and
+you can specify the lab that performed the test. Some regulatory guidelines
+require that water tests are taken for both field and pack house water sources.</p>
+<h3 id="sales">Sales</h3>
+<p>Sale logs provide the ability to record the sale of specific assets. You can
+specify quantity sold, unit price, total price, customer, and invoice number.
+Sales logs can only represent the sale of a single item, and are not intended
+for use as multi-item invoices. The primary purpose of sale logs is to connect
+the final dots for food traceability.</p>
+<h2 id="log-features">Log features</h2>
+<h3 id="task-assignment">Task assignment</h3>
+<p>Logs can be assigned to one or more person(s) in farmOS using the log's <em>Owner</em>
+field. Users can view a list of all logs assigned to them by clicking
+"My Account" in the menu and then selecting the "Logs" tab of their user
+profile.</p>
+<h3 id="categorization">Categorization</h3>
+<p>Logs can be assigned to one or more categories. A set of pre-defined categories
+are provided by farmOS, and more can be added by users. Log categories enable
+you to organize, sort, and filter your logs in ways that make sense to you, so
+you can find the logs you need easily in the future.</p></div>
         </div>
 
         <footer class="col-md-12">
