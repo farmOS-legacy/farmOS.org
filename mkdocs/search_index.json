@@ -502,7 +502,7 @@
         }, 
         {
             "location": "/hosting/googlemaps/", 
-            "text": "Google Maps API Key\n\n\nAs of June 22nd, 2016 the Google Maps API requires an API key.\n\n\nThis means that if you are hosting farmOS yourself, you need to create an API\nkey in order to use any of the mapping components in farmOS.\n\n\nAnyone who had a farmOS site installed before June 22nd, 2016, and was actively\nusing it, was automatically grandfathered in and does not need an API key:\n\n\n\n\nExisting applications have been grandfathered based on their current usage to\nensure that they continue to function both now and in the future. We will\nalso be proactively contacting all existing API key users who, based on usage\ngrowth patterns, may be impacted in the future. If you\u2019re an existing user,\nplease take the time to read our Policy Update for Standard Plan summary for\ndetails on how each of these changes might affect your implementation.\n\n\n\n\nhttps://maps-apis.googleblog.com/2016/06/building-for-scale-updates-to-google.html\n\n\nTo create an API key and add it to your farmOS, do the following:\n\n\n1. Generate a Browser Key\n\n\nhttps://console.developers.google.com/apis/credentials\n\n\n2. Enable Google Maps Javascript API\n\n\nhttps://console.developers.google.com/apis/api/maps_backend/overview\n\n\n3. Enable the Openlayers UI module\n\n\nIn your farmOS site, log in as user 1 (the administrative user that you created\nwhen you installed farmOS) and go to: \n/admin/modules\n\n\nFind the \"Openlayers UI\" module and enable it.\n\n\n4. Enter the key into the Google Maps Hybrid source in Openlayers\n\n\nIn your farmOS site, go to: \n/admin/structure/openlayers/sources/list/farm_map_source_google_hybrid/edit/options\n\n\nCopy and paste your API key into the \"Key\" field and click Save.\n\n\nNote that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
+            "text": "Google Maps API Key\n\n\nAs of June 22nd, 2016 the Google Maps API requires an API key.\n\n\nThis means that if you are hosting farmOS yourself, you need to create an API\nkey in order to use any of the mapping components in farmOS.\n\n\nAnyone who had a farmOS site installed before June 22nd, 2016, and was actively\nusing it, was automatically grandfathered in and does not need an API key:\n\n\n\n\nExisting applications have been grandfathered based on their current usage to\nensure that they continue to function both now and in the future. We will\nalso be proactively contacting all existing API key users who, based on usage\ngrowth patterns, may be impacted in the future. If you\u2019re an existing user,\nplease take the time to read our Policy Update for Standard Plan summary for\ndetails on how each of these changes might affect your implementation.\n\n\n\n\nhttps://maps-apis.googleblog.com/2016/06/building-for-scale-updates-to-google.html\n\n\nTo create an API key and add it to your farmOS, do the following:\n\n\n1. Generate a Browser Key\n\n\nhttps://console.developers.google.com/apis/credentials\n\n\n2. Enable Google Maps Javascript API\n\n\nhttps://console.developers.google.com/apis/api/maps_backend/overview\n\n\n4. Enter the key into the farmOS Map configuration\n\n\nIn your farmOS site, go to: \n/admin/config/farm/map\n\n\nCopy and paste your API key into the \"Google Maps API Key\" field and click\n\"Save configuration\".\n\n\nNote that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
             "title": "Google Maps"
         }, 
         {
@@ -521,14 +521,9 @@
             "title": "2. Enable Google Maps Javascript API"
         }, 
         {
-            "location": "/hosting/googlemaps/#3-enable-the-openlayers-ui-module", 
-            "text": "In your farmOS site, log in as user 1 (the administrative user that you created\nwhen you installed farmOS) and go to:  /admin/modules  Find the \"Openlayers UI\" module and enable it.", 
-            "title": "3. Enable the Openlayers UI module"
-        }, 
-        {
-            "location": "/hosting/googlemaps/#4-enter-the-key-into-the-google-maps-hybrid-source-in-openlayers", 
-            "text": "In your farmOS site, go to:  /admin/structure/openlayers/sources/list/farm_map_source_google_hybrid/edit/options  Copy and paste your API key into the \"Key\" field and click Save.  Note that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
-            "title": "4. Enter the key into the Google Maps Hybrid source in Openlayers"
+            "location": "/hosting/googlemaps/#4-enter-the-key-into-the-farmos-map-configuration", 
+            "text": "In your farmOS site, go to:  /admin/config/farm/map  Copy and paste your API key into the \"Google Maps API Key\" field and click\n\"Save configuration\".  Note that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
+            "title": "4. Enter the key into the farmOS Map configuration"
         }, 
         {
             "location": "/development/drupal/", 
