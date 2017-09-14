@@ -373,13 +373,22 @@ webroot) and open it in a browser to access farmOS.</p>
 <ul>
 <li><strong>PHP 5.4+.</strong> Drupal 7 itself only requires PHP 5.2+, but farmOS makes heavy
   use of the <a href="https://drupal.org/project/openlayers">Openlayers module</a>, which uses some newer features of PHP.</li>
+</ul>
+<h3 id="optional-dependencies">Optional dependencies</h3>
+<p>The following are not hard requirements of farmOS, but will provide progressive
+enhancements if they are available.</p>
+<ul>
 <li><strong>A Google Maps API key</strong> is necessary for rendering the Google Maps layers
   used in farmOS maps. See the <a href="../../hosting/googlemaps">Google Maps API Key</a> instructions for more
-  information about how to set this up.</li>
+  information about how to set this up. If an API key is not provided,
+  <a href="https://www.openstreetmap.org">OpenStreetMap</a> will be used as the default base layer.</li>
 <li><strong><a href="http://php.net/manual/en/book.bc.php">PHP BCMath extension</a></strong> is required for accurate geometric polygon area
   calculations.</li>
 <li><strong><a href="https://trac.osgeo.org/geos">GEOS - Geometry Engine, Open Source</a></strong> is required by the Area Generator
   module.</li>
+<li><strong><a href="https://www.postgresql.org">PostgreSQL</a> + <a href="http://postgis.net">PostGIS</a></strong> can be used as farmOS's database backend, which
+  together provide advanced geographic query capabilities. See
+  <a href="https://github.com/farmOS/farmOS/issues/43">GitHub issue #43</a> for more information.</li>
 <li><strong>SSL</strong> Although not strictly a requirement, some features (like the
   "Geolocate" button on maps) will only work when over a secure connection. SSL
   is also recommended if you are using the Sensor Listener module to keep your

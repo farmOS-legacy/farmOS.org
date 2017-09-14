@@ -432,10 +432,23 @@ page (specifically the steps for clearing cache and running database updates)
 for more details.</p>
 <h2 id="local-development-with-docker-compose">Local development with Docker Compose</h2>
 <p>The recommended approach for local farmOS development in Docker is to use
-<a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MariaDB database
-container.</p>
+<a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MariaDB or
+PostgreSQL database container.</p>
 <p>The <code>docker-compose.yml</code> file included with farmOS sets <code>FARMOS_DEV</code> to <code>true</code>
 by default, so it is intended only for development purposes at this time.</p>
+<h3 id="postgresql-postgis">PostgreSQL + PostGIS</h3>
+<p>If you want to use a PostgreSQL database with the PostGIS extension, an
+additional <code>docker-compose.postgis.yml</code> file is provided which can be used to
+override the default <code>docker-compose.yml</code> database configuration.</p>
+<p>To use the provided override file, use the <code>-f</code> flag with all <code>docker-compose</code>
+commands to read from both the <code>docker-compose.yml</code> file and the
+<code>docker-compose.postgis.yml</code> file. For example, instead of
+<code>sudo docker-compose up</code> you will run:</p>
+<pre><code>sudo docker-compose -f docker-compose.yml -f docker-compose.postgis.yml up
+</code></pre>
+<p>Alternatively, if you rename <code>docker-compose.postgis.yml</code> to
+<code>docker-compose.override.yml</code>, it will be picked up automatically and you can
+simply use <code>sudo docker-compose up</code> like you would normally.</p>
 <h3 id="install-docker-and-docker-compose">Install Docker and Docker Compose</h3>
 <p>First, install Docker and Docker Compose:</p>
 <ul>
@@ -478,7 +491,8 @@ describe how to install dlite and start/stop containers:</p>
 <pre><code>sudo docker-compose up
 </code></pre>
 <p>This will create two containers: a farmOS application container, and a MariaDB
-database container.</p>
+database container (see "PostgreSQL + PostGIS" section above if you would
+rather use PostgreSQL).</p>
 <p><strong>Note:</strong> It will take some time for the containers to start the first time.
 This is because the farmOS codebase needs to be built when the container is run
 (it is not built in the image itself). For this reason, you might not want to
@@ -490,20 +504,41 @@ quick.</p>
 your host system:</p>
 <ul>
 <li><code>/var/html/www</code> from the farmOS application container</li>
-<li><code>/var/lib/mysql</code> from the MariaDB database container</li>
+<li><code>/var/lib/mysql</code> from the MariaDB database container (or
+  <code>/var/lib/postgresql/data</code> if you are using PostgreSQL)</li>
 </ul>
 <p>Both will be made available within a <code>.data</code> directory in the farmOS repository
 on the host. This is where you will be able to access the code for development
 purposes. It is also how your database and files are persisted when the
 containers are destroyed and rebuilt.</p>
+<h4 id="file-ownership">File ownership</h4>
+<p>On a Linux host, all the files in <code>.data</code> will have an owner and group of
+<code>root</code>. For development purposes, it is recommended that you change the owner
+of everything in the <code>www</code> container to your local user. This can be done with
+the following command (executed from the repository's root directory):</p>
+<pre><code>sudo chown -R ${USER} .data/www
+</code></pre>
+<p>This changes the owner of <em>everything</em> in /var/www/html to the currently logged
+in user on the host. But it leaves the group alone.</p>
+<p>This will persist until the codebase is rebuilt. When rebuilt,
+<code>docker-entrypoint.sh</code> changes the owner and group of the <code>.data/www/sites</code>
+directory to <code>www-data</code>. So you would need to re-run the above <code>chown</code> after
+each rebuild. For development environments this isn't a big problem because
+rebuilds don't happen automatically - they need to be triggered by deleting
+<code>profiles/farm/farm.info</code>.</p>
 <h3 id="install-farmos">Install farmOS</h3>
 <p>Once the containers are up and running, you can install farmOS using the Drupal
 installer. This is a simple step-by-step process that you will need to go
 through when you first access the site in your browser.</p>
+<h4 id="browser-address">Browser address</h4>
+<p>If you are running Docker on Linux, you can simply go to <code>http://localhost</code> in
+your browser. Otherwise, you may need to look up the IP address of the Docker
+container that was created and access it that way.</p>
 <p>To find the IP address of your farmOS container, use the following command:</p>
 <pre><code>sudo docker inspect --format '{{ .NetworkSettings.Networks.farmos_default.IPAddress }}' farmos_www_1
 </code></pre>
 <p>Visit the IP address in a browser - you should see the Drupal/farmOS installer.</p>
+<h4 id="database-setup">Database setup</h4>
 <p>In the "Set up database" step of installation, use the following values:</p>
 <ul>
 <li>Database name: <code>farmos</code></li>
