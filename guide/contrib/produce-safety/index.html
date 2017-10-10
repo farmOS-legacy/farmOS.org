@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/guide/assets/equipment/">
+        <link rel="canonical" href="http://farmos.org/guide/contrib/produce-safety/">
         <link rel="shortcut icon" href="../../../favicon.ico">
         
 
-	<title>Equipment - farmOS.org</title>
+	<title>Produce Safety - farmOS.org</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -96,37 +96,37 @@
         
             
 <li >
-    <a href="../">Introduction</a>
+    <a href="../../assets/">Introduction</a>
 </li>
 
         
             
 <li >
-    <a href="../plantings/">Plantings</a>
+    <a href="../../assets/plantings/">Plantings</a>
 </li>
 
         
             
 <li >
-    <a href="../animals/">Animals</a>
-</li>
-
-        
-            
-<li class="active">
-    <a href="./">Equipment</a>
+    <a href="../../assets/animals/">Animals</a>
 </li>
 
         
             
 <li >
-    <a href="../compost/">Compost</a>
+    <a href="../../assets/equipment/">Equipment</a>
 </li>
 
         
             
 <li >
-    <a href="../sensors/">Sensors</a>
+    <a href="../../assets/compost/">Compost</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../assets/sensors/">Sensors</a>
 </li>
 
         
@@ -165,13 +165,13 @@
         
             
 <li >
-    <a href="../../contrib/">Introduction</a>
+    <a href="../">Introduction</a>
 </li>
 
         
             
-<li >
-    <a href="../../contrib/produce-safety/">Produce Safety</a>
+<li class="active">
+    <a href="./">Produce Safety</a>
 </li>
 
         
@@ -328,12 +328,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../animals/">
+                    <a rel="next" href="../">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../compost/">
+                    <a rel="prev" href="../../../hosting/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -356,42 +356,126 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#equipment">Equipment</a></li>
+        <li class="main active"><a href="#produce-safety">Produce Safety</a></li>
         
-            <li><a href="#equipment-logs">Equipment logs</a></li>
+            <li><a href="#overview">Overview</a></li>
         
-            <li><a href="#suggested-uses">Suggested uses</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+        
+            <li><a href="#focus-areas">Focus areas</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="equipment">Equipment</h1>
-<p>farmOS can be used to manage equipment assets on the farm.</p>
-<p>Equipment <a href="../../../guide/location">movements</a> and activities can be recorded via standard <a href="../../../guide/logs">log types</a>,
-and a special <strong>Maintenance</strong> log type is provided specifically for keeping
-equipment maintenance records.</p>
-<video width="100%" controls>
-  <source src="/demo/equipment.mp4" type="video/mp4">
-</video>
-
-<h2 id="equipment-logs">Equipment logs</h2>
-<p>In addition to the standard <a href="../../../guide/logs">log types</a> that all farmOS assets share
-(activities, observations, inputs, and harvests), the equipment module provides
-an additional log type that is specific to equipment: maintenance.</p>
-<p><strong>Maintenance</strong> logs can be used to record when you perform maintenance on a
-piece of equipment. This can be a repair, a tune-up, an oil change, a cleaning,
-or anything thing else that is maintenance related to the proper use and
-functioning of the equipment. All your maintenance records can be organized,
-categorized, and filtered like other log types in farmOS.</p>
-<h2 id="suggested-uses">Suggested uses</h2>
+<h1 id="produce-safety">Produce Safety</h1>
+<p><a href="https://github.com/farmOS/farm_produce_safety">https://github.com/farmOS/farm_produce_safety</a></p>
+<p>The Produce Safety module for farmOS provides record keeping features for the
+FSMA Produce Safety Rule in the United States, developed in partnership with
+the <a href="https://www.uvm.edu/extension/agriculture/agricultural_engineering">Agricultural Engineering Program</a> of <a href="https://www.uvm.edu/extension">University of Vermont Extension</a>
+with financial support from the <a href="http://agriculture.vermont.gov">Vermont Agency of Agriculture Food &amp; Markets</a>'
+Specialty Crop Block Grant and from the <a href="http://www.vhcb.org">Vermont Housing &amp; Conservation Board</a>.</p>
+<p>The <a href="https://www.fda.gov/Food/GuidanceRegulation/FSMA/ucm334114.htm">Produce Safety Rule</a> is part of the <a href="https://www.fda.gov/food/guidanceregulation/fsma">Food Safety Modernization Act</a>
+(FSMA). This regulation focuses on setting federal regulatory standards for the
+production, harvest, and handling of fruits and vegetables, in an effort to
+prevent microbial contamination and reduce foodborne illnesses associated with
+fresh produce.</p>
+<p><strong>This documentation should not be considered an official list of requirements.</strong></p>
+<p>It is only intended to help farmers become familiar with using farmOS to manage
+their records. For more information on guidelines, refer to the FDA's
+<a href="https://www.fda.gov/Food/GuidanceRegulation/FSMA/ucm334114.htm">FSMA Final Rule on Produce Safety</a> and the <a href="https://producesafetyalliance.cornell.edu">Produce Safety Alliance</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>The Produce Safety module sits on top of farmOS and utilizes many of the core
+features, including Plantings, Equipment, Compost, and various log types. The
+goal is to leverage the common record keeping capabilities that are already
+provided by farmOS, and extend them to facilitate record keeping requirements
+that are specific to the Produce Safety Rule.</p>
+<p>The following documentation pages provide guidance on how to manage general
+farm records with farmOS:</p>
 <ul>
-<li>Keep track of equipment location via movement logs.</li>
-<li>Record oil changes, repairs, and inspections with maintenance logs.</li>
-<li>Use activity logs to record equipment use.</li>
-<li>Track fuel usage with input logs.</li>
-</ul></div>
+<li><a href="../../../guide">Introduction</a></li>
+<li><a href="../../../guide/areas">Areas</a></li>
+<li><a href="../../../guide/logs">Logs</a></li>
+<li><a href="../../../guide/assets">Assets</a><ul>
+<li><a href="../../../guide/assets/plantings">Plantings</a></li>
+<li><a href="../../../guide/assets/animals">Animals</a></li>
+<li><a href="../../../guide/assets/equipment">Equipment</a></li>
+<li><a href="../../../guide/assets/compost">Compost</a></li>
+</ul>
+</li>
+<li><a href="../../../guide/people">People</a></li>
+</ul>
+<p>It may also be helpful to utilize the <a href="../../../guide/import">CSV Import</a> feature of farmOS to import
+records from spreadsheets.</p>
+<p>The following sections describe farmOS features specific to the Produce Safety
+module.</p>
+<h2 id="dashboard">Dashboard</h2>
+<p>The module provides a Produce Safety Dashboard (available as a tab within the
+farmOS dashboard) which acts as an organized starting point for produce safety
+record keeping. Documents and files that are specific to the operations food
+safety plan and procedures can be uploaded to the dashboard for storage and
+reference.</p>
+<p>Quick links are provided for managing records within each of the 5 main produce
+safety focus areas (described below).</p>
+<p>Logs that are added via the quick links will automatically be assigned to the
+"Produce Safety" category for easier lookup in the future (as well as additional
+categories that may be specific to the activity being recorded). Remember that
+farmOS can be used for more than just Produce Safety record keeping, so it is
+up to you to keep your records organized in a way that makes them easy to find
+for management and reporting purposes.</p>
+<h2 id="focus-areas">Focus areas</h2>
+<p>The primary goal of the Produce Safety Rule is to prevent microbial
+contamination and reduce foodborne illnesses associated with fresh produce. The
+regulatory requirements are divided into five main focus areas.</p>
+<h3 id="worker-health-hygiene-and-training">Worker Health, Hygiene, and Training</h3>
+<p>This focuses on maintaining records to demonstrate that farm workers are
+properly trained, are provided with stocked and sanitary facilities, and any
+health problems are properly documented.</p>
+<p>In addition to the core log types provided by farmOS, the Produce Safety module
+adds two that are specific to the Produce Safety Rule's record keeping
+requirements, which focus on farm workers:</p>
+<ul>
+<li><strong>Training</strong> logs are used to record details about training sessions that are
+  attended by workers on the farm. Training logs can include a list of
+  attendees, trainer(s), and details about the material that is covered.</li>
+<li><strong>Worker health</strong> logs are used to record incidents related to worker health.
+  Injuries or illnesses that occur on the farm should be recorded with these
+  logs, and should be related to the specific area(s) that they may have
+  occurred in.</li>
+</ul>
+<p>Activity and/or observation logs should be used to record checking and
+restocking of first aid and facilities.</p>
+<h3 id="biological-soil-amendments">Biological Soil Amendments</h3>
+<p>All soil amendments should be recorded with input logs. Soil test logs should
+be used to keep track of any lab tests that are performed.</p>
+<p>If compost is being produced on the farm, it is necessary to keep records of
+production time, temperature measurements (via observation logs), and pile
+turnings (via activity logs), to ensure that the compost was produced in a
+manner that reduces the risk of biological pathogens. Logs should be tagged
+with both the "Produce Safety" and "Compost" or "Soil" categories, as
+appropriate.</p>
+<h3 id="domesticated-and-wild-animals">Domesticated and Wild Animals</h3>
+<p>If domesticated animals are present on the farm, they should be managed as
+<a href="../../../guide/assets/animals">Animal assets</a> in farmOS.</p>
+<p>Risk assessment should be performed (and recorded via observation logs) before
+planting and before harvest, to reduce the risk of contamination.</p>
+<p>If intrusions or contaminations are observed, they should be recorded as
+observation logs. Corrective actions should be recorded as activity logs. Logs
+should be tagged with both the "Produce Safety" and "Animals" categories.</p>
+<h3 id="agricultural-water">Agricultural Water</h3>
+<p>Water test logs should be used to record lab tests that are performed on water.
+This includes both field water (pre-harvest) and water that is used to wash
+produce before packing (post-harvest).</p>
+<p>Any corrective actions that are taken should be recorded as activity logs with
+categories of both "Produce Safety" and "Water" (these categories are applied
+automatically by the quick links within the Produce Safety dashboard).</p>
+<h3 id="equipment-tools-and-buildings">Equipment, Tools, and Buildings</h3>
+<p>All areas relevant to produce safety (fields, buildings, facilities, etc) can
+be managed as <a href="../../../guide/areas">Areas</a> in farmOS. Tools and equipment can be managed as
+<a href="../../../guide/assets/equipment">Equipment</a> assets.</p>
+<p>When areas or equipment are cleaned/sanitized, this should be recorded as an
+activity log with the "Produce Safety" category applied.</p></div>
         </div>
 
         <footer class="col-md-12">
