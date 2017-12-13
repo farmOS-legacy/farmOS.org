@@ -882,7 +882,7 @@
         }, 
         {
             "location": "/community/farms/", 
-            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
+            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nCanada\n\n\n\n\nGolden Maple Farm (Victoria, British Columbia)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
             "title": "Farms"
         }, 
         {
@@ -894,6 +894,11 @@
             "location": "/community/farms/#australia", 
             "text": "Eagle View Farm (Buckley, Victoria)", 
             "title": "Australia"
+        }, 
+        {
+            "location": "/community/farms/#canada", 
+            "text": "Golden Maple Farm (Victoria, British Columbia)", 
+            "title": "Canada"
         }, 
         {
             "location": "/community/farms/#brazil", 
