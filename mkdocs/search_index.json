@@ -862,23 +862,23 @@
         }, 
         {
             "location": "/community/monthly-call/", 
-            "text": "Monthly Call\n\n\nThe farmOS community hosts a monthly call via Google Hangouts to discuss\ndevelopment and direction of the project. Anyone is welcome to join. Refer to\nthe schedule below, and use the \"Join Hangout\" link to join the call.\n\n\nJoin Hangout\n\n\nCalls are currently held on the second Wednesday of the month, at 1pm Eastern US\ntime.\n\n\nNote that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that actual GMT times for\neach call.\n\n\n2017 Schedule\n\n\nJanuary 11th @ 1pm EST / 6pm UTC\n\n\nFebruary 8th @ 1pm EST / 6pm UTC\n\n\nMarch 8th @ 1pm EST / 6pm UTC\n\n\nApril 12th @ 1pm EST / 5pm UTC\n\n\nMay 10th @ 1pm EST / 5pm UTC\n\n\nJune 14th @ 1pm EST / 5pm UTC\n\n\nJuly 12th @ 1pm EST / 5pm UTC\n\n\nAugust 9th @ 1pm EST / 5pm UTC\n\n\nSeptember 13th @ 1pm EST / 5pm UTC\n\n\nOctober 11th @ 1pm EST / 5pm UTC\n\n\nNovember 8th @ 1pm EST / 6pm UTC\n\n\nDecember 13th @ 1pm EST / 6pm UTC", 
+            "text": "Monthly Call\n\n\nThe farmOS community hosts a monthly call via Google Hangouts. Anyone is\nwelcome to join. Ask questions, brainstorm ideas, or just talk farming.\n\n\nRefer to the schedule below, and use the \"Join Hangout\" link to join the call.\n\n\nJoin Hangout\n\n\nCalls are currently held on the second Wednesday of the month, at 1pm Eastern\nUS time.\n\n\nNote that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that, along with the\nactual GMT times for each call.\n\n\n2018 Schedule\n\n\nJanuary 10th @ 1pm EST / 6pm UTC\n\n\nFebruary 14th @ 1pm EST / 6pm UTC\n\n\nMarch 14th @ 1pm EDT / 5pm UTC\n\n\nApril 11th @ 1pm EDT / 5pm UTC\n\n\nMay 9th @ 1pm EDT / 5pm UTC\n\n\nJune 13th @ 1pm EDT / 5pm UTC\n\n\nJuly 11th @ 1pm EDT / 5pm UTC\n\n\nAugust 8th @ 1pm EDT / 5pm UTC\n\n\nSeptember 12th @ 1pm EDT / 5pm UTC\n\n\nOctober 10th @ 1pm EDT / 5pm UTC\n\n\nNovember 14th @ 1pm EST / 6pm UTC\n\n\nDecember 12th @ 1pm EST / 6pm UTC", 
             "title": "Monthly Call"
         }, 
         {
             "location": "/community/monthly-call/#monthly-call", 
-            "text": "The farmOS community hosts a monthly call via Google Hangouts to discuss\ndevelopment and direction of the project. Anyone is welcome to join. Refer to\nthe schedule below, and use the \"Join Hangout\" link to join the call.", 
+            "text": "The farmOS community hosts a monthly call via Google Hangouts. Anyone is\nwelcome to join. Ask questions, brainstorm ideas, or just talk farming.  Refer to the schedule below, and use the \"Join Hangout\" link to join the call.", 
             "title": "Monthly Call"
         }, 
         {
             "location": "/community/monthly-call/#join-hangout", 
-            "text": "Calls are currently held on the second Wednesday of the month, at 1pm Eastern US\ntime.  Note that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that actual GMT times for\neach call.", 
+            "text": "Calls are currently held on the second Wednesday of the month, at 1pm Eastern\nUS time.  Note that Daylight Savings Time is observed in the US, so the time relative to\nGMT will change twice a year. The schedule below shows that, along with the\nactual GMT times for each call.", 
             "title": "Join Hangout"
         }, 
         {
-            "location": "/community/monthly-call/#2017-schedule", 
-            "text": "January 11th @ 1pm EST / 6pm UTC  February 8th @ 1pm EST / 6pm UTC  March 8th @ 1pm EST / 6pm UTC  April 12th @ 1pm EST / 5pm UTC  May 10th @ 1pm EST / 5pm UTC  June 14th @ 1pm EST / 5pm UTC  July 12th @ 1pm EST / 5pm UTC  August 9th @ 1pm EST / 5pm UTC  September 13th @ 1pm EST / 5pm UTC  October 11th @ 1pm EST / 5pm UTC  November 8th @ 1pm EST / 6pm UTC  December 13th @ 1pm EST / 6pm UTC", 
-            "title": "2017 Schedule"
+            "location": "/community/monthly-call/#2018-schedule", 
+            "text": "January 10th @ 1pm EST / 6pm UTC  February 14th @ 1pm EST / 6pm UTC  March 14th @ 1pm EDT / 5pm UTC  April 11th @ 1pm EDT / 5pm UTC  May 9th @ 1pm EDT / 5pm UTC  June 13th @ 1pm EDT / 5pm UTC  July 11th @ 1pm EDT / 5pm UTC  August 8th @ 1pm EDT / 5pm UTC  September 12th @ 1pm EDT / 5pm UTC  October 10th @ 1pm EDT / 5pm UTC  November 14th @ 1pm EST / 6pm UTC  December 12th @ 1pm EST / 6pm UTC", 
+            "title": "2018 Schedule"
         }, 
         {
             "location": "/community/farms/", 
