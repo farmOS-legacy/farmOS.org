@@ -372,18 +372,13 @@
         }, 
         {
             "location": "/guide/quantity/", 
-            "text": "Quantity measurements\n\n\nMost \nlogs\n in farmOS have the ability to record structured quantity\nmeasurements alongside other details. These can be used to collect data about\nyour farm activities in an organized way, which can be analyzed later to\nprovide insights.\n\n\nQuantity measurements can be added via the \"Quantity\" field on logs. More than\none quantity measurement can be added to a single log.\n\n\nThe \"Quantity\" field consists of four optional sub-fields:\n\n\n\n\nMeasure - What type of measurement is this? Eg: Weight, Volume, Count,\n  Temperature, etc.\n\n\nValue - The measurement value (a number).\n\n\nUnits - The unit of measure. This can be anything you like, but it's always\n  good to keep your units consistent, as much as possible, for later analysis.\n\n\nLabel - Labels are just a text field that allow you to add an additional note\n  to the quantity measurement. This is helpful if you have multiple quantities\n  of the same measure.\n\n\n\n\nQuantity report generator\n\n\n...", 
+            "text": "Quantity measurements\n\n\nMost \nlogs\n in farmOS have the ability to record structured quantity\nmeasurements alongside other details. These can be used to collect data about\nyour farm activities in an organized way, which can be analyzed later to\nprovide insights.\n\n\nQuantity measurements can be added via the \"Quantity\" field on logs. More than\none quantity measurement can be added to a single log.\n\n\nThe \"Quantity\" field consists of four optional sub-fields:\n\n\n\n\nMeasure - What type of measurement is this? Eg: Weight, Volume, Count,\n  Temperature, etc.\n\n\nValue - The measurement value (a number).\n\n\nUnits - The unit of measure. This can be anything you like, but it's always\n  good to keep your units consistent, as much as possible, for later analysis.\n\n\nLabel - Labels are just a text field that allow you to add an additional note\n  to the quantity measurement. This is helpful if you have multiple quantities\n  of the same measure.", 
             "title": "Quantity measurements"
         }, 
         {
             "location": "/guide/quantity/#quantity-measurements", 
             "text": "Most  logs  in farmOS have the ability to record structured quantity\nmeasurements alongside other details. These can be used to collect data about\nyour farm activities in an organized way, which can be analyzed later to\nprovide insights.  Quantity measurements can be added via the \"Quantity\" field on logs. More than\none quantity measurement can be added to a single log.  The \"Quantity\" field consists of four optional sub-fields:   Measure - What type of measurement is this? Eg: Weight, Volume, Count,\n  Temperature, etc.  Value - The measurement value (a number).  Units - The unit of measure. This can be anything you like, but it's always\n  good to keep your units consistent, as much as possible, for later analysis.  Label - Labels are just a text field that allow you to add an additional note\n  to the quantity measurement. This is helpful if you have multiple quantities\n  of the same measure.", 
             "title": "Quantity measurements"
-        }, 
-        {
-            "location": "/guide/quantity/#quantity-report-generator", 
-            "text": "...", 
-            "title": "Quantity report generator"
         }, 
         {
             "location": "/guide/inventory/", 
