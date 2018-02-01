@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/guide/contrib/">
+        <link rel="canonical" href="http://farmos.org/guide/inventory/">
         <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>Introduction - farmOS.org</title>
+	<title>Inventory tracking - farmOS.org</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -153,8 +153,8 @@
 
                     
                         
-<li >
-    <a href="../inventory/">Inventory tracking</a>
+<li class="active">
+    <a href="./">Inventory tracking</a>
 </li>
 
                     
@@ -182,20 +182,20 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">Introduction</a>
+<li >
+    <a href="../contrib/">Introduction</a>
 </li>
 
         
             
 <li >
-    <a href="eggs/">Eggs</a>
+    <a href="../contrib/eggs/">Eggs</a>
 </li>
 
         
             
 <li >
-    <a href="produce-safety/">Produce Safety</a>
+    <a href="../contrib/produce-safety/">Produce Safety</a>
 </li>
 
         
@@ -352,12 +352,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../export/">
+                    <a rel="next" href="../quantity/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="eggs/">
+                    <a rel="prev" href="../people/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -380,23 +380,30 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#community-modules">Community modules</a></li>
+        <li class="main active"><a href="#inventory-tracking">Inventory tracking</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="community-modules">Community modules</h1>
-<p>The farmOS platform can be extended with modules built by the community. This
-section of the user guide contains documentation for community modules.</p>
-<p>If you have built a farmOS module and would like to include your documentation
-here, you can fork the <a href="https://github.com/farmOS/farmOS.org">farmOS.org repository on Github</a> and create a pull
-request.</p>
-<ul>
-<li><a href="../../guide/contrib/eggs">Eggs</a></li>
-<li><a href="../../guide/contrib/produce-safety">Produce Safety</a></li>
-</ul></div>
+<h1 id="inventory-tracking">Inventory tracking</h1>
+<p>A new feature available in farmOS 7.x-1.0-beta16 is an inventory module, which
+allows for tracking of asset inventory levels over time via <a href="../../guide/logs">logs</a>. As of this
+release, inventory management is only enabled on <a href="../../guide/assets/animals">animal</a> assets, but will be
+enabled on other asset types in future releases. For more information about
+tracking animal inventory, read the <a href="../../guide/assets/animals">animal</a> asset user guide.</p>
+<p>Inventory can be added/subtracted from an asset using the "Inventory
+adjustment" fields on logs. You may also make more than one inventory
+adjustment on an individual log (to different assets, for example).</p>
+<p>The inventory adjustment field has two subfields: <strong>Asset</strong> and <strong>Value</strong>.</p>
+<p>The asset field references the asset whose inventory is being adjusted. The
+value field is a positive or negative adjustment to the asset's inventory. A
+positive number will add to the inventory, and a negative number will subtract
+from the inventory.</p>
+<p>An asset's current inventory is visible on the asset record page. You can also
+view a list of all logs that have adjusted the asset's inventory in the past
+(as well as planned inventory adjustment logs in the future).</p></div>
         </div>
 
         <footer class="col-md-12">

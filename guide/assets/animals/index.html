@@ -130,6 +130,12 @@
 </li>
 
         
+            
+<li >
+    <a href="../groups/">Groups</a>
+</li>
+
+        
     </ul>
   </li>
 
@@ -137,6 +143,18 @@
                         
 <li >
     <a href="../../location/">Movements and location</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../quantity/">Quantity measurements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../inventory/">Inventory tracking</a>
 </li>
 
                     
@@ -166,6 +184,12 @@
             
 <li >
     <a href="../../contrib/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../contrib/eggs/">Eggs</a>
 </li>
 
         
@@ -360,11 +384,13 @@
         
             <li><a href="#speciesbreeds">Species/breeds</a></li>
         
-            <li><a href="#animal-groups">Animal groups</a></li>
+            <li><a href="#animal-groupsherds">Animal groups/herds</a></li>
+        
+            <li><a href="#inventory-head-counts">Inventory / head counts</a></li>
         
             <li><a href="#movements">Movements</a></li>
         
-            <li><a href="#animal-logs">Animal logs</a></li>
+            <li><a href="#medical-records">Medical records</a></li>
         
     
     </ul>
@@ -373,18 +399,39 @@
 
 <h1 id="animals">Animals</h1>
 <p>farmOS can be used to manage animal/livestock records.</p>
-<p>An "Animal" asset type is provided to represent individual animals, and all of
+<p>An "Animal" asset type is provided for representing animal records, and all of
 the standard farmOS <a href="../../../guide/logs">log types</a> can be used to record events and activities.</p>
+<p>Animal records can be used to represent either individual animals, or multiple
+animals (see "Inventory / head counts" below).</p>
 <h2 id="speciesbreeds">Species/breeds</h2>
 <p>When you create an animal asset, you will need to define what <strong>species/breed</strong>
 it is. Species/breeds represent the various <strong>types</strong> of animals you manage.
 These can be very general names (eg: "Cattle") or more specific breeds (eg:
 "Jersey cattle").</p>
-<h2 id="animal-groups">Animal groups</h2>
-<p>Animals can also be organized into groups. This is useful if you always manage
-certain animals together. It is also possible to assign animals to more than
-one group. This can be used in many different ways to help manage large
-numbers of animals in farmOS.</p>
+<h2 id="animal-groupsherds">Animal groups/herds</h2>
+<p>Animals can also be organized into groups using the <a href="../../../guide/assets/groups">Group</a> asset type. This is
+useful if you always manage certain animals together. It is also possible to
+assign animals to more than one group. This can be used in many different ways
+to help manage large numbers of animals in farmOS. See the <a href="../../../guide/assets/groups">Group</a> asset guide
+to learn more.</p>
+<h2 id="inventory-head-counts">Inventory / head counts</h2>
+<p>A single animal record can be used for managing more than one animal. This is
+useful in cases where animals don't need to be tracked individually, for
+instance with flocks of birds or heads of cattle (where individual tagging is
+not necessary for record keeping purposes).</p>
+<p>To learn how to use inventory adjustments to track animal head counts over
+time, read the <a href="../../../guide/inventory">inventory</a> use guide.</p>
+<blockquote>
+<p>Q: Should I use inventory or groups for my animals?</p>
+</blockquote>
+<p>This comes down to whether or not you need to maintain separate records for
+individual animals. If you do, then create a separate animal asset for each
+animal, and you can optionally organize them into group assets after that. If
+you don't need individual animal records, you can create a single animal asset
+and use the inventory features to track a head count over time with logs. Or,
+you could do both! Perhaps you have a herd (group asset) with some individual
+animals, and some larger groups of animals (head count). It's just a matter of
+how granular you need your record keeping to be.</p>
 <h2 id="movements">Movements</h2>
 <p>Animals can be moved from place to place in farmOS using <a href="../../../guide/location">movement logs</a>. You
 can also filter your animal list down to animals within a certain group, select
@@ -392,7 +439,7 @@ all, and create a combined movement log for all of them at once. This is a
 great way to manage grazing records as you move animals from paddock to
 paddock. For more general information on moving assets in farmOS, read the page
 on <a href="../../../guide/location">movements and location</a>.</p>
-<h2 id="animal-logs">Animal logs</h2>
+<h2 id="medical-records">Medical records</h2>
 <p>In addition to the standard <a href="../../../guide/logs">log types</a> that all farmOS assets share
 (activities, observations, inputs, and harvests), the livestock module provides
 an additional log type that is specific to animals: medical records.</p>

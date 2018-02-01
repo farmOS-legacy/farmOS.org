@@ -130,6 +130,12 @@
 </li>
 
         
+            
+<li >
+    <a href="../../guide/assets/groups/">Groups</a>
+</li>
+
+        
     </ul>
   </li>
 
@@ -137,6 +143,18 @@
                         
 <li >
     <a href="../../guide/location/">Movements and location</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../guide/quantity/">Quantity measurements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../guide/inventory/">Inventory tracking</a>
 </li>
 
                     
@@ -166,6 +184,12 @@
             
 <li >
     <a href="../../guide/contrib/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../guide/contrib/eggs/">Eggs</a>
 </li>
 
         
@@ -395,6 +419,15 @@ webroot) and open it in a browser to access farmOS.</p>
 <li><strong>PHP 5.5+.</strong> Drupal 7 itself only requires PHP 5.2+, but farmOS makes heavy
   use of the <a href="https://drupal.org/project/openlayers">Openlayers module</a>, and includes some custom code that uses
   newer features of PHP only available in 5.5+.</li>
+<li><strong>PHP configuration</strong> - It is recommended that you set the following PHP
+  configuration variables, to ensure that farmOS runs smoothly. It may run fine
+  without these settings, but some features may not work properly without them.<ul>
+<li><code>memory_limit=256M</code></li>
+<li><code>max_execution_time=240</code></li>
+<li><code>max_input_time=240</code></li>
+<li><code>max_input_vars = 5000</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="optional-dependencies">Optional dependencies</h3>
 <p>The following are not hard requirements of farmOS, but will provide progressive

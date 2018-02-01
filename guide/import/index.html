@@ -130,6 +130,12 @@
 </li>
 
         
+            
+<li >
+    <a href="../assets/groups/">Groups</a>
+</li>
+
+        
     </ul>
   </li>
 
@@ -137,6 +143,18 @@
                         
 <li >
     <a href="../location/">Movements and location</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../quantity/">Quantity measurements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../inventory/">Inventory tracking</a>
 </li>
 
                     
@@ -166,6 +184,12 @@
             
 <li >
     <a href="../contrib/">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../contrib/eggs/">Eggs</a>
 </li>
 
         
@@ -360,6 +384,8 @@
         
             <li><a href="#common-fields">Common fields</a></li>
         
+            <li><a href="#boolean-values">Boolean values</a></li>
+        
             <li><a href="#access">Access</a></li>
         
     
@@ -392,9 +418,9 @@ importers.</p>
 <p>Common asset fields include:</p>
 <ul>
 <li><strong>Name</strong> - The name of the asset (required).</li>
-<li><strong>Active</strong> - Whether or not the asset is currently active. This should be set
-  to "yes" or "1" if the asset is active, and "no" or "0" if the asset is not
-  active. If omitted, this will default to "1" (active).</li>
+<li><strong>Active</strong> - Whether or not the asset is currently active. See
+  "Boolean options" below for allowed values. If omitted, the asset will be
+  marked as "active".</li>
 <li><strong>Description</strong> - A longer description of the asset.</li>
 <li><strong>Parent IDs</strong> - A comma-separated list of asset IDs that represent parents
   of the asset being imported. These parent assets must already exist in farmOS
@@ -406,9 +432,8 @@ importers.</p>
   left blank.</li>
 <li><strong>Date</strong> - The date when the logged event takes place (required). This can be
   a string in any English date format that is convertable to a UNIX timestamp.</li>
-<li><strong>Done</strong> - Whether or not the log is complete. This should be set to "yes" or "1"
-  if the log is done, and "no" or "0" if the log is not done. If omitted, this
-  will default to "1" (done).</li>
+<li><strong>Done</strong> - Whether or not the log is complete. See "Boolean options" below
+  for allowed values. If omitted, the log will be marked as "done".</li>
 <li><strong>Notes</strong> - A longer description of the logged event.</li>
 <li><strong>Asset IDs</strong> - A comma-separated list of asset IDs that this log is related
   to. These assets must already exist in farmOS in order for the link to be
@@ -422,6 +447,26 @@ importers.</p>
 </ul>
 <p>Common fields that are required are noted above. Specific asset/log type
 importers may have additional required fields.</p>
+<h2 id="boolean-values">Boolean values</h2>
+<p>The following values are acceptable for boolean fields, like "Active" for asset
+importers, and "Done" for log importers. These values are not case sensitive
+(so "Yes" and "yes" will be treated the same).</p>
+<h3 id="true">True</h3>
+<ul>
+<li>Yes</li>
+<li>Y</li>
+<li>True</li>
+<li>T</li>
+<li>1</li>
+</ul>
+<h3 id="false">False</h3>
+<ul>
+<li>No</li>
+<li>N</li>
+<li>False</li>
+<li>F</li>
+<li>0</li>
+</ul>
 <h2 id="access">Access</h2>
 <p>CSV importers are only available to users with the Farm Manager <a href="../../guide/people">role</a>.</p></div>
         </div>
