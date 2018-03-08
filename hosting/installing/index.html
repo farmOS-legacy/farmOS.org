@@ -421,11 +421,12 @@ webroot) and open it in a browser to access farmOS.</p>
   newer features of PHP only available in 5.5+.</li>
 <li><strong>PHP configuration</strong> - It is recommended that you set the following PHP
   configuration variables, to ensure that farmOS runs smoothly. It may run fine
-  without these settings, but some features may not work properly without them.<ul>
+  without these settings, but some features may not work properly without them.
+  Note that the farmOS <a href="../../development/docker">Docker</a> image sets these automatically.<ul>
 <li><code>memory_limit=256M</code></li>
 <li><code>max_execution_time=240</code></li>
 <li><code>max_input_time=240</code></li>
-<li><code>max_input_vars = 5000</code></li>
+<li><code>max_input_vars=5000</code></li>
 </ul>
 </li>
 </ul>
