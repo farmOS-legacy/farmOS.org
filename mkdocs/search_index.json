@@ -947,7 +947,7 @@
         }, 
         {
             "location": "/community/farms/", 
-            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nCanada\n\n\n\n\nGolden Maple Farm (Victoria, British Columbia)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nPoland\n\n\n\n\nPiotr Ma\u0142kowski (Do\u0142ubowo, Podlasie)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nGolden Avenue Urban Permaculture Farm (Eugene, Oregon)\n\n\nGrocholl and Sons Farms (Harrison, Illinois)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nPax Sam Place Urban Permaculture Community (Eugene, Oregon)\n\n\nRed Shirt Farm (Lanesborough, Massachusetts)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
+            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nCanada\n\n\n\n\nGolden Maple Farm (Victoria, British Columbia)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nNew Zealand\n\n\n\n\nPermakai (Waiuku, Auckland)\n\n\n\n\nPoland\n\n\n\n\nPiotr Ma\u0142kowski (Do\u0142ubowo, Podlasie)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nGolden Avenue Urban Permaculture Farm (Eugene, Oregon)\n\n\nGrocholl and Sons Farms (Harrison, Illinois)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nPax Sam Place Urban Permaculture Community (Eugene, Oregon)\n\n\nRed Shirt Farm (Lanesborough, Massachusetts)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
             "title": "Farms"
         }, 
         {
@@ -979,6 +979,11 @@
             "location": "/community/farms/#jamaica", 
             "text": "Grierfield Farms (Grierfield, St Ann)", 
             "title": "Jamaica"
+        }, 
+        {
+            "location": "/community/farms/#new-zealand", 
+            "text": "Permakai (Waiuku, Auckland)", 
+            "title": "New Zealand"
         }, 
         {
             "location": "/community/farms/#poland", 
