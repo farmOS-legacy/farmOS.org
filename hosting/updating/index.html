@@ -382,6 +382,10 @@
     
         <li class="main active"><a href="#updating-farmos">Updating farmOS</a></li>
         
+            <li><a href="#do-not-use-drupals-automatic-update-feature">Do not use Drupal's automatic update feature</a></li>
+        
+            <li><a href="#update-procedure">Update procedure</a></li>
+        
     
     </ul>
 </div></div>
@@ -391,8 +395,26 @@
 <p>New versions of farmOS will be released on a regular basis, and it's important
 to stay up-to-date so that you can receive new features, bug fixes, and security
 patches when they become available.</p>
-<p>Updating farmOS is basically the same process as <a href="https://drupal.org/node/1223018">updating Drupal core</a>.</p>
-<p>The general procedure is:</p>
+<h2 id="do-not-use-drupals-automatic-update-feature">Do not use Drupal's automatic update feature</h2>
+<p>Drupal provides an interface for downloading and updating contributed modules
+automatically.</p>
+<p><strong>This process may break your farmOS system.</strong></p>
+<p>farmOS is a Drupal distribution, and includes patches to some contributed
+Drupal modules that are necessary for proper functioning. Drupal's automatic
+update feature will not apply the necessary patches when it downloads the new
+version of a module.</p>
+<p>It also does not support updating Drupal distributions (only modules and
+themes). farmOS is a Drupal distribution, and new versions often include
+automated update code to ensure a smooth update from one version of farmOS to
+the next.</p>
+<p>Therefore, it is recommended that you either download the officially packaged
+releases of farmOS from <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a>,
+<a href="../../hosting/installing">build it yourself with Drush</a>, or run <a href="../../development/docker">farmOS on Docker</a>. This will ensure
+that the necessary patches are applied, and that the farmOS distribution
+updates are included.</p>
+<h2 id="update-procedure">Update procedure</h2>
+<p>Updating farmOS is basically the same process as <a href="https://drupal.org/node/1223018">updating Drupal core</a>. The
+following procedure will ensure that your update goes smoothly.</p>
 <ol>
 <li>Backup your code and database! Always do this before making big changes. Be
    ready and able to roll-back in the event that something goes wrong.</li>
@@ -411,8 +433,8 @@ patches when they become available.</p>
 <p><a href="https://drupal.org/upgrade/running-update-php">Run database updates</a>.</p>
 </li>
 <li>
-<p>Revert all Features via Drush. If you have intentionally overridden any
-   specific farmOS configurations, then you should NOT do this. You will need
+<p>Revert all Features via Drush. <strong>If you have intentionally overridden any
+   specific farmOS configurations, then you should NOT do this.</strong> You will need
    to resolve any merge conflicts with farmOS core Features changes in order to
    complete the upgrade. See <a href="../../development/update-safety">developing with updates in mind</a>.</p>
 <p><code>drush fra</code></p>
