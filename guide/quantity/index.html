@@ -177,6 +177,12 @@
 
                     
                         
+<li >
+    <a href="../quick/">Quick forms</a>
+</li>
+
+                    
+                        
   <li class="dropdown-submenu">
     <a tabindex="-1" href="">Community modules</a>
     <ul class="dropdown-menu">
@@ -190,6 +196,12 @@
             
 <li >
     <a href="../contrib/eggs/">Eggs</a>
+</li>
+
+        
+            
+<li >
+    <a href="../contrib/organic/">Organic</a>
 </li>
 
         
@@ -382,6 +394,8 @@
     
         <li class="main active"><a href="#quantity-measurements">Quantity measurements</a></li>
         
+            <li><a href="#quantity-report">Quantity report</a></li>
+        
     
     </ul>
 </div></div>
@@ -404,7 +418,19 @@ one quantity measurement can be added to a single log.</p>
 <li>Label - Labels are just a text field that allow you to add an additional note
   to the quantity measurement. This is helpful if you have multiple quantities
   of the same measure.</li>
-</ul></div>
+</ul>
+<h2 id="quantity-report">Quantity report</h2>
+<p>A single log in farmOS can have multiple quantity measurements, but when
+viewing a list of logs only the first quantity measurement will be displayed. A
+special "Quantity Report" module is provided specifically  for querying logged
+quantity measurements . This allows you to specify filter criteria and generate
+a list of quantity measurements that can be viewed in farmOS or exported to a
+CSV file. This provides a very flexible approach to gathering ongoing
+quantitative data on your farm, and then analyzing it for trends over time.</p>
+<p>This module is still in "beta", and more filters/capabilities are being added.
+If you have ideas, please <a href="../../community/contribute">create feature requests on GitHub</a>. It is not
+enabled by default when farmOS is installed, so you need to turn it on in order
+to use it.</p></div>
         </div>
 
         <footer class="col-md-12">

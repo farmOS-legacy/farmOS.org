@@ -177,6 +177,12 @@
 
                     
                         
+<li >
+    <a href="../quick/">Quick forms</a>
+</li>
+
+                    
+                        
   <li class="dropdown-submenu">
     <a tabindex="-1" href="">Community modules</a>
     <ul class="dropdown-menu">
@@ -190,6 +196,12 @@
             
 <li >
     <a href="../contrib/eggs/">Eggs</a>
+</li>
+
+        
+            
+<li >
+    <a href="../contrib/organic/">Organic</a>
 </li>
 
         
@@ -418,9 +430,8 @@ importers.</p>
 <p>Common asset fields include:</p>
 <ul>
 <li><strong>Name</strong> - The name of the asset (required).</li>
-<li><strong>Active</strong> - Whether or not the asset is currently active. See
-  "Boolean options" below for allowed values. If omitted, the asset will be
-  marked as "active".</li>
+<li><strong>Archived</strong> - Whether or not the asset is archived. See "Boolean options"
+  below for allowed values. If omitted, the asset will not be archived.</li>
 <li><strong>Description</strong> - A longer description of the asset.</li>
 <li><strong>Parent IDs</strong> - A comma-separated list of asset IDs that represent parents
   of the asset being imported. These parent assets must already exist in farmOS
@@ -448,9 +459,9 @@ importers.</p>
 <p>Common fields that are required are noted above. Specific asset/log type
 importers may have additional required fields.</p>
 <h2 id="boolean-values">Boolean values</h2>
-<p>The following values are acceptable for boolean fields, like "Active" for asset
-importers, and "Done" for log importers. These values are not case sensitive
-(so "Yes" and "yes" will be treated the same).</p>
+<p>The following values are acceptable for boolean fields, like "Archived" for
+asset importers, and "Done" for log importers. These values are not case
+sensitive (so "Yes" and "yes" will be treated the same).</p>
 <h3 id="true">True</h3>
 <ul>
 <li>Yes</li>

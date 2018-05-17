@@ -177,6 +177,12 @@
 
                     
                         
+<li >
+    <a href="../../quick/">Quick forms</a>
+</li>
+
+                    
+                        
   <li class="dropdown-submenu">
     <a tabindex="-1" href="">Community modules</a>
     <ul class="dropdown-menu">
@@ -190,6 +196,12 @@
             
 <li >
     <a href="../../contrib/eggs/">Eggs</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../contrib/organic/">Organic</a>
 </li>
 
         
@@ -390,7 +402,7 @@
         
             <li><a href="#movements">Movements</a></li>
         
-            <li><a href="#medical-records">Medical records</a></li>
+            <li><a href="#animal-logs">Animal logs</a></li>
         
     
     </ul>
@@ -439,10 +451,19 @@ all, and create a combined movement log for all of them at once. This is a
 great way to manage grazing records as you move animals from paddock to
 paddock. For more general information on moving assets in farmOS, read the page
 on <a href="../../../guide/location">movements and location</a>.</p>
-<h2 id="medical-records">Medical records</h2>
+<h2 id="animal-logs">Animal logs</h2>
 <p>In addition to the standard <a href="../../../guide/logs">log types</a> that all farmOS assets share
 (activities, observations, inputs, and harvests), the livestock module provides
-an additional log type that is specific to animals: medical records.</p>
+two additional log types that are specific to animals:</p>
+<p><strong>Birth</strong> logs can be used to record the birth of one or more animals on the
+farm. Birth logs can optionally reference the mother animal, and when they are
+saved they will automatically update the "Parents" and "Date of birth" fields
+on all referenced child animals. You can view a list of a mother's birth logs
+from her page, as well as add new ones. The "Date of birth" field on animal
+records will automatically link back to their birth log (if one exists). The
+child animal asset records must be created before the birth log, so that they
+can be referenced, but the livestock module also provides a "Birth"
+<a href="../../../guide/quick">quick form</a> that will create the children and birth log all in one step.</p>
 <p><strong>Medical</strong> logs can be used to record animal health records. This can be a
 veterinary visit, administering medicine/vaccinations, or other medical
 procedures. You can also use standard <strong>Input</strong> logs when administering
