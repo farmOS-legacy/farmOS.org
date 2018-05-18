@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/community/maintainers/">
+        <link rel="canonical" href="http://farmos.org/development/api/">
         <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>Maintainers - farmOS.org</title>
+	<title>API - farmOS.org</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -253,49 +253,49 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../development/drupal/">Drupal</a>
+    <a href="../drupal/">Drupal</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/projects/">Projects</a>
+    <a href="../projects/">Projects</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/issue-queues/">Issue Queues</a>
+    <a href="../issue-queues/">Issue Queues</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/architecture/">Architecture</a>
+    <a href="../architecture/">Architecture</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/update-safety/">Update Safety</a>
+    <a href="../update-safety/">Update Safety</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/docker/">Docker</a>
+    <a href="../docker/">Docker</a>
 </li>
 
                     
                         
-<li >
-    <a href="../../development/api/">API</a>
+<li class="active">
+    <a href="./">API</a>
 </li>
 
                     
@@ -304,49 +304,49 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../contribute/">Contribute</a>
+    <a href="../../community/contribute/">Contribute</a>
 </li>
 
                     
                         
 <li >
-    <a href="../monthly-call/">Monthly Call</a>
+    <a href="../../community/monthly-call/">Monthly Call</a>
 </li>
 
                     
                         
 <li >
-    <a href="../farms/">Farms</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Maintainers</a>
+    <a href="../../community/farms/">Farms</a>
 </li>
 
                     
                         
 <li >
-    <a href="../supporters/">Supporters</a>
+    <a href="../../community/maintainers/">Maintainers</a>
 </li>
 
                     
                         
 <li >
-    <a href="../press/">Press</a>
+    <a href="../../community/supporters/">Supporters</a>
 </li>
 
                     
                         
 <li >
-    <a href="../trademark/">Trademark</a>
+    <a href="../../community/press/">Press</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../community/trademark/">Trademark</a>
 </li>
 
                     
@@ -370,12 +370,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../farms/">
+                    <a rel="next" href="../docker/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../supporters/">
+                    <a rel="prev" href="../../community/contribute/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -398,21 +398,95 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#maintainers">Maintainers</a></li>
+        <li class="main active"><a href="#api">API</a></li>
         
-            <li><a href="#michael-stenta">Michael Stenta</a></li>
+            <li><a href="#authentication">Authentication</a></li>
+        
+            <li><a href="#requesting-records">Requesting records</a></li>
+        
+            <li><a href="#creating-records">Creating records</a></li>
+        
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="maintainers">Maintainers</h1>
-<p><img alt="Michael Stenta" src="../../img/maintainers/mstenta.jpg" /></p>
-<h3 id="michael-stenta">Michael Stenta</h3>
+<h1 id="api">API</h1>
+<p>farmOS has a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST API</a> that other applications/systems can use to communicate
+with farmOS programatically. The API provides <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations for all of the
+main farmOS <a href="../../development/architecture">record types</a> (Drupal entity types). This is accomplished with the
+<a href="https://www.drupal.org/project/restws">RESTful Web Services</a> module.</p>
+<p>The following documentation provides a brief overview of the farmOS API for
+developers who are interested in using it. For more general information, please
+refer to the <a href="https://www.drupal.org/node/1860564">RESTful Web Services module documentation</a>.</p>
+<p>In all of the commands below, replace the following placeholders with your
+specific farmOS URL, username, and password.</p>
 <ul>
-<li>Drupal.org: <a href="https://drupal.org/u/mstenta">m.stenta</a></li>
-<li>Github: <a href="https://github.com/mstenta">mstenta</a></li>
+<li><code>[URL]</code> - Base URL of the farmOS instance, without trailing slash (eg: <code>https://example.farmos.net</code>)</li>
+<li><code>[USER]</code> - User name (eg: <code>MyUserName</code>)</li>
+<li><code>[PASS]</code> - Password (eg: <code>MyPassword</code>)</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>The following <code>curl</code> command will authenticate using the username and password,
+and save the session cookie to a file called farmOS-cookie.txt. Then it will
+get a session token and save that to a <code>$TOKEN</code> variable. Together, the cookie
+and token can be used to make authenticated requests.</p>
+<pre><code>curl --cookie-jar farmOS-cookie.txt -d 'name=[USER]&amp;pass=[PASS]&amp;form_id=user_login' [URL]/user/login
+TOKEN="$(curl --cookie farmOS-cookie.txt [URL]/restws/session/token)"
+</code></pre>
+<h2 id="requesting-records">Requesting records</h2>
+<p>The following <code>curl</code> command examples demonstrate how to get lists of records
+and individual records in JSON format. They use the stored <code>farmOS-cookie.txt</code>
+file and <code>$TOKEN</code> variable generated with the commands above.</p>
+<p><strong>Lists of records</strong></p>
+<p>This will retrieve a list of harvest logs in JSON format:</p>
+<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log.json?type=farm_harvest
+</code></pre>
+<p>Records can also be requested in XML format by changing the file extension in
+the URL:</p>
+<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log.xml?type=farm_harvest
+</code></pre>
+<p><strong>Individual records</strong></p>
+<p>Individual records can be retrieved in a similar way, by including their entity
+ID. This will retrieve a log with ID 1:</p>
+<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log/1.json
+</code></pre>
+<p><strong>Endpoints</strong></p>
+<p>The endpoint to use depends on the entity type you are requesting:</p>
+<ul>
+<li>Assets: <code>/farm_asset.json</code></li>
+<li>Logs: <code>/log.json</code></li>
+<li>Areas*: <code>/taxonomy_term.json?type=farm_areas</code></li>
+</ul>
+<p>*Note that areas are currently represented as Drupal taxonomy terms, but may be
+changed to assets in the future. See <a href="https://www.drupal.org/project/farm/issues/2363393">Make "Area" into a type of Farm Asset</a>.</p>
+<h2 id="creating-records">Creating records</h2>
+<p>Records can be created by POSTing JSON/XML objects to the endpoint for the
+entity type you would like to create.</p>
+<p>First, here is a very simple example of an observation log in JSON. The bare
+minimum required fields are <code>name</code>, <code>type</code>, and <code>timestamp</code>.</p>
+<pre><code>{
+  "name": "Test observation via REST",
+  "type": "farm_observation",
+  "timestamp": "1526584271",
+}
+</code></pre>
+<p>Here is a <code>curl</code> command to create that log in farmOS:</p>
+<pre><code>curl -X POST --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" -H 'Content-Type: application/json' -d '{"name": "Test observation via REST", "type": "farm_observation", "timestamp": "1526584271"}' [URL]/log
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Some common issues and solutions are described below. If these do not help,
+submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a> or ask questions in the
+<a href="https://riot.im/app/#/room/#farmOS:matrix.org">farmOS chat room</a>.</p>
+<ul>
+<li><strong>HTTPS redirects</strong> - If your farmOS instance automatically redirects from
+  <code>http://</code> to <code>https://</code>, make sure you are making requests using the
+  <code>https://</code> protocol. The redirect can cause issues with some API requests.</li>
+<li><strong>Date format</strong> - All dates in farmOS are stored in <a href="https://en.wikipedia.org/wiki/Unix_time">Unix timestamp</a> format.
+  Most frameworks/languages provide functions for generating/converting
+  dates/times to this format. Only Unix timestamps will be accepted by the API.</li>
 </ul></div>
         </div>
 
