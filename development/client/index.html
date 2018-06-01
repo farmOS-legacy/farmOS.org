@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/community/supporters/">
+        <link rel="canonical" href="http://farmos.org/development/client/">
         <link rel="shortcut icon" href="../../favicon.ico">
         
 
-	<title>Supporters - farmOS.org</title>
+	<title>Client/Native - farmOS.org</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -253,55 +253,55 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../../development/drupal/">Drupal</a>
+    <a href="../drupal/">Drupal</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/projects/">Projects</a>
+    <a href="../projects/">Projects</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/issue-queues/">Issue Queues</a>
+    <a href="../issue-queues/">Issue Queues</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/architecture/">Architecture</a>
+    <a href="../architecture/">Architecture</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/update-safety/">Update Safety</a>
+    <a href="../update-safety/">Update Safety</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/docker/">Docker</a>
+    <a href="../docker/">Docker</a>
 </li>
 
                     
                         
 <li >
-    <a href="../../development/api/">API</a>
+    <a href="../api/">API</a>
 </li>
 
                     
                         
-<li >
-    <a href="../../development/client/">Client/Native</a>
+<li class="active">
+    <a href="./">Client/Native</a>
 </li>
 
                     
@@ -310,49 +310,49 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../contribute/">Contribute</a>
+    <a href="../../community/contribute/">Contribute</a>
 </li>
 
                     
                         
 <li >
-    <a href="../monthly-call/">Monthly Call</a>
+    <a href="../../community/monthly-call/">Monthly Call</a>
 </li>
 
                     
                         
 <li >
-    <a href="../farms/">Farms</a>
+    <a href="../../community/farms/">Farms</a>
 </li>
 
                     
                         
 <li >
-    <a href="../maintainers/">Maintainers</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Supporters</a>
+    <a href="../../community/maintainers/">Maintainers</a>
 </li>
 
                     
                         
 <li >
-    <a href="../press/">Press</a>
+    <a href="../../community/supporters/">Supporters</a>
 </li>
 
                     
                         
 <li >
-    <a href="../trademark/">Trademark</a>
+    <a href="../../community/press/">Press</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../community/trademark/">Trademark</a>
 </li>
 
                     
@@ -376,12 +376,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../maintainers/">
+                    <a rel="next" href="../api/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../press/">
+                    <a rel="prev" href="../../community/contribute/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -404,66 +404,168 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#supporters">Supporters</a></li>
+        <li class="main active"><a href="#farmos-client-native-app">farmOS Client / Native app</a></li>
         
-            <li><a href="#organizations">Organizations</a></li>
+            <li><a href="#vuejs-architecture">Vue.js Architecture</a></li>
         
-            <li><a href="#individuals">Individuals</a></li>
+            <li><a href="#development-environments">Development environments</a></li>
+        
+            <li><a href="#native-build-process">Native build process</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="supporters">Supporters</h1>
-<p>The farmOS project is made possible by many supporters.</p>
-<h2 id="organizations">Organizations</h2>
+<h1 id="farmos-client-native-app">farmOS Client / Native app</h1>
+<p>Work has begun on a simplified farmOS app that works offline in both browser
+and native app form. It will be installable on Android and iOS devices. The
+goal is to create a fast and focused client app for day-to-day and in-the-field
+record keeping that stores data locally for offline use, and syncs back to a
+farmOS server when internet access is available.</p>
+<p>The application is divided into two projects:</p>
+<ol>
+<li>farmOS Client: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></li>
+<li>farmOS Native: <a href="https://github.com/farmOS/farmOS-native">https://github.com/farmOS/farmOS-native</a></li>
+</ol>
+<p>The "client" is where all of the UI and features are built. The "native"
+project wraps that client inside a native app, which can be installed on
+Android/iOS.</p>
+<p><strong>This documentation is not complete. It is intended only for informational
+purposes at this time.</strong></p>
+<h2 id="vuejs-architecture">Vue.js Architecture</h2>
+<p>Here's a basic overview of how the client and native repos make use of the Vue
+ecosystem and its API's:</p>
 <ul>
-<li><a href="http://farmier.com">Farmier</a></li>
-<li><a href="http://farmhack.org">Farm Hack</a></li>
-<li><a href="http://www.greenstartnh.org">Green Start</a></li>
-<li><a href="http://soilhealth.cals.cornell.edu">Cornell Soil Health</a></li>
-<li><a href="http://openpipekit.org">Open Pipe Kit</a></li>
-<li><a href="https://publiclab.org">Public Lab</a></li>
-<li><a href="https://mapknitter.org">MapKnitter</a></li>
-<li><a href="http://sdmdataaccess.nrcs.usda.gov">USDA/NRCS Soil Survey</a></li>
-<li><a href="http://www.godan.info">GODAN</a></li>
-<li><a href="http://open-seeds.org">The Agroecology Lab</a></li>
-<li><a href="http://straffordccd.org">Strafford County Conservation District</a></li>
-<li><a href="http://www.cheshireconservation.org">Cheshire County Conservation District</a></li>
-<li><a href="http://www.sullivancountynh.gov/index.php?n=conservation_district">Sullivan County Conservation District</a></li>
-<li><a href="http://www.cooscountyconservation.org">Coos County Conservation District</a></li>
-<li><a href="http://www.lisw-rcpp.com">Long Island Sound RCPP</a></li>
-<li><a href="https://www.pasafarming.org">Pennsylvania Association for Sustainable Agriculture</a></li>
-<li><a href="https://www.uvm.edu/extension">University of Vermont Extension</a></li>
-<li><a href="http://agriculture.vermont.gov">Vermont Agency of Agriculture Food &amp; Markets</a></li>
-<li><a href="http://www.vhcb.org">Vermont Housing &amp; Conservation Board</a></li>
-<li><a href="http://bionutrient.org">Bionutrient Food Association</a></li>
-<li><a href="http://globetrotterfoundation.org">Globetrotter Foundation</a></li>
+<li>The client implements<ul>
+<li>Vue components, which implement<ul>
+<li>Rendering algorithms, based on current state of the Vuex store</li>
+<li>Component methods, which dispatch actions/mutations to the store when
+  DOM events are triggered</li>
 </ul>
-<h2 id="individuals">Individuals</h2>
+</li>
+<li>The Vuex store, which implements<ul>
+<li>a state tree, representing the entire UI state (eg, an array of log
+  objects)</li>
+<li>mutations, which transform the UI state (synchronously)</li>
+<li>actions, which<ul>
+<li>handle asynchronous requests from the data plugin and components,
+  and</li>
+<li>'commits' mutations to the store at different stages of those
+  requests</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The data plugin (a Vue plugin) implements<ul>
+<li>Vuex subscribe methods, which<ul>
+<li>listen for UI actions and mutations, then</li>
+<li>dispatch actions to the db and http modules</li>
+</ul>
+</li>
+<li>The db module, consisting of Vuex actions which implement<ul>
+<li>WebSQL transactions, then</li>
+<li>dispatches actions to the UI's store (eg, to update <code>logs</code>' "cached"
+  status)</li>
+</ul>
+</li>
+<li>The http module, consisting of Vuex actions which implement:<ul>
+<li>AJAX requests, then</li>
+<li>dispatches actions to UI's store (eg, to update <code>logs</code>' "synced"
+  status)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="development-environments">Development environments</h2>
+<p>See <a href="https://github.com/farmOS/farmOS-native/issues/19#issuecomment-382198804">farmOS/farmOS-native#19</a> for info on using npm-link in development.</p>
+<h3 id="browser">Browser</h3>
+<h3 id="platform-sdks">Platform SDK's</h3>
 <ul>
-<li><a href="http://mstenta.net">Michael Stenta</a></li>
-<li>Dorn Cox</li>
-<li>RJ Steinert</li>
-<li>Bruce Dawson</li>
-<li>Pol Dellaiera</li>
-<li>Phil Anzel</li>
-<li>Jeff Warren</li>
-<li>Sam Chapatwala</li>
-<li>Joel Baranick</li>
-<li>Svenn Are Bjerkem</li>
-<li>Kenny Robinson</li>
-<li>Dan Kittredge</li>
-<li>David Forster</li>
-<li>Greg Austic</li>
-<li>Brooks Miller</li>
-<li>Franklin Egan</li>
-<li>Chris Callahan</li>
-<li><a href="http://imaptools.com">Stephen Woodbridge</a></li>
-<li>Andy Grimley</li>
-<li>Sallie Calhoun</li>
-</ul></div>
+<li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging">Cordova docs on running the emulator and debugger in Android Studio</a></li>
+<li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging">Cordova docs on running the emulator and debugger in XCode</a></li>
+</ul>
+<h2 id="native-build-process">Native build process</h2>
+<p>The process for building the native applications for iOS and Android can be
+broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and
+JavaScript modules into their final form that will run in <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/webviews/">WebView</a>; secondly,
+Cordova, with some help from the Android and iOS SDK's (Android Studio &amp; XCode,
+respectively), builds the full-blown native packages (.apk and .ipa files,
+respectively).</p>
+<p>To build from source, you'll need to clone the farmOS-native repository from
+GitHub:</p>
+<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-native.git
+</code></pre>
+
+<p>Note that the farmOS-client is a dependency which will be automatically
+installed as an npm package in the following step, so you do not need to clone
+that repo.</p>
+<p>Bundling the web assets with Webpack is fairly straight-forward. <a href="https://nodejs.org">Node</a>
+(v.6.0.0 or higher) and npm (v.3.0.0 or higher) are the only system
+requirements. Once Node is installed, you can install the necessary JavaScript
+dependencies with npm, which is automatically included with Node. The npm
+script <code>build-mobile</code> can then run Webpack to bundle the assets. All this can
+be done by running the following two commands from the project's root
+directory:</p>
+<pre><code class="bash">$ npm install
+$ npm run build-mobile
+</code></pre>
+
+<p>This will generate all the necessary files within the <code>www</code> directory, which
+Webpack will create if it doesn't already exist. Do not alter these files
+directly. They are optimized for WebView, which is basically a browser that
+Cordova installs and runs inside the native application itself to render all
+the HTML, CSS and JavaScript source files. The same files are used by both iOS
+and Android implementations</p>
+<p>All the web assets are now ready for building the final native packages. Both
+platforms will require installing Cordova globally, via npm:</p>
+<pre><code class="bash">$ npm install -g cordova
+</code></pre>
+
+<p>This, however, is where the process diverges into separate iOS and Android
+builds. This next stage will probably comprise the most system configuration,
+too, since it requires installing each platform's SDK (Software Development
+Kit), if they aren't installed already. Of course, if you only intend to build
+for one platform, you only need to install that platform's SDK and
+corresponding system requirements; building for both platforms will require
+installing both SDK's.</p>
+<h3 id="android-build">Android Build</h3>
+<p>To configure your system to build the Android app, follow Cordova's
+<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html">Android Platform Guide</a>" and the <a href="https://developer.android.com/studio/install">Android Studio installation guide</a>. This
+will differ depending on your development machine's operating system, but Mac,
+Windows and Linux are all supported.</p>
+<p><strong>System Requirements:</strong></p>
+<ul>
+<li>Java 8</li>
+<li>Android Studio</li>
+<li>Gradle</li>
+</ul>
+<p>Note that Android Studio recommends the official Oracle JDK for Java 8; using
+OpenJDK may cause errors. Also make sure to follow Cordova's instructions for
+setting up your system's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#setting-environment-variables">environment variables</a> and installing the
+<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#adding-sdk-packages">SDK packages</a> for the Android versions the app will target. As of May 2018,
+the latest version of Android that Cordova seems to support is 7.1.1, at API
+Level 25.</p>
+<p>Once Android Studio is installed and configured, make sure Android has been
+added to Cordova's list of platforms, then you're ready to run the final build
+command:</p>
+<pre><code class="bash">$ cordova platform add android
+$ cordova build android
+</code></pre>
+
+<p>By default, the <code>build</code> command will produce a debugging APK (equivalent to
+running <code>cordova build android --debug</code>). If you want to build a final release
+version, you'll need to add the <code>--release</code> flag, but you'll also need to use
+your keys for signing the APK (see "<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#signing-an-app">Signing an App</a>" in the Cordova docs for
+more details). Both the debug and release APK's can then be found at
+<code>path/to/farmos-native/platforms/android/app/build/outputs/apk</code> after building.</p>
+<h3 id="ios-build">iOS Build</h3>
+<p>Only available on Apple OS X. Windows and Linux are not supported. For some
+workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-ios-app-on-linux-in-2017/">Developing an iOS App on Linux</a>"</p>
+<p>Cordova's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.htm">iOS Platform Guide</a></p></div>
         </div>
 
         <footer class="col-md-12">
