@@ -623,7 +623,42 @@ with a fully-functioning farmOS instance running in a Docker container!</p>
 </code></pre>
 <p>To start your containers:</p>
 <pre><code>sudo docker-compose start
-</code></pre></div>
+</code></pre>
+<h3 id="updating-farmos">Updating farmOS</h3>
+<p><strong>Warning</strong>: if you have made any changes to the code inside <code>.data/www</code>, they
+will be overwritten by this process. The one exception is the <code>.data/www/sites</code>
+directory, which will not be modified. It's a good idea to put extra modules
+that you have downloaded yourself into <code>.data/www/sites/all/modules</code> for this
+reason.</p>
+<p>First, stop the containers and create a backup of the <code>.data</code> directory so that
+you can easily restore if anything goes wrong.</p>
+<pre><code>sudo docker-compose stop
+sudo tar -czf data-backup.tar.gz .data
+</code></pre>
+<p>Pull the latest version of the farmOS Docker image</p>
+<pre><code>sudo docker pull farmos/farmos:7.x-1.x
+</code></pre>
+<p><strong>If you are running a development version of farmOS</strong>, delete <code>farm.info</code>.</p>
+<pre><code>rm .data/www/profiles/farm/farm.info
+</code></pre>
+<p>Restart the farmOS container.</p>
+<pre><code>sudo docker-compose down
+sudo docker-compose up -d
+</code></pre>
+<p>Run database updates by going to <code>/update.php</code> in your browser and following
+the instructions.</p>
+<p>You may also need to revert any overridden features in
+<code>/admin/structure/features</code> (if they are not automatically). <strong>Warning</strong>: If
+you have made any modifications to farmOS configuration, reverting features may
+overwrite those changes.</p>
+<p>If anything goes wrong during this process, you can restore to the backup you
+created in a few steps:</p>
+<pre><code>sudo docker-compose down
+sudo rm -rf .data
+sudo tar -xzf data-backup.tar.gz
+</code></pre>
+<p>For more information about how the Docker update process works, see the
+"Rebuilding the codebase" section above.</p></div>
         </div>
 
         <footer class="col-md-12">
