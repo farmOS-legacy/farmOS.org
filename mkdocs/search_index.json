@@ -551,6 +551,16 @@
             "title": "Eggs"
         }, 
         {
+            "location": "/guide/contrib/nutrient/", 
+            "text": "Nutrient\n\n\nhttps://github.com/farmOS/farm_nutrient\n\n\nThe Nutrient module for farmOS provides the ability to store nutrient\nmanagement plans in farmOS. You can link it to specific \nareas\n, and upload\nyour planning documents, spreadsheets, and other files for easy reference. A\nNutrient Management dashboard is also provided, with quick links for managing\nsoil tests, nutrient management plans, and soil amendment records.\n\n\nDevelopment of this module was sponsored by the\n\nVermont Vegetable and Berry Growers Association\n and the\n\nUniversity of Vermont Extension\n.\n\n\nIn the future, more nutrient management planning features may be built in this\nmodule, including integrated calculations and input recommendations. See the\nmodule's GitHub project page to suggest features or take part in the\ndevelopment.", 
+            "title": "Nutrient"
+        }, 
+        {
+            "location": "/guide/contrib/nutrient/#nutrient", 
+            "text": "https://github.com/farmOS/farm_nutrient  The Nutrient module for farmOS provides the ability to store nutrient\nmanagement plans in farmOS. You can link it to specific  areas , and upload\nyour planning documents, spreadsheets, and other files for easy reference. A\nNutrient Management dashboard is also provided, with quick links for managing\nsoil tests, nutrient management plans, and soil amendment records.  Development of this module was sponsored by the Vermont Vegetable and Berry Growers Association  and the University of Vermont Extension .  In the future, more nutrient management planning features may be built in this\nmodule, including integrated calculations and input recommendations. See the\nmodule's GitHub project page to suggest features or take part in the\ndevelopment.", 
+            "title": "Nutrient"
+        }, 
+        {
             "location": "/guide/contrib/organic/", 
             "text": "Organic\n\n\nhttps://github.com/farmOS/farm_organic\n\n\nThe Organic module for farmOS simply provides two flags that can be applied to\nassets, logs, and areas:\n\n\n\n\nOrganic\n\n\nNot Organic\n\n\n\n\nThis allows you to flag certain assets, areas, and logs as organic or\nnot-organic. If you have a mostly organic operation, you may want to just flag\nnon-organic records. Or, if you have a mostly non-organic operation, the\nopposite approach may be more useful (only flag organic records). You can\ndecide how best to use the flags for your record keeping and certification\nneeds.\n\n\nIn the future, more organic certification features may be built in this module.\nSee the module's GitHub project page to suggest features or take part in the\ndevelopment.", 
             "title": "Organic"
@@ -1112,7 +1122,7 @@
         }, 
         {
             "location": "/community/farms/", 
-            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nCanada\n\n\n\n\nGolden Maple Farm (Victoria, British Columbia)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nNew Zealand\n\n\n\n\nPermakai (Waiuku, Auckland)\n\n\n\n\nPoland\n\n\n\n\nPiotr Ma\u0142kowski (Do\u0142ubowo, Podlasie)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nGolden Avenue Urban Permaculture Farm (Eugene, Oregon)\n\n\nGrocholl and Sons Farms (Harrison, Illinois)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nPax Sam Place Urban Permaculture Community (Eugene, Oregon)\n\n\nRed Shirt Farm (Lanesborough, Massachusetts)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
+            "text": "Farms using farmOS\n\n\nThe following is a list of farms using farmOS. If you want your farm to be\nincluded in this list, add a comment to \nthis issue on Github\n.\n\n\nAustralia\n\n\n\n\nEagle View Farm (Buckley, Victoria)\n\n\n\n\nCanada\n\n\n\n\nGolden Maple Farm (Victoria, British Columbia)\n\n\n\n\nCzech Republic\n\n\n\n\nHospod\u00e1\u0159stv\u00ed Jaro\u0161ovice (T\u00fdn nad Vltavou, South Czech)\n\n\n\n\nBrazil\n\n\n\n\nOlivopampa (Santana do Livramento, Rio Grande do Sul)\n\n\n\n\nFiji\n\n\n\n\nNaitauba Gardens (Naitauba Island, Northern Lau Group)\n\n\n\n\nJamaica\n\n\n\n\nGrierfield Farms (Grierfield, St Ann)\n\n\n\n\nNew Zealand\n\n\n\n\nPermakai (Waiuku, Auckland)\n\n\n\n\nPoland\n\n\n\n\nPiotr Ma\u0142kowski (Do\u0142ubowo, Podlasie)\n\n\n\n\nUnited States\n\n\n\n\nAll In Farm (Georgetown, Texas)\n\n\nCloud 9 Ranch (Greeneville, Tennessee)\n\n\nCounter Culture Organic Farm (Waialua, Hawai\ni)\n\n\nDouble Doc Ranch (Shell, Wyoming)\n\n\nFoodScaping Permaculture Farm (Cheshire, Oregon)\n\n\nGolden Avenue Urban Permaculture Farm (Eugene, Oregon)\n\n\nGrocholl and Sons Farms (Harrison, Illinois)\n\n\nHampton Plantation (Owings, Maryland)\n\n\nLokoea Farms (Haleiwa, Hawai\ni)\n\n\nMiles Smith Farm (Loudon, New Hampshire)\n\n\nMoonstone Farm (Saranac Lake, New York)\n\n\nNorth Mountain Pastures (Newport, Pennsylvania)\n\n\nPatroon Land Farm (Voorheesville, New York)\n\n\nPax Sam Place Urban Permaculture Community (Eugene, Oregon)\n\n\nRed Shirt Farm (Lanesborough, Massachusetts)\n\n\nSilver Market Gardens (Silver City, New Mexico)\n\n\nStone Grown Farm (Mansfield, Connecticut)\n\n\nTuckaway Farm (Lee, New Hampshire)\n\n\nUniversity of New Hampshire (Durham, New Hampshire)\n\n\nWalden Creek Farm (Elgin, Texas)\n\n\nWolfe's Neck Farm (Freeport, Maine)", 
             "title": "Farms"
         }, 
         {
@@ -1129,6 +1139,11 @@
             "location": "/community/farms/#canada", 
             "text": "Golden Maple Farm (Victoria, British Columbia)", 
             "title": "Canada"
+        }, 
+        {
+            "location": "/community/farms/#czech-republic", 
+            "text": "Hospod\u00e1\u0159stv\u00ed Jaro\u0161ovice (T\u00fdn nad Vltavou, South Czech)", 
+            "title": "Czech Republic"
         }, 
         {
             "location": "/community/farms/#brazil", 
