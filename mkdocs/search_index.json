@@ -702,7 +702,7 @@
         }, 
         {
             "location": "/hosting/googlemaps/", 
-            "text": "Google Maps API Key\n\n\nAs of June 22nd, 2016 the Google Maps API requires an API key.\n\n\nThis means that if you are hosting farmOS yourself, you need to create an API\nkey in order to use the Google Maps base layers in farmOS maps. If an API key\nis not provided during installation, \nOpenStreetMap\n will be used as the\ndefault base layer instead.\n\n\nAnyone who had a farmOS site installed before June 22nd, 2016, and was actively\nusing it, was automatically grandfathered in and does not need an API key:\n\n\n\n\nExisting applications have been grandfathered based on their current usage to\nensure that they continue to function both now and in the future. We will\nalso be proactively contacting all existing API key users who, based on usage\ngrowth patterns, may be impacted in the future. If you\u2019re an existing user,\nplease take the time to read our Policy Update for Standard Plan summary for\ndetails on how each of these changes might affect your implementation.\n\n\n\n\nhttps://maps-apis.googleblog.com/2016/06/building-for-scale-updates-to-google.html\n\n\nTo create an API key and add it to your farmOS, do the following:\n\n\n1. Generate a Browser Key\n\n\nhttps://console.developers.google.com/apis/credentials\n\n\n2. Enable Google Maps Javascript API\n\n\nhttps://console.developers.google.com/apis/api/maps_backend/overview\n\n\n3. Enter the key into the farmOS Map configuration\n\n\na) If you are installing farmOS for the first time\n, there is a field for entering\nthe Google Maps API key during the \"Configure farmOS\" step.\n\n\nb) If you have already installed farmOS\n, you can enter the API key in the map\nconfiguration form at \n/admin/config/farm/map\n.\n\n\nNote that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
+            "text": "Google Maps API Key\n\n\nAs of June 22nd, 2016 the Google Maps API requires an API key.\n\n\nThis means that if you are hosting farmOS yourself, you need to create an API\nkey in order to use the Google Maps base layers in farmOS maps. If an API key\nis not provided during installation, \nOpenStreetMap\n will be used as the\ndefault base layer instead.\n\n\nAnyone who had a farmOS site installed before June 22nd, 2016, and was actively\nusing it, was automatically grandfathered in and does not need an API key:\n\n\n\n\nExisting applications have been grandfathered based on their current usage to\nensure that they continue to function both now and in the future. We will\nalso be proactively contacting all existing API key users who, based on usage\ngrowth patterns, may be impacted in the future. If you\u2019re an existing user,\nplease take the time to read our Policy Update for Standard Plan summary for\ndetails on how each of these changes might affect your implementation.\n\n\n\n\nhttps://maps-apis.googleblog.com/2016/06/building-for-scale-updates-to-google.html\n\n\nTo create an API key and add it to your farmOS, do the following:\n\n\n1. Generate a Browser Key\n\n\nhttps://console.developers.google.com/apis/credentials\n\n\n2. Enable Google Maps Javascript API\n\n\nhttps://console.developers.google.com/apis/library/maps-backend.googleapis.com\n\n\n3. Create Billing Account\n\n\nThe Google Maps JavaScript API is \neffectively free for personal use\n (up to tens of thousands of page views per month) but as of July 2018 it does require that you attach a credit card.\n\n\nGo to \nhttps://console.cloud.google.com/billing/\n and follow the instructions to create a new billing account (or link an existing one)\n\n\n4. Enter the key into the farmOS Map configuration\n\n\na) If you are installing farmOS for the first time\n, there is a field for entering\nthe Google Maps API key during the \"Configure farmOS\" step.\n\n\nb) If you have already installed farmOS\n, you can enter the API key in the map\nconfiguration form at \n/admin/config/farm/map\n.\n\n\nNote that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
             "title": "Google Maps"
         }, 
         {
@@ -717,13 +717,18 @@
         }, 
         {
             "location": "/hosting/googlemaps/#2-enable-google-maps-javascript-api", 
-            "text": "https://console.developers.google.com/apis/api/maps_backend/overview", 
+            "text": "https://console.developers.google.com/apis/library/maps-backend.googleapis.com", 
             "title": "2. Enable Google Maps Javascript API"
         }, 
         {
-            "location": "/hosting/googlemaps/#3-enter-the-key-into-the-farmos-map-configuration", 
+            "location": "/hosting/googlemaps/#3-create-billing-account", 
+            "text": "The Google Maps JavaScript API is  effectively free for personal use  (up to tens of thousands of page views per month) but as of July 2018 it does require that you attach a credit card.  Go to  https://console.cloud.google.com/billing/  and follow the instructions to create a new billing account (or link an existing one)", 
+            "title": "3. Create Billing Account"
+        }, 
+        {
+            "location": "/hosting/googlemaps/#4-enter-the-key-into-the-farmos-map-configuration", 
             "text": "a) If you are installing farmOS for the first time , there is a field for entering\nthe Google Maps API key during the \"Configure farmOS\" step.  b) If you have already installed farmOS , you can enter the API key in the map\nconfiguration form at  /admin/config/farm/map .  Note that according to Google it may take a couple of minutes before a new\nAPI key becomes active.", 
-            "title": "3. Enter the key into the farmOS Map configuration"
+            "title": "4. Enter the key into the farmOS Map configuration"
         }, 
         {
             "location": "/development/drupal/", 
