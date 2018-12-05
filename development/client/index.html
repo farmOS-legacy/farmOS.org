@@ -412,6 +412,8 @@
     
         <li class="main active"><a href="#farmos-client-native-app">farmOS Client / Native app</a></li>
         
+            <li><a href="#releases">Releases</a></li>
+        
             <li><a href="#architecture">Architecture</a></li>
         
             <li><a href="#development-environments">Development environments</a></li>
@@ -439,6 +441,11 @@ project wraps that client inside a native app, which can be installed on
 Android/iOS.</p>
 <p><strong>This documentation is not complete. It is intended only for informational
 purposes at this time.</strong></p>
+<h2 id="releases">Releases</h2>
+<p>Currently, since the project is in early alpha phase, we only have public 
+releases available via Adobe's <a href="https://build.phonegap.com/apps/3295280">Phone Gap Build</a> service. If you're interested 
+in signing up for beta releases via the Apple and Android app stores, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0brjVUEKiwG1iw4D386iKgbpw5xQ-YJ3w-1iBdKXO-RyK0g/viewform?usp=sf_link">sign up 
+here</a>.</p>
 <h2 id="architecture">Architecture</h2>
 <p>The client essentially represents a UI library; the native repository consumes 
 that library, while also providing the client with the dependencies it needs to 
@@ -644,15 +651,10 @@ $ npm link farmos-client
 $ npm start
 </code></pre>
 
-<p>Finally, you can navigate back again to the client repo, and run the dev script:</p>
-<pre><code class="bash">$ cd path/to/farmOS-client 
-$ npm run dev
-</code></pre>
-
-<p>This will set a watcher on the <code>src/</code> directory, so that whenever you save a 
-change to the client repo, Webpack will automatically rebuild the <code>dist/</code> 
-folder, which will in turn trigger the native repo's dev server to hot reload, 
-so you can see the changes in the browser.</p>
+<p>Now whenever you save a change to the client repo, Webpack will automatically 
+detect changes in your local client repository. Changes in the client or the 
+native repo will then trigger the native repo's dev server to hot reload, so you 
+can see the changes in the browser.</p>
 <h2 id="native-build-process">Native build process</h2>
 <p>The process for building the native applications for iOS and Android can be
 broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and

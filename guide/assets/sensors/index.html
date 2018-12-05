@@ -421,14 +421,12 @@
 
 <h1 id="sensors">Sensors</h1>
 <p>In addition to manually-entered records, farmOS also provides a framework for
-receiving data from automated environmental sensors. The <em>Farm Sensor</em> module
-adds a <strong>Sensor</strong> <a href="../../../guide/assets">asset</a> type, which can be tracked like any
-other asset.</p>
-<p>Sub-modules (like <em>Farm Sensor: Listener</em>) extend the Sensor asset type by
+importing data from automated environmental sensors. The <em>Farm Sensor</em> module
+adds a <strong>Sensor</strong> asset type, which can be tracked like any other asset.
+Sub-modules (like <em>Farm Sensor: Listener</em>) extend the Sensor asset type by
 providing integration with external devices. Additional modules can be built to
-connect to specific types of sensors, if necessary.</p>
-<p>It is possible to assemble your own sensors with inexpensive components and
-send their data to farmOS without any soldering or programming.</p>
+connect to specific types of sensors. It is also possible to assemble your own
+sensors with inexpensive components and send their data to farmOS.</p>
 <video width="100%" controls>
   <source src="/demo/sensors.mp4" type="video/mp4">
 </video>
@@ -437,74 +435,13 @@ send their data to farmOS without any soldering or programming.</p>
 <p>The <em>Farm Sensor: Listener</em> module is a general-purpose sensor sub-module that
 provides a simple "Listener" sensor type. Each sensor asset that is denoted as
 a listener receives a unique URL with a public and private key that data can be
-pushed to using standard <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> requests with <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>-encoded data. Data is
+pushed to using standard <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> requests and <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>-encoded data. Data is
 stored in the database and is displayed in the sensor asset within farmOS.</p>
+<p>Specific instructions are provided in the farmOS interface itself when you
+create a listener sensor asset. Refer to those instructions for more
+information, as well as sample code and JSON formatting.</p>
 <p>The listener module is useful for simple data streams. For more complex data, a
 more customized sub-module may be necessary.</p>
-<h3 id="posting-data-to-a-listener">Posting data to a listener</h3>
-<p>Data can be posted to the listener using a standard <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> request.</p>
-<p>Each sensor will have a unique URL endpoint, which contains both the public key
-(as part of the address), and the private key (as a URL query paramter). This
-can be found in the configuration settings for the sensor asset within farmOS.</p>
-<p><em>It is recommended that you serve farmOS over an HTTPS connection, so that the
-keys are encrypted in transit.</em></p>
-<p><strong>URL example:</strong> <code>https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy</code></p>
-<p>The endpoint expects a JSON object with name/value pairs, and an optional
-timestamp.</p>
-<p><strong>JSON example:</strong> <code>{ "timestamp": 1541519720, "value": 76.5 }</code></p>
-<p>If the timestamp is omitted, farmOS will assign the data a timestamp based on
-the time that the request is received.</p>
-<p><strong>JSON without timestamp:</strong> <code>{ "value": 76.5 }</code></p>
-<p>Multiple sensor values can be included in each request (if a device measures
-more than one metric, for example). The name given to each value can be any
-string of numbers and letters other than "timestamp", which is reserved. Each
-name/value pair will be stored in a separate row in the database.</p>
-<p><strong>JSON with multiple values:</strong> <code>{ "timestamp": 1541519720, "temperature": 76.5, "humidity": 60 }</code></p>
-<p>The following <code>curl</code> command demonstrates how to post simple data to a sensor
-from the command-line.</p>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; -X POST \
--d '{ &quot;timestamp&quot;: 1541519720, &quot;value&quot;: 76.5 }' \
-https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy
-</code></pre>
-
-<h3 id="pulling-data-from-a-listener">Pulling data from a listener</h3>
-<p>Data can also be retrived from the sensor via the same API endpoint, using a
-<code>GET</code> request instead of a <code>POST</code> request. The URL is the same as the URL for
-posting data.</p>
-<p><strong>URL example:</strong> <code>https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy</code></p>
-<p>The private key must be included, unless public API read access is allowed (see
-below).</p>
-<p>Only the most recent data point will be returned, unless additional query
-parameters are provided for limiting/filtering the data. Available parameters
-include:</p>
-<ul>
-<li><code>name</code>: Filter to data with a matching name.</li>
-<li><code>start</code>: Filter data to timestamps greater than or equal to this start
-  timestamp.</li>
-<li><code>end</code>: Filter data to timestamps less than or equal to this end timestamp.</li>
-<li><code>limit</code>: The number of results to return.</li>
-<li><code>offset</code>: The value to start at.</li>
-</ul>
-<p><strong>Example filtered by name:</strong> <code>https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy&amp;name=temperature</code></p>
-<p><strong>Allowing public API read access</strong></p>
-<p>Data in farmOS is private by default. A private key is required to push data to
-a sensor, and by default the same key is also required to pull data.</p>
-<p>If you want to access your sensor data outside of farmOS, you should be careful
-not to leak your private key, because that would allow anyone to post data to
-your sensor.</p>
-<p>One area where this is of particular concern is one in which you want to use a
-client-side language like JavaScript to pull sensor data for display on a
-public web page (eg: in a graph you develop yourself). Doing so runs the risk
-of exposing your private key, if it is included in the client-side code that
-is publicly visible. To allow for this use-case, you can choose to make your
-sensor data itself publicly available.</p>
-<p>Listener sensors have an optional configuration setting to "Allow public API
-read access". Enabling this will allow data from the sensor to be queried
-publicly via the API endpoint without a private key.</p>
-<p><em>This setting will make the data available to anyone who knows the farmOS URL
-and sensor public key.</em></p>
-<p>If more privacy is needed, it is recommended that the sensor be kept private,
-and server-side API requests are used instead of client-side code.</p>
 <h3 id="grovepi-node-red">GrovePi + Node Red</h3>
 <p>If you are looking for a DIY approach to collecting sensor data that doesn't
 require soldering or coding check out this guide to
