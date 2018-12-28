@@ -341,17 +341,29 @@ ID. This will retrieve a log with ID 1:</p>
 <p><strong>Endpoints</strong></p>
 <p>The endpoint to use depends on the entity type you are requesting:</p>
 <ul>
-<li>Assets: <code>/farm_asset.json</code></li>
-<li>Logs: <code>/log.json</code></li>
-<li>Taxonomy terms: <code>/taxonomy_term.json</code></li>
+<li>Assets: <code>/farm_asset.json</code><ul>
+<li>Plantings: <code>/farm_asset.json?type=planting</code></li>
+<li>Animals: <code>/farm_asset.json?type=animal</code></li>
+<li>Equipment: <code>/farm_asset.json?type=equipment</code></li>
+<li>...</li>
 </ul>
-<p><strong>Areas</strong></p>
-<p>Note that areas are currently represented as Drupal taxonomy terms, but may be
+</li>
+<li>Logs: <code>/log.json</code><ul>
+<li>Activities: <code>/log.json?type=farm_activity</code></li>
+<li>Observations: <code>/log.json?type=farm_observation</code></li>
+<li>Harvests: <code>/log.json?type=farm_harvest</code></li>
+<li>Inputs: <code>/log.json?type=farm_input</code></li>
+<li>...</li>
+</ul>
+</li>
+<li>Taxonomy terms: <code>/taxonomy_term.json</code><ul>
+<li>Areas*: <code>/taxonomy_term.json?bundle=farm_areas</code></li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<p>*Note that areas are currently represented as Drupal taxonomy terms, but may be
 changed to assets in the future. See <a href="https://www.drupal.org/project/farm/issues/2363393">Make "Area" into a type of Farm Asset</a>.</p>
-<p>In order to get a list of areas, you first need to get the taxonomy vocabulary
-ID for the <code>farm_areas</code> vocabulary. Then, you can filter the taxonomy term
-endpoint by the vocabulary ID ("<code>[vid]</code>") to only show areas:
-<code>/taxonomy_term.json?vocabulary=[vid]</code></p>
 <h2 id="creating-records">Creating records</h2>
 <p>Records can be created by POSTing JSON/XML objects to the endpoint for the
 entity type you would like to create.</p>
@@ -425,7 +437,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "previous": 80, "help": 191, "search": 83};
+                shortcuts = {"previous": 80, "search": 83, "help": 191, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
