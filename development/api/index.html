@@ -312,31 +312,66 @@ specific farmOS URL, username, and password.</p>
 <li><code>[URL]</code> - Base URL of the farmOS instance, without trailing slash (eg: <code>https://example.farmos.net</code>)</li>
 <li><code>[USER]</code> - User name (eg: <code>MyUserName</code>)</li>
 <li><code>[PASS]</code> - Password (eg: <code>MyPassword</code>)</li>
+<li><code>[AUTH]</code> - Authentication parameters for <code>curl</code> commands (this will depend on
+  the authentication method you choose below).</li>
 </ul>
 <h2 id="authentication">Authentication</h2>
+<h3 id="cookie-and-token">Cookie and Token</h3>
+<p>The simplest approach is to authenticate via Drupal's <code>user_login</code> form and
+save the session cookie provided by Drupal. Then, you can use that to retrieve
+a CSRF token from <code>[URL]/restws/session/token</code>, which is provided and required
+by the <code>restws</code> module. The cookie and token can then be included with each API
+request.</p>
 <p>The following <code>curl</code> command will authenticate using the username and password,
-and save the session cookie to a file called farmOS-cookie.txt. Then it will
+and save the session cookie to a file called <code>farmOS-cookie.txt</code>. Then it will
 get a session token and save that to a <code>$TOKEN</code> variable. Together, the cookie
 and token can be used to make authenticated requests.</p>
 <pre><code>curl --cookie-jar farmOS-cookie.txt -d 'name=[USER]&amp;pass=[PASS]&amp;form_id=user_login' [URL]/user/login
 TOKEN="$(curl --cookie farmOS-cookie.txt [URL]/restws/session/token)"
 </code></pre>
+<p>After running those two commands, the cookie and token can be included with
+subsequent <code>curl</code> requests via the <code>--cookie</code> and <code>-H</code> parameters:</p>
+<pre><code>--cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}"
+</code></pre>
+<p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
+<h3 id="basic-authentication">Basic Authentication</h3>
+<p>An alternative approach is to use <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.</p>
+<p>The RESTful Web Services module comes with a Basic Authentication sub-module,
+which provides the ability to include the username and password with each
+request using HTTP Basic Authentication. This modules is included with farmOS
+but is disabled by default.</p>
+<p><strong>By default the module only tries to authenticate usernames prefixed with 'restws'.</strong>
+This can be changed by modifying the regex used against usernames - see the
+<a href="https://cgit.drupalcode.org/restws/tree/restws_basic_auth/README.txt">RESTful Web Services Basic Authentication module documentation</a>.</p>
+<p><strong>SSL encryption is highly recommended.</strong> This option requires sending
+credentials with every request which means extra care must be taken to not
+expose these credentials. Using SSL will encrypt the credentials with each
+request. Otherwise, they will be sent in plaintext.</p>
+<p>Using basic authentication makes it much easier to test the API with
+development tools such as <a href="https://www.getpostman.com/">Postman</a> or <a href="https://restlet.com/">Restlet</a>. You just need to add basic
+authentication credentials to the request header. The request returns a cookie,
+which seems to be saved by these applications. This means subsequent requests
+don't need the authentication header, as long as the cookie is saved.</p>
+<p>Basic Authentication can be used in <code>curl</code> requests via the <code>-u</code> parameter:</p>
+<pre><code>-u [USER]:[PASS]
+</code></pre>
+<p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
 <h2 id="requesting-records">Requesting records</h2>
 <p>The following <code>curl</code> command examples demonstrate how to get lists of records
 and individual records in JSON format. They use the stored <code>farmOS-cookie.txt</code>
 file and <code>$TOKEN</code> variable generated with the commands above.</p>
 <p><strong>Lists of records</strong></p>
 <p>This will retrieve a list of harvest logs in JSON format:</p>
-<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log.json?type=farm_harvest
+<pre><code>curl [AUTH] [URL]/log.json?type=farm_harvest
 </code></pre>
 <p>Records can also be requested in XML format by changing the file extension in
 the URL:</p>
-<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log.xml?type=farm_harvest
+<pre><code>curl [AUTH] [URL]/log.xml?type=farm_harvest
 </code></pre>
 <p><strong>Individual records</strong></p>
 <p>Individual records can be retrieved in a similar way, by including their entity
 ID. This will retrieve a log with ID 1:</p>
-<pre><code>curl --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" [URL]/log/1.json
+<pre><code>curl [AUTH] [URL]/log/1.json
 </code></pre>
 <p><strong>Endpoints</strong></p>
 <p>The endpoint to use depends on the entity type you are requesting:</p>
@@ -376,7 +411,7 @@ minimum required fields are <code>name</code>, <code>type</code>, and <code>time
 }
 </code></pre>
 <p>Here is a <code>curl</code> command to create that log in farmOS:</p>
-<pre><code>curl -X POST --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" -H 'Content-Type: application/json' -d '{"name": "Test observation via REST", "type": "farm_observation", "timestamp": "1526584271"}' [URL]/log
+<pre><code>curl -X POST [AUTH] -H 'Content-Type: application/json' -d '{"name": "Test observation via REST", "type": "farm_observation", "timestamp": "1526584271"}' [URL]/log
 </code></pre>
 <h2 id="uploading-files">Uploading files</h2>
 <p>Files can be attached to records using the API.</p>
@@ -412,7 +447,7 @@ FILE_CONTENT=`base64 [filename]`
 # &lt;&lt;CURL_DATA is used because base64 encoded files are generally longer
 # the max curl argument length. See:
 # https://unix.stackexchange.com/questions/174350/curl-argument-list-too-long
-curl -X POST --cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}" -H "Content-Type: application/json" -d @- [URL]/log &lt;&lt;CURL_DATA
+curl -X POST [AUTH] -H "Content-Type: application/json" -d @- [URL]/log &lt;&lt;CURL_DATA
 {"name": "Test file upload via REST", "type": "farm_observation", "timestamp": "1534261642", "field_farm_images": ["data:${FILE_MIME};base64,${FILE_CONTENT}"]}
 CURL_DATA
 </code></pre>
@@ -437,7 +472,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "search": 83, "help": 191, "next": 78};
+                shortcuts = {"next": 78, "help": 191, "search": 83, "previous": 80};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
