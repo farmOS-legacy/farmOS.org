@@ -55,9 +55,6 @@
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">Home</a>
-                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -257,6 +254,9 @@
                             <li >
                                 <a href="faq/">FAQ</a>
                             </li>
+                            <li >
+                                <a href="donate/">Donate</a>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -265,16 +265,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="guide/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                             <li>
                                 <a href="https://github.com/farmOS/edit/master/docs/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
@@ -286,35 +276,32 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#overview">Overview</a></li>
-            <li><a href="#status">Status</a></li>
-            <li><a href="#quick-links">Quick Links</a></li>
+        <li class="main active"><a href="#quick-links">Quick Links</a></li>
+        <li class="main "><a href="#media">Media</a></li>
             <li><a href="#motivations">Motivations</a></li>
             <li><a href="#godan-documentary-web-series">GODAN Documentary Web Series</a></li>
             <li><a href="#cnbc-special">CNBC Special</a></li>
             <li><a href="#2017-nofa-summer-conference">2017 NOFA Summer Conference</a></li>
-            <li><a href="#farmosorg-on-twitter">@farmOSorg on Twitter</a></li>
+        <li class="main "><a href="#farmosorg-on-twitter">@farmOSorg on Twitter</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <p><img alt="farmOS" src="/img/farmOS.png" /></p>
-<h1 id="overview">Overview</h1>
-<p>farmOS is a web-based application for farm management, planning, and record
-keeping.</p>
-<p>It is built on <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>, <a href="https://www.drupal.org/download">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>.
-Both Drupal and farmOS are licensed under the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>,
-which means they are <a href="https://en.wikipedia.org/wiki/Free_software">free</a> and <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
-<p>For more information, read through some of the <a href="/faq">Frequently Asked Questions</a>.</p>
-<h2 id="status">Status</h2>
-<p>farmOS is under active development, but is still relatively new. The focus right
-now is laying a strong <a href="/development/architecture">groundwork</a>, so that others can more easily join in and
-<a href="/community/contribute">contribute</a>.</p>
+<p><strong>
+farmOS is a web-based application for farm management, planning, and record
+keeping. It is developed by a community of volunteers and aims to provide a
+standard platform for farmers, developers, and researchers to build upon.
+</strong></p>
+<p>The farmOS server is built on top of <a href="https://drupal.org">Drupal</a>, which makes it <a href="http://en.wikipedia.org/wiki/Modular_programming">modular</a>,
+<a href="https://www.drupal.org/download">extensible</a>, and <a href="http://www.drupal.org/documentation/is-drupal-secure">secure</a>. A <a href="https://github.com/farmOS/farmOS-client">client app</a> is also in the works to provide
+native (Android/iOS) and offline functionality. Both are licensed under the
+<a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>, which means they are <a href="https://en.wikipedia.org/wiki/Free_software">free</a> and <a href="http://en.wikipedia.org/wiki/Open_source">open source</a>.</p>
+<p>To learn how to use farmOS, refer to the <a href="/guide">User Guide</a>.</p>
+<p>For more information, read the <a href="/faq">Frequently Asked Questions</a>.</p>
 <h2 id="quick-links">Quick Links</h2>
 <ul>
-<li>Drupal.org: <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
-<li>Github: <a href="https://github.com/farmOS">https://github.com/farmOS</a></li>
-<li>Monthly call: <a href="https://plus.google.com/hangouts/_/farmier.com/farmos-monthly">Google Hangout</a> (2nd Wed of the month at 2pm Eastern)</li>
+<li><a href="/community/monthly-call">Monthly call</a></li>
 <li>Chat:<ul>
 <li>Riot.im:<ul>
 <li><a href="https://riot.im/app/#/room/#farmOS:matrix.org">#farmOS on Matrix.org</a> (bridged to #farmOS IRC room on Freenode)</li>
@@ -324,10 +311,17 @@ now is laying a strong <a href="/development/architecture">groundwork</a>, so th
 <li>IRC: <a href="http://webchat.freenode.net/?channels=#farmOS">#farmOS on Freenode</a> (requires a registered name)</li>
 </ul>
 </li>
+<li>Code repositories:<ul>
+<li>Drupal.org: <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
+<li>GitHub: [https://github.com/farmOS/farmOS]</li>
+<li>Client app: [https://github.com/farmOS/farmOS-client]</li>
+</ul>
+</li>
 <li>Twitter: <a href="https://twitter.com/farmOSorg">@farmOSorg</a></li>
 <li>Twitter: <a href="https://twitter.com/getFarmier">@getFarmier</a></li>
 </ul>
-<h2 id="motivations">Motivations</h2>
+<h2 id="media">Media</h2>
+<h3 id="motivations">Motivations</h3>
 <p>In this video by Chris Callahan at <a href="https://www.uvm.edu/extension">UVM Extension</a>'s
 <a href="https://www.uvm.edu/extension/agriculture/agricultural_engineering">Agricultural Engineering Program</a>, Michael Stenta provides an overview of the
 motivations behind farmOS.  Why he started the project, why he uses Drupal as
@@ -335,17 +329,17 @@ the development framework and why it is open-source. Available on YouTube:
 <a href="https://youtu.be/ATUEWrlDbWw">https://youtu.be/ATUEWrlDbWw</a></p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/ATUEWrlDbWw?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<h2 id="godan-documentary-web-series">GODAN Documentary Web Series</h2>
+<h3 id="godan-documentary-web-series">GODAN Documentary Web Series</h3>
 <p>farmOS was featured in the <a href="http://www.godan.info/news/open-farms-godan-documentary-web-series-episode-3">GODAN Documentary Web Series: "OPEN FARMS"</a>,
 available on YouTube: <a href="https://youtu.be/bCOqg5iH6fM">https://youtu.be/bCOqg5iH6fM</a></p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/bCOqg5iH6fM?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<h2 id="cnbc-special">CNBC Special</h2>
+<h3 id="cnbc-special">CNBC Special</h3>
 <p>farmOS was featured in a CNBC special:
 <a href="https://youtu.be/zua1y-hBcGc">CNBC: The Future Of Farming Is Utilizing Data In An Open Source Network Of Farmers</a>.</p>
 <iframe width="640" height="360" src="https://www.youtube.com/embed/zua1y-hBcGc?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<h2 id="2017-nofa-summer-conference">2017 NOFA Summer Conference</h2>
+<h3 id="2017-nofa-summer-conference">2017 NOFA Summer Conference</h3>
 <p>Michael Stenta presented a farmOS workshop at the 2017 <a href="http://nofasummerconference.org">NOFA Summer Conference</a>.
 It covers the core features of farmOS, how to get started, where to find help,
 and how to contribute back to the project.</p>
@@ -365,7 +359,7 @@ and how to contribute back to the project.</p>
         </footer>
         <script>
             var base_url = ".",
-                shortcuts = {"next": 78, "previous": 80, "search": 83, "help": 191};
+                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
         </script>
         <script src="js/base.js" defer></script>
         <script src="search/main.js" defer></script>
@@ -439,5 +433,5 @@ and how to contribute back to the project.</p>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-01-26 15:48:51
+Build Date UTC : 2019-01-31 17:58:51
 -->
