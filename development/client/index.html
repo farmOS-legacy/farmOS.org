@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="http://farmos.org/development/client/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Client/Native - farmOS.org</title>
+        <title>Client - farmOS.org</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -214,7 +214,7 @@
 </li>
                                     
 <li class="active">
-    <a href="./">Client/Native</a>
+    <a href="./">Client</a>
 </li>
                                 </ul>
                             </li>
@@ -283,7 +283,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#farmos-client-native-app">farmOS Client / Native app</a></li>
+        <li class="main active"><a href="#farmos-client">farmOS Client</a></li>
             <li><a href="#releases">Releases</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#development-environments">Development environments</a></li>
@@ -292,236 +292,78 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="farmos-client-native-app">farmOS Client / Native app</h1>
+<h1 id="farmos-client">farmOS Client</h1>
 <p>Work has begun on a simplified farmOS app that works offline in both browser
 and native app form. It will be installable on Android and iOS devices. The
 goal is to create a fast and focused client app for day-to-day and in-the-field
 record keeping that stores data locally for offline use, and syncs back to a
 farmOS server when internet access is available.</p>
-<p>The application is divided into two projects:</p>
-<ol>
-<li>farmOS Client: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></li>
-<li>farmOS Native: <a href="https://github.com/farmOS/farmOS-native">https://github.com/farmOS/farmOS-native</a></li>
-</ol>
-<p>The "client" is where all of the UI and features are built. The "native"
-project wraps that client inside a native app, which can be installed on
-Android/iOS.</p>
+<p>The application consists of the main client, which provides the UI and core
+features, as well as native plugins, which provide specific support for native
+functionality, like the ability to persist data and access the camera.</p>
+<p>The source code can be found here: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></p>
 <p><strong>This documentation is not complete. It is intended only for informational
 purposes at this time.</strong></p>
 <h2 id="releases">Releases</h2>
-<p>Currently, since the project is in early alpha phase, we only have public 
-releases available via Adobe's <a href="https://build.phonegap.com/apps/3295280">Phone Gap Build</a> service. If you're interested 
-in signing up for beta releases via the Apple and Android app stores, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0brjVUEKiwG1iw4D386iKgbpw5xQ-YJ3w-1iBdKXO-RyK0g/viewform?usp=sf_link">sign up 
+<p>Currently, since the project is in early alpha phase, we only have public
+releases available via Adobe's <a href="https://build.phonegap.com/apps/3295280">Phone Gap Build</a> service. If you're interested
+in signing up for beta releases via the Apple and Android app stores, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0brjVUEKiwG1iw4D386iKgbpw5xQ-YJ3w-1iBdKXO-RyK0g/viewform?usp=sf_link">sign up
 here</a>.</p>
 <h2 id="architecture">Architecture</h2>
-<p>The client essentially represents a UI library; the native repository consumes 
-that library, while also providing the client with the dependencies it needs to 
-be able to run on native devices, via Cordova. Those dependencies are the data 
-and login plugins, which perform data and authentication operations specific to 
-the native environment. The client library is separated from the native 
-implementation in this way is so that the client library can also be consumed 
-by other, browser-based implementations, such as Drupal modules, or standalone 
-single page applications.</p>
-<h3 id="farmos-native">farmos-native</h3>
-<p>The native repo currently performs two main functions:</p>
-<ul>
-<li>housing the data and login plugins</li>
-<li>controlling the Cordova build process</li>
-</ul>
-<p>The plugins are already quite self-contained. It seems like a forgone conclusion 
-that at some point we'll want to make them into their own independent libraries. 
-They're actually Vue plugins, which is all that's preventing all Vue-related 
-dependencies (and devDependencies) from being removed from the native repo, so 
-that time might need come sooner rather than later. Anticipating that fact, the 
-data and login plugins are outlined separately below.</p>
-<p>Putting the plugins aside for now then, the native repo really becomes quite a 
-spare repository, basically comprised of the following:</p>
-<ul>
-<li>the configuration files and build scripts for npm, Webpack and Cordova</li>
-<li>a mostly empty <code>index.html</code>, which just serves as a target for the build 
-scripts</li>
-<li>a <code>main.js</code> file, which only calls the client library and passes it the 
-plugins as arguments</li>
-</ul>
-<p>Being concerned solely with the final build process, it really doesn't contain 
-much essential code of its own, only serving to bring all the necessary 
-dependencies and scripts together in one place. Then all it has to do is call 
-the client library's load function and pass in the dependencies it needs. It's 
-conceivable that the whole thing could be replaced with a Makefile.</p>
-<h3 id="data-plugin">data plugin</h3>
-<p>The data plugin supplies the client with methods for storing farmOS data on 
-local disk with WebSQL, and for sending that data to a farmOS server via AJAX 
-and the farmOS REST API.</p>
-<p>Specifically, the data plugin is a <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugin</a>, which implements</p>
-<ul>
-<li>Vuex subscribe methods, which <ul>
-<li>listen for UI actions and mutations, then </li>
-<li>dispatch actions to the db and http modules;</li>
-</ul>
-</li>
-<li>the db Vuex module, consisting of Vuex actions, which implement<ul>
-<li>WebSQL transactions, then</li>
-<li>dispatches actions to the UI's store (eg, to update <code>logs</code>' "cached" 
-status);</li>
-</ul>
-</li>
-<li>the http Vuex module, consisting of Vuex actions, which implement<ul>
-<li>AJAX requests, then</li>
-<li>dispatches actions to UI's store (eg, to update <code>logs</code>' "synced" status).</li>
-</ul>
-</li>
-</ul>
-<h3 id="login-plugin">login plugin</h3>
-<p>I need to finish the login plugin's documentation once I've gone through and 
-figured out the authentication process better, and fixed some issues with the 
-way it currently uses Vue mixins, but structurally it's pretty similar to the 
-data plugin. </p>
-<p>The one crucial difference is that it also registers a Vue component, 
-<code>Login.vue</code>, on the main Vue instance when it's installed by the client. There's 
-a lot that's not ideal about the login plugin, but how it registers the Vue 
-component could actually be a good model for how other components could be added 
-dynamically to the client's core library, if we wanted to break up the UI itself 
-into separate modules.</p>
-<h3 id="farmos-client">farmos-client</h3>
-<p>Compared to the native repo, the client repo has a lot more going on. The 
-primary organizing principle for all this, currently, is the Vue framework 
-itself.</p>
-<p>The load function, found in <code>src/app.js</code>, is the main entry point. It is 
-basically a thin wrapper for instantiating the main Vue object, and installing 
-any Vue plugins that were passed in as dependencies. It's only a few lines, so 
-perhaps it's easiest to illustrate how it works by including it here in its 
-entirety:</p>
-<pre><code class="js">export default (data, login) =&gt; {
-  Vue.use(data, {store, router})
-  if (typeof login !== 'undefined') {
-    Vue.use(login, {router, store})
-  }
-  return new Vue({
-    el: '#app',
-    store,
-    router,
-    components: {App},
-    template: '&lt;App/&gt;'
-  })
-};
-</code></pre>
-
-<p>Note that the login plugin is optional. Crucially, when the plugins are 
-installed, they must be passed the Vuex store and Vue router. Also, the DOM 
-selector <code>#app</code> is hardcoded here as the mount point for the Vue application. 
-In the future, this selector should certainly be parameterized to allow more 
-flexibility. </p>
-<p>Beyond the load function, the client can be summarized as comprising:</p>
-<ul>
-<li>Vue components, which implement<ul>
-<li>Rendering algorithms, based on current state of the Vuex store</li>
-<li>Component methods, which dispatch actions/mutations to the store when DOM 
-events are triggered</li>
-</ul>
-</li>
-<li>The Vuex store, which implements <ul>
-<li>a state tree, representing the entire UI state (eg, an array of log 
-  objects)</li>
-<li>mutations, which transform the UI state (synchronously)</li>
-<li>actions, which <ul>
-<li>handle asynchronous requests from the data plugin and components, and </li>
-<li>'commits' mutations to the store at different stages of those requests</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>The client is made with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. It's native plugins are
+actually <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a>. Initially, the client and its native implementation were maintained as separate libraries. This was done with the aim of being able to
+isolate native functionality in plugins that could be swapped out for
+browser-based plugins. This may not be strictly necessary in the future, but it
+does at least make for good separation of concerns.</p>
 <h2 id="development-environments">Development environments</h2>
-<p>Currently, a local clone of the farmOS-native repository is required to run a 
-development environment for both the client and native repos; however, you do 
-not need to clone the client repo separately if you're only planning to work on 
-the native repo. So, follow the steps below to set up the native repo's dev 
-environment first, regardless of which you're planning to work on, then proceed 
-to setting up the client environment only if you wish to work on the client.</p>
-<p>The first thing of course is to clone the native repo from GitHub, and install 
+<p>The first thing of course is to clone the native repo from GitHub, and install
 the npm dependencies:</p>
-<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-native.git
-$ cd farmOS-native
+<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-client.git
+$ cd farmOS-client
 $ npm install
 </code></pre>
 
-<p>You should now have all the dependencies you need to run the native app, either 
-in the browser or via one of the platform SDK's. If you're main objective is to 
-develop on the client, you'll probably want to do so in the browser. If you only 
-wish to work on the native repo, it will have already downloaded its own copy of 
-the client repo into its <code>node_modules</code> directory, along with all its other 
-dependencies, when you ran <code>npm install</code>.</p>
 <h3 id="browser">Browser</h3>
-<p>The browser-based development environment can be started by running the 
+<p>The browser-based development environment can be started by running the
 following command from the project root:</p>
 <pre><code class="bash">$ npm start
 </code></pre>
 
-<p>This will start the Webpack devServer, which will compile a development build 
-and serve it from <a href="http://localhost:8080/">http://localhost:8080/</a>. Changes saved to the files in your 
+<p>This will start the Webpack devServer, which will compile a development build
+and serve it from <a href="http://localhost:8080/">http://localhost:8080/</a>. Changes saved to the files in your
 local repo will be hot reloaded automatically while the devServer is running.</p>
 <h4 id="proxying-a-farmos-docker-container">Proxying a farmOS Docker container</h4>
-<p>By default, when the Webpack devServer starts, it will set up a proxy service, 
-which will route all AJAX requests and responses through <code>http://localhost:80</code>, 
-in order to prevent CORS errors. This is assumed to be the address of a local 
-farmOS development server running in a Docker container. This is probably the 
-easiest way to get a development backend up and running, so if you don't already 
-have a sever you can use for testing, see the <a href="/development/docker/">full instructions for setting up 
+<p>By default, when the Webpack devServer starts, it will set up a proxy service,
+which will route all AJAX requests and responses through <code>http://localhost:80</code>,
+in order to prevent CORS errors. This is assumed to be the address of a local
+farmOS development server running in a Docker container. This is probably the
+easiest way to get a development backend up and running, so if you don't already
+have a sever you can use for testing, see the <a href="/development/docker/">full instructions for setting up
 a farmOS Docker container</a>.</p>
-<p>If you wish to proxy an address other than <code>http://localhost:80</code>, you'll need to 
-change the proxy settings in <code>farmOS-native/config/index.js</code>. Set 
-<code>dev.proxy.target</code> to the address and port of your farmOS testing server. 
-Restart the devServer and it should now be proxying your new address. It may 
-also be necessary to add new endpoints to the <code>dev.proxy.context</code> array as new 
-features are developed and new endpoints on the farmOS server need to be 
-reached. For more information, see the <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">Webpack documentation on configuring the 
+<p>If you wish to proxy an address other than <code>http://localhost:80</code>, you'll need to
+change the proxy settings in <code>farmOS-native/config/index.js</code>. Set
+<code>dev.proxy.target</code> to the address and port of your farmOS testing server.
+Restart the devServer and it should now be proxying your new address. It may
+also be necessary to add new endpoints to the <code>dev.proxy.context</code> array as new
+features are developed and new endpoints on the farmOS server need to be
+reached. For more information, see the <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">Webpack documentation on configuring the
 proxy middleware</a>.</p>
-<p>You will also have to install the Drupal <a href="https://www.drupal.org/project/cors">CORS module</a> on your farmOS server in 
-order to handle the way the client does authentication (hopefully this will no 
-longer be necessary once we implement OAuth). Once it's installed, go to the 
+<p>You will also have to install the Drupal <a href="https://www.drupal.org/project/cors">CORS module</a> on your farmOS server in
+order to handle the way the client does authentication (hopefully this will no
+longer be necessary once we implement OAuth). Once it's installed, go to the
 <a href="http://localhost/admin/config/services/cors">CORS configuration page</a> and add the following line to the Domains field:</p>
 <pre><code>*|http://localhost:8080||Content-Type,Authorization,X-Requested-With|true
 </code></pre>
 
-<p>Finally, when logging in to the client from the browser, simply leave the URL 
-field blank. The devServer will then interpret all requests as relative links 
-and proxy them accordingly. For some reason login can sometimes fail on the 
+<p>Finally, when logging in to the client from the browser, simply leave the URL
+field blank. The devServer will then interpret all requests as relative links
+and proxy them accordingly. For some reason login can sometimes fail on the
 first attempt, but should succeed on all subsequent attempts.</p>
 <h3 id="platform-sdks">Platform SDK's</h3>
 <ul>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging">Cordova docs on running the emulator and debugger in Android Studio</a></li>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging">Cordova docs on running the emulator and debugger in XCode</a></li>
 </ul>
-<h3 id="linking-the-farmos-client-repository">Linking the farmOS-client repository</h3>
-<p>If you wish to work on the client repo in development, the first thing you'll 
-want to do is clone it from GitHub and install its dependencies:</p>
-<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-native.git
-$ cd farmOS-native
-$ npm install
-</code></pre>
-
-<p>Next, you'll need to direct the native repo to use this local copy of the client 
-library, instead of the copy it downloaded into its own <code>node_modules</code> 
-directory. Fortunately, npm provides a helpful little cli tool for just this 
-sort of occasion, <a href="https://docs.npmjs.com/cli/link">npm-link</a>. It basically just creates a symbolic link in place 
-of the npm package in the consuming repository's <code>node_modules</code>. To use it, 
-first navigate to client library to create a reference to your local copy of 
-the client repo:</p>
-<pre><code class="bash">$ cd path/to/farmOS-client 
-$ npm link
-</code></pre>
-
-<p>Now, navigate to your local copy of the native repo, to point it to your local 
-copy of the client, and start the dev server there, if you haven't already:</p>
-<pre><code class="bash">$ cd path/to/farmOS-native
-$ npm link farmos-client
-$ npm start
-</code></pre>
-
-<p>Now whenever you save a change to the client repo, Webpack will automatically 
-detect changes in your local client repository. Changes in the client or the 
-native repo will then trigger the native repo's dev server to hot reload, so you 
-can see the changes in the browser.</p>
 <h2 id="native-build-process">Native build process</h2>
 <p>The process for building the native applications for iOS and Android can be
 broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and
@@ -609,7 +451,7 @@ workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "search": 83, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
