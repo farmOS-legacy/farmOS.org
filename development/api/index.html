@@ -287,6 +287,7 @@
             <li><a href="#authentication">Authentication</a></li>
             <li><a href="#requesting-records">Requesting records</a></li>
             <li><a href="#creating-records">Creating records</a></li>
+            <li><a href="#updating-records">Updating records</a></li>
             <li><a href="#uploading-files">Uploading files</a></li>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
@@ -397,8 +398,8 @@ ID. This will retrieve a log with ID 1:</p>
 <p>*Note that areas are currently represented as Drupal taxonomy terms, but may be
 changed to assets in the future. See <a href="https://www.drupal.org/project/farm/issues/2363393">Make "Area" into a type of Farm Asset</a>.</p>
 <h2 id="creating-records">Creating records</h2>
-<p>Records can be created by POSTing JSON/XML objects to the endpoint for the
-entity type you would like to create.</p>
+<p>Records can be created with a <code>POST</code> request of JSON/XML objects to the endpoint
+for the entity type you would like to create.</p>
 <p>First, here is a very simple example of an observation log in JSON. The bare
 minimum required fields are <code>name</code>, <code>type</code>, and <code>timestamp</code>.</p>
 <pre><code>{
@@ -409,6 +410,16 @@ minimum required fields are <code>name</code>, <code>type</code>, and <code>time
 </code></pre>
 <p>Here is a <code>curl</code> command to create that log in farmOS:</p>
 <pre><code>curl -X POST [AUTH] -H 'Content-Type: application/json' -d '{"name": "Test observation via REST", "type": "farm_observation", "timestamp": "1526584271"}' [URL]/log
+</code></pre>
+<h2 id="updating-records">Updating records</h2>
+<p>Records can be updated with a <code>PUT</code> request of JSON/XML objects to the record's
+endpoint (with ID). Only include the fields you want to update - everything
+else will be left unchanged.</p>
+<p>Do not add <code>.json</code> or <code>.xml</code> to the endpoint's URL. Instead, add a
+<code>Content-Type</code> header that specifies either <code>application/json</code> or
+<code>application/xml</code>.</p>
+<p>For example, to change the name of log 1:</p>
+<pre><code>curl -X PUT [AUTH] -H 'Content-Type: application/json' -d '{"name": "Change the log name"}' [URL]/log/1
 </code></pre>
 <h2 id="uploading-files">Uploading files</h2>
 <p>Files can be attached to records using the API.</p>
@@ -469,7 +480,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
+                shortcuts = {"help": 191, "next": 78, "search": 83, "previous": 80};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
