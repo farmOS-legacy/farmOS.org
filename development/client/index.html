@@ -290,6 +290,7 @@
             <li><a href="#releases">Releases</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#development-environments">Development environments</a></li>
+            <li><a href="#web-build-process">Web build process</a></li>
             <li><a href="#native-build-process">Native build process</a></li>
     </ul>
 </div></div>
@@ -314,7 +315,8 @@ in signing up for beta releases via the Apple and Android app stores, <a href="h
 here</a>.</p>
 <h2 id="architecture">Architecture</h2>
 <p>The client is made with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. It's native plugins are
-actually <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a>. Initially, the client and its native implementation were maintained as separate libraries. This was done with the aim of being able to
+actually <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a>. Initially, the client and its native implementation were
+maintained as separate libraries. This was done with the aim of being able to
 isolate native functionality in plugins that could be swapped out for
 browser-based plugins. This may not be strictly necessary in the future, but it
 does at least make for good separation of concerns.</p>
@@ -367,6 +369,13 @@ first attempt, but should succeed on all subsequent attempts.</p>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging">Cordova docs on running the emulator and debugger in Android Studio</a></li>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging">Cordova docs on running the emulator and debugger in XCode</a></li>
 </ul>
+<h2 id="web-build-process">Web build process</h2>
+<p>To build the client for the web, you just need to run the build script:</p>
+<pre><code class="bash">$ npm run build:web
+</code></pre>
+
+<p>The output of this script will be found in the <code>dist</code> directory and can be
+deployed using web server.</p>
 <h2 id="native-build-process">Native build process</h2>
 <p>The process for building the native applications for iOS and Android can be
 broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and
@@ -386,11 +395,11 @@ that repo.</p>
 (v.6.0.0 or higher) and npm (v.3.0.0 or higher) are the only system
 requirements. Once Node is installed, you can install the necessary JavaScript
 dependencies with npm, which is automatically included with Node. The npm
-script <code>build-mobile</code> can then run Webpack to bundle the assets. All this can
+script <code>build:native</code> can then run Webpack to bundle the assets. All this can
 be done by running the following two commands from the project's root
 directory:</p>
 <pre><code class="bash">$ npm install
-$ npm run build-mobile
+$ npm run build:native
 </code></pre>
 
 <p>This will generate all the necessary files within the <code>www</code> directory, which
@@ -454,7 +463,7 @@ workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "help": 191, "next": 78, "previous": 80};
+                shortcuts = {"previous": 80, "help": 191, "search": 83, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
