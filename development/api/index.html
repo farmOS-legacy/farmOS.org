@@ -291,6 +291,7 @@
             <li><a href="#requesting-records">Requesting records</a></li>
             <li><a href="#creating-records">Creating records</a></li>
             <li><a href="#updating-records">Updating records</a></li>
+            <li><a href="#field-collections">Field collections</a></li>
             <li><a href="#uploading-files">Uploading files</a></li>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
@@ -424,14 +425,133 @@ else will be left unchanged.</p>
 <p>For example, to change the name of log 1:</p>
 <pre><code>curl -X PUT [AUTH] -H 'Content-Type: application/json' -d '{"name": "Change the log name"}' [URL]/log/1
 </code></pre>
+<h2 id="field-collections">Field collections</h2>
+<p>Some fields are stored within <a href="https://drupal.org/project/field_collection">Field Collections</a> in farmOS, which are
+technically separate entities attached to the host entity. farmOS uses the
+<a href="https://drupal.org/project/restws_field_collection">RESTful Web Services Field Collection</a> module to hide the fact that these are
+separate entities, so that their fields can be accessed and modified in the
+same request as the host entity.</p>
+<p>In farmOS Field Collections are used for the following:</p>
+<h3 id="quantity-measurements">Quantity measurements</h3>
+<p><a href="/guide/quantity">Quantity</a> measurements are recorded on logs, and can each include a measure
+(eg: count, weight, volume, etc), a value (decimal number), a unit (a reference
+to a Units taxonomy term, and a label (a free-form text field).</p>
+<p>A log with a quantity measurement looks like this:</p>
+<pre><code>{
+  "name": "Example quantity measurement log",
+  "type": "farm_observation",
+  "timestamp": "1551983893",
+  "quantity": [
+    {
+      "measure": "weight",
+      "value": "100",
+      "unit": {"id": "15"},
+      "label": "My label",
+    },
+  ],
+}
+</code></pre>
+<p>All measurement properties are optional. The label is useful if you have more
+than one measurement of the same measure (eg: two weight measurements) in the
+same log. Use the label to add more specific information about what each
+measurement is for.</p>
+<h3 id="movements">Movements</h3>
+<p><a href="/guide/location">Movements</a> are defined on logs, and include an area reference (where the
+asset(s) are moving to), and optionally a geometry (if you need to define a more
+specific location than the area reference itself).</p>
+<p>A log with a movement looks like this:</p>
+<pre><code>{
+  "name": "Example movement log",
+  "type": "farm_activity",
+  "timestamp": "1551983893",
+  "assets": [
+    {"id": "123"},
+  ],
+  "movement": {
+    "area": [
+      {"id": "5"},
+    ],
+    "geometry": "POINT(-31.04003861546518 39.592143995003994)",
+  },
+}
+</code></pre>
+<p>Within the <code>movement</code> structure, the area ID should be an area term ID (<code>tid</code> on
+the area object). The geometry should be in <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text</a>. It is possible to
+reference multiple areas, indicating that the asset is moved to multiple areas
+(eg: a planting in multiple beds).</p>
+<h3 id="group-membership">Group membership</h3>
+<p><a href="/guide/assets/groups">Group</a> membership changes are defined on logs, and include one or more group
+asset IDs. This indicates that any referenced asset(s) were moved to the
+group(s) specified at the time of the log.</p>
+<p>A log with a group membership change looks like this:</p>
+<pre><code>{
+  "name": "Example group membership change log",
+  "type": "farm_activity",
+  "timestamp": "1551983893",
+  "assets": [
+    {"id": "123"},
+  ],
+  "membership": {
+    "group": [
+      {"id": "456"},
+    ],
+  },
+}
+</code></pre>
+<p>Groups are a type of asset in farmOS, so the group ID is actually an asset ID.</p>
+<h3 id="inventory-adjustments">Inventory adjustments</h3>
+<p><a href="/guide/inventory">Inventory</a> adjustments are defined on logs, and include one or more pairs of
+asset IDs (the asset for which inventory is being adjusted) and an adjustment
+value (postitive or negative number, to indicate an increase or decrease in the
+inventory level).</p>
+<p>A log with an inventory adjustment looks like this:</p>
+<pre><code>{
+  "name": "Example group membership change log",
+  "type": "farm_activity",
+  "timestamp": "1551983893",
+  "inventory": [
+    {
+      "asset": {"id": "123"},
+      "value": "-10",
+    },
+  ],
+}
+</code></pre>
+<h3 id="animal-id-tags">Animal ID Tags</h3>
+<p>Animal ID Tags can be added to <a href="/guide/assets/animals">animal</a> assets, and include a Tag ID, Tag Type,
+and Tag Location.</p>
+<p>An animal asset with an ID tag looks like this:</p>
+<pre><code>{
+  "name": "Betsy",
+  "type": "animal",
+  "animal_type": {"id": "10"},
+  "tag": [
+    {
+      "id": "123456",
+      "location": "Left ear",
+      "type": "Ear tag",
+    },
+  ],
+}
+</code></pre>
+<p>The ID and Location fields can be anything you want.</p>
+<p>Available tag types are:</p>
+<ul>
+<li><code>Brand</code></li>
+<li><code>Ear tag</code></li>
+<li><code>Tattoo</code></li>
+<li><code>Leg band</code></li>
+<li><code>Chip</code></li>
+<li><code>Other</code></li>
+</ul>
 <h2 id="uploading-files">Uploading files</h2>
 <p>Files can be attached to records using the API.</p>
 <p>Most record types (areas, assets, logs, etc) have both a "Photo(s)" field (for
 image files) and a "File(s)" field (for other files). The machine names of
 these fields are:</p>
 <ul>
-<li>Photo(s): <code>field_farm_images</code></li>
-<li>File(s): <code>field_farm_files</code></li>
+<li>Photo(s): <code>images</code></li>
+<li>File(s): <code>files</code></li>
 </ul>
 <p>The API expects an array of base64-encoded strings. Multiple files can be
 included in the array.</p>
@@ -440,7 +560,7 @@ included in the array.</p>
   "name": "Test file upload via REST",
   "type": "farm_observation",
   "timestamp": "1534261642",
-  "field_farm_images": [
+  "images": [
     "data:image/jpeg;base64,[BASE64_CONTENT]",
   ],
 }
@@ -459,7 +579,7 @@ FILE_CONTENT=`base64 [filename]`
 # the max curl argument length. See:
 # https://unix.stackexchange.com/questions/174350/curl-argument-list-too-long
 curl -X POST [AUTH] -H "Content-Type: application/json" -d @- [URL]/log &lt;&lt;CURL_DATA
-{"name": "Test file upload via REST", "type": "farm_observation", "timestamp": "1534261642", "field_farm_images": ["data:${FILE_MIME};base64,${FILE_CONTENT}"]}
+{"name": "Test file upload via REST", "type": "farm_observation", "timestamp": "1534261642", "images": ["data:${FILE_MIME};base64,${FILE_CONTENT}"]}
 CURL_DATA
 </code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -483,7 +603,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "help": 191, "search": 83, "next": 78};
+                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
