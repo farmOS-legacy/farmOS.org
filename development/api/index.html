@@ -288,6 +288,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#api">API</a></li>
             <li><a href="#authentication">Authentication</a></li>
+            <li><a href="#farmjson">/farm.json</a></li>
             <li><a href="#requesting-records">Requesting records</a></li>
             <li><a href="#creating-records">Creating records</a></li>
             <li><a href="#updating-records">Updating records</a></li>
@@ -358,6 +359,29 @@ don't need the authentication header, as long as the cookie is saved.</p>
 <pre><code>-u [USER]:[PASS]
 </code></pre>
 <p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
+<h2 id="farmjson">/farm.json</h2>
+<p>farmOS provides an informational API endpoint at <code>/farm.json</code>, which includes
+the farm name, URL, API version, and the currently authenticated user's name,
+ID, and email address.</p>
+<p>For example:</p>
+<pre><code>{
+  "name": "My Farm",
+  "url": "https://myfarm.mydomain.com",
+  "api_version": "1.0",
+  "user": {
+    "uid": "3",
+    "name": "My Username",
+    "mail": "myemail@mydomain.com",
+  },
+}
+</code></pre>
+<h3 id="api-version">API Version</h3>
+<p><strong>Current API version: 1.0</strong></p>
+<p>It is <em>highly</em> recommended that you check the API version of the farmOS system
+you are communicating with, to be sure that your code is using the same version.
+If any changes are made that are not backwards compatible, the API version will
+change. So by checking it in your code, you can prevent unexpected things from
+happening if you try to use unsupported API features.</p>
 <h2 id="requesting-records">Requesting records</h2>
 <p>The following <code>curl</code> command examples demonstrate how to get lists of records
 and individual records in JSON format. They use the stored <code>farmOS-cookie.txt</code>
@@ -695,7 +719,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "search": 83, "previous": 80};
+                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
