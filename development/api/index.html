@@ -293,7 +293,6 @@
             <li><a href="#updating-records">Updating records</a></li>
             <li><a href="#field-collections">Field collections</a></li>
             <li><a href="#uploading-files">Uploading files</a></li>
-            <li><a href="#specific-examples">Specific examples</a></li>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
 </div></div>
@@ -465,7 +464,7 @@ save it internally in your application, just know that it may not correspond to
 the same vocabulary on another farmOS. Therefore it is recommended that you look
 it up each time you need it.</p>
 <p>For example, to get the <code>vid</code> that corresponds to the <code>farm_crops</code> vocabulary:</p>
-<pre><code>curl [AUTH] [URL]taxonomy_vocabulary.json?machine_name=farm_crops
+<pre><code>curl [AUTH] [URL]/taxonomy_vocabulary.json?machine_name=farm_crops
 </code></pre>
 <p>Before you create a new term, you should check to see if it already exists:</p>
 <pre><code>curl [AUTH] [URL]/taxonomy_term.json?bundle=farm_crops&amp;name=Broccoli
@@ -675,7 +674,6 @@ curl -X POST [AUTH] -H "Content-Type: application/json" -d @- [URL]/log &lt;&lt;
 {"name": "Test file upload via REST", "type": "farm_observation", "timestamp": "1534261642", "images": ["data:${FILE_MIME};base64,${FILE_CONTENT}"]}
 CURL_DATA
 </code></pre>
-<h2 id="specific-examples">Specific examples</h2>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Some common issues and solutions are described below. If these do not help,
 submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a> or ask questions in the
@@ -697,7 +695,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "previous": 80, "help": 191, "search": 83};
+                shortcuts = {"help": 191, "next": 78, "search": 83, "previous": 80};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
