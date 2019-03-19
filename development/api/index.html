@@ -723,6 +723,20 @@ to a Units taxonomy term, and a label (a free-form text field).</p>
   ],
 }
 </code></pre>
+<p>Available <code>measure</code> options are:</p>
+<ul>
+<li><code>count</code></li>
+<li><code>length</code></li>
+<li><code>weight</code></li>
+<li><code>area</code></li>
+<li><code>volume</code></li>
+<li><code>time</code></li>
+<li><code>temperature</code></li>
+<li><code>value</code></li>
+<li><code>rating</code></li>
+<li><code>ratio</code></li>
+<li><code>probability</code></li>
+</ul>
 <p>All measurement properties are optional. The label is useful if you have more
 than one measurement of the same measure (eg: two weight measurements) in the
 same log. Use the label to add more specific information about what each
@@ -875,7 +889,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
+                shortcuts = {"search": 83, "next": 78, "previous": 80, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
