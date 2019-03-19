@@ -418,7 +418,7 @@ ID. This will retrieve a log with ID 1:</p>
 </ul>
 </li>
 <li>Taxonomy terms: <code>/taxonomy_term.json</code><ul>
-<li>Areas*: <code>/taxonomy_term.json?bundle=farm_areas</code></li>
+<li>Areas&ast;: <code>/taxonomy_term.json?bundle=farm_areas</code></li>
 <li>Quantity Units: <code>/taxonomy_term.json?bundle=farm_quantity_units</code></li>
 <li>Crops/varieties: <code>/taxonomy_term.json?bundle=farm_crops</code></li>
 <li>Animal species/breeds: <code>/taxonomy_term.json?bundle=farm_animal_types</code></li>
@@ -428,11 +428,12 @@ ID. This will retrieve a log with ID 1:</p>
 </ul>
 </li>
 </ul>
-<p>*Note that areas are currently represented as Drupal taxonomy terms, but may be
+<p>&ast; Note that areas are currently represented as Drupal taxonomy terms, but may be
 changed to assets in the future. See <a href="https://www.drupal.org/project/farm/issues/2363393">Make "Area" into a type of Farm Asset</a>.</p>
 <h2 id="creating-records">Creating records</h2>
 <p>Records can be created with a <code>POST</code> request of JSON/XML objects to the endpoint
 for the entity type you would like to create.</p>
+<h3 id="creating-logs">Creating logs</h3>
 <p>First, here is a very simple example of an observation log in JSON. The bare
 minimum required fields are <code>name</code>, <code>type</code>, and <code>timestamp</code>.</p>
 <pre><code>{
@@ -444,6 +445,161 @@ minimum required fields are <code>name</code>, <code>type</code>, and <code>time
 <p>Here is a <code>curl</code> command to create that log in farmOS:</p>
 <pre><code>curl -X POST [AUTH] -H 'Content-Type: application/json' -d '{"name": "Test observation via REST", "type": "farm_observation", "timestamp": "1526584271"}' [URL]/log
 </code></pre>
+<p>Most log types have the same set of standard fields. Some specific log types
+differ slightly. The following are standard fields available on most log types:</p>
+<ul>
+<li><code>id</code>: The log ID (unique database primary key).</li>
+<li><code>name</code>: The log name.</li>
+<li><code>type</code>: The log type. Some types that are included in farmOS are:<ul>
+<li><code>farm_activity</code>: General activity logs.</li>
+<li><code>farm_observation</code>: General observation logs.</li>
+<li><code>farm_input</code>: An input to one or more assets/areas.</li>
+<li><code>farm_harvest</code>: A harvest from one or more assets/areas.</li>
+<li><code>farm_seeding</code>: A seeding log (specific to Planting assets).</li>
+<li><code>farm_transplanting</code>: A transplanting log (specific to Planting assets).</li>
+<li><code>farm_maintenance</code>: A maintenance log (specific to Equipment assets).</li>
+</ul>
+</li>
+<li><code>timestamp</code>: A timestamp representing when the logged event took place.</li>
+<li><code>done</code>: Boolean value indicating whether the log is "done" or not.</li>
+<li><code>notes</code>: A free-form text field for log notes.<ul>
+<li>Note that this should be a JSON object with a <code>value</code> property and a
+  <code>format</code> property set to <code>farm_format</code>.</li>
+</ul>
+</li>
+<li><code>asset</code>: Reference(s) to asset(s) that the log is associated with.</li>
+<li><code>area</code>: Reference(s) to area(s) that the log is associated with.</li>
+<li><code>geofield</code>: Geometry specific to the logged event.</li>
+<li><code>movement</code>: Movement information (see "Field collections" below).</li>
+<li><code>membership</code>: Group membership information (see "Field collections" below).</li>
+<li><code>quantity</code>: Quantity measurements (see "Field collections" below).</li>
+<li><code>images</code>: Image files attached to the log.</li>
+<li><code>files</code>: Other files attached to the log.</li>
+<li><code>flags</code>: Flags associated with the log. Examples:<ul>
+<li><code>priority</code></li>
+<li><code>monitor</code></li>
+<li><code>review</code></li>
+</ul>
+</li>
+<li><code>log_category</code>: A reference to one or more log categories.</li>
+<li><code>log_owner</code>: A reference to one or more users that the log is assigned to.<ul>
+<li>Note that this is different from <code>uid</code>, which is the user who created the
+  log.</li>
+</ul>
+</li>
+<li><code>created</code>: A timestamp representing when the log was created.</li>
+<li><code>changed</code>: A timestamp representing when the log was last updated.</li>
+<li><code>uid</code>: A reference to the user who created the log.</li>
+</ul>
+<h4 id="input-logs">Input logs</h4>
+<p>Additional fields on input logs (all optional):</p>
+<ul>
+<li><code>material</code>: Reference(s) to material(s) that were applied.</li>
+<li><code>input_purpose</code>: A description of the purpose of the input.</li>
+<li><code>input_method</code>: A description of how the input was applied.</li>
+<li><code>input_source</code>: A description of where the input was obtained.</li>
+<li><code>date_purchase</code>: A timestamp representing when the input material was
+  purchased.</li>
+<li><code>lot_number</code>: The lot number(s) of the input material, if available.</li>
+</ul>
+<h4 id="harvest-logs">Harvest logs</h4>
+<p>Additional fields on harvest logs (all optional):</p>
+<ul>
+<li><code>lot_number</code>: The harvest lot number.</li>
+</ul>
+<h4 id="seeding-and-transplanting-logs">Seeding and transplanting logs</h4>
+<p>Seeding and transplanting logs are log types that are specific to Planting
+assets (to indicate when seedings/transplantings took place, along with quantity
+and location information). They have some key differences from other log types:</p>
+<ul>
+<li>The <code>asset</code> field is required and must reference an asset of type <code>planting</code>.</li>
+<li>They do not have the <code>areas</code> or <code>geofield</code> fields, and instead expect to have
+  a <code>movement</code> field collection with information about where it took place. This
+  is used to set the location of the planting at a given point in time.</li>
+<li>Seeding logs also have a <code>seed_source</code> field which can be used to specify
+  where seeds came from (free-form text field).</li>
+</ul>
+<h3 id="creating-assets">Creating assets</h3>
+<p>Assets must have a <code>name</code> and a <code>type</code>, and some asset types have additional
+required fields. For example <code>planting</code> assets require a <code>crop</code> reference (for
+crop/variety), <code>animal</code> assets require an <code>animal_type</code> reference (for
+species/breed), and other types may have other requirements. A quick way to find
+out which fields are required is to open the "Add asset" form in farmOS and look
+for the red asterisk that indicates a required field.</p>
+<p>A very basic "Equipment" asset looks like this:</p>
+<pre><code>{
+  "name": "Tractor",
+  "type": "equipment",
+  "manufacturer": "Allis-Chambers",
+  "model": "G",
+  "serial_number": "1234567890",
+}
+</code></pre>
+<p>Here is a <code>curl</code> command to create that asset in farmOS:</p>
+<pre><code>curl -X POST [AUTH] -H 'Content-Type: application/json' -d '{"name": "Tractor", "type": "equipment", "manufacturer": "Allis-Chambers", "model": "G", "serial_number": "1234567890"}' [URL]/farm_asset
+</code></pre>
+<p>Most asset types have the same set of standard fields. Some specific asset types
+differ slightly. The following are standard fields available on most log types:</p>
+<ul>
+<li><code>id</code>: The asset ID (unique database primary key).</li>
+<li><code>name</code>: The asset name.</li>
+<li><code>type</code>: The asset type. Some types that are included in farmOS are:<ul>
+<li><code>planting</code></li>
+<li><code>animal</code></li>
+<li><code>equipment</code></li>
+<li><code>group</code></li>
+</ul>
+</li>
+<li><code>description</code>: A free-form text field for an asset description.<ul>
+<li>Note that this should be a JSON object with a <code>value</code> property and a
+  <code>format</code> property set to <code>farm_format</code>.</li>
+</ul>
+</li>
+<li><code>archived</code>: A timestamp representing when the asset was archived. If this is
+  <code>0</code> then the asset is not archived.</li>
+<li><code>images</code>: Image files attached to the asset.</li>
+<li><code>files</code>: Other files attached to the asset.</li>
+<li><code>flags</code>: Flags associated with the log. Examples:<ul>
+<li><code>priority</code></li>
+<li><code>monitor</code></li>
+<li><code>review</code></li>
+</ul>
+</li>
+<li><code>created</code>: A timestamp representing when the asset was created.</li>
+<li><code>changed</code>: A timestamp representing when the asset was last changed.</li>
+<li><code>uid</code>: A reference to the user who created the asset.</li>
+</ul>
+<h4 id="planting-assets">Planting assets</h4>
+<p>Additional fields on animal assets:</p>
+<ul>
+<li><code>crop</code>: Reference(s) to the crops/varieties this is a planting of.
+   <strong>Required.</strong></li>
+<li><code>parent</code>: Reference(s) to assets that this planting is derived from.</li>
+</ul>
+<h4 id="animal-assets">Animal assets</h4>
+<p>Additional fields on animal assets:</p>
+<ul>
+<li><code>animal_type</code>: Reference to the animal's species/breed. <strong>Required.</strong></li>
+<li><code>animal_nicknames</code>: Nickname(s) for the animal.</li>
+<li><code>animal_castrated</code>: Boolean indicating whether or not this animal has been
+  castrated.</li>
+<li><code>animal_sex</code>: The sex of the animal. Available options:<ul>
+<li><code>F</code> (female)</li>
+<li><code>M</code> (male)</li>
+</ul>
+</li>
+<li><code>tag</code>: ID Tag(s) that are assigned to the animal (see "Field collections"
+  below).</li>
+<li><code>parent</code>: Reference(s) to the animal's parent(s).</li>
+<li><code>date</code>: A timestamp representing the birth date of the animal.</li>
+</ul>
+<h4 id="equipment-assets">Equipment assets</h4>
+<p>Additional fields on equipment assets (all optional):</p>
+<ul>
+<li><code>manufacturer</code>: The equipment manufacturer.</li>
+<li><code>model</code>: The equipment model.</li>
+<li><code>serial_number</code>: The equipment serial number.</li>
+</ul>
 <h3 id="creating-taxonomy-terms">Creating taxonomy terms</h3>
 <p>farmOS allows farmers to build vocabularies of terms for various categorization
 purposes. These are referred to as "taxonomies" in farmOS (and Drupal), although
@@ -719,7 +875,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
+                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
