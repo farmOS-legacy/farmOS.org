@@ -296,7 +296,7 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="farmos-client">farmOS Client</h1>
+<h1 id="farmos-client">farmOS Client<a class="headerlink" href="#farmos-client" title="Permanent link">&para;</a></h1>
 <p>Work has begun on a simplified farmOS app that works offline in both browser
 and native app form. It will be installable on Android and iOS devices. The
 goal is to create a fast and focused client app for day-to-day and in-the-field
@@ -308,19 +308,19 @@ functionality, like the ability to persist data and access the camera.</p>
 <p>The source code can be found here: <a href="https://github.com/farmOS/farmOS-client">https://github.com/farmOS/farmOS-client</a></p>
 <p><strong>This documentation is not complete. It is intended only for informational
 purposes at this time.</strong></p>
-<h2 id="releases">Releases</h2>
+<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
 <p>Currently, since the project is in early alpha phase, we only have public
 releases available via Adobe's <a href="https://build.phonegap.com/apps/3295280">Phone Gap Build</a> service. If you're interested
 in signing up for beta releases via the Apple and Android app stores, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf0brjVUEKiwG1iw4D386iKgbpw5xQ-YJ3w-1iBdKXO-RyK0g/viewform?usp=sf_link">sign up
 here</a>.</p>
-<h2 id="architecture">Architecture</h2>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
 <p>The client is made with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. It's native plugins are
 actually <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a>. Initially, the client and its native implementation were
 maintained as separate libraries. This was done with the aim of being able to
 isolate native functionality in plugins that could be swapped out for
 browser-based plugins. This may not be strictly necessary in the future, but it
 does at least make for good separation of concerns.</p>
-<h2 id="development-environments">Development environments</h2>
+<h2 id="development-environments">Development environments<a class="headerlink" href="#development-environments" title="Permanent link">&para;</a></h2>
 <p>The first thing of course is to clone the native repo from GitHub, and install
 the npm dependencies:</p>
 <pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-client.git
@@ -328,7 +328,7 @@ $ cd farmOS-client
 $ npm install
 </code></pre>
 
-<h3 id="browser">Browser</h3>
+<h3 id="browser">Browser<a class="headerlink" href="#browser" title="Permanent link">&para;</a></h3>
 <p>The browser-based development environment can be started by running the
 following command from the project root:</p>
 <pre><code class="bash">$ npm start
@@ -337,7 +337,7 @@ following command from the project root:</p>
 <p>This will start the Webpack devServer, which will compile a development build
 and serve it from <a href="http://localhost:8080/">http://localhost:8080/</a>. Changes saved to the files in your
 local repo will be hot reloaded automatically while the devServer is running.</p>
-<h4 id="proxying-a-farmos-docker-container">Proxying a farmOS Docker container</h4>
+<h4 id="proxying-a-farmos-docker-container">Proxying a farmOS Docker container<a class="headerlink" href="#proxying-a-farmos-docker-container" title="Permanent link">&para;</a></h4>
 <p>By default, when the Webpack devServer starts, it will set up a proxy service,
 which will route all AJAX requests and responses through <code>http://localhost:80</code>,
 in order to prevent CORS errors. This is assumed to be the address of a local
@@ -364,19 +364,19 @@ longer be necessary once we implement OAuth). Once it's installed, go to the
 field blank. The devServer will then interpret all requests as relative links
 and proxy them accordingly. For some reason login can sometimes fail on the
 first attempt, but should succeed on all subsequent attempts.</p>
-<h3 id="platform-sdks">Platform SDK's</h3>
+<h3 id="platform-sdks">Platform SDK's<a class="headerlink" href="#platform-sdks" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging">Cordova docs on running the emulator and debugger in Android Studio</a></li>
 <li><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging">Cordova docs on running the emulator and debugger in XCode</a></li>
 </ul>
-<h2 id="web-build-process">Web build process</h2>
+<h2 id="web-build-process">Web build process<a class="headerlink" href="#web-build-process" title="Permanent link">&para;</a></h2>
 <p>To build the client for the web, you just need to run the build script:</p>
 <pre><code class="bash">$ npm run build:web
 </code></pre>
 
 <p>The output of this script will be found in the <code>dist</code> directory and can be
 deployed using web server.</p>
-<h2 id="native-build-process">Native build process</h2>
+<h2 id="native-build-process">Native build process<a class="headerlink" href="#native-build-process" title="Permanent link">&para;</a></h2>
 <p>The process for building the native applications for iOS and Android can be
 broken down into 2 main steps: first, Webpack bundles all the HTML, CSS and
 JavaScript modules into their final form that will run in <a href="https://cordova.apache.org/docs/en/latest/guide/hybrid/webviews/">WebView</a>; secondly,
@@ -420,7 +420,7 @@ Kit), if they aren't installed already. Of course, if you only intend to build
 for one platform, you only need to install that platform's SDK and
 corresponding system requirements; building for both platforms will require
 installing both SDK's.</p>
-<h3 id="android-build">Android Build</h3>
+<h3 id="android-build">Android Build<a class="headerlink" href="#android-build" title="Permanent link">&para;</a></h3>
 <p>To configure your system to build the Android app, follow Cordova's
 <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html">Android Platform Guide</a>" and the <a href="https://developer.android.com/studio/install">Android Studio installation guide</a>. This
 will differ depending on your development machine's operating system, but Mac,
@@ -450,7 +450,7 @@ version, you'll need to add the <code>--release</code> flag, but you'll also nee
 your keys for signing the APK (see "<a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#signing-an-app">Signing an App</a>" in the Cordova docs for
 more details). Both the debug and release APK's can then be found at
 <code>path/to/farmos-native/platforms/android/app/build/outputs/apk</code> after building.</p>
-<h3 id="ios-build">iOS Build</h3>
+<h3 id="ios-build">iOS Build<a class="headerlink" href="#ios-build" title="Permanent link">&para;</a></h3>
 <p>Only available on Apple OS X. Windows and Linux are not supported. For some
 workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-ios-app-on-linux-in-2017/">Developing an iOS App on Linux</a>"</p>
 <p>Cordova's <a href="https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html">iOS Platform Guide</a></p></div>
@@ -463,7 +463,7 @@ workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "previous": 80, "help": 191};
+                shortcuts = {"next": 78, "previous": 80, "search": 83, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

@@ -299,7 +299,7 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="api">API</h1>
+<h1 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>farmOS has a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST API</a> that other applications/systems can use to communicate
 with farmOS programatically. The API provides <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations for all of the
 main farmOS <a href="/development/architecture">record types</a> (Drupal entity types). This is accomplished with the
@@ -318,8 +318,8 @@ specific farmOS URL, username, and password.</p>
 <li><code>[AUTH]</code> - Authentication parameters for <code>curl</code> commands (this will depend on
   the authentication method you choose below).</li>
 </ul>
-<h2 id="authentication">Authentication</h2>
-<h3 id="cookie-and-token">Cookie and Token</h3>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h3 id="cookie-and-token">Cookie and Token<a class="headerlink" href="#cookie-and-token" title="Permanent link">&para;</a></h3>
 <p>The simplest approach is to authenticate via Drupal's <code>user_login</code> form and
 save the session cookie provided by Drupal. Then, you can use that to retrieve
 a CSRF token from <code>[URL]/restws/session/token</code>, which is provided and required
@@ -337,7 +337,7 @@ subsequent <code>curl</code> requests via the <code>--cookie</code> and <code>-H
 <pre><code>--cookie farmOS-cookie.txt -H "X-CSRF-Token: ${TOKEN}"
 </code></pre>
 <p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
-<h3 id="basic-authentication">Basic Authentication</h3>
+<h3 id="basic-authentication">Basic Authentication<a class="headerlink" href="#basic-authentication" title="Permanent link">&para;</a></h3>
 <p>An alternative approach is to use <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Authentication</a>.</p>
 <p>The RESTful Web Services module comes with a Basic Authentication sub-module,
 which provides the ability to include the username and password with each
@@ -359,7 +359,7 @@ don't need the authentication header, as long as the cookie is saved.</p>
 <pre><code>-u [USER]:[PASS]
 </code></pre>
 <p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
-<h2 id="farmjson">/farm.json</h2>
+<h2 id="farmjson">/farm.json<a class="headerlink" href="#farmjson" title="Permanent link">&para;</a></h2>
 <p>farmOS provides an informational API endpoint at <code>/farm.json</code>, which includes
 the farm name, URL, API version, and the currently authenticated user's name,
 ID, and email address.</p>
@@ -375,14 +375,14 @@ ID, and email address.</p>
   },
 }
 </code></pre>
-<h3 id="api-version">API Version</h3>
+<h3 id="api-version">API Version<a class="headerlink" href="#api-version" title="Permanent link">&para;</a></h3>
 <p><strong>Current API version: 1.0</strong></p>
 <p>It is <em>highly</em> recommended that you check the API version of the farmOS system
 you are communicating with, to be sure that your code is using the same version.
 If any changes are made that are not backwards compatible, the API version will
 change. So by checking it in your code, you can prevent unexpected things from
 happening if you try to use unsupported API features.</p>
-<h2 id="requesting-records">Requesting records</h2>
+<h2 id="requesting-records">Requesting records<a class="headerlink" href="#requesting-records" title="Permanent link">&para;</a></h2>
 <p>The following <code>curl</code> command examples demonstrate how to get lists of records
 and individual records in JSON format. They use the stored <code>farmOS-cookie.txt</code>
 file and <code>$TOKEN</code> variable generated with the commands above.</p>
@@ -430,10 +430,10 @@ ID. This will retrieve a log with ID 1:</p>
 </ul>
 <p>&ast; Note that areas are currently represented as Drupal taxonomy terms, but may be
 changed to assets in the future. See <a href="https://www.drupal.org/project/farm/issues/2363393">Make "Area" into a type of Farm Asset</a>.</p>
-<h2 id="creating-records">Creating records</h2>
+<h2 id="creating-records">Creating records<a class="headerlink" href="#creating-records" title="Permanent link">&para;</a></h2>
 <p>Records can be created with a <code>POST</code> request of JSON/XML objects to the endpoint
 for the entity type you would like to create.</p>
-<h3 id="creating-logs">Creating logs</h3>
+<h3 id="creating-logs">Creating logs<a class="headerlink" href="#creating-logs" title="Permanent link">&para;</a></h3>
 <p>First, here is a very simple example of an observation log in JSON. The bare
 minimum required fields are <code>name</code>, <code>type</code>, and <code>timestamp</code>.</p>
 <pre><code>{
@@ -491,7 +491,7 @@ differ slightly. The following are standard fields available on most log types:<
 <li><code>changed</code>: A timestamp representing when the log was last updated.</li>
 <li><code>uid</code>: A reference to the user who created the log.</li>
 </ul>
-<h4 id="input-logs">Input logs</h4>
+<h4 id="input-logs">Input logs<a class="headerlink" href="#input-logs" title="Permanent link">&para;</a></h4>
 <p>Additional fields on input logs (all optional):</p>
 <ul>
 <li><code>material</code>: Reference(s) to material(s) that were applied.</li>
@@ -502,12 +502,12 @@ differ slightly. The following are standard fields available on most log types:<
   purchased.</li>
 <li><code>lot_number</code>: The lot number(s) of the input material, if available.</li>
 </ul>
-<h4 id="harvest-logs">Harvest logs</h4>
+<h4 id="harvest-logs">Harvest logs<a class="headerlink" href="#harvest-logs" title="Permanent link">&para;</a></h4>
 <p>Additional fields on harvest logs (all optional):</p>
 <ul>
 <li><code>lot_number</code>: The harvest lot number.</li>
 </ul>
-<h4 id="seeding-and-transplanting-logs">Seeding and transplanting logs</h4>
+<h4 id="seeding-and-transplanting-logs">Seeding and transplanting logs<a class="headerlink" href="#seeding-and-transplanting-logs" title="Permanent link">&para;</a></h4>
 <p>Seeding and transplanting logs are log types that are specific to Planting
 assets (to indicate when seedings/transplantings took place, along with quantity
 and location information). They have some key differences from other log types:</p>
@@ -519,7 +519,7 @@ and location information). They have some key differences from other log types:<
 <li>Seeding logs also have a <code>seed_source</code> field which can be used to specify
   where seeds came from (free-form text field).</li>
 </ul>
-<h3 id="creating-assets">Creating assets</h3>
+<h3 id="creating-assets">Creating assets<a class="headerlink" href="#creating-assets" title="Permanent link">&para;</a></h3>
 <p>Assets must have a <code>name</code> and a <code>type</code>, and some asset types have additional
 required fields. For example <code>planting</code> assets require a <code>crop</code> reference (for
 crop/variety), <code>animal</code> assets require an <code>animal_type</code> reference (for
@@ -569,14 +569,14 @@ differ slightly. The following are standard fields available on most log types:<
 <li><code>changed</code>: A timestamp representing when the asset was last changed.</li>
 <li><code>uid</code>: A reference to the user who created the asset.</li>
 </ul>
-<h4 id="planting-assets">Planting assets</h4>
+<h4 id="planting-assets">Planting assets<a class="headerlink" href="#planting-assets" title="Permanent link">&para;</a></h4>
 <p>Additional fields on animal assets:</p>
 <ul>
 <li><code>crop</code>: Reference(s) to the crops/varieties this is a planting of.
    <strong>Required.</strong></li>
 <li><code>parent</code>: Reference(s) to assets that this planting is derived from.</li>
 </ul>
-<h4 id="animal-assets">Animal assets</h4>
+<h4 id="animal-assets">Animal assets<a class="headerlink" href="#animal-assets" title="Permanent link">&para;</a></h4>
 <p>Additional fields on animal assets:</p>
 <ul>
 <li><code>animal_type</code>: Reference to the animal's species/breed. <strong>Required.</strong></li>
@@ -593,14 +593,14 @@ differ slightly. The following are standard fields available on most log types:<
 <li><code>parent</code>: Reference(s) to the animal's parent(s).</li>
 <li><code>date</code>: A timestamp representing the birth date of the animal.</li>
 </ul>
-<h4 id="equipment-assets">Equipment assets</h4>
+<h4 id="equipment-assets">Equipment assets<a class="headerlink" href="#equipment-assets" title="Permanent link">&para;</a></h4>
 <p>Additional fields on equipment assets (all optional):</p>
 <ul>
 <li><code>manufacturer</code>: The equipment manufacturer.</li>
 <li><code>model</code>: The equipment model.</li>
 <li><code>serial_number</code>: The equipment serial number.</li>
 </ul>
-<h3 id="creating-taxonomy-terms">Creating taxonomy terms</h3>
+<h3 id="creating-taxonomy-terms">Creating taxonomy terms<a class="headerlink" href="#creating-taxonomy-terms" title="Permanent link">&para;</a></h3>
 <p>farmOS allows farmers to build vocabularies of terms for various categorization
 purposes. These are referred to as "taxonomies" in farmOS (and Drupal), although
 "vocabulary" is sometimes used interchangeably.</p>
@@ -687,7 +687,7 @@ for mapping purposes. In order for an area to show up on a map, it must have an
 <p>You can fetch all areas of a particular type (eg: <code>field</code>) like this:</p>
 <pre><code>curl [AUTH] [URL]/taxonomy_term.json?bundle=farm_areas&amp;area_type=field
 </code></pre>
-<h2 id="updating-records">Updating records</h2>
+<h2 id="updating-records">Updating records<a class="headerlink" href="#updating-records" title="Permanent link">&para;</a></h2>
 <p>Records can be updated with a <code>PUT</code> request of JSON/XML objects to the record's
 endpoint (with ID). Only include the fields you want to update - everything
 else will be left unchanged.</p>
@@ -697,14 +697,14 @@ else will be left unchanged.</p>
 <p>For example, to change the name of log 1:</p>
 <pre><code>curl -X PUT [AUTH] -H 'Content-Type: application/json' -d '{"name": "Change the log name"}' [URL]/log/1
 </code></pre>
-<h2 id="field-collections">Field collections</h2>
+<h2 id="field-collections">Field collections<a class="headerlink" href="#field-collections" title="Permanent link">&para;</a></h2>
 <p>Some fields are stored within <a href="https://drupal.org/project/field_collection">Field Collections</a> in farmOS, which are
 technically separate entities attached to the host entity. farmOS uses the
 <a href="https://drupal.org/project/restws_field_collection">RESTful Web Services Field Collection</a> module to hide the fact that these are
 separate entities, so that their fields can be accessed and modified in the
 same request as the host entity.</p>
 <p>In farmOS Field Collections are used for the following:</p>
-<h3 id="quantity-measurements">Quantity measurements</h3>
+<h3 id="quantity-measurements">Quantity measurements<a class="headerlink" href="#quantity-measurements" title="Permanent link">&para;</a></h3>
 <p><a href="/guide/quantity">Quantity</a> measurements are recorded on logs, and can each include a measure
 (eg: count, weight, volume, etc), a value (decimal number), a unit (a reference
 to a Units taxonomy term, and a label (a free-form text field).</p>
@@ -741,7 +741,7 @@ to a Units taxonomy term, and a label (a free-form text field).</p>
 than one measurement of the same measure (eg: two weight measurements) in the
 same log. Use the label to add more specific information about what each
 measurement is for.</p>
-<h3 id="movements">Movements</h3>
+<h3 id="movements">Movements<a class="headerlink" href="#movements" title="Permanent link">&para;</a></h3>
 <p><a href="/guide/location">Movements</a> are defined on logs, and include an area reference (where the
 asset(s) are moving to), and optionally a geometry (if you need to define a more
 specific location than the area reference itself).</p>
@@ -765,7 +765,7 @@ specific location than the area reference itself).</p>
 the area object). The geometry should be in <a href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">Well-Known Text</a>. It is possible to
 reference multiple areas, indicating that the asset is moved to multiple areas
 (eg: a planting in multiple beds).</p>
-<h3 id="group-membership">Group membership</h3>
+<h3 id="group-membership">Group membership<a class="headerlink" href="#group-membership" title="Permanent link">&para;</a></h3>
 <p><a href="/guide/assets/groups">Group</a> membership changes are defined on logs, and include one or more group
 asset IDs. This indicates that any referenced asset(s) were moved to the
 group(s) specified at the time of the log.</p>
@@ -785,7 +785,7 @@ group(s) specified at the time of the log.</p>
 }
 </code></pre>
 <p>Groups are a type of asset in farmOS, so the group ID is actually an asset ID.</p>
-<h3 id="inventory-adjustments">Inventory adjustments</h3>
+<h3 id="inventory-adjustments">Inventory adjustments<a class="headerlink" href="#inventory-adjustments" title="Permanent link">&para;</a></h3>
 <p><a href="/guide/inventory">Inventory</a> adjustments are defined on logs, and include one or more pairs of
 asset IDs (the asset for which inventory is being adjusted) and an adjustment
 value (postitive or negative number, to indicate an increase or decrease in the
@@ -803,7 +803,7 @@ inventory level).</p>
   ],
 }
 </code></pre>
-<h3 id="animal-id-tags">Animal ID Tags</h3>
+<h3 id="animal-id-tags">Animal ID Tags<a class="headerlink" href="#animal-id-tags" title="Permanent link">&para;</a></h3>
 <p>Animal ID Tags can be added to <a href="/guide/assets/animals">animal</a> assets, and include a Tag ID, Tag Type,
 and Tag Location.</p>
 <p>An animal asset with an ID tag looks like this:</p>
@@ -830,7 +830,7 @@ and Tag Location.</p>
 <li><code>Chip</code></li>
 <li><code>Other</code></li>
 </ul>
-<h2 id="uploading-files">Uploading files</h2>
+<h2 id="uploading-files">Uploading files<a class="headerlink" href="#uploading-files" title="Permanent link">&para;</a></h2>
 <p>Files can be attached to records using the API.</p>
 <p>Most record types (areas, assets, logs, etc) have both a "Photo(s)" field (for
 image files) and a "File(s)" field (for other files). The machine names of
@@ -868,7 +868,7 @@ curl -X POST [AUTH] -H "Content-Type: application/json" -d @- [URL]/log &lt;&lt;
 {"name": "Test file upload via REST", "type": "farm_observation", "timestamp": "1534261642", "images": ["data:${FILE_MIME};base64,${FILE_CONTENT}"]}
 CURL_DATA
 </code></pre>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Some common issues and solutions are described below. If these do not help,
 submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a> or ask questions in the
 <a href="https://riot.im/app/#/room/#farmOS:matrix.org">farmOS chat room</a>.</p>
@@ -889,7 +889,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "previous": 80, "help": 191};
+                shortcuts = {"next": 78, "previous": 80, "search": 83, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
