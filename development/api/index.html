@@ -361,8 +361,8 @@ don't need the authentication header, as long as the cookie is saved.</p>
 <p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
 <h2 id="farmjson">/farm.json<a class="headerlink" href="#farmjson" title="Permanent link">&para;</a></h2>
 <p>farmOS provides an informational API endpoint at <code>/farm.json</code>, which includes
-the farm name, URL, API version, and the currently authenticated user's name,
-ID, and email address.</p>
+the farm name, URL, API version, information about the currently authenticated
+user, and information about available entity types and bundles.</p>
 <p>For example:</p>
 <pre><code>{
   "name": "My Farm",
@@ -373,10 +373,24 @@ ID, and email address.</p>
     "name": "My Username",
     "mail": "myemail@mydomain.com",
   },
+  "resources": {
+    "log": {
+      "farm_activity": {
+        "label": "Activity",
+        "label_plural": "Activities",
+      }
+    },
+    ...
+  }
 }
 </code></pre>
+<p>The <code>resources</code> section contains a list of entity types (aka "resource types")
+that are available. Within each is a list of bundles (eg: "log types", "asset
+types", etc). Each bundle contains information such as its translated <code>label</code>.
+The <code>taxonomy_term</code> bundles also contain their <code>vid</code> (vocabulary ID), which is
+necessary when creating new terms (see <a href="#creating-taxonomy-terms">Creating taxonomy terms</a>).</p>
 <h3 id="api-version">API Version<a class="headerlink" href="#api-version" title="Permanent link">&para;</a></h3>
-<p><strong>Current API version: 1.0</strong></p>
+<p><strong>Current API version: 1.1</strong></p>
 <p>It is <em>highly</em> recommended that you check the API version of the farmOS system
 you are communicating with, to be sure that your code is using the same version.
 If any changes are made that are not backwards compatible, the API version will
@@ -468,6 +482,7 @@ differ slightly. The following are standard fields available on most log types:<
 </ul>
 </li>
 <li><code>asset</code>: Reference(s) to asset(s) that the log is associated with.</li>
+<li><code>equipment</code>: Reference(s) to equipment assets that were used in the process.</li>
 <li><code>area</code>: Reference(s) to area(s) that the log is associated with.</li>
 <li><code>geofield</code>: Geometry specific to the logged event.</li>
 <li><code>movement</code>: Movement information (see "Field collections" below).</li>
@@ -490,6 +505,9 @@ differ slightly. The following are standard fields available on most log types:<
 <li><code>created</code>: A timestamp representing when the log was created.</li>
 <li><code>changed</code>: A timestamp representing when the log was last updated.</li>
 <li><code>uid</code>: A reference to the user who created the log.</li>
+<li><code>data</code>: An arbitrary string of data. This can be used to store additional data
+  on the log as JSON, XML, YAML, etc. <strong>It is the resposibility of the API user
+  to respect data format that is already in the log.</strong></li>
 </ul>
 <h4 id="input-logs">Input logs<a class="headerlink" href="#input-logs" title="Permanent link">&para;</a></h4>
 <p>Additional fields on input logs (all optional):</p>
@@ -568,6 +586,9 @@ differ slightly. The following are standard fields available on most log types:<
 <li><code>created</code>: A timestamp representing when the asset was created.</li>
 <li><code>changed</code>: A timestamp representing when the asset was last changed.</li>
 <li><code>uid</code>: A reference to the user who created the asset.</li>
+<li><code>data</code>: An arbitrary string of data. This can be used to store additional data
+  on the asset as JSON, XML, YAML, etc. <strong>It is the resposibility of the API
+  user to respect data format that is already in the log.</strong></li>
 </ul>
 <h4 id="planting-assets">Planting assets<a class="headerlink" href="#planting-assets" title="Permanent link">&para;</a></h4>
 <p>Additional fields on animal assets:</p>
@@ -638,13 +659,16 @@ it lower in the list).</p>
 <p>When creating a new term, however, you need to provide the vocabulary ID in the
 term object, not the machine name/bundle. In order to get the vocabulary ID, you
 can look it up using the <code>/taxonomy_vocabulary</code> endpoint, which lists all
-available vocabularies.</p>
+available vocabularies. Or, you can find it in <code>farm.json</code> (described above).</p>
 <p>The vocabulary ID may be different from one farmOS system to another, so if you
 save it internally in your application, just know that it may not correspond to
 the same vocabulary on another farmOS. Therefore it is recommended that you look
 it up each time you need it.</p>
 <p>For example, to get the <code>vid</code> that corresponds to the <code>farm_crops</code> vocabulary:</p>
 <pre><code>curl [AUTH] [URL]/taxonomy_vocabulary.json?machine_name=farm_crops
+</code></pre>
+<p>Or, by loading the information in <code>farm.json</code> and parsing out the vocabulary ID:</p>
+<pre><code>curl [AUTH] [URL]/farm.json
 </code></pre>
 <p>Before you create a new term, you should check to see if it already exists:</p>
 <pre><code>curl [AUTH] [URL]/taxonomy_term.json?bundle=farm_crops&amp;name=Broccoli
@@ -733,6 +757,7 @@ to a Units taxonomy term, and a label (a free-form text field).</p>
 <li><code>time</code></li>
 <li><code>temperature</code></li>
 <li><code>value</code></li>
+<li><code>rate</code></li>
 <li><code>rating</code></li>
 <li><code>ratio</code></li>
 <li><code>probability</code></li>
@@ -889,7 +914,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "previous": 80, "help": 191};
+                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
