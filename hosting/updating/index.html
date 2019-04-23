@@ -179,6 +179,10 @@
 <li >
     <a href="../googlemaps/">Google Maps</a>
 </li>
+                                    
+<li >
+    <a href="../docker/">Docker</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -317,31 +321,28 @@ updates are included.</p>
 <h2 id="update-procedure">Update procedure<a class="headerlink" href="#update-procedure" title="Permanent link">&para;</a></h2>
 <p>Updating farmOS is basically the same process as <a href="https://drupal.org/node/1223018">updating Drupal core</a>. The
 following procedure will ensure that your update goes smoothly.</p>
+<p><strong>Docker note</strong>: if you are hosting farmOS in Docker, see
+<a href="/hosting/docker">Hosting farmOS with Docker</a> for Docker-specific update instructions.</p>
 <ol>
 <li>Backup your code and database! Always do this before making big changes. Be
    ready and able to roll-back in the event that something goes wrong.</li>
 <li>Download the new recommended release of farmOS from
    <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
 <li>Unzip the compressed folder, and replace everything in your Drupal codebase
-   EXCEPT the <code>/sites/</code> folder. Do not overwrite the <code>/sites/</code> folder, because
-   it contains content and configuration for your site.</li>
-<li>
-<p>Clear your cache and rebuild your registry with <a href="https://github.com/drush-ops/drush">Drush</a> and
-   <a href="https://drupal.org/project/registry_rebuild">Drush Registry Rebuild</a>. This isn't always necessary, but it doesn't hurt.</p>
-<p><code>drush cc all</code></p>
-<p><code>drush rr</code></p>
-</li>
-<li>
-<p><a href="https://drupal.org/upgrade/running-update-php">Run database updates</a>.</p>
-</li>
+   EXCEPT the <code>/sites/</code> folder. <strong>Do not overwrite the <code>/sites/</code> folder, because
+   it contains content and configuration for your site.</strong></li>
+<li><a href="https://drupal.org/upgrade/running-update-php">Run database updates</a>.</li>
+</ol>
+<p>Optionally:</p>
+<ul>
 <li>
 <p>Revert all Features via Drush. <strong>If you have intentionally overridden any
-   specific farmOS configurations, then you should NOT do this.</strong> You will need
-   to resolve any merge conflicts with farmOS core Features changes in order to
-   complete the upgrade. See <a href="/development/update-safety">developing with updates in mind</a>.</p>
+  specific farmOS configurations, then you should NOT do this.</strong> You will need
+  to resolve any merge conflicts with farmOS core Features changes in order to
+  complete the upgrade. See <a href="/development/update-safety">developing with updates in mind</a>.</p>
 <p><code>drush fra</code></p>
 </li>
-</ol></div>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
@@ -351,7 +352,7 @@ following procedure will ensure that your update goes smoothly.</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

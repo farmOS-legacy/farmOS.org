@@ -179,6 +179,10 @@
 <li >
     <a href="../../hosting/googlemaps/">Google Maps</a>
 </li>
+                                    
+<li >
+    <a href="../../hosting/docker/">Docker</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
@@ -286,193 +290,93 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#farmos-on-docker">farmOS on Docker</a></li>
-            <li><a href="#general-info">General info</a></li>
-            <li><a href="#local-development-with-docker-compose">Local development with Docker Compose</a></li>
+        <li class="main active"><a href="#developing-farmos-with-docker">Developing farmOS with Docker</a></li>
+            <li><a href="#docker-compose">Docker Compose</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="farmos-on-docker">farmOS on Docker<a class="headerlink" href="#farmos-on-docker" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p><a href="https://www.docker.com">Docker</a> is an open-source project that automates the deployment of applications
-inside software containers. - <a href="https://en.wikipedia.org/wiki/Docker_(software)">Wikipedia</a></p>
-</blockquote>
-<p>A farmOS Docker image is available on <a href="https://hub.docker.com">Docker Hub</a> at
-<a href="https://hub.docker.com/r/farmos/farmos">https://hub.docker.com/r/farmos/farmos</a>.
-It is built automatically from the Dockerfile included with the
-<a href="https://www.drupal.org/project/farm">farmOS distribution</a>, whenever new commits are pushed to the
-<a href="https://github.com/farmOS/farmOS">farmOS GitHub repository</a>.</p>
-<p>This can be used for local farmOS development purposes, or for hosting your own
-farmOS instance on a web server with the help of Docker.</p>
-<p><strong>This document primarily covers how to set up a local development environment
-with Docker. It does not cover how to host a production farmOS instance. The
-image should support this, but it is largely untested.</strong></p>
-<h2 id="general-info">General info<a class="headerlink" href="#general-info" title="Permanent link">&para;</a></h2>
-<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
-<p>The farmOS Dockerfile exposes a few environment variables, which can be
-overridden when the container is run.</p>
-<ul>
-<li><code>FARMOS_VERSION</code> - This is the tagged/packaged release of farmOS that should be
-downloaded from drupal.org. This will be used if <code>FARMOS_DEV</code> is <code>false</code> (see
-below). This will always be the most recently packaged release of farmOS.</li>
-<li><code>FARMOS_DEV_BRANCH</code> - This is the branch that should be used for development
-purposes. This will be used if <code>FARMOS_DEV</code> is <code>true</code> (see below). The default
-is the branch you currently have checked out.</li>
-<li><code>FARMOS_DEV</code> - This is a boolean variable to specify whether you want
-to set up a development environment in the Docker container (when it is set to
-<code>true</code>), or you want to use the official packaged release defined in
-<code>FARMOS_VERSION</code> above (when it is set to <code>false</code>). The default is <code>false</code>. See
-more detailed information about how this works below.</li>
-</ul>
-<h3 id="development-vs-production">Development vs production<a class="headerlink" href="#development-vs-production" title="Permanent link">&para;</a></h3>
-<p>The Dockerfile can theoretically be used for either development or production
-environments. The farmOS codebase will be set up differently, depending on the
-status of the <code>FARMOS_DEV</code> environment variable.</p>
-<p>When <code>FARMOS_DEV</code> is set to <code>true</code>, farmOS is built using <code>drush make</code> with the
-<code>--working-copy</code> flag. This ensures that a working Git directory is checked out
-for the farmOS installation profile (in <code>profiles/farm</code> within the built
-codebase). It will use whatever branch is specified in the <code>FARMOS_DEV_BRANCH</code>
-variable. The <code>FARMOS_VERSION</code> variable is ignored.</p>
-<p>When <code>FARMOS_DEV</code> is set to <code>false</code> (this is the default), then the officially
-packaged release of farmOS will be downloaded from drupal.org and unpacked in
-the container. It will download the version specified in the <code>FARMOS_VERSION</code>
-variable. The <code>FARMOS_DEV_BRANCH</code> variable is ignored.</p>
-<h3 id="rebuilding-the-codebase">Rebuilding the codebase<a class="headerlink" href="#rebuilding-the-codebase" title="Permanent link">&para;</a></h3>
-<p>The farmOS Docker image assumes that the entire farmOS codebase (located in
-<code>/var/www/html</code> within the container) will be mounted on the host as a
-<a href="https://docs.docker.com/engine/tutorials/dockervolumes">Docker volume</a>. A Docker <code>ENTRYPOINT</code> script is included to ensure that the
-farmOS codebase is created within that volume. When the container is destroyed,
-everything in <code>/var/www/html</code> persists in the host volume.</p>
-<p>Since the farmOS codebase is built in the <code>ENTRYPOINT</code> script, and not in the
-Dockerfile, that means that updating your Docker image will not necessarily
-update your farmOS codebase.</p>
-<p>Therefore, the <code>ENTRTYPOINT</code> script has logic to decide if/when the farmOS
-codebase should be rebuilt. Simply put, if you are running a packaged release of
-farmOS, and a new version of farmOS is released, all you have to do is pull an
-updated farmOS Docker image and rebuild your container to get the new version.</p>
-<p>If, on the other hand, you have a development build (<code>FARMOS_DEV</code> is <code>true</code>),
-then the only way to trigger a rebuild is to delete <code>profiles/farm/farm.info</code>.
-Then, stop and start your container and the farmOS development codebase will be
-rebuilt with <code>drush make</code>.</p>
-<p>More specifically, farmOS will be rebuilt if one of the following is true:</p>
-<ol>
-<li><code>profiles/farm/farm.info</code> is missing, or:</li>
-<li><code>FARMOS_DEV</code> is <code>false</code> and the version string in <code>profiles/farm/farm.info</code>
-does not match <code>FARMOS_VERSION</code> in the Dockerfile.</li>
-</ol>
-<p>When the codebase is rebuilt, everything in <code>/var/www/html</code> is wiped out and
-replaced automatically, with the exception of the <code>/var/www/html/sites</code>
-directory - which is preserved across the rebuild. This ensures that Drupal's
-<code>settings.php</code>, any uploaded files (in <code>sites/default/files</code>), and any
-additional modules that you add to <code>sites/*/modules</code> are not lost when the
-codebase is rebuilt.</p>
-<p><strong>WARNING:</strong> If you have a development environment (created with <code>FARMOS_DEV</code>
-set to <code>true</code>) and you have made changes to any of the working Git repositories
-in <code>/var/www/html/profiles/farm</code>, they will be overwritten when the codebase is
-rebuilt. The best way to avoid this is to copy any overridden modules/themes to
-the <code>sites/all/modules</code> or <code>sites/all/themes</code> directory so that they are
-preserved when the codebase is rebuilt.</p>
-<p><strong>ALSO NOTE:</strong> When the codebase is rebuilt, it does NOT automatically run
-update.php on the site. You must do this manually. See the <a href="/hosting/updating">Updating farmOS</a>
-page (specifically the steps for clearing cache and running database updates)
-for more details.</p>
-<h2 id="local-development-with-docker-compose">Local development with Docker Compose<a class="headerlink" href="#local-development-with-docker-compose" title="Permanent link">&para;</a></h2>
+<h1 id="developing-farmos-with-docker">Developing farmOS with Docker<a class="headerlink" href="#developing-farmos-with-docker" title="Permanent link">&para;</a></h1>
+<p>For general information, see <a href="/hosting/docker">Hosting farmOS with Docker</a>.</p>
+<h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
 <p>The recommended approach for local farmOS development in Docker is to use
-<a href="https://docs.docker.com/compose">Docker Compose</a> to build both the farmOS container and the MariaDB or
-PostgreSQL database container.</p>
-<p>The <code>docker-compose.yml</code> file included with farmOS sets <code>FARMOS_DEV</code> to <code>true</code>
-by default, so it is intended only for development purposes at this time.</p>
-<h3 id="postgresql-postgis">PostgreSQL + PostGIS<a class="headerlink" href="#postgresql-postgis" title="Permanent link">&para;</a></h3>
-<p>If you want to use a PostgreSQL database with the PostGIS extension, an
-additional <code>docker-compose.postgis.yml</code> file is provided which can be used to
-override the default <code>docker-compose.yml</code> database configuration.</p>
-<p>To use the provided override file, use the <code>-f</code> flag with all <code>docker-compose</code>
-commands to read from both the <code>docker-compose.yml</code> file and the
-<code>docker-compose.postgis.yml</code> file. For example, instead of
-<code>sudo docker-compose up</code> you will run:</p>
-<pre><code>sudo docker-compose -f docker-compose.yml -f docker-compose.postgis.yml up
-</code></pre>
-<p>Alternatively, if you rename <code>docker-compose.postgis.yml</code> to
-<code>docker-compose.override.yml</code>, it will be picked up automatically and you can
-simply use <code>sudo docker-compose up</code> like you would normally.</p>
+<a href="https://docs.docker.com/compose">Docker Compose</a> to run both the farmOS container and the database container
+on your local host.</p>
 <h3 id="install-docker-and-docker-compose">Install Docker and Docker Compose<a class="headerlink" href="#install-docker-and-docker-compose" title="Permanent link">&para;</a></h3>
 <p>First, install Docker and Docker Compose:</p>
 <ul>
 <li><a href="https://docs.docker.com/engine/installation">Install Docker</a><ul>
-<li>On Mac OS X, use "dlite" (not "Docker for Mac" or "Docker Toolbox")</li>
+<li>On Mac OS X, use "Docker for Mac" (not "Docker Toolbox")</li>
 <li>On Windows, use "Docker for Windows" (not "Docker Toolbox")</li>
 <li>On Linux, follow the directions on docker.com</li>
 </ul>
 </li>
 <li><a href="https://docs.docker.com/compose/install">Install Docker Compose</a></li>
 </ul>
-<h4 id="mac-specific-instructions">Mac Specific Instructions<a class="headerlink" href="#mac-specific-instructions" title="Permanent link">&para;</a></h4>
-<p>Due to <a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound">performance issues</a> with shared volumes in Docker for Mac, <a href="https://github.com/nlf/dlite">dlite</a> is
-currently the suggested way to host Docker images. The following sections
-describe how to install dlite and start/stop containers:</p>
-<h5 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">&para;</a></h5>
-<ol>
-<li>Download the latest release from <a href="https://github.com/nlf/dlite/releases">dlite releases</a> on GitHub</li>
-<li>Extract dlite from the tarball and copy it to <code>/usr/local/bin/dlite</code></li>
-<li>Run: <code>chmod +x /usr/local/bin/dlite</code></li>
-<li>Initialize dlite by running: <code>dlite init</code></li>
-<li>Start dlite host by running: <code>dlite start</code></li>
-</ol>
-<h5 id="starting">Starting<a class="headerlink" href="#starting" title="Permanent link">&para;</a></h5>
-<ol>
-<li>Proceed with <a href="#create-containers">Create Containers</a></li>
-<li>Fix networking by running <code>docker network connect bridge farmos_www_1</code></li>
-<li>Proceed with <a href="#install-farmos">Install farmOS</a> at <a href="http://farmos_www_1.docker">http://farmos_www_1.docker</a></li>
-</ol>
-<h5 id="stopping">Stopping<a class="headerlink" href="#stopping" title="Permanent link">&para;</a></h5>
-<ol>
-<li>Run: <code>docker-compose stop</code></li>
-<li>Remove networking: <code>docker network disconnect bridge farmos_www_1</code></li>
-</ol>
 <h3 id="create-containers">Create containers<a class="headerlink" href="#create-containers" title="Permanent link">&para;</a></h3>
-<p>To create the farmOS Docker containers, first clone the farmOS repository:</p>
-<pre><code>git clone https://github.com/farmOS/farmOS.git &amp;&amp; cd farmOS
+<p>To create the farmOS Docker containers, start by creating a new farmOS directory
+on your host:</p>
+<pre><code>mkdir farmOS
+cd farmOS
+</code></pre>
+<p>Next, copy the <code>docker-compose.development.yml</code> file into the directory and
+rename it to <code>docker-compose.yml</code>:</p>
+<pre><code>wget https://raw.githubusercontent.com/farmOS/farmOS/7.x-1.x/docker/docker-compose.development.yml
+mv docker-compose.development.yml docker-compose.yml
 </code></pre>
 <p>Then, use <code>docker-compose up</code> to create the containers:</p>
 <pre><code>sudo docker-compose up
 </code></pre>
 <p>This will create two containers: a farmOS application container, and a MariaDB
-database container (see "PostgreSQL + PostGIS" section above if you would
-rather use PostgreSQL).</p>
-<p><strong>Note:</strong> It will take some time for the containers to start the first time.
-This is because the farmOS codebase needs to be built when the container is run
-(it is not built in the image itself). For this reason, you might not want to
-use the <code>-d</code> flag at the end of <code>sudo docker-compose up</code>, so that you can see
-the progress. Once it is built, stopping and starting the container is very
-quick.</p>
-<h3 id="persistent-volumes">Persistent volumes<a class="headerlink" href="#persistent-volumes" title="Permanent link">&para;</a></h3>
-<p>The docker-compose.yml file defines two Docker volumes that will be available on
-your host system:</p>
+database container.</p>
+<p>This will run the two containers in your open terminal window, and will print
+Apage and MariaDB logs to the screen. This is useful for debugging, and you can
+shut them down with Ctrl+C when you're done.</p>
+<p>If you want to run these containers in the background, so you don't need to keep
+your terminal window, add <code>-d</code> to the end of the command:</p>
+<pre><code>sudo docker-compose up -d
+</code></pre>
+<p>Then you can shut them down and remove the containers with:</p>
+<pre><code>sudo docker-compose down
+</code></pre>
+<h4 id="mac-specific-instructions">Mac Specific Instructions<a class="headerlink" href="#mac-specific-instructions" title="Permanent link">&para;</a></h4>
+<p>Due to <a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound">performance issues</a> with shared volumes in Docker for Mac, it is
+recommended that you add <code>:delegated</code> to your volume definitions in
+<code>docker-compose.yml</code>.</p>
+<p>For example, instead of:</p>
+<pre><code>volumes:
+  - './db:/var/lib/mysql'
+</code></pre>
+
+<p>Replace with:</p>
+<pre><code>volumes:
+  - './db:/var/lib/mysql:delegated'
+</code></pre>
+
+<p>Do this for both the <code>db</code> and <code>www</code> container volumes.</p>
+<h4 id="persistent-volumes">Persistent volumes<a class="headerlink" href="#persistent-volumes" title="Permanent link">&para;</a></h4>
+<p>The <code>docker-compose.development.yml</code> file defines two Docker volumes that will
+be mounted into the containers from your host directory:</p>
 <ul>
-<li><code>/var/html/www</code> from the farmOS application container</li>
-<li><code>/var/lib/mysql</code> from the MariaDB database container (or
-  <code>/var/lib/postgresql/data</code> if you are using PostgreSQL)</li>
+<li><code>./www</code> - <code>/var/html/www</code> from the farmOS application container, which
+  includes the entire farmOS codebase, <code>settings.php</code> file (for connecting to
+  the database), and any files that are uploaded/created in farmOS.</li>
+<li><code>./db</code> - <code>/var/lib/mysql</code> from the MariaDB database container, which contains
+  the farmOS database.</li>
 </ul>
-<p>Both will be made available within a <code>.data</code> directory in the farmOS repository
-on the host. This is where you will be able to access the code for development
-purposes. It is also how your database and files are persisted when the
-containers are destroyed and rebuilt.</p>
+<p>Both will be made available within the <code>farmOS</code> directory you created initially.</p>
+<p>This is where you will be able to access the code for development purposes. It
+is also how your database and files are persisted when the containers are
+destroyed and rebuilt.</p>
 <h4 id="file-ownership">File ownership<a class="headerlink" href="#file-ownership" title="Permanent link">&para;</a></h4>
-<p>On a Linux host, all the files in <code>.data</code> will have an owner and group of
-<code>root</code>. For development purposes, it is recommended that you change the owner
-of everything in the <code>www</code> container to your local user. This can be done with
-the following command (executed from the repository's root directory):</p>
-<pre><code>sudo chown -R ${USER} .data/www
+<p>On a Linux host, all the files in <code>www</code> will have an owner and group of
+<code>www-data</code>. For development purposes, it is recommended that you change the
+owner of everything in the <code>www</code> container to your local user. This can be done
+with the following command:</p>
+<pre><code>sudo chown -R ${USER} www
 </code></pre>
 <p>This changes the owner of <em>everything</em> in /var/www/html to the currently logged
-in user on the host. But it leaves the group alone.</p>
-<p>This will persist until the codebase is rebuilt. When rebuilt,
-<code>docker-entrypoint.sh</code> changes the owner and group of the <code>.data/www/sites</code>
-directory to <code>www-data</code>. So you would need to re-run the above <code>chown</code> after
-each rebuild. For development environments this isn't a big problem because
-rebuilds don't happen automatically - they need to be triggered by deleting
-<code>profiles/farm/farm.info</code>.</p>
+in user on the host. But it leaves the group alone (<code>www-data</code>).</p>
 <h3 id="install-farmos">Install farmOS<a class="headerlink" href="#install-farmos" title="Permanent link">&para;</a></h3>
 <p>Once the containers are up and running, you can install farmOS using the Drupal
 installer. This is a simple step-by-step process that you will need to go
@@ -488,40 +392,65 @@ container that was created and access it that way.</p>
 <h4 id="database-setup">Database setup<a class="headerlink" href="#database-setup" title="Permanent link">&para;</a></h4>
 <p>In the "Set up database" step of installation, use the following values:</p>
 <ul>
-<li>Database name: <code>farmos</code></li>
-<li>Database username: <code>farmos</code></li>
-<li>Database password: <code>farmos</code></li>
+<li>Database name: <code>farm</code></li>
+<li>Database username: <code>farm</code></li>
+<li>Database password: <code>farm</code></li>
 <li>Under "Advanced options", change "Database host" to: <code>db</code></li>
 </ul>
 <p>Follow the instructions to continue with the installation and you should be left
 with a fully-functioning farmOS instance running in a Docker container!</p>
-<h3 id="stopstart-containers">Stop/start containers<a class="headerlink" href="#stopstart-containers" title="Permanent link">&para;</a></h3>
-<p>To stop your running containers:</p>
-<pre><code>sudo docker-compose stop
-</code></pre>
-<p>To start your containers:</p>
-<pre><code>sudo docker-compose start
-</code></pre>
 <h3 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h3>
-<p><strong>Warning</strong>: if you have made any changes to the code inside <code>.data/www</code>, they
-will be overwritten by this process. The one exception is the <code>.data/www/sites</code>
+<p><strong>Important</strong>: these instructions are for updating a <em>development</em> environment
+hosted with Docker. If you are running a production environment, see
+<a href="/hosting/docker">Hosting farmOS with Docker</a>.</p>
+<p>There are two ways to update your development codebase: incremental vs complete.</p>
+<h4 id="incremental-update">Incremental update<a class="headerlink" href="#incremental-update" title="Permanent link">&para;</a></h4>
+<p>An incremental update can be done if the changes are relatively simple. This
+includes commits to the farmOS repository that do not include any of the
+following:</p>
+<ul>
+<li>Updates to Drupal core</li>
+<li>Updates to contrib modules</li>
+<li>New contrib modules</li>
+<li>New patches to Drupal core or contrib modules</li>
+</ul>
+<p>These things are handled by Drush Make, which is run during a complete update
+(see below). If you are familiar with Drupal and Drush Make, it is possible to
+make these updates incrementally as well, but if you are not then follow the
+"Complete update" instructions below.</p>
+<p>To perform an incremental update, run <code>git pull origin 7.x-1.x</code> in the farmOS
+installation profile repository, which is inside <code>www/profiles/farm</code>:</p>
+<pre><code>cd www/profiles/farm
+git pull origin 7.x-1.x
+</code></pre>
+<h4 id="complete-update">Complete update<a class="headerlink" href="#complete-update" title="Permanent link">&para;</a></h4>
+<p><strong>Warning</strong>: if you have made any changes to the code inside <code>www</code>, they
+will be overwritten by this process. The one exception is the <code>www/sites</code>
 directory, which will not be modified. It's a good idea to put extra modules
-that you have downloaded yourself into <code>.data/www/sites/all/modules</code> for this
-reason.</p>
-<p>First, stop the containers and create a backup of the <code>.data</code> directory so that
-you can easily restore if anything goes wrong.</p>
-<pre><code>sudo docker-compose stop
-sudo tar -czf data-backup.tar.gz .data
+that you have downloaded/developed yourself into <code>www/sites/all/modules</code> for
+this reason.</p>
+<p>First, stop the containers and create a backup snapshot so that you can easily
+restore if anything goes wrong. See "Backup/restore during development" below.</p>
+<p>Pull the latest version of the farmOS Docker <code>dev</code> image:</p>
+<pre><code>sudo docker pull farmos/farmos:dev
 </code></pre>
-<p>Pull the latest version of the farmOS Docker image</p>
-<pre><code>sudo docker pull farmos/farmos:7.x-1.x
-</code></pre>
-<p><strong>If you are running a development version of farmOS</strong>, delete <code>farm.info</code>.</p>
-<pre><code>rm .data/www/profiles/farm/farm.info
-</code></pre>
-<p>Restart the farmOS container.</p>
+<p>Stop the farmOS containers:</p>
 <pre><code>sudo docker-compose down
-sudo docker-compose up -d
+</code></pre>
+<p>Move the <code>sites</code> directory out of the webroot:</p>
+<pre><code>sudo mv www/sites ./
+</code></pre>
+<p>Delete everthing in <code>www</code>:</p>
+<pre><code>sudo rm -r www/*
+</code></pre>
+<p>Restart the farmOS containers:</p>
+<pre><code>sudo docker-compose up -d
+</code></pre>
+<p>The <code>www</code> container should be automatically populated again with the new
+codebase.</p>
+<p>Restore the <code>sites</code> directory:</p>
+<pre><code>sudo rm -rf www/sites
+sudo mv sites www
 </code></pre>
 <p>Run database updates by going to <code>/update.php</code> in your browser and following
 the instructions.</p>
@@ -530,13 +459,23 @@ the instructions.</p>
 you have made any modifications to farmOS configuration, reverting features may
 overwrite those changes.</p>
 <p>If anything goes wrong during this process, you can restore to the backup you
-created in a few steps:</p>
+created. See "Backup/restore during development" below.</p>
+<h3 id="backuprestore-during-development">Backup/restore during development<a class="headerlink" href="#backuprestore-during-development" title="Permanent link">&para;</a></h3>
+<p>During development, you can create quick snapshots of the database and/or
+codebase from these volume directories. Simply shut down the running containers
+and create tarball(s).</p>
+<p><strong>Backup</strong>:</p>
 <pre><code>sudo docker-compose down
-sudo rm -rf .data
-sudo tar -xzf data-backup.tar.gz
+tar -czf backup.tar.gz db www
+sudo docker-compose up -d
 </code></pre>
-<p>For more information about how the Docker update process works, see the
-"Rebuilding the codebase" section above.</p></div>
+<p><strong>Restore</strong></p>
+<pre><code>sudo docker-compose down
+sudo rm -rf db
+sudo rm -rf www
+tar -xzf backup.tar.gz
+sudo docker-compose up -d
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -546,7 +485,7 @@ sudo tar -xzf data-backup.tar.gz
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
