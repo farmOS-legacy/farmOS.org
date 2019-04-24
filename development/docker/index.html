@@ -441,7 +441,7 @@ restore if anything goes wrong. See "Backup/restore during development" below.</
 <pre><code>sudo mv www/sites ./
 </code></pre>
 <p>Delete everthing in <code>www</code>:</p>
-<pre><code>sudo rm -r www/*
+<pre><code>sudo rm -r www/{*,.*}
 </code></pre>
 <p>Restart the farmOS containers:</p>
 <pre><code>sudo docker-compose up -d
@@ -466,14 +466,14 @@ codebase from these volume directories. Simply shut down the running containers
 and create tarball(s).</p>
 <p><strong>Backup</strong>:</p>
 <pre><code>sudo docker-compose down
-tar -czf backup.tar.gz db www
+sudo tar -czf backup.tar.gz db www
 sudo docker-compose up -d
 </code></pre>
 <p><strong>Restore</strong></p>
 <pre><code>sudo docker-compose down
 sudo rm -rf db
 sudo rm -rf www
-tar -xzf backup.tar.gz
+sudo tar -xzf backup.tar.gz
 sudo docker-compose up -d
 </code></pre></div>
         </div>
@@ -485,7 +485,7 @@ sudo docker-compose up -d
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"next": 78, "previous": 80, "help": 191, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
