@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/development/drupal/">
+        <link rel="canonical" href="http://farmos.org/development/release/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Drupal - farmOS.org</title>
+        <title>Release procedure - farmOS.org</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -189,8 +189,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">Drupal</a>
+<li >
+    <a href="../drupal/">Drupal</a>
 </li>
                                     
 <li >
@@ -221,8 +221,8 @@
     <a href="../client/">Client</a>
 </li>
                                     
-<li >
-    <a href="../release/">Release procedure</a>
+<li class="active">
+    <a href="./">Release procedure</a>
 </li>
                                 </ul>
                             </li>
@@ -274,17 +274,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../hosting/docker/">
+                                <a rel="next" href="../client/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../projects/">
+                                <a rel="prev" href="../../community/contribute/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/farmOS/edit/master/docs/development/drupal.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/farmOS/edit/master/docs/development/release.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -294,29 +294,90 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#drupal">Drupal</a></li>
-            <li><a href="#basic-concepts">Basic concepts</a></li>
-            <li><a href="#best-practices">Best practices</a></li>
+        <li class="main active"><a href="#new-release-procedure">New Release Procedure</a></li>
+            <li><a href="#preparation">Preparation</a></li>
+            <li><a href="#release-procedure">Release procedure</a></li>
+            <li><a href="#announce">Announce</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><img alt="Drupal" src="/img/druplicon.png" /></p>
-<h1 id="drupal">Drupal<a class="headerlink" href="#drupal" title="Permanent link">&para;</a></h1>
-<p>farmOS is built on top of <a href="https://drupal.org">Drupal</a>, a free and open-source web application
-framework.</p>
-<h2 id="basic-concepts">Basic concepts<a class="headerlink" href="#basic-concepts" title="Permanent link">&para;</a></h2>
-<p>If you are new to Drupal, it is recommended that you first familiarize yourself
-with some of the basic concepts.</p>
+<h1 id="new-release-procedure">New Release Procedure<a class="headerlink" href="#new-release-procedure" title="Permanent link">&para;</a></h1>
+<p>The following documents the standard procedure for packaging a new release of
+farmOS. It is used by the <a href="/community/maintainers">maintainers</a> to ensure that all the necessary steps
+are taken.</p>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://drupal.org/documentation/concepts">Drupal concepts</a></li>
+<li>Make sure Drupal core version is up-to-date (eg: <a href="https://github.com/farmOS/farmOS/commit/d682318fa484a9aab7329bd8f9ebd338dd21dac1">farmOS/farmOS@d682318</a>).<ul>
+<li>Evaluate whether or not any core patches are still necessary, and remove
+  them if not (eg: <a href="https://github.com/farmOS/farmOS/commit/028dc18af52fb137617db6bd8df5006238ca9fb6">farmOS/farmOS@028dc18</a>).</li>
 </ul>
-<h2 id="best-practices">Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<p>In general, farmOS development follows the same best practices and coding
-standards set forth by the Drupal community.</p>
+</li>
+<li>Make sure all contrib modules are up-to-date (e.g. <a href="https://github.com/farmOS/farmOS/commit/d831fef9900a75050a4b18e1c8ed9599ef4d82c9">farmOS/farmOS@d831fef</a>)<ul>
+<li>If any updated contrib modules are patched in farmOS, evaluate whether or
+  not the patch is still necessary (e.g. <a href="https://github.com/farmOS/farmOS/commit/7d2e30a9d9e69baa508c3dddb4d79c68b0fc7120">farmOS/farmOS@7d2e30a</a>)</li>
+</ul>
+</li>
+<li>Ensure that the <a href="https://hub.docker.com/r/farmos/farmos/builds">7.x-1.x Docker Hub image</a> is building successfully.</li>
+<li>Test all update hooks</li>
+<li>Test fresh Drush make build and installation</li>
+</ul>
+<h2 id="release-procedure">Release procedure<a class="headerlink" href="#release-procedure" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://drupal.org/best-practices">Drupal best practices</a></li>
-<li><a href="https://drupal.org/coding-standards">Drupal coding standards</a></li>
+<li>Create a "Prepare for release of farmOS [version tag]." commit that updates
+  the farmOS version references:<ul>
+<li>Update the commented <code>projects[farm][version]</code> line in <code>build-farm.make</code>.</li>
+<li>Update the commented <code>FARMOS_VERSION</code> line in <code>docker/Dockerfile</code>.</li>
+<li>Update <code>image</code> in <code>docker/docker-compose.production.yml</code>.</li>
+</ul>
+</li>
+<li>Create a release commit "farmOS [version tag]." (with period) that does the
+  following:<ul>
+<li>In <code>build-farm.make</code>:<ul>
+<li>Un-comment <code>projects[farm][version]</code>.</li>
+<li>Comment <code>projects[farm][download][*]</code> (3 lines).</li>
+</ul>
+</li>
+<li>In <code>docker/Dockerfile</code>:<ul>
+<li>Un-comment <code>FARMOS_VERSION</code> for the new tag.</li>
+<li>Comment <code>FARMOS_VERSION</code> for the development release.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tag the release commit in Git.</li>
+<li>Create a <code>git revert HEAD</code> commit that reverts the release commit (swaps the
+  commented lines back so that development version are used).</li>
+<li>Push the tag and revert commits to drupal.org and GitHub.</li>
+<li>Create a release node in drupal.org (e.g. <a href="https://www.drupal.org/project/farm/releases/7.x-1.1">7.x-1.1</a>) with release notes that
+  include:<ul>
+<li><strong>farmOS updates</strong> - Brief descriptions in HTML list form (copying commit
+  messages is a good way to do this, but very minor changes can be
+  excluded).</li>
+<li><strong>Drupal core updates</strong> - Link(s) to core release notes.</li>
+<li><strong>Contrib updates</strong> - Link(s) to project release notes.</li>
+<li><strong>Docker updates</strong> - Any updates that are relevant to hosting farmOS in
+  Docker.</li>
+<li><strong>Bug fixes</strong> - Brief descriptions of bugs that were fixed.</li>
+</ul>
+</li>
+<li>Close the roadmap for this release and open a new one. Move any outstanding
+  issues to the new one.</li>
+<li>Update Drupal.org <a href="https://drupal.org/project/farm">farmOS project page</a> to point to the new recommended
+  release.</li>
+<li>Edit Github release tag (eg: <a href="https://github.com/farmOS/farmOS/releases/tag/7.x-1.1">7.x-1.1 tag</a>):<ul>
+<li>Add a link to the drupal.org release node (eg: "For full release notes,
+  see: https://www.drupal.org/project/farm/releases/7.x-1.1").</li>
+<li>Upload the packaged tar.gz file generated by drupal.org.</li>
+</ul>
+</li>
+</ul>
+<h2 id="announce">Announce<a class="headerlink" href="#announce" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://twitter.com/farmOSorg">Twitter @farmOSorg</a> (eg:
+  <a href="https://twitter.com/farmOSorg/status/1118981883101052929">https://twitter.com/farmOSorg/status/1118981883101052929</a>)</li>
+<li><a href="[https://opencollective.com/farmOS">OpenCollective farmOS</a> (eg:
+  <a href="https://opencollective.com/farmos/updates/farmos-1-1-has-been-released">https://opencollective.com/farmos/updates/farmos-1-1-has-been-released</a>)</li>
 </ul></div>
         </div>
 

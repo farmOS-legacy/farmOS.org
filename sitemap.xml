@@ -176,6 +176,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://farmos.org/development/release/</loc>
+     <lastmod>2019-04-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://farmos.org/community/contribute/</loc>
      <lastmod>2019-04-24</lastmod>
      <changefreq>daily</changefreq>
