@@ -341,6 +341,11 @@ webroot) and open it in a browser to access farmOS.</p>
 <li><code>max_input_vars=5000</code></li>
 </ul>
 </li>
+<li><strong>Drupal configuration</strong> - Clean URLs must be enabled in Drupal. Check the 
+  configuration on the Drupal configuration page 
+  <em>(Administration &gt; Configuration &gt; Search and metadata &gt; Clean URLs)</em> and 
+  enable Clean URLs. If running Apache web-server, <code>mod_rewrite</code> must be enabled. 
+  For additional instructions, see the <a href="https://www.drupal.org/docs/7/configuring-clean-urls/enable-clean-urls">Enable clean URLs</a> page in Drupal Documentation.</li>
 </ul>
 <h3 id="optional-dependencies">Optional dependencies<a class="headerlink" href="#optional-dependencies" title="Permanent link">&para;</a></h3>
 <p>The following are not hard requirements of farmOS, but will provide progressive
@@ -371,7 +376,7 @@ enhancements if they are available.</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "help": 191, "search": 83, "previous": 80};
+                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
