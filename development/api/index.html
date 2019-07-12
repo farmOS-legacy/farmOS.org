@@ -369,13 +369,15 @@ don't need the authentication header, as long as the cookie is saved.</p>
 <p>This should be used to replace <code>[AUTH]</code> in the <code>curl</code> examples that follow.</p>
 <h2 id="farmjson">/farm.json<a class="headerlink" href="#farmjson" title="Permanent link">&para;</a></h2>
 <p>farmOS provides an informational API endpoint at <code>/farm.json</code>, which includes
-the farm name, URL, API version, information about the currently authenticated
-user, and information about available entity types and bundles.</p>
+the farm name, URL, API version, the system of measurement used by the farm,
+information about the currently authenticated user, and information about
+available entity types and bundles.</p>
 <p>For example:</p>
 <pre><code>{
   "name": "My Farm",
   "url": "https://myfarm.mydomain.com",
   "api_version": "1.0",
+  "system_of_measurement": "metric",
   "user": {
     "uid": "3",
     "name": "My Username",
@@ -922,7 +924,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "previous": 80, "search": 83, "next": 78};
+                shortcuts = {"search": 83, "next": 78, "previous": 80, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
