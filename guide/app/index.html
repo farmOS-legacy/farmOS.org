@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://farmos.org/guide/import/">
+        <link rel="canonical" href="http://farmos.org/guide/app/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Import - farmOS.org</title>
+        <title>Field Kit - farmOS.org</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -121,8 +121,8 @@
     <a href="../people/">People</a>
 </li>
                                     
-<li class="active">
-    <a href="./">Import</a>
+<li >
+    <a href="../import/">Import</a>
 </li>
                                     
 <li >
@@ -133,8 +133,8 @@
     <a href="../quick/">Quick forms</a>
 </li>
                                     
-<li >
-    <a href="../app/">Field Kit</a>
+<li class="active">
+    <a href="./">Field Kit</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -278,17 +278,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../people/">
+                                <a rel="next" href="../quick/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../export/">
+                                <a rel="prev" href="../contrib/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/farmOS/edit/master/docs/guide/import.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/farmOS/edit/master/docs/guide/app.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -298,89 +298,42 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#importing-data">Importing data</a></li>
-            <li><a href="#common-fields">Common fields</a></li>
-            <li><a href="#boolean-values">Boolean values</a></li>
-            <li><a href="#access">Access</a></li>
+        <li class="main active"><a href="#farmos-field-kit">farmOS Field Kit</a></li>
+            <li><a href="#releases">Releases</a></li>
+            <li><a href="#development">Development</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="importing-data">Importing data<a class="headerlink" href="#importing-data" title="Permanent link">&para;</a></h1>
-<p><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> importers are provided for all <a href="/guide/assets">asset</a> and <a href="/guide/logs">log</a> types in farmOS.</p>
-<p>This video by Chris Callahan at <a href="https://www.uvm.edu/extension">UVM Extension</a>'s
-<a href="https://www.uvm.edu/extension/agriculture/agricultural_engineering">Agricultural Engineering Program</a> summarizes the comma separated variable
-(CSV) import and export feature of FarmOS which allows for the import and
-export of FarmOS data from and to spreadsheet applications. This may be
-especially helpful for offline use.</p>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/NoOuNZRNjRo?rel=0" frameborder="0" allowfullscreen></iframe>
-
-<p>Links to each importer can be found at the top of each primary asset or log
-listing page (accessible via the <a href="/guide#navigation">main menu</a> of farmOS). For example, if you
-want to import Animal assets, click on Assets &gt; Animals in the main menu, and
-then click the "Import animals" action link at the top of the page.</p>
-<p>There is a link to "Download a template" within the importer page, which will
-give you a blank CSV file with all the necessary column headers. Start with the
-template file, and add a row for each of the records you want to import. Save
-this file and upload it to the importer form to create the new records in
-farmOS.</p>
-<h2 id="common-fields">Common fields<a class="headerlink" href="#common-fields" title="Permanent link">&para;</a></h2>
-<p>Each asset/log type has its own importer, and some have fields that are unique
-to their type, but there are some common fields that are shared across all
-importers.</p>
-<p>Common asset fields include:</p>
-<ul>
-<li><strong>Name</strong> - The name of the asset (required).</li>
-<li><strong>Archived</strong> - Whether or not the asset is archived. See "Boolean options"
-  below for allowed values. If omitted, the asset will not be archived.</li>
-<li><strong>Description</strong> - A longer description of the asset.</li>
-<li><strong>Parent IDs</strong> - A comma-separated list of asset IDs that represent parents
-  of the asset being imported. These parent assets must already exist in farmOS
-  in order for the link to be created.</li>
-</ul>
-<p>Common log fields include:</p>
-<ul>
-<li><strong>Name</strong> - The name of the log. This will be automatically generated if it is
-  left blank.</li>
-<li><strong>Date</strong> - The date when the logged event takes place (required). This can be
-  a string in any English date format that is convertable to a UNIX timestamp.</li>
-<li><strong>Done</strong> - Whether or not the log is complete. See "Boolean options" below
-  for allowed values. If omitted, the log will be marked as "done".</li>
-<li><strong>Notes</strong> - A longer description of the logged event.</li>
-<li><strong>Asset IDs</strong> - A comma-separated list of asset IDs that this log is related
-  to. These assets must already exist in farmOS in order for the link to be
-  created.</li>
-<li><strong>Area names</strong> - A comma-separated list of areas that this log is related to.
-  Areas will be matched on their name, and new areas will be created if they do
-  not exist.</li>
-<li><strong>Category names</strong> - A comma-separated list of log categories that should be
-  applied to the log. The categories must already exist in farmOS in order for
-  the assignment to take place.</li>
-</ul>
-<p>Common fields that are required are noted above. Specific asset/log type
-importers may have additional required fields.</p>
-<h2 id="boolean-values">Boolean values<a class="headerlink" href="#boolean-values" title="Permanent link">&para;</a></h2>
-<p>The following values are acceptable for boolean fields, like "Archived" for
-asset importers, and "Done" for log importers. These values are not case
-sensitive (so "Yes" and "yes" will be treated the same).</p>
-<h3 id="true">True<a class="headerlink" href="#true" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Yes</li>
-<li>Y</li>
-<li>True</li>
-<li>T</li>
-<li>1</li>
-</ul>
-<h3 id="false">False<a class="headerlink" href="#false" title="Permanent link">&para;</a></h3>
-<ul>
-<li>No</li>
-<li>N</li>
-<li>False</li>
-<li>F</li>
-<li>0</li>
-</ul>
-<h2 id="access">Access<a class="headerlink" href="#access" title="Permanent link">&para;</a></h2>
-<p>CSV importers are only available to users with the Farm Manager <a href="/guide/people">role</a>.</p></div>
+<h1 id="farmos-field-kit">farmOS Field Kit<a class="headerlink" href="#farmos-field-kit" title="Permanent link">&para;</a></h1>
+<p>farmOS Field Kit is a way to connect to your farmOS server from your mobile
+device. Because much of the work of an active farm can occur outside of wifi or
+cellular range, Field Kit is designed to be an offline-first app. You can create
+and modify farm logs wherever you're at, whenever you need to; then, when you
+are back within signal range, you can synchronize all your logs with your farmOS
+server.</p>
+<p>Field Kit provides a simplified view of the farm's records, working much like a
+to-do app. Logs of upcoming farm activities that have been assigned to you will
+be synced to your device. As you complete each activity, you can update the log
+with real-time data and photos, mark it as done, then sync it back to the
+server. You can also create new logs, such as observations or other log types,
+all on the fly.</p>
+<h2 id="releases">Releases<a class="headerlink" href="#releases" title="Permanent link">&para;</a></h2>
+<p><strong>Please note that all releases of farmOS Field Kit are currently in beta release
+and are not considered stable. If you use them, make sure to backup your data
+regularly to your farmOS server to avoid data loss.</strong></p>
+<p>Field Kit is available as a web app and as native apps for Android and iOS.</p>
+<p>The Android app can be installed now from the <a href="https://play.google.com/store/apps/details?id=org.farmos.app">Play Store</a>.</p>
+<p>The iOS app is only available right now via <a href="https://developer.apple.com/testflight/">Test Flight</a> and you will need an
+invite in order to install it. If you'd like to request and invite, you can
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSf0brjVUEKiwG1iw4D386iKgbpw5xQ-YJ3w-1iBdKXO-RyK0g/viewform?usp=sf_link">sign up here</a>.</p>
+<p>The web app can be found at <a href="https://farmos.app">farmos.app</a> and can be installed as a
+<a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web App</a> (PWA). As a PWA, the app will work offline and your logs
+will be stored in between uses. You can even add the app to your device's home
+screen, so it can be launched just like a native app.</p>
+<h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h2>
+<p>For technical information on the project, please see the <a href="/development/client">Development section</a>.</p>
+<p>The source code can be viewed on <a href="https://github.com/farmOS/farmOS-client">GitHub</a></p></div>
         </div>
 
         <footer class="col-md-12">
