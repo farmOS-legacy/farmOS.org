@@ -64,6 +64,10 @@
 </li>
                                     
 <li >
+    <a href="../../guide/app/">Field Kit</a>
+</li>
+                                    
+<li >
     <a href="../../guide/areas/">Mapping your farm</a>
 </li>
                                     
@@ -131,10 +135,6 @@
                                     
 <li >
     <a href="../../guide/quick/">Quick forms</a>
-</li>
-                                    
-<li >
-    <a href="../../guide/app/">Field Kit</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -288,7 +288,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/farmOS/edit/master/docs/development/client.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/client.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -310,7 +310,7 @@
 
 <h1 id="farmos-client">farmOS Client<a class="headerlink" href="#farmos-client" title="Permanent link">&para;</a></h1>
 <p>Work has begun on a simplified farmOS app that works offline in both browser
-and native app form. It will be installable on Android and iOS devices. The
+and native app form. It is installable on Android and iOS devices. The
 goal is to create a fast and focused client app for day-to-day and in-the-field
 record keeping that stores data locally for offline use, and syncs back to a
 farmOS server when internet access is available.</p>
@@ -324,14 +324,14 @@ purposes at this time.</strong></p>
 <p>Please see the <a href="/guide/app">User's Guide</a> for more information on how to install and use
 the client on your devices.</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<p>The client is made with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. It's native plugins are
-actually <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a>. Initially, the client and its native implementation were
-maintained as separate libraries. This was done with the aim of being able to
-isolate native functionality in plugins that could be swapped out for
-browser-based plugins. This may not be strictly necessary in the future, but it
-does at least make for good separation of concerns.</p>
+<p>The client is built with <a href="https://vuejs.org/">Vue.js</a> and <a href="https://cordova.apache.org/">Apache Cordova</a>. Initially, the client 
+and its native implementation were maintained as separate libraries. This was 
+done with the aim of being able to isolate native functionality in <a href="https://vuejs.org/v2/guide/plugins.html">Vue plugins</a> 
+that could be swapped out for browser-based plugins. This may not be strictly 
+necessary in the future, but it does at least make for good separation of 
+concerns.</p>
 <h2 id="development-environments">Development environments<a class="headerlink" href="#development-environments" title="Permanent link">&para;</a></h2>
-<p>The first thing of course is to clone the native repo from GitHub, and install
+<p>The first thing of course is to clone the client repo from GitHub, and install
 the npm dependencies:</p>
 <pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-client.git
 $ cd farmOS-client
@@ -393,14 +393,11 @@ JavaScript modules into their final form that will run in <a href="https://cordo
 Cordova, with some help from the Android and iOS SDK's (Android Studio &amp; XCode,
 respectively), builds the full-blown native packages (.apk and .ipa files,
 respectively).</p>
-<p>To build from source, you'll need to clone the farmOS-native repository from
+<p>To build from source, you'll need to clone the client repository from
 GitHub:</p>
-<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-native.git
+<pre><code class="bash">$ git clone https://github.com/farmOS/farmOS-client.git
 </code></pre>
 
-<p>Note that the farmOS-client is a dependency which will be automatically
-installed as an npm package in the following step, so you do not need to clone
-that repo.</p>
 <p>Bundling the web assets with Webpack is fairly straight-forward. <a href="https://nodejs.org">Node</a>
 (v.6.0.0 or higher) and npm (v.3.0.0 or higher) are the only system
 requirements. Once Node is installed, you can install the necessary JavaScript
@@ -473,7 +470,7 @@ workarounds, see "<a href="https://andrewmichaelsmith.com/2017/02/developing-an-
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "search": 83, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "previous": 80, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
