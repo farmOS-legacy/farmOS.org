@@ -397,8 +397,10 @@ that list and the map will be automatically re-centered on that location.</p>
 <p>KML files are special shape files that define a geometry on a map. They can be
 created with various GIS/mapping software. If you already have your farm mapped
 in another software (like <a href="https://www.google.com/earth">Google Earth</a>), you can export KML files for each
-area and then import them into farmOS's geometry fields.</p>
-<p>To import a KML file, follow these steps:</p>
+area and then import them into farmOS's geometry fields. Alternatively, you can
+use the <em>Farm Area Import</em> module to import a single KML file and break it up
+into multiple areas.</p>
+<p>To import a KML file of an individual area, follow these steps:</p>
 <ol>
 <li>Create a new area (or edit an existing one).</li>
 <li>Scroll down to the Files field and upload your KML file.</li>
@@ -410,6 +412,22 @@ area and then import them into farmOS's geometry fields.</p>
   <source src="/demo/kml-import.mp4" type="video/mp4">
 </video>
 
+<p>To import a KML file with multiple areas, follow these steps:</p>
+<ol>
+<li>Enable the <em>Farm Area Import</em> module (if it isn't already).</li>
+<li>Click "Areas" in the main menu and then click the "Import" tab.</li>
+<li>Copy and paste the contents of your KML file into the text area, and click
+   "Parse".</li>
+<li>If geometries are found in the KML file, a fieldset will be shown for each
+   of them, letting you customize the area name, type, and whether or not it
+   should be imported.</li>
+<li>At the bottom of the form, there is an option to create a new area that will
+   contain all the imported areas. It is a good idea to use this so that you
+   can easily review the areas that were imported, without having them mixed in
+   with your existing areas right away. If you find that the import didn't work
+   properly, you can select all the areas under this parent area and delete them
+   in bulk.</li>
+</ol>
 <h3 id="exporting-a-kml-file">Exporting a KML file<a class="headerlink" href="#exporting-a-kml-file" title="Permanent link">&para;</a></h3>
 <p>KML files can be exported from both areas and logs. Open the main Areas list, or
 any list of logs, select one or more, and click the "KML" button that appears at
@@ -435,16 +453,15 @@ bottom of the page to save your changes.</p>
 </video>
 
 <h2 id="generate-beds">Generate beds<a class="headerlink" href="#generate-beds" title="Permanent link">&para;</a></h2>
-<p>farmOS includes a special "Area Generator" module that makes it easy to
+<p>farmOS includes a special "Bed Generator" module that makes it easy to
 automatically generate a whole bunch of areas in bulk. The original goal was to
 make it easier to generate parallel beds within a field, but it may provide
 additional possibilities in the future.</p>
-<p>To use the area generator to generate beds, follow these steps:</p>
+<p>To use the bed generator to generate beds, follow these steps:</p>
 <ol>
-<li>Go to the "Areas" page (from the main menu) and click the "Area generator"
+<li>Go to the "Areas" page (from the main menu) and click the "Bed generator"
    tab.</li>
 <li>Select the field that the beds will be created within.</li>
-<li>Set the "Area type" to "Bed".</li>
 <li>Enter the number of beds that should be generated within the field.</li>
 <li>Set the orientation of the beds, and use the "Preview" button to see how
    they look.</li>
@@ -464,7 +481,7 @@ additional possibilities in the future.</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"next": 78, "search": 83, "help": 191, "previous": 80};
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
