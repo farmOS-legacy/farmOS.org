@@ -487,7 +487,32 @@ sudo rm -rf db
 sudo rm -rf www
 sudo tar -xzf backup.tar.gz
 sudo docker-compose up -d
-</code></pre></div>
+</code></pre>
+<h3 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">&para;</a></h3>
+<h4 id="drush">Drush<a class="headerlink" href="#drush" title="Permanent link">&para;</a></h4>
+<p><a href="https://www.drush.org">Drush</a> is a command line shell and Unix scripting interface for Drupal. Drush
+core ships with lots of useful commands for interacting with code like
+modules/themes/profiles. Similarly, it runs update.php, executes sql queries
+and DB migrations, and misc utilities like run cron or clear cache.</p>
+<p>If you setup farmOS with the Docker farmOS <code>dev</code> image then Drush is already
+included!</p>
+<p>To use it simply run the following when the docker images are running:</p>
+<pre><code>sudo docker exec -it farmos_www_1 drush help
+</code></pre>
+<p><strong>Note:</strong> The farmOS container will be named <code>farmos_www_1</code> ONLY if your farmOS
+directory is named <code>farmOS</code>. Docker Compose names the containers based on the
+folder that they are in. If you name your folder <code>myfarmOS</code> then the container
+will be named <code>myfarmos_www_1</code>.</p>
+<p>If all goes well, you should see a list of Drush commands.</p>
+<p>Note that you can also alias this command to your <code>.bashrc</code> file. Add the
+following line to your <code>~/.bashrc</code> file:</p>
+<pre><code>alias drush='sudo docker exec -it farmos_www_1 drush'
+</code></pre>
+<p>Run the following to start a bash session with the new alias and test the
+<code>drush</code> command:</p>
+<pre><code>drush help
+</code></pre>
+<p>This should display the same list of drush commands.</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -497,7 +522,7 @@ sudo docker-compose up -d
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"previous": 80, "help": 191, "search": 83, "next": 78};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
