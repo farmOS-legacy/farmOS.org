@@ -233,6 +233,31 @@ and create tarball(s).
     sudo tar -xzf backup.tar.gz
     sudo docker-compose up -d
 
+### Development Tools
+
+#### Drush
+
+[Drush](https://www.drush.org) is a command line shell and Unix scripting interface for Drupal. Drush core ships with lots of useful commands for interacting with code like modules/themes/profiles. Similarly, it runs update.php, executes sql queries and DB migrations, and misc utilities like run cron or clear cache. 
+
+If you setup farmOS with the Docker farmOS 'dev' image then Drush is already included! To use it simply run the following when the docker images are running: 
+
+    sudo docker exec -it farmos_www_1 drush help
+
+
+If all goes well, you should see a list of Drush commands.
+
+Note that you can also alias this command to your `.bashrc` file. Add the following line to your `~/.bashrc` file:
+
+    alias drush='sudo docker exec -it farmos_www_1 drush'
+
+Run the following to start a bash session with the new alias and test the `drush` command:
+
+    exec bash
+    drush help
+
+This should display the same list of drush commands.
+
+
 [Hosting farmOS with Docker]: /hosting/docker
 [Docker Compose]: https://docs.docker.com/compose
 [Install Docker]: https://docs.docker.com/engine/installation
