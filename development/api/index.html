@@ -609,6 +609,15 @@ differ slightly. The following are standard fields available on most log types:<
   on the asset as JSON, XML, YAML, etc. <strong>It is the resposibility of the API
   user to respect data format that is already in the log.</strong></li>
 </ul>
+<p>Assets will also have the following special-purpose fields, which are computed
+based on the asset's log history. These fields cannot be written to directly,
+they can only be changed via logs.</p>
+<ul>
+<li><code>location</code>: An array of references to areas that the asset is currently
+  located in, based on its most recent completed movement log.</li>
+<li><code>geometry</code>: The current geometry of the asset, based on its most recent
+  completed movement log.</li>
+</ul>
 <h4 id="planting-assets">Planting assets<a class="headerlink" href="#planting-assets" title="Permanent link">&para;</a></h4>
 <p>Additional fields on animal assets:</p>
 <ul>
@@ -740,6 +749,13 @@ else will be left unchanged.</p>
 <p>For example, to change the name of log 1:</p>
 <pre><code>curl -X PUT [AUTH] -H 'Content-Type: application/json' -d '{"name": "Change the log name"}' [URL]/log/1
 </code></pre>
+<p>Areas will also have the following special-purpose fields, which are computed
+based on log history. These fields cannot be written to directly, they can only
+be changed via logs.</p>
+<ul>
+<li><code>assets</code>: An array of references to assets that are currently located in the
+  area, based on asset movement logs.</li>
+</ul>
 <h2 id="field-collections">Field collections<a class="headerlink" href="#field-collections" title="Permanent link">&para;</a></h2>
 <p>Some fields are stored within <a href="https://drupal.org/project/field_collection">Field Collections</a> in farmOS, which are
 technically separate entities attached to the host entity. farmOS uses the
