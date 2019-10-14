@@ -13,6 +13,7 @@
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="../../extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -324,9 +325,11 @@
 <p>Logs are records of all kinds of events. You can be as granular as you want: the
 more information you're recording, the more you can look back on and learn from
 in the future.</p>
-<video width="100%" controls>
-  <source src="/demo/logs.mp4" type="video/mp4">
-</video>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/logs.mp4" type="video/mp4">
+  </video>
+</div>
 
 <h3 id="planning-ahead">Planning ahead<a class="headerlink" href="#planning-ahead" title="Permanent link">&para;</a></h3>
 <p>Planning ahead in farmOS is exactly the same as recording things that already
@@ -419,7 +422,7 @@ This will open up a new log form with the assets pre-selected.</p></div>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

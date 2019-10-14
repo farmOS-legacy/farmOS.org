@@ -13,6 +13,7 @@
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="../../extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -325,9 +326,11 @@ in farmOS. Assets include Plantings, Animals, Equipment, etc.</p>
 <p>Assets are organized into different sections in the farmOS interface, and can
 be accessed from the main menu. You can add assets from within each asset type's
 dashboard.</p>
-<video width="100%" controls>
-  <source src="/demo/assets.mp4" type="video/mp4">
-</video>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/assets.mp4" type="video/mp4">
+  </video>
+</div>
 
 <h2 id="asset-fields">Asset fields<a class="headerlink" href="#asset-fields" title="Permanent link">&para;</a></h2>
 <p>Each asset type will have it's own set of fields, but some of the common ones
@@ -386,7 +389,7 @@ not clone the logs that are associated with them.</p></div>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

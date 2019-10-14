@@ -13,6 +13,7 @@
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="../../../extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -326,9 +327,11 @@ providing integration with external devices. Additional modules can be built to
 connect to specific types of sensors, if necessary.</p>
 <p>It is possible to assemble your own sensors with inexpensive components and
 send their data to farmOS without any soldering or programming.</p>
-<video width="100%" controls>
-  <source src="/demo/sensors.mp4" type="video/mp4">
-</video>
+<div class="embed-responsive embed-responsive-16by9">
+  <video class="embed-responsive-item" width="100%" controls>
+    <source src="/demo/sensors.mp4" type="video/mp4">
+  </video>
+</div>
 
 <h2 id="farm-sensor-listener">Farm Sensor: Listener<a class="headerlink" href="#farm-sensor-listener" title="Permanent link">&para;</a></h2>
 <p>The <em>Farm Sensor: Listener</em> module is a general-purpose sensor sub-module that
@@ -409,7 +412,9 @@ and server-side API requests are used instead of client-side code.</p>
 require soldering or coding check out this guide to
 <a href="http://farmhack.org/tools/collecting-sensor-data-farmos-using-grovepi-and-node-red">Collecting sensor data in farmOS using GrovePi and Node-RED</a>
 on <a href="http://farmhack.org">Farm Hack</a>.</p>
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/rCl06YBb4cM" frameborder="0" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rCl06YBb4cM" allowfullscreen></iframe>
+</div>
 
 <h3 id="open-pipe-kit">Open Pipe Kit<a class="headerlink" href="#open-pipe-kit" title="Permanent link">&para;</a></h3>
 <p>The <a href="http://openpipekit.github.io">Open Pipe Kit</a> project provides a command-line script that can be used to
@@ -417,7 +422,9 @@ push data to farmOS from various sensors using the <em>Farm Sensor: Listener</em
 module. The following video demonstrates how to set it up. For more information
 about Open Pipe Kit, refer to: <a href="http://openpipekit.github.io">http://openpipekit.github.io</a></p>
 <p>Open Pipe Kit farmOS CLI: <a href="https://github.com/openpipekit/farmos-cli">https://github.com/openpipekit/farmos-cli</a></p>
-<iframe width="100%" height="480" src="https://www.youtube.com/embed/fCflGeOpTqk" frameborder="0" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fCflGeOpTqk" allowfullscreen></iframe>
+</div>
 
 <h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h3>
 <p>The <em>Farm Sensor: Listener</em> module comes with a basic alert notification
@@ -449,7 +456,7 @@ to a Nextel subscriber with the phone number <code>232-232-2323</code>, you woul
         </footer>
         <script>
             var base_url = "../../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+                shortcuts = {"previous": 80, "help": 191, "next": 78, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
         <script src="../../../search/main.js" defer></script>
