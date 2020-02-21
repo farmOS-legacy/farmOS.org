@@ -190,7 +190,7 @@
 </li>
                                     
 <li >
-    <a href="../../hosting/googlemaps/">Google Maps</a>
+    <a href="../../hosting/apikeys/">API Keys</a>
 </li>
                                     
 <li >
@@ -365,19 +365,19 @@ the fields available to you when you are describing an area:</p>
 <h2 id="using-geometry-fields">Using geometry fields<a class="headerlink" href="#using-geometry-fields" title="Permanent link">&para;</a></h2>
 <p>Here are some common things you will do with the geometry fields in farmOS:</p>
 <h3 id="zooming">Zooming<a class="headerlink" href="#zooming" title="Permanent link">&para;</a></h3>
-<p>There are four ways to zoom in/out:</p>
+<p>There are three ways to zoom in/out:</p>
 <ol>
 <li>On touch screens, you can "pinch zoom" using two fingers.</li>
 <li>With a computer mouse, you can use the scroll wheel to zoom in/out.</li>
 <li>The plus (+) and minus (+) buttons in the top left of the map control zoom.</li>
-<li>There is a "Geolocate" button in the upper left (looks like a bullseye) that
-   will automatically zoom in to your current location. On a computer this will
-   use your IP address, and on a mobile device it will use your GPS.</li>
 </ol>
 <h3 id="geolocating">Geolocating<a class="headerlink" href="#geolocating" title="Permanent link">&para;</a></h3>
 <p>A "Geolocate" button is available in the top left of the map. This will use your
 device's GPS (if available) and/or IP-based geolocation service to try to find
-your current location and center the map on that point.</p>
+your current location and center the map on that point. While geolocation is
+turned on, your position will automatically update as you move around. In
+addition to the point, a circle will also be displayed around the point with an
+accuracy radius to tell you how confident the geolocated position is.</p>
 <h3 id="address-search">Address search<a class="headerlink" href="#address-search" title="Permanent link">&para;</a></h3>
 <p>A search button is available in the left of the map (under the zoom buttons) for
 performing an address search. As you type into the search box, matching
@@ -403,14 +403,14 @@ that list and the map will be automatically re-centered on that location.</p>
 <h3 id="modifying">Modifying<a class="headerlink" href="#modifying" title="Permanent link">&para;</a></h3>
 <p>There are three buttons for modifying shapes:</p>
 <ol>
-<li><strong>Edit</strong>: Click the edit button, and then click a shape to select it. You can
-   click and drag any of the vertices to modify the overall shape.</li>
-<li><strong>Move</strong>: Click the edit button, and then click a shape to select it. Then
+<li><strong>Modify</strong>: Click the modify button, and then click a shape to select it. You
+   can click and drag any of the vertices to modify the overall shape.</li>
+<li><strong>Move</strong>: Click the move button, and then click a shape to select it. Then
    click and drag the shape to move it to a different position.</li>
-<li><strong>Clear</strong>: The clear button will clear ALL shapes from the map. If you do
-   accidentally click this, refresh the page WITHOUT saving, and you will revert
-   to the previously saved shapes. Note that this will also revert any other
-   changes to your area that you haven't saved.</li>
+<li><strong>Delete</strong>: The delete button will clear any selected shapes from the map. If
+   you accidentally click this, refresh the page WITHOUT saving, and you will
+   revert to the previously saved shapes. Note that this will also revert any
+   other changes to your area that you haven't saved.</li>
 </ol>
 <h3 id="importing-a-kml-file">Importing a KML file<a class="headerlink" href="#importing-a-kml-file" title="Permanent link">&para;</a></h3>
 <p>KML files are special shape files that define a geometry on a map. They can be
@@ -506,7 +506,7 @@ additional possibilities in the future.</p>
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
+                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>

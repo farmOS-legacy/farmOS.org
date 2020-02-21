@@ -190,7 +190,7 @@
 </li>
                                     
 <li >
-    <a href="../../hosting/googlemaps/">Google Maps</a>
+    <a href="../../hosting/apikeys/">API Keys</a>
 </li>
                                     
 <li >
@@ -413,6 +413,14 @@ available entity types and bundles.</p>
       "farm_activity": {
         "label": "Activity",
         "label_plural": "Activities",
+        "fields" {
+          "area": {
+            "label": "Areas",
+            "type": "taxonomy_term_reference",
+            "required": 0,
+          },
+          ...
+        },
       }
     },
     ...
@@ -422,11 +430,12 @@ available entity types and bundles.</p>
 <p>The <code>system_of_measurement</code> with be either <code>metric</code> or <code>us</code>.</p>
 <p>The <code>resources</code> section contains a list of entity types (aka "resource types")
 that are available. Within each is a list of bundles (eg: "log types", "asset
-types", etc). Each bundle contains information such as its translated <code>label</code>.
+types", etc). Each bundle contains information such as its translated <code>label</code>,
+and a list of available <code>fields</code> and their metadata (<code>label</code>, <code>required</code>, etc).
 The <code>taxonomy_term</code> bundles also contain their <code>vid</code> (vocabulary ID), which is
 necessary when creating new terms (see <a href="#creating-taxonomy-terms">Creating taxonomy terms</a>).</p>
 <h3 id="api-version">API Version<a class="headerlink" href="#api-version" title="Permanent link">&para;</a></h3>
-<p><strong>Current API version: 1.1</strong></p>
+<p><strong>Current API version: 1.2</strong></p>
 <p>It is <em>highly</em> recommended that you check the API version of the farmOS system
 you are communicating with, to be sure that your code is using the same version.
 If any changes are made that are not backwards compatible, the API version will
@@ -966,7 +975,7 @@ submit a support request on <a href="https://github.com/farmOS/farmOS">GitHub</a
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"help": 191, "search": 83, "previous": 80, "next": 78};
+                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
