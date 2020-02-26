@@ -9,19 +9,14 @@
         <link rel="canonical" href="http://farmos.org/development/projects/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>Projects - farmOS.org</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-light.min.css">
         <link href="../../extra.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <script>
@@ -36,280 +31,272 @@
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">farmOS.org</a>
-                </div>
+                <a class="navbar-brand" href="../..">farmOS.org</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../guide/">Introduction</a>
+<li>
+    <a href="../../guide/" class="dropdown-item">Introduction</a>
 </li>
                                     
-<li >
-    <a href="../../guide/app/">Field Kit</a>
+<li>
+    <a href="../../guide/app/" class="dropdown-item">Field Kit</a>
 </li>
                                     
-<li >
-    <a href="../../guide/areas/">Mapping your farm</a>
+<li>
+    <a href="../../guide/areas/" class="dropdown-item">Mapping your farm</a>
 </li>
                                     
-<li >
-    <a href="../../guide/logs/">Logging events</a>
+<li>
+    <a href="../../guide/logs/" class="dropdown-item">Logging events</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Managing assets</a>
+    <a href="#" class="dropdown-item">Managing assets</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../guide/assets/">Introduction</a>
+<li>
+    <a href="../../guide/assets/" class="dropdown-item">Introduction</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/plantings/">Plantings</a>
+<li>
+    <a href="../../guide/assets/plantings/" class="dropdown-item">Plantings</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/animals/">Animals</a>
+<li>
+    <a href="../../guide/assets/animals/" class="dropdown-item">Animals</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/equipment/">Equipment</a>
+<li>
+    <a href="../../guide/assets/equipment/" class="dropdown-item">Equipment</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/compost/">Compost</a>
+<li>
+    <a href="../../guide/assets/compost/" class="dropdown-item">Compost</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/sensors/">Sensors</a>
+<li>
+    <a href="../../guide/assets/sensors/" class="dropdown-item">Sensors</a>
 </li>
             
-<li >
-    <a href="../../guide/assets/groups/">Groups</a>
+<li>
+    <a href="../../guide/assets/groups/" class="dropdown-item">Groups</a>
 </li>
     </ul>
   </li>
                                     
-<li >
-    <a href="../../guide/location/">Movements and location</a>
+<li>
+    <a href="../../guide/location/" class="dropdown-item">Movements and location</a>
 </li>
                                     
-<li >
-    <a href="../../guide/quantity/">Quantity measurements</a>
+<li>
+    <a href="../../guide/quantity/" class="dropdown-item">Quantity measurements</a>
 </li>
                                     
-<li >
-    <a href="../../guide/inventory/">Inventory tracking</a>
+<li>
+    <a href="../../guide/inventory/" class="dropdown-item">Inventory tracking</a>
 </li>
                                     
-<li >
-    <a href="../../guide/people/">People</a>
+<li>
+    <a href="../../guide/people/" class="dropdown-item">People</a>
 </li>
                                     
-<li >
-    <a href="../../guide/import/">Import</a>
+<li>
+    <a href="../../guide/import/" class="dropdown-item">Import</a>
 </li>
                                     
-<li >
-    <a href="../../guide/export/">Export</a>
+<li>
+    <a href="../../guide/export/" class="dropdown-item">Export</a>
 </li>
                                     
-<li >
-    <a href="../../guide/quick/">Quick forms</a>
+<li>
+    <a href="../../guide/quick/" class="dropdown-item">Quick forms</a>
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#">Community modules</a>
+    <a href="#" class="dropdown-item">Community modules</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../guide/contrib/">Introduction</a>
+<li>
+    <a href="../../guide/contrib/" class="dropdown-item">Introduction</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/eggs/">Eggs</a>
+<li>
+    <a href="../../guide/contrib/eggs/" class="dropdown-item">Eggs</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/forest/">Forest</a>
+<li>
+    <a href="../../guide/contrib/forest/" class="dropdown-item">Forest</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/grazing/">Grazing</a>
+<li>
+    <a href="../../guide/contrib/grazing/" class="dropdown-item">Grazing</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/nutrient/">Nutrient</a>
+<li>
+    <a href="../../guide/contrib/nutrient/" class="dropdown-item">Nutrient</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/organic/">Organic</a>
+<li>
+    <a href="../../guide/contrib/organic/" class="dropdown-item">Organic</a>
 </li>
             
-<li >
-    <a href="../../guide/contrib/produce-safety/">Produce Safety</a>
+<li>
+    <a href="../../guide/contrib/produce-safety/" class="dropdown-item">Produce Safety</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hosting <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../hosting/">Getting started</a>
+<li>
+    <a href="../../hosting/" class="dropdown-item">Getting started</a>
 </li>
                                     
-<li >
-    <a href="../../hosting/installing/">Installing</a>
+<li>
+    <a href="../../hosting/installing/" class="dropdown-item">Installing</a>
 </li>
                                     
-<li >
-    <a href="../../hosting/updating/">Updating</a>
+<li>
+    <a href="../../hosting/updating/" class="dropdown-item">Updating</a>
 </li>
                                     
-<li >
-    <a href="../../hosting/apikeys/">API Keys</a>
+<li>
+    <a href="../../hosting/apikeys/" class="dropdown-item">API Keys</a>
 </li>
                                     
-<li >
-    <a href="../../hosting/docker/">Docker</a>
+<li>
+    <a href="../../hosting/docker/" class="dropdown-item">Docker</a>
 </li>
                                     
-<li >
-    <a href="../../hosting/localization/">Localization</a>
+<li>
+    <a href="../../hosting/localization/" class="dropdown-item">Localization</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../drupal/">Drupal</a>
+<li>
+    <a href="../drupal/" class="dropdown-item">Drupal</a>
 </li>
                                     
-<li class="active">
-    <a href="./">Projects</a>
+<li>
+    <a href="./" class="dropdown-item active">Projects</a>
 </li>
                                     
-<li >
-    <a href="../issue-queues/">Issue Queues</a>
+<li>
+    <a href="../issue-queues/" class="dropdown-item">Issue Queues</a>
 </li>
                                     
-<li >
-    <a href="../architecture/">Architecture</a>
+<li>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
-<li >
-    <a href="../update-safety/">Update Safety</a>
+<li>
+    <a href="../update-safety/" class="dropdown-item">Update Safety</a>
 </li>
                                     
-<li >
-    <a href="../docker/">Docker</a>
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
 </li>
                                     
-<li >
-    <a href="../api/">API</a>
+<li>
+    <a href="../api/" class="dropdown-item">API</a>
 </li>
                                     
-<li >
-    <a href="../client/">Client</a>
+<li>
+    <a href="../client/" class="dropdown-item">Client</a>
 </li>
                                     
-<li >
-    <a href="../release/">Release procedure</a>
+<li>
+    <a href="../release/" class="dropdown-item">Release procedure</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../community/contribute/">Contribute</a>
+<li>
+    <a href="../../community/contribute/" class="dropdown-item">Contribute</a>
 </li>
                                     
-<li >
-    <a href="../../community/monthly-call/">Monthly Call</a>
+<li>
+    <a href="../../community/monthly-call/" class="dropdown-item">Monthly Call</a>
 </li>
                                     
-<li >
-    <a href="https://riot.im/app/#/room/#farmOS:matrix.org">Chat</a>
+<li>
+    <a href="https://riot.im/app/#/room/#farmOS:matrix.org" class="dropdown-item">Chat</a>
 </li>
                                     
-<li >
-    <a href="https://farmOS.discourse.group/">Forum</a>
+<li>
+    <a href="https://farmOS.discourse.group/" class="dropdown-item">Forum</a>
 </li>
                                     
-<li >
-    <a href="../../community/farms/">Farms</a>
+<li>
+    <a href="../../community/farms/" class="dropdown-item">Farms</a>
 </li>
                                     
-<li >
-    <a href="../../community/maintainers/">Maintainers</a>
+<li>
+    <a href="../../community/maintainers/" class="dropdown-item">Maintainers</a>
 </li>
                                     
-<li >
-    <a href="../../community/supporters/">Supporters</a>
+<li>
+    <a href="../../community/supporters/" class="dropdown-item">Supporters</a>
 </li>
                                     
-<li >
-    <a href="../../community/press/">Press</a>
+<li>
+    <a href="../../community/press/" class="dropdown-item">Press</a>
 </li>
                                     
-<li >
-    <a href="../../community/trademark/">Trademark</a>
+<li>
+    <a href="../../community/trademark/" class="dropdown-item">Trademark</a>
 </li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../faq/">FAQ</a>
+                            <li class="navitem">
+                                <a href="../../faq/" class="nav-link">FAQ</a>
                             </li>
-                            <li >
-                                <a href="../../donate/">Donate</a>
+                            <li class="navitem">
+                                <a href="../../donate/" class="nav-link">Donate</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../drupal/">
+                            <li class="nav-item">
+                                <a rel="prev" href="../drupal/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../issue-queues/">
+                            <li class="nav-item">
+                                <a rel="next" href="../issue-queues/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/projects.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/farmOS/farmOS.org/edit/7.x-1.x/docs/development/projects.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -317,16 +304,42 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#projects">Projects</a></li>
-            <li><a href="#distribution">Distribution</a></li>
-            <li><a href="#modules">Modules</a></li>
-            <li><a href="#theme">Theme</a></li>
-            <li><a href="#external-tools">External Tools</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#projects" class="nav-link">Projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#distribution" class="nav-link">Distribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#modules" class="nav-link">Modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#theme" class="nav-link">Theme</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#external-tools" class="nav-link">External Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h1>
 <p><a href="http://farmos.org">farmOS</a> is built as a set of separate but inter-dependent <a href="https://drupal.org">Drupal</a> projects.</p>
@@ -477,6 +490,7 @@ Drupal theme based off of <a href="https://drupal.org/project/bootstrap">Bootstr
   areas as a <a href="https://www.opengeospatial.org/standards/wfs">Web Feature Service (WFS)</a> enabling bi-directional access
   through full-fledged GIS tools like <a href="https://qgis.org/">Quantum GIS</a>.</li>
 </ul></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -486,24 +500,24 @@ Drupal theme based off of <a href="https://drupal.org/project/bootstrap">Bootstr
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "previous": 80, "next": 78, "help": 191};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
@@ -514,12 +528,12 @@ Drupal theme based off of <a href="https://drupal.org/project/bootstrap">Bootstr
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
