@@ -1,5 +1,17 @@
-## Testing, Testing....
+## Sense-Able Farming
 
-This is really just a test of how to submit items for proposed publication to the FarmOS.org website, as a pull request.  
+The farm is by its very nature a complex open system in a fast-changing, unpredictable environment... So it is essential to create tight feedback & response loops w/r/t all operations under management.  To that end, two approaches are indicated:
 
-Devs: Please free to delete, or ignore!
+### Remote Sensing
+
+To that end, the problem as stated by Chris Rowe in documentation of his [GrovePi/Node-RED remote sensing solution](https://farmhack.org/tools/collecting-sensor-data-farmos-using-grovepi-and-node-red) really states the case for me: "I am a farmer and I want a tool to remotely know what is happening in the environment **because I can't be everywhere all the time**." _exactly!_ .  
+
+There's more about this approach on FarmOS.org site, in Documentation section under "Assets" see [sensors page](https://farmos.org/guide/assets/sensors/)... And to see our first example in practice, on VDL's hosted instance, under Assets:Sensors, you can see see [the page for "Quahog1" sensor](https://vdl.farmos.net/farm/sensor/quahog1) _(login as: guest/guest1 for read-only view of all_.
+
+### Logging Observations using FieldKit
+
+As stated above, Remote Sensing is essentially a workaround for the problem of scarce farmer-bandwidth -yet the primary feedback mechanism remains the farmers presence, for two reasons:
+- Technology being, as Douglas Adams famously defined it "Stuff that doesn't work right yet", it is important for the farmer to monitor that the technology is working as intended, observing its impacts (intended and unintended) on production; and
+- Per ancient Chinese proverb: "Best fertilizer is shadow of the farmer."  For this reason, the point of Remote Sensing is to free up farmer to give attention to those things that the machine cannot do (e.g. examining leaves for potential health issues, making ad-hoc interventions as appropriate, etc.)
+
+So, as a handy supplement to our Remote Sensing apparatus, we use [FieldKit](https://farmos.org/guide/app/) on iOS and/or Android mobile platforms as the human interface for recording ad-hoc observations... _and there are [issues](https://github.com/farmOS/farmOS-client/issues)_
