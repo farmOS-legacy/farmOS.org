@@ -400,13 +400,9 @@ also be necessary to add new endpoints to the <code>dev.proxy.context</code> arr
 features are developed and new endpoints on the farmOS server need to be
 reached. For more information, see the <a href="https://webpack.js.org/configuration/dev-server/#devserver-proxy">Webpack documentation on configuring the
 proxy middleware</a>.</p>
-<p>You will also have to install the Drupal <a href="https://www.drupal.org/project/cors">CORS module</a> on your farmOS server in
-order to handle the way the client does authentication (hopefully this will no
-longer be necessary once we implement OAuth). Once it's installed, go to the
-<a href="http://localhost/admin/config/services/cors">CORS configuration page</a> and add the following line to the Domains field:</p>
-<pre><code>*|http://localhost:8080||Content-Type,Authorization,X-Requested-With|true
-</code></pre>
-
+<p>You will also need to configure the server to enable CORS requests. Go to
+<a href="http://localhost/admin/config/farm/access">http://localhost/admin/config/farm/access</a> and enter <code>http://localhost:8080</code>
+as the Access-Control-Allow-Origin.</p>
 <p>Finally, when logging in to the client from the browser, simply leave the URL
 field blank. The devServer will then interpret all requests as relative links
 and proxy them accordingly. For some reason login can sometimes fail on the
