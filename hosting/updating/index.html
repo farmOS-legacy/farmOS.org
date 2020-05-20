@@ -318,10 +318,6 @@
             
             <li class="nav-item" data-level="1"><a href="#updating-farmos" class="nav-link">Updating farmOS</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#do-not-use-drupals-automatic-update-feature" class="nav-link">Do not use Drupal's automatic update feature</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#update-procedure" class="nav-link">Update procedure</a>
               <ul class="nav flex-column">
               </ul>
@@ -334,33 +330,23 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h1>
+<p><strong>ALWAYS BACKUP YOUR DATABASE, CODE, AND FILES BEFORE ATTEMPTING AN UPDATE!</strong></p>
 <p>New versions of farmOS will be released on a regular basis, and it's important
 to stay up-to-date so that you can receive new features, bug fixes, and security
 patches when they become available.</p>
-<h2 id="do-not-use-drupals-automatic-update-feature">Do not use Drupal's automatic update feature<a class="headerlink" href="#do-not-use-drupals-automatic-update-feature" title="Permanent link">&para;</a></h2>
-<p>Drupal provides an interface for downloading and updating contributed modules
-automatically.</p>
-<p><strong>This process may break your farmOS system.</strong></p>
-<p>farmOS is a Drupal distribution, and includes patches to some contributed
-Drupal modules that are necessary for proper functioning. Drupal's automatic
-update feature will not apply the necessary patches when it downloads the new
-version of a module.</p>
-<p>It also does not support updating Drupal distributions (only modules and
-themes). farmOS is a Drupal distribution, and new versions often include
-automated update code to ensure a smooth update from one version of farmOS to
-the next.</p>
-<p>Therefore, it is recommended that you either download the officially packaged
-releases of farmOS from <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a>,
-<a href="/hosting/installing">build it yourself with Drush</a>, or run <a href="/development/docker">farmOS on Docker</a>. This will ensure
-that the necessary patches are applied, and that the farmOS distribution
-updates are included.</p>
+<p>It is recommended that you either download the officially packaged releases of
+farmOS from <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a> or run <a href="/development/docker">farmOS on Docker</a>. This
+will ensure that the necessary patches are applied, and that the farmOS
+distribution updates are included.</p>
+<p><strong>Note that automatic updates through Drupal's UI are disabled by farmOS</strong> See
+<a href="https://drupal.org/node/3136140">https://drupal.org/node/3136140</a> for more information.</p>
 <h2 id="update-procedure">Update procedure<a class="headerlink" href="#update-procedure" title="Permanent link">&para;</a></h2>
 <p>Updating farmOS is basically the same process as <a href="https://drupal.org/node/1223018">updating Drupal core</a>. The
 following procedure will ensure that your update goes smoothly.</p>
 <p><strong>Docker note</strong>: if you are hosting farmOS in Docker, see
 <a href="/hosting/docker">Hosting farmOS with Docker</a> for Docker-specific update instructions.</p>
 <ol>
-<li>Backup your code and database! Always do this before making big changes. Be
+<li><strong>Backup your database, code, and files!</strong> Always do this before updating. Be
    ready and able to roll-back in the event that something goes wrong.</li>
 <li>Download the new recommended release of farmOS from
    <a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a></li>
