@@ -33,7 +33,7 @@ more customized sub-module may be necessary.
 
 ### Posting data to a listener
 
-You can find a quick video demonstrating how to set up a FarmOS 'listener' sensor [here](https://edgecollective.io/posts/farmos_sensor_feed/).
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/arGErKKODrU" allowfullscreen></iframe> 
 
 Data can be posted to the listener using a standard [HTTP] request.
 
