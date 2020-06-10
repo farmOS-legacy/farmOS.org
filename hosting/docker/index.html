@@ -379,7 +379,23 @@ same process, with a few exceptions:</p>
 </ul>
 <p>With <code>/var/www/html/sites</code> mounted as a volume, you can simply update to a new
 version of the farmOS Docker image itself and then run <code>update.php</code> to update
-farmOS.</p></div>
+farmOS.</p>
+<h3 id="customizing-phpini-settings">Customizing php.ini settings<a class="headerlink" href="#customizing-phpini-settings" title="Permanent link">&para;</a></h3>
+<p>It is common to need to customize certain PHP settings - such as the max upload
+size limit. This can be easily accomplished via a custom php.ini file mounted in
+the farmOS docker container.</p>
+<p><strong>docker-compose.yml</strong></p>
+<pre><code class="yaml">volumes:
+  - './php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini'
+</code></pre>
+
+<p><strong>php-custom.ini</strong></p>
+<pre><code class="ini">upload_max_filesize = 10M
+post_max_size = 10M
+</code></pre>
+
+<p><em>See the <a href="https://www.php.net/manual/en/configuration.file.php">PHP configuration file</a> documentation for more details on php.ini
+files.</em></p></div>
             </div>
         </div>
 
