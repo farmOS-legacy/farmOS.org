@@ -318,7 +318,35 @@
             
             <li class="nav-item" data-level="1"><a href="#developing-farmos-with-docker" class="nav-link">Developing farmOS with Docker</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#docker-compose" class="nav-link">Docker Compose</a>
+            <li class="nav-item" data-level="2"><a href="#install-docker-and-docker-compose" class="nav-link">Install Docker and Docker Compose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-containers" class="nav-link">Create containers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#install-farmos" class="nav-link">Install farmOS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-workflow" class="nav-link">Development workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#updating-farmos" class="nav-link">Updating farmOS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#backuprestore-during-development" class="nav-link">Backup/restore during development</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#development-tools" class="nav-link">Development Tools</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#optional-configure-a-local-https-reverse-proxy" class="nav-link">(Optional) Configure a Local Https Reverse Proxy</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -331,12 +359,10 @@
 
 <h1 id="developing-farmos-with-docker">Developing farmOS with Docker<a class="headerlink" href="#developing-farmos-with-docker" title="Permanent link">&para;</a></h1>
 <p>For general information, see <a href="/hosting/docker">Hosting farmOS with Docker</a>.</p>
-<h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
+<h2 id="install-docker-and-docker-compose">Install Docker and Docker Compose<a class="headerlink" href="#install-docker-and-docker-compose" title="Permanent link">&para;</a></h2>
 <p>The recommended approach for local farmOS development in Docker is to use
 <a href="https://docs.docker.com/compose">Docker Compose</a> to run both the farmOS container and the database container
 on your local host.</p>
-<h3 id="install-docker-and-docker-compose">Install Docker and Docker Compose<a class="headerlink" href="#install-docker-and-docker-compose" title="Permanent link">&para;</a></h3>
-<p>First, install Docker and Docker Compose:</p>
 <ul>
 <li><a href="https://docs.docker.com/engine/installation">Install Docker</a><ul>
 <li>On Mac OS X, use "Docker for Mac" (not "Docker Toolbox")</li>
@@ -346,7 +372,7 @@ on your local host.</p>
 </li>
 <li><a href="https://docs.docker.com/compose/install">Install Docker Compose</a></li>
 </ul>
-<h3 id="create-containers">Create containers<a class="headerlink" href="#create-containers" title="Permanent link">&para;</a></h3>
+<h2 id="create-containers">Create containers<a class="headerlink" href="#create-containers" title="Permanent link">&para;</a></h2>
 <p>To create the farmOS Docker containers, start by creating a new farmOS directory
 on your host:</p>
 <pre><code>mkdir farmOS
@@ -372,7 +398,7 @@ your terminal window, add <code>-d</code> to the end of the command:</p>
 <p>Then you can shut them down and remove the containers with:</p>
 <pre><code>sudo docker-compose down
 </code></pre>
-<h4 id="mac-specific-instructions">Mac Specific Instructions<a class="headerlink" href="#mac-specific-instructions" title="Permanent link">&para;</a></h4>
+<h3 id="mac-specific-instructions">Mac Specific Instructions<a class="headerlink" href="#mac-specific-instructions" title="Permanent link">&para;</a></h3>
 <p>Due to <a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound">performance issues</a> with shared volumes in Docker for Mac, it is
 recommended that you add <code>:delegated</code> to your volume definitions in
 <code>docker-compose.yml</code>.</p>
@@ -387,7 +413,30 @@ recommended that you add <code>:delegated</code> to your volume definitions in
 </code></pre>
 
 <p>Do this for both the <code>db</code> and <code>www</code> container volumes.</p>
-<h4 id="persistent-volumes">Persistent volumes<a class="headerlink" href="#persistent-volumes" title="Permanent link">&para;</a></h4>
+<h2 id="install-farmos">Install farmOS<a class="headerlink" href="#install-farmos" title="Permanent link">&para;</a></h2>
+<p>Once the containers are up and running, you can install farmOS using the Drupal
+installer. This is a simple step-by-step process that you will need to go
+through when you first access the site in your browser.</p>
+<h3 id="browser-address">Browser address<a class="headerlink" href="#browser-address" title="Permanent link">&para;</a></h3>
+<p>If you are running Docker on Linux, you can simply go to <code>http://localhost</code> in
+your browser. Otherwise, you may need to look up the IP address of the Docker
+container that was created and access it that way.</p>
+<p>To find the IP address of your farmOS container, use the following command:</p>
+<pre><code>sudo docker inspect --format '{{ .NetworkSettings.Networks.farmos_default.IPAddress }}' farmos_www_1
+</code></pre>
+<p>Visit the IP address in a browser - you should see the Drupal/farmOS installer.</p>
+<h3 id="database-setup">Database setup<a class="headerlink" href="#database-setup" title="Permanent link">&para;</a></h3>
+<p>In the "Set up database" step of installation, use the following values:</p>
+<ul>
+<li>Database name: <code>farm</code></li>
+<li>Database username: <code>farm</code></li>
+<li>Database password: <code>farm</code></li>
+<li>Under "Advanced options", change "Database host" to: <code>db</code></li>
+</ul>
+<p>Follow the instructions to continue with the installation and you should be left
+with a fully-functioning farmOS instance running in a Docker container!</p>
+<h2 id="development-workflow">Development workflow<a class="headerlink" href="#development-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="persistent-volumes">Persistent volumes<a class="headerlink" href="#persistent-volumes" title="Permanent link">&para;</a></h3>
 <p>The <code>docker-compose.development.yml</code> file defines two Docker volumes that will
 be mounted into the containers from your host directory:</p>
 <ul>
@@ -401,7 +450,7 @@ be mounted into the containers from your host directory:</p>
 <p>This is where you will be able to access the code for development purposes. It
 is also how your database and files are persisted when the containers are
 destroyed and rebuilt.</p>
-<h4 id="file-ownership">File ownership<a class="headerlink" href="#file-ownership" title="Permanent link">&para;</a></h4>
+<h3 id="file-ownership">File ownership<a class="headerlink" href="#file-ownership" title="Permanent link">&para;</a></h3>
 <p>On a Linux host, all the files in <code>www</code> will have an owner and group of
 <code>www-data</code>. For development purposes, it is recommended that you change the
 owner of everything in the <code>www</code> container to your local user. This can be done
@@ -409,35 +458,14 @@ with the following command:</p>
 <pre><code>sudo chown -R ${USER} www
 </code></pre>
 <p>This changes the owner of <em>everything</em> in /var/www/html to the currently logged
-in user on the host. But it leaves the group alone (<code>www-data</code>).</p>
-<h3 id="install-farmos">Install farmOS<a class="headerlink" href="#install-farmos" title="Permanent link">&para;</a></h3>
-<p>Once the containers are up and running, you can install farmOS using the Drupal
-installer. This is a simple step-by-step process that you will need to go
-through when you first access the site in your browser.</p>
-<h4 id="browser-address">Browser address<a class="headerlink" href="#browser-address" title="Permanent link">&para;</a></h4>
-<p>If you are running Docker on Linux, you can simply go to <code>http://localhost</code> in
-your browser. Otherwise, you may need to look up the IP address of the Docker
-container that was created and access it that way.</p>
-<p>To find the IP address of your farmOS container, use the following command:</p>
-<pre><code>sudo docker inspect --format '{{ .NetworkSettings.Networks.farmos_default.IPAddress }}' farmos_www_1
-</code></pre>
-<p>Visit the IP address in a browser - you should see the Drupal/farmOS installer.</p>
-<h4 id="database-setup">Database setup<a class="headerlink" href="#database-setup" title="Permanent link">&para;</a></h4>
-<p>In the "Set up database" step of installation, use the following values:</p>
-<ul>
-<li>Database name: <code>farm</code></li>
-<li>Database username: <code>farm</code></li>
-<li>Database password: <code>farm</code></li>
-<li>Under "Advanced options", change "Database host" to: <code>db</code></li>
-</ul>
-<p>Follow the instructions to continue with the installation and you should be left
-with a fully-functioning farmOS instance running in a Docker container!</p>
-<h3 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h3>
+in user on the host. But it leaves the group alone (<code>www-data</code>). Just make sure
+to do this <em>after</em> installation has completed.</p>
+<h2 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h2>
 <p><strong>Important</strong>: these instructions are for updating a <em>development</em> environment
 hosted with Docker. If you are running a production environment, see
 <a href="/hosting/docker">Hosting farmOS with Docker</a>.</p>
 <p>There are two ways to update your development codebase: incremental vs complete.</p>
-<h4 id="incremental-update">Incremental update<a class="headerlink" href="#incremental-update" title="Permanent link">&para;</a></h4>
+<h3 id="incremental-update">Incremental update<a class="headerlink" href="#incremental-update" title="Permanent link">&para;</a></h3>
 <p>An incremental update can be done if the changes are relatively simple. This
 includes commits to the farmOS repository that do not include any of the
 following:</p>
@@ -456,7 +484,7 @@ installation profile repository, which is inside <code>www/profiles/farm</code>:
 <pre><code>cd www/profiles/farm
 git pull origin 7.x-1.x
 </code></pre>
-<h4 id="complete-update">Complete update<a class="headerlink" href="#complete-update" title="Permanent link">&para;</a></h4>
+<h3 id="complete-update">Complete update<a class="headerlink" href="#complete-update" title="Permanent link">&para;</a></h3>
 <p><strong>Warning</strong>: if you have made any changes to the code inside <code>www</code>, they
 will be overwritten by this process. The one exception is the <code>www/sites</code>
 directory, which will not be modified. It's a good idea to put extra modules
@@ -493,7 +521,7 @@ you have made any modifications to farmOS configuration, reverting features may
 overwrite those changes.</p>
 <p>If anything goes wrong during this process, you can restore to the backup you
 created. See "Backup/restore during development" below.</p>
-<h3 id="backuprestore-during-development">Backup/restore during development<a class="headerlink" href="#backuprestore-during-development" title="Permanent link">&para;</a></h3>
+<h2 id="backuprestore-during-development">Backup/restore during development<a class="headerlink" href="#backuprestore-during-development" title="Permanent link">&para;</a></h2>
 <p>During development, you can create quick snapshots of the database and/or
 codebase from these volume directories. Simply shut down the running containers
 and create tarball(s).</p>
@@ -509,8 +537,8 @@ sudo rm -rf www
 sudo tar -xzf backup.tar.gz
 sudo docker-compose up -d
 </code></pre>
-<h3 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">&para;</a></h3>
-<h4 id="drush">Drush<a class="headerlink" href="#drush" title="Permanent link">&para;</a></h4>
+<h2 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">&para;</a></h2>
+<h3 id="drush">Drush<a class="headerlink" href="#drush" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.drush.org">Drush</a> is a command line shell and Unix scripting interface for Drupal. Drush
 core ships with lots of useful commands for interacting with code like
 modules/themes/profiles. Similarly, it runs update.php, executes sql queries
@@ -534,7 +562,7 @@ following line to your <code>~/.bashrc</code> file:</p>
 <pre><code>drush help
 </code></pre>
 <p>This should display the same list of drush commands.</p>
-<h3 id="optional-configure-a-local-https-reverse-proxy">(Optional) Configure a Local Https Reverse Proxy<a class="headerlink" href="#optional-configure-a-local-https-reverse-proxy" title="Permanent link">&para;</a></h3>
+<h2 id="optional-configure-a-local-https-reverse-proxy">(Optional) Configure a Local Https Reverse Proxy<a class="headerlink" href="#optional-configure-a-local-https-reverse-proxy" title="Permanent link">&para;</a></h2>
 <p>See <a href="/development/configure-local-https-reverse-proxy">Configuring a Local Https Reverse Proxy</a>.</p></div>
             </div>
         </div>
