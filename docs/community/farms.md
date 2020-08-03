@@ -15,6 +15,7 @@ included in this list, add a comment to [this issue on Github].
 ## Brazil
 
 * Olivopampa (Santana do Livramento, Rio Grande do Sul)
+* Rancho Moretto (Emilianópolis, São Paulo)
 
 ## Canada
 
@@ -31,6 +32,10 @@ included in this list, add a comment to [this issue on Github].
 ## France
 
 * Ferme des Ours (Boofzheim, Grand-Est)
+
+## Germany
+
+* Landw. Betrieb Fischer (Arberg, Bavaria)
 
 ## Italy
 
