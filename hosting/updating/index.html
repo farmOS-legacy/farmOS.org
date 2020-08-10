@@ -340,16 +340,20 @@ will ensure that the necessary patches are applied, and that the farmOS
 distribution updates are included.</p>
 <p><strong>Note that automatic updates through Drupal's UI are disabled by farmOS</strong> See
 <a href="https://drupal.org/node/3136140">https://drupal.org/node/3136140</a> for more information.</p>
-<p><strong>Security Updates</strong>
-Some security updates can't wait till the next main release of farmOS. 
-So if you got a security warning in your farmOS or 
-read about a important drupal update, you should check if there is a 
-development update for farmOS available (normally released on the same day).
-You can find the development updates at the bottom of 
-<a href="https://drupal.org/project/farm">https://drupal.org/project/farm</a> (the same page as the normal updates) 
-by the headline "Downloads". </p>
-<p><strong>Checking your version</strong>
-You can see your installed version under '/admin/reports/status'. </p>
+<p><strong>Security updates</strong></p>
+<p>Occassionally there will be security updates to Drupal core and contributed
+modules, which will cause the following message to show in farmOS:</p>
+<blockquote>
+<p>There is a security update available for your version of Drupal. To ensure the
+security of your server, you should update immediately! See the
+<strong>available updates</strong> page for more information.</p>
+</blockquote>
+<p>When these upstream security updates are released, we update them in the
+development branches of farmOS as soon as possible. If the vulnerabilities are
+serious, we will also tag a new version release of farmOS. In many cases, a new
+release is not urgent because the vulnerability does not directly affect farmOS.
+If you would like to update before a new release is available, you can download
+a "<a href="https://www.drupal.org/project/farm/releases/7.x-1.x-dev">development snapshot</a>" from Drupal.org.</p>
 <h2 id="update-procedure">Update procedure<a class="headerlink" href="#update-procedure" title="Permanent link">&para;</a></h2>
 <p>Updating farmOS is basically the same process as <a href="https://drupal.org/node/1223018">updating Drupal core</a>. The
 following procedure will ensure that your update goes smoothly.</p>

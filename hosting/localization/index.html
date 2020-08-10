@@ -328,38 +328,26 @@
 <h1 id="localization-to-another-language">Localization to another language<a class="headerlink" href="#localization-to-another-language" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
-<p>Enable <strong>Locale</strong> module</p>
+<p>Enable the <strong>Farm Localization</strong> module (<code>farm_l10n</code>) that comes with farmOS.</p>
 </li>
 <li>
-<ul>
-<li>Download and enable <strong>Localization_update</strong> module (https://www.drupal.org/project/l10n_update), For example, using drush:</li>
-</ul>
-<p><code>drush en l10n_update</code></p>
-</li>
-<li>
-<p>Add your language at <em>/admin/config/regional/language</em></p>
+<p>Add your language at <code>/admin/config/regional/language</code></p>
 <ul>
 <li>Set this new language as default language, if desired.</li>
-<li>Set the Detection and Selection options at <em>/admin/config/regional/language/configure</em></li>
 </ul>
 </li>
 <li>
-<p>Configure the Localization_update Module at <em>/admin/config/regional/language/update</em></p>
+<p>Go to <code>/admin/config/regional/translate/update</code> and check manually for
+  tranlations and update them.</p>
 </li>
 <li>
-<p>Suggested:</p>
-</li>
-</ul>
-<blockquote>
-<p>Check for updates: weekly</p>
-<p>Import behaviour: Only overwrite imported translations, customized translations are kept.</p>
-</blockquote>
+<p>If there are some strings not translated, you can do it at
+  <code>/admin/config/regional/translate/translate</code> and, if possible, add them to
+  https://localize.drupal.org.</p>
 <ul>
-<li>
-<p>If you are in a hurry, first time, go to <em>/admin/config/regional/translate/update</em> and check manually for tranlations and update them.</p>
-</li>
-<li>
-<p>If there are some strings not translated, you can do it at <em>/admin/config/regional/translate/translate</em> and, if possible, add them to https://localize.drupal.org. You could use this additional module to do both tasks together: https://www.drupal.org/project/l10n_client</p>
+<li>You could download and install the <strong>Localization Client</strong> module to do
+  both tasks together: <a href="https://www.drupal.org/project/l10n_client">https://www.drupal.org/project/l10n_client</a></li>
+</ul>
 </li>
 </ul></div>
             </div>
