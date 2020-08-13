@@ -322,10 +322,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#custom-build" class="nav-link">Custom build</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#local-development" class="nav-link">Local development</a>
               <ul class="nav flex-column">
               </ul>
@@ -350,25 +346,13 @@ combines <a href="https://drupal.org/project/drupal">Drupal core</a> with a set 
 <p>The Drupal.org packaged release is pre-built and ready to go. Just drop it into
 a hosted web server environment and it will work the same as Drupal. For more
 information on installing Drupal, see the official <a href="https://drupal.org/documentation/install">Drupal Installation Guide</a>.</p>
-<h2 id="custom-build">Custom build<a class="headerlink" href="#custom-build" title="Permanent link">&para;</a></h2>
-<p>Alternatively, you can also build the distribution yourself using Drush Make.
-This is essentially what the drupal.org automatic packaging script does, so it
-is generally not necessary to do this unless you have a specific reason to.</p>
-<p>Simply checkout the [farmOS repository] and run the following command:</p>
-<pre><code>drush make build-farm.make farm
-</code></pre>
-<p>This will build the farmOS distribution in a directory called "farm". Point your
-server's webroot to this directory (or move the contents to your server's
-webroot) and open it in a browser to access farmOS.</p>
 <h2 id="local-development">Local development<a class="headerlink" href="#local-development" title="Permanent link">&para;</a></h2>
 <p>See <a href="/development/docker">farmOS on Docker</a>.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>You will need a web server with all the basic <a href="https://drupal.org/requirements">requirements of Drupal</a>.</p>
 <p>In addition to Drupal's basic requirements, farmOS also needs the following:</p>
 <ul>
-<li><strong>PHP 5.5+.</strong> Drupal 7 itself only requires PHP 5.2+, but farmOS makes heavy
-  use of the <a href="https://drupal.org/project/openlayers">Openlayers module</a>, and includes some custom code that uses
-  newer features of PHP only available in 5.5+.</li>
+<li><strong>PHP 7+</strong></li>
 <li><strong>PHP configuration</strong> - It is recommended that you set the following PHP
   configuration variables, to ensure that farmOS runs smoothly. It may run fine
   without these settings, but some features may not work properly without them.
@@ -389,17 +373,14 @@ webroot) and open it in a browser to access farmOS.</p>
 <p>The following are not hard requirements of farmOS, but will provide progressive
 enhancements if they are available.</p>
 <ul>
-<li><strong>A Google Maps API key</strong> is necessary for rendering the Google Maps layers
-  used in farmOS maps. See the <a href="/hosting/googlemaps">Google Maps API Key</a> instructions for more
-  information about how to set this up. If an API key is not provided,
+<li><strong>Google Maps and/or MapBox API keys</strong> are necessary for rendering the Google
+  Maps and MapBox base layers in farmOS maps. See the [API keys] instructions
+  for more information about how to set this up. If API keys are not provided,
   <a href="https://www.openstreetmap.org">OpenStreetMap</a> will be used as the default base layer.</li>
 <li><strong><a href="http://php.net/manual/en/book.bc.php">PHP BCMath extension</a></strong> is required for accurate geometric polygon area
   calculations.</li>
 <li><strong><a href="https://trac.osgeo.org/geos">GEOS - Geometry Engine, Open Source</a></strong> is required by the Area Generator
   module.</li>
-<li><strong><a href="https://www.postgresql.org">PostgreSQL</a> + <a href="http://postgis.net">PostGIS</a></strong> can be used as farmOS's database backend, which
-  together provide advanced geographic query capabilities. See
-  <a href="https://github.com/farmOS/farmOS/issues/43">GitHub issue #43</a> for more information.</li>
 <li><strong>SSL</strong> Although not strictly a requirement, some features (like the
   "Geolocate" button on maps) will only work when over a secure connection.
   <a href="/guide/app">Field Kit</a> requires SSL on your farmOS instance in order to connect to it.
