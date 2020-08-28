@@ -445,8 +445,8 @@ don't need the authentication header, as long as the cookie is saved.</p>
 <h2 id="farmjson">/farm.json<a class="headerlink" href="#farmjson" title="Permanent link">&para;</a></h2>
 <p>farmOS provides an informational API endpoint at <code>/farm.json</code>, which includes
 the farm name, URL, API version, the system of measurement used by the farm,
-information about the currently authenticated user, and information about
-available entity types and bundles.</p>
+information about the currently authenticated user, installed languages, and
+information about available entity types and bundles.</p>
 <p>For example:</p>
 <pre><code>{
   "name": "My Farm",
@@ -457,6 +457,15 @@ available entity types and bundles.</p>
     "uid": "3",
     "name": "My Username",
     "mail": "myemail@mydomain.com",
+    "language": "en",
+  },
+  "languages": {
+    "en": {
+      "language": "en",
+      "name": "English",
+      "native": "English",
+      "direction": 0,
+    },
   },
   "resources": {
     "log": {
@@ -484,6 +493,7 @@ types", etc). Each bundle contains information such as its translated <code>labe
 and a list of available <code>fields</code> and their metadata (<code>label</code>, <code>required</code>, etc).
 The <code>taxonomy_term</code> bundles also contain their <code>vid</code> (vocabulary ID), which is
 necessary when creating new terms (see <a href="#creating-taxonomy-terms">Creating taxonomy terms</a>).</p>
+<p>Other modules can add information to <code>/farm.json</code> with <code>hook_farm_info()</code>.</p>
 <h3 id="api-version">API Version<a class="headerlink" href="#api-version" title="Permanent link">&para;</a></h3>
 <p><strong>Current API version: 1.3</strong></p>
 <p>It is <em>highly</em> recommended that you check the API version of the farmOS system

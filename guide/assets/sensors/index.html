@@ -398,10 +398,38 @@ include:</p>
 <li><code>start</code>: Filter data to timestamps greater than or equal to this start
   timestamp.</li>
 <li><code>end</code>: Filter data to timestamps less than or equal to this end timestamp.</li>
-<li><code>limit</code>: The number of results to return.</li>
+<li><code>limit</code>: The number of results to return. See "Limits" below for details.</li>
 <li><code>offset</code>: The value to start at.</li>
 </ul>
 <p><strong>Example filtered by name:</strong> <code>https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy&amp;name=temperature</code></p>
+<p><strong>Limits</strong></p>
+<p>The <code>limit</code> parameter can be used to specify how many data points should be
+returned. Setting <code>limit</code> to <code>0</code> will return the maximum number of points, which
+is capped at <code>100000</code> (to prevent memory exhaustion). If more data is desired,
+multiple requests should be made using the <code>offset</code> parameter. Setting <code>limit</code>
+to a value greater than the max will result in a response code of
+<code>422 Unprocessable Entity: exceeds max limit of 100000</code>.</p>
+<p><strong>Data summary info</strong></p>
+<p>It's also possible to retrieve summary information about the data stored for a
+particular sensor by adding <code>/summary</code> to the end of the sensor's URL. This will
+list each unique <code>name</code> used in the data, along with the total <code>count</code> of values
+and the <code>first</code> and <code>last</code> timestamp for each. For example:</p>
+<p><code>https://myfarm.farmos.net/farm/sensor/listener/xxxxxx/summary?private_key=yyyyyy</code></p>
+<p>Example JSON response:</p>
+<pre><code>{
+    &quot;humid&quot;: {
+        &quot;count&quot;: 100,
+        &quot;first&quot;: &quot;1541117473&quot;,
+        &quot;last&quot;: &quot;1594911898&quot;
+    },
+    &quot;temp&quot;: {
+        &quot;count&quot;: 100,
+        &quot;first&quot;:&quot;1541117473&quot;,
+        &quot;last&quot;:&quot;1594911898&quot;
+    }
+}
+</code></pre>
+
 <p><strong>Allowing public API read access</strong></p>
 <p>Data in farmOS is private by default. A private key is required to push data to
 a sensor, and by default the same key is also required to pull data.</p>
