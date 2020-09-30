@@ -1118,14 +1118,17 @@ associated with a user account. Due to limitations with the Drupal 7
 cannot be associated with the Drupal Permissions system to access protected
 resources. farmOS will hopefully support the Client Credentials Grant when
 farmOS migrates to Drupal 8 and can use the <a href="https://www.drupal.org/project/simple_oauth/">simple_oauth</a> module.</p>
+<p><strong>NOTE:</strong> The <code>oauth2/token</code> and <code>oauth2/authorize</code> endpoints are deprecated and
+will be removed in farmOS 2.x. Starting with farmOS 1.6 it is recommended to use
+the new <code>oauth/token</code> and <code>oauth/authorize</code> endpoints.</p>
 <h4 id="authorization-code-grant">Authorization Code Grant<a class="headerlink" href="#authorization-code-grant" title="Permanent link">&para;</a></h4>
 <p>The Authorization Code Grant is most popular for 3rd party client authorization.</p>
 <p>Requesting resources is a four step process:</p>
-<p><strong>First</strong>: the client sends a request to the farmOS server <code>/oauth2/authorize</code>
+<p><strong>First</strong>: the client sends a request to the farmOS server <code>/oauth/authorize</code>
 endpoint requesting an <code>Authorization Code</code>. The user logs in and authorizes
 the client to have the OAuth Scopes it is requesting.</p>
 <pre><code>Copy this link to browser -
-http://localhost/oauth2/authorize?response_type=code&amp;client_id=farmos_development&amp;scope=user_access&amp;redirect_uri=http://localhost/api/authorized&amp;state=p4W8P5f7gJCIDbC1Mv78zHhlpJOidy
+http://localhost/oauth/authorize?response_type=code&amp;client_id=farmos_development&amp;scope=user_access&amp;redirect_uri=http://localhost/api/authorized&amp;state=p4W8P5f7gJCIDbC1Mv78zHhlpJOidy
 </code></pre>
 <p><strong>Second</strong>: after the user accepts, the server redirects
 to the <code>redirect_uri</code> with an authorization <code>code</code> and <code>state</code> in the query
@@ -1136,8 +1139,8 @@ http://localhost/api/authorized?code=9eb9442c7a2b011fd59617635cca5421cd089943&am
 <p><strong>Third</strong>: copy the <code>code</code> and <code>state</code> from the URL into the body of a POST request.
 The <code>grant_type</code>, <code>client_id</code>, <code>client_secret</code> and <code>redirect_uri</code> must also be
 included in the POST body. The client makes a POST request to the
-<code>/oauth2/token</code> endpoint to retrieve an <code>access_token</code> and <code>refresh_token</code>.</p>
-<pre><code>foo@bar:~$ curl -X POST -d "grant_type=authorization_code&amp;code=ae4d1381cc67def1c10dc88a19af6ac30d7b5959&amp;client_id=farmos_development&amp;redirect_uri=http://localhost/api/authorized" http://localhost/oauth2/token
+<code>/oauth/token</code> endpoint to retrieve an <code>access_token</code> and <code>refresh_token</code>.</p>
+<pre><code>foo@bar:~$ curl -X POST -d "grant_type=authorization_code&amp;code=ae4d1381cc67def1c10dc88a19af6ac30d7b5959&amp;client_id=farmos_development&amp;redirect_uri=http://localhost/api/authorized" http://localhost/oauth/token
 {"access_token":"3f9212c4a6656f1cd1304e47307927a7c224abb0","expires_in":"10","token_type":"Bearer","scope":"user_access","refresh_token":"292810b04d688bfb5c3cee28e45637ec8ef1dd9e"}
 </code></pre>
 <p><strong>Fourth</strong>: the client sends the access token in the request header to access protected
@@ -1157,10 +1160,10 @@ directly into a login form within the client application. These credentials are
 then used (not stored) to request tokens which are used for <em>authentication</em> 
 with the farmOS server and retrieving data.</p>
 <p>Requesting protected resources is a two step process:</p>
-<p><strong>First</strong>, the client sends a POST request to the farmOS server <code>/oauth2/token</code>
+<p><strong>First</strong>, the client sends a POST request to the farmOS server <code>/oauth/token</code>
 endpoint with <code>grant_type</code> set to <code>password</code> and a <code>username</code> and <code>password</code>
 included in the request body.</p>
-<pre><code>$ curl -X POST -d "grant_type=password&amp;username=username&amp;password=test&amp;client_id=farm&amp;scope=user_access" http://localhost/oauth2/token
+<pre><code>$ curl -X POST -d "grant_type=password&amp;username=username&amp;password=test&amp;client_id=farm&amp;scope=user_access" http://localhost/oauth/token
 {"access_token":"e69c60dea3f5c59c95863928fa6fb860d3506fe9","expires_in":"300","token_type":"Bearer","scope":"user_access","refresh_token":"cead7d46d18d74daea83f114bc0b512ec4cc31c3"}
 </code></pre>
 <p><strong>second</strong>, the client sends the <code>access_token</code> in the request header to access protected
@@ -1173,10 +1176,10 @@ resources. The header is an Authorization header with a Bearer token:
 <p>The <code>refresh_token</code> can be used to retrieve a new <code>access_token</code> if the token
 has expired.</p>
 <p>It is a one step process:</p>
-<p>The client sends an authenticated request to the <code>/oauth2/token</code>endpoint with
+<p>The client sends an authenticated request to the <code>/oauth/token</code>endpoint with
 <code>grant_type</code> set to <code>refresh_token</code> and includes the <code>refresh_token</code>,
 <code>client_id</code> and <code>client_secret</code> in the request body.</p>
-<pre><code>foo@bar:~$ curl -X POST -H 'Authorization: Bearer ad52c04d26c1002084501d28b59196996f0bd93f' -d 'refresh_token=52e7a0e12e8ddd08b155b3b3ee385687fef01664&amp;grant_type=refresh_token&amp;client_id=farmos_api_client&amp;client_secret=client_secret' http://localhost/oauth2/token
+<pre><code>foo@bar:~$ curl -X POST -H 'Authorization: Bearer ad52c04d26c1002084501d28b59196996f0bd93f' -d 'refresh_token=52e7a0e12e8ddd08b155b3b3ee385687fef01664&amp;grant_type=refresh_token&amp;client_id=farmos_api_client&amp;client_secret=client_secret' http://localhost/oauth/token
 {"access_token":"acdbfabb736e42aa301b50fdda95d6b7fd3e7e14","expires_in":"300","token_type":"Bearer","scope":"user_access","refresh_token":"b73f4744840498a26f43447d8cf755238bfd391a"}
 </code></pre>
 <p>The server responds with an <code>access_token</code> and <code>refresh_token</code> that can be used
@@ -1216,7 +1219,7 @@ complete the authorization process. You then copy the <code>link</code> from the
 are redirected to back into the console. This supplies the <code>farm_client</code> with
 an an authorization <code>code</code> that it uses to request an OAuth <code>token</code>. </p>
 <pre><code>&gt;&gt;&gt; farm_client = farmOS(hostname="http://localhost", client_id="farmos_development", scope="user_access")
-Please go here and authorize, http://localhost/oauth2/authorize?response_type=code&amp;client_id=farmos_development&amp;redirect_uri=http%3A%2F%2Flocalhost%2Fapi%2Fauthorized&amp;scope=user_access&amp;state=V9RCDd4yrSWZP8iGXt6qW51sYxsFZs&amp;access_type=offline&amp;prompt=select_account
+Please go here and authorize, http://localhost/oauth/authorize?response_type=code&amp;client_id=farmos_development&amp;redirect_uri=http%3A%2F%2Flocalhost%2Fapi%2Fauthorized&amp;scope=user_access&amp;state=V9RCDd4yrSWZP8iGXt6qW51sYxsFZs&amp;access_type=offline&amp;prompt=select_account
 Paste the full redirect URL here:&gt;? http://localhost/api/authorized?code=33429f3530e36f4bdf3c2adbbfcd5b7d73e89d5c&amp;state=V9RCDd4yrSWZP8iGXt6qW51sYxsFZs
 
 &gt;&gt;&gt; farm_client.info()
