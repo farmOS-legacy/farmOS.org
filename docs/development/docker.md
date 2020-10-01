@@ -30,7 +30,7 @@ rename it to `docker-compose.yml`:
 
 Then, use `docker-compose up` to create the containers:
 
-    sudo docker-compose up
+    docker-compose up
 
 This will create two containers: a farmOS application container, and a MariaDB
 database container.
@@ -42,11 +42,11 @@ shut them down with Ctrl+C when you're done.
 If you want to run these containers in the background, so you don't need to keep
 your terminal window, add `-d` to the end of the command:
 
-    sudo docker-compose up -d
+    docker-compose up -d
 
 Then you can shut them down and remove the containers with:
 
-    sudo docker-compose down
+    docker-compose down
 
 ### Mac Specific Instructions
 
