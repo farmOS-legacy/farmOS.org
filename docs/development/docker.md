@@ -72,13 +72,19 @@ Do this for both the `db` and `www` container volumes.
 
 ## Install farmOS
 
+First copy the default settings file into the default site
+
+```
+cp www/sites/default/default.settings.php www/sites/default/settings.php
+```
+
 Once the containers are up and running, you can install farmOS using the Drupal
 installer. This is a simple step-by-step process that you will need to go
 through when you first access the site in your browser.
 
 ### Browser address
 
-If you are running Docker on Linux, you can simply go to `http://localhost` in
+If you are running Docker on Linux or Mac, you can simply go to `http://localhost` in
 your browser. Otherwise, you may need to look up the IP address of the Docker
 container that was created and access it that way.
 
@@ -175,31 +181,31 @@ restore if anything goes wrong. See "Backup/restore during development" below.
 
 Pull the latest version of the farmOS Docker `dev` image:
 
-    sudo docker pull farmos/farmos:dev
+    docker pull farmos/farmos:dev
 
 Stop the farmOS containers:
 
-    sudo docker-compose down
+    docker-compose down
 
 Move the `sites` directory out of the webroot:
 
-    sudo mv www/sites ./
+    mv www/sites ./
 
 Delete everthing in `www`:
 
-    sudo rm -r www/{*,.*}
+    rm -r www/{*,.*}
 
 Restart the farmOS containers:
 
-    sudo docker-compose up -d
+    docker-compose up -d
 
 The `www` container should be automatically populated again with the new
 codebase.
 
 Restore the `sites` directory:
 
-    sudo rm -rf www/sites
-    sudo mv sites www
+    rm -rf www/sites
+    mv sites www
 
 Run database updates by going to `/update.php` in your browser and following
 the instructions.
@@ -220,17 +226,17 @@ and create tarball(s).
 
 **Backup**:
 
-    sudo docker-compose down
-    sudo tar -czf backup.tar.gz db www
-    sudo docker-compose up -d
+    docker-compose down
+    tar -czf backup.tar.gz db www
+    docker-compose up -d
 
 **Restore**
 
-    sudo docker-compose down
-    sudo rm -rf db
-    sudo rm -rf www
-    sudo tar -xzf backup.tar.gz
-    sudo docker-compose up -d
+    docker-compose down
+    rm -rf db
+    rm -rf www
+    tar -xzf backup.tar.gz
+    docker-compose up -d
 
 ## Development Tools
 
@@ -246,7 +252,7 @@ included!
 
 To use it simply run the following when the docker images are running:
 
-    sudo docker exec -it farmos_www_1 drush help
+    docker exec -it farmos_www_1 drush help
 
 **Note:** The farmOS container will be named `farmos_www_1` ONLY if your farmOS
 directory is named `farmOS`. Docker Compose names the containers based on the
@@ -258,7 +264,7 @@ If all goes well, you should see a list of Drush commands.
 Note that you can also alias this command to your `.bashrc` file. Add the
 following line to your `~/.bashrc` file:
 
-    alias drush='sudo docker exec -it farmos_www_1 drush'
+    alias drush='docker exec -it farmos_www_1 drush'
 
 Run the following to start a bash session with the new alias and test the
 `drush` command:
