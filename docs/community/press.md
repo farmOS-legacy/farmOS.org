@@ -1,11 +1,33 @@
 # Press
 
-farmOS has been featured in the following articles. If you would like to write
-about farmOS, [contact m.stenta](https://farmier.com/contact).
+farmOS has been featured in the following articles, videos, and podcasts. If you
+would like to write about farmOS, [contact m.stenta](https://farmier.com/contact).
 
 ## 2020
 
+**2020 August 19th** [Opensensing: Open source AgTech IoT ecosystems](https://opensensing.com/open-source-agtech-iot-ecosystem)
+
+**2020 August 17th** [North Queensland Register: Agtech companies told to adopt 'sharing attitude' to their technology](https://www.northqueenslandregister.com.au/story/6881602/pull-down-the-walls-around-agtech-says-nuffield-scholar)
+
+**2020 August** [Nuffield Australia Report: If you want to go far, go together - The future of open source agtech](https://nuffieldinternational.org/live/Report/AU/2019/andrew-sargent)
+
+**2020 July 23rd** [Free Software Foundation: People everywhere are standing up for free software](https://www.fsf.org/blogs/community/people-everywhere-are-standing-up-for-free-software)
+
+**2020 July 7th** [OpenTEAM News: Growing community and capacity for interoperability](https://mailchi.mp/119ed19b5c3b/openteam-news-growing-community-and-capacity-for-interoperability)
+
+**2020 May 22nd** [GOAT/OpenTEAM In-Depth Web Series: farmOS Aggregator Update](https://youtu.be/aAz223-HZDo)
+
+**2020 March 14th** [LibrePlanet: Stewarding technological freedom in agriculture](https://media.libreplanet.org/u/libreplanet/m/stewarding-technological-freedom-in-agriculture)
+
+**2020 March 4th** [Future of Agriculture Podcast: FOA 195: Hacking the Farm with Open Source Technology](https://aggrad.libsyn.com/foa-195-hacking-the-farm-with-open-source-technology)
+
 **2020 February 26th** [CountryGuide: The open source farmer](https://www.country-guide.ca/guide-business/the-open-source-farmer)
+
+**2020 February 19th** [GOAT/OpenTEAM In-Depth Web Series: Knuth Farms](https://youtu.be/C30YVKy8H5A)
+
+**2020 February 19th** [GOAT/OpenTEAM In-Depth Web Series: Rothamsted Research](https://youtu.be/HmxvrNG7Af8)
+
+**2020 February 17th** [GOAT/OpenTEAM In-Depth Web Series: Paicines Ranch](https://youtu.be/NJ1v_kgkq4k)
 
 ## 2019
 
@@ -23,9 +45,18 @@ about farmOS, [contact m.stenta](https://farmier.com/contact).
 
 **2019 September 17th** [Civil Eats: Investment in Regenerative Agriculture Connects the Dots Between Soil and Plate](https://civileats.com/2019/09/17/investment-in-regenerative-agriculture-connects-the-dots-between-soil-and-plate)
 
+**2019 August 22nd** [GOAT/OpenTEAM In-Depth Web Series: farmOS](https://youtu.be/KLQfKtsLDxA)
+
+**2019 August 1st** [Morning Ag Clips: Global collaboration creates open source climate solutions](https://www.no-tillfarmer.com/articles/9009-global-collaborative-launches-openteam-to-address-soil-health-and-mitigate-climate-change)
+
+**2019 August 1st** [No-Till Farmer: 
+Global Collaborative Launches OpenTEAM to Address Soil Health and Mitigate Climate Change](https://www.no-tillfarmer.com/articles/9009-global-collaborative-launches-openteam-to-address-soil-health-and-mitigate-climate-change)
+
 **2019 July 31st** [Foundation for Food and Agriculture Research: Global Collaborative Launches OpenTEAM™](https://foundationfar.org/2019/07/31/global-collaborative-launches-openteam-the-first-open-source-technology-ecosystem-in-the-world-to-address-soil-health-and-mitigate-climate-change)
 
 **2019 July 23rd** [Red Hat Open Source Stories: Farming for the Future - The Open Farmer](https://www.redhat.com/en/open-source-stories/farming-for-the-future/open-farme)
+
+**2019 May 21st** [RFC Lab: Ramping up for 2019 RFC Food/Soil survey](https://lab.realfoodcampaign.org/ramping-up-for-2019-rfc-food-soil-survey)
 
 **2019 May 8th** [Red Hat Open Source Stories: Farming for the Future](https://www.redhat.com/en/open-source-stories/farming-for-the-future)
 
@@ -50,6 +81,8 @@ about farmOS, [contact m.stenta](https://farmier.com/contact).
 **2018 February 13th** [Morning Ag Clips: Wolfe’s Neck's Dorn Cox earns national award](https://www.morningagclips.com/wolfes-necks-dorn-cox-earns-national-award)
 
 **2018 February 6th** [Wolfe's Neck Center: Research Director, Dorn Cox, Receives Bennett Award](https://www.wolfesneck.org/blog/research-director-dorn-cox-receives-bennett-award)
+
+**2018 January 22nd** [High Mowing Organic Seeds: Crop Planning and Adaptation: How to Plan for Change to Achieve Success](https://www.highmowingseeds.com/blog/crop-planning-and-adaptation)
 
 ## 2017
 

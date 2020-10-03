@@ -15,6 +15,7 @@ included in this list, add a comment to [this issue on Github].
 ## Brazil
 
 * Olivopampa (Santana do Livramento, Rio Grande do Sul)
+* Rancho Moretto (Emilianópolis, São Paulo)
 
 ## Canada
 
@@ -32,6 +33,10 @@ included in this list, add a comment to [this issue on Github].
 
 * Ferme des Ours (Boofzheim, Grand-Est)
 
+## Germany
+
+* Landw. Betrieb Fischer (Arberg, Bavaria)
+
 ## Italy
 
 * Riso Corbetta (Rovasenda, Vercelli)
@@ -47,6 +52,10 @@ included in this list, add a comment to [this issue on Github].
 ## Poland
 
 * Piotr Małkowski (Dołubowo, Podlasie)
+
+## Portugal
+
+* Quinta Vale da Lama (Lagos, Algarve)
 
 ## South Africa
 
@@ -67,8 +76,10 @@ included in this list, add a comment to [this issue on Github].
 * FoodScaping Permaculture Farm (Cheshire, Oregon)
 * Golden Avenue Urban Permaculture Farm (Eugene, Oregon)
 * Grocholl and Sons Farms (Harrison, Illinois)
+* Guard Well Farm (Holualoa, Hawai&#699;i)
 * Hampton Plantation (Owings, Maryland)
 * Heniscity Farm (Pegram, Tennessee)
+* Hesselridge Farm (Rochester, Washington)
 * Lokoea Farms (Haleiwa, Hawai&#699;i)
 * Miles Smith Farm (Loudon, New Hampshire)
 * Monarca Farm (Lajas, Puerto Rico)
@@ -77,6 +88,7 @@ included in this list, add a comment to [this issue on Github].
 * Patroon Land Farm (Voorheesville, New York)
 * Pax Sam Place Urban Permaculture Community (Eugene, Oregon)
 * Red Shirt Farm (Lanesborough, Massachusetts)
+* Refugia Gardens (Flagstaff, Arizona)
 * Satori Farms (Cave Junction, Oregon)
 * Silver Market Gardens (Silver City, New Mexico)
 * Stone Grown Farm (Mansfield, Connecticut)

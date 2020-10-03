@@ -52,6 +52,7 @@ These modules are included directly in the farmOS distribution repository:
   pairs) properties to assets.
 * **Farm Asset Views** - Default Views of farm assets.
 * **Farm Calendar** - Provides a calendar view of farmOS logs.
+* **Farm Client** - Integrates the farmOS server and client.
 * **Farm Constraint** - Provides a framework for managing foreign key
   constraints between farmOS entities.
 * **Farm Crop** - Features for managing farm crops.
@@ -87,6 +88,7 @@ These modules are included directly in the farmOS distribution repository:
 * **Farm Map KML** - Provides KML features for farm maps.
 * **Farm MapKnitter** - Provides integration with Public Lab's MapKnitter.org.
 * **Farm Menu** - Provides a menu for farm pages.
+* **Farm Metrics** - Allow modules to define high level metrics.
 * **Farm Movement** - Provides movement field and related asset location code.
 * **Farm People** - A view of people associated with the farm.
 * **Farm Plan** - A farm plan entity type.
@@ -108,8 +110,6 @@ These modules are included directly in the farmOS distribution repository:
 * **Farm Soil Test** - .Features for managing soil tests.
 * **Farm Soil: Compost** - Features for managing compost.
 * **Farm Term** - Provides helper functions for working with taxonomy terms.
-* **Farm Tour** - Provides tours of the farmOS system using the Bootstrap Tour
-  module.
 * **Farm UI** - Provides standardized user interface support to farmOS modules.
 * **Farm Water** - Provides features for water management.
 * **Farm Water Test** - Features for managing water tests.
@@ -130,10 +130,14 @@ added to extend your farmOS functionality:
   for creating egg harvest logs.
 * **[Farm Maple](https://github.com/farmOS/farm_maple)** - Features for
   management of maple tapping and production.
+* **[Farm Map: Emilia-Romagna](https://github.com/bonushenricus/farm_map_emrom)** -
+  Emilia-Romagna map layers for farmOS maps.
 * **[Farm Map: Finland](https://github.com/rkioski/farm_map_fi)** - Finnish map
   layers for farmOS maps.
 * **[Farm Map: Norway](https://github.com/farmOS/farm_map_no)** - Norwegian map
   layers for farmOS maps.
+* **[Farm Map: SJC](https://github.com/symbioquine/farm_map_sjc)** - San Juan
+  County, WA, USA map layers for farmOS maps.
 * **[Farm Mushroom](https://github.com/farmOS/farm_mushroom)** - Features for
   managing mushroom production.
 * **[FarmOS NWS](https://github.com/almostengr/farmosnws)** - Imports data
@@ -160,6 +164,8 @@ Drupal theme based off of [Bootstrap].
 * **[farmOS Area Feature Proxy][farm-os-area-feature-proxy]** - Exposes FarmOS
   areas as a [Web Feature Service (WFS)][WFS] enabling bi-directional access
   through full-fledged GIS tools like [Quantum GIS][QGIS].
+* **[Ansible farmOS]** - Ansible playbooks for provisioning a farmOS server on
+  Debian 9.
 
 [farmOS]: http://farmos.org
 [Drupal]: https://drupal.org
@@ -175,4 +181,5 @@ Drupal theme based off of [Bootstrap].
 [farm-os-area-feature-proxy]: https://github.com/symbioquine/farm-os-area-feature-proxy
 [WFS]: https://www.opengeospatial.org/standards/wfs
 [QGIS]: https://qgis.org/
+[Ansible farmOS]: https://github.com/komatek21/Ansible_FarmOS
 

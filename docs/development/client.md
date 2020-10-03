@@ -38,6 +38,12 @@ $ cd farmOS-client
 $ npm install
 ```
 
+Note that the default branch for this repository is `develop`, not `master`;
+`develop` should represent the most current set of complete features that
+are only awaiting further testing before release. You should branch or fork
+off `develop` and submit pull requests to be merged back into it. The 
+`deploy` branch respresents the latest tagged release.
+
 ### Browser
 The browser-based development environment can be started by running the
 following command from the project root:
@@ -68,14 +74,9 @@ features are developed and new endpoints on the farmOS server need to be
 reached. For more information, see the [Webpack documentation on configuring the
 proxy middleware].
 
-You will also have to install the Drupal [CORS module] on your farmOS server in
-order to handle the way the client does authentication (hopefully this will no
-longer be necessary once we implement OAuth). Once it's installed, go to the
-[CORS configuration page] and add the following line to the Domains field:
-
-```
-*|http://localhost:8080||Content-Type,Authorization,X-Requested-With|true
-```
+You will also need to configure the server to enable CORS requests. Go to
+[http://localhost/admin/config/farm/access] and enter `http://localhost:8080`
+as the Access-Control-Allow-Origin.
 
 Finally, when logging in to the client from the browser, simply leave the URL
 field blank. The devServer will then interpret all requests as relative links
@@ -171,11 +172,8 @@ setting up your system's [environment variables] and installing the
 the latest version of Android that Cordova seems to support is 7.1.1, at API
 Level 25.
 
-[//]: <> (TODO: Determine what versions of Android the app should target and list them here.)
-
 Once Android Studio is installed and configured, make sure Android has been
-added to Cordova's list of platforms, then you're ready to run the final build
-command:
+added to Cordova's list of platforms, then you're try out the build command:
 
 ```bash
 $ cordova platform add android
@@ -186,17 +184,50 @@ By default, the `build` command will produce a debugging APK (equivalent to
 running `cordova build android --debug`). If you want to build a final release
 version, you'll need to add the `--release` flag, but you'll also need to use
 your keys for signing the APK (see "[Signing an App]" in the Cordova docs for
-more details). Both the debug and release APK's can then be found at
-`path/to/farmos-native/platforms/android/app/build/outputs/apk` after building.
+more details). For reference, the official farmOS Field Kit app is built using
+the following flags:
 
-[//]: <> (TODO: Figure out signing the app for the Play Store and document here.)
+```bash
+cordova build android --release -- \
+--keystore=/path/to//your-key.keystore \
+--storePassword=xxxxxxxx \
+--alias=yyyy --password=zzzzzzzz
+```
+
+Both the debug and release APK's can then be found at
+`path/to/farmOS-client/platforms/android/app/build/outputs/apk` after building.
 
 ### iOS Build
 
 Only available on Apple OS X. Windows and Linux are not supported. For some
 workarounds, see "[Developing an iOS App on Linux]"
 
-Cordova's [iOS Platform Guide]
+You'll need Xcode installed in order to run the Cordova build commands. See
+Cordova's [iOS Platform Guide] for more info.
+
+Once you have the environment set up, you'll want to add the iOS platform with
+Cordova (we recommend version 5.1.1 or higher), then you can run a debugging
+build:
+
+```bash
+cordova platform add ios@5.1.1
+cordova build ios
+```
+
+Using the `build` command without the `--release` flag triggers a debug build
+by default. To build a signed app for the App Store, you'll need to follow
+Cordova's [app signing guidelines], but for reference, we use the following
+command and flags:
+
+```bash
+cordova build ios --release --device \
+--codeSignIdentity="iPhone Distribution" \
+--developmentTeam="ABCD1234" \
+--packageType="app-store" \
+--provisioningProfile="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+Signed .ipa files will be found at `path/to/farmOS-client/platforms/ios/build/device/`
 
 [https://github.com/farmOS/farmOS-client]: https://github.com/farmOS/farmOS-client
 [https://github.com/farmOS/farmOS-native]: https://github.com/farmOS/farmOS-native
@@ -207,8 +238,7 @@ Cordova's [iOS Platform Guide]
 [http://localhost:8080/]: http://localhost:8080/
 [full instructions for setting up a farmOS Docker container]: /development/docker/
 [Webpack documentation on configuring the proxy middleware]: https://webpack.js.org/configuration/dev-server/#devserver-proxy
-[CORS module]: https://www.drupal.org/project/cors
-[CORS configuration page]: http://localhost/admin/config/services/cors
+[http://localhost/admin/config/farm/access]: http://localhost/admin/config/farm/access
 [Cordova docs on running the emulator and debugger in Android Studio]: https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#debugging
 [Cordova docs on running the emulator and debugger in XCode]: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#debugging
 [WebView]: https://cordova.apache.org/docs/en/latest/guide/hybrid/webviews/
@@ -220,3 +250,4 @@ Cordova's [iOS Platform Guide]
 [Signing an App]: https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#signing-an-app
 [Developing an iOS App on Linux]: https://andrewmichaelsmith.com/2017/02/developing-an-ios-app-on-linux-in-2017/
 [iOS Platform Guide]: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html
+[app signing guidelines]: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#signing-an-app
