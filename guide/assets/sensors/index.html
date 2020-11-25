@@ -202,10 +202,6 @@
 </li>
                                     
 <li>
-    <a href="../../../development/issue-queues/" class="dropdown-item">Issue Queues</a>
-</li>
-                                    
-<li>
     <a href="../../../development/architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
@@ -382,7 +378,6 @@ from the command-line.</p>
 -d '{ &quot;timestamp&quot;: 1541519720, &quot;value&quot;: 76.5 }' \
 https://myfarm.farmos.net/farm/sensor/listener/xxxxxx?private_key=yyyyyy
 </code></pre>
-
 <h3 id="pulling-data-from-a-listener">Pulling data from a listener<a class="headerlink" href="#pulling-data-from-a-listener" title="Permanent link">&para;</a></h3>
 <p>Data can also be retrived from the sensor via the same API endpoint, using a
 <code>GET</code> request instead of a <code>POST</code> request. The URL is the same as the URL for
@@ -429,7 +424,6 @@ and the <code>first</code> and <code>last</code> timestamp for each. For example
     }
 }
 </code></pre>
-
 <p><strong>Allowing public API read access</strong></p>
 <p>Data in farmOS is private by default. A private key is required to push data to
 a sensor, and by default the same key is also required to pull data.</p>

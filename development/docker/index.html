@@ -202,10 +202,6 @@
 </li>
                                     
 <li>
-    <a href="../issue-queues/" class="dropdown-item">Issue Queues</a>
-</li>
-                                    
-<li>
     <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
@@ -406,12 +402,10 @@ recommended that you add <code>:delegated</code> to your volume definitions in
 <pre><code>volumes:
   - './db:/var/lib/mysql'
 </code></pre>
-
 <p>Replace with:</p>
 <pre><code>volumes:
   - './db:/var/lib/mysql:delegated'
 </code></pre>
-
 <p>Do this for both the <code>db</code> and <code>www</code> container volumes.</p>
 <h2 id="install-farmos">Install farmOS<a class="headerlink" href="#install-farmos" title="Permanent link">&para;</a></h2>
 <p>Once the containers are up and running, you can install farmOS using the Drupal

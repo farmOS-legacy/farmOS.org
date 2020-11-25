@@ -202,10 +202,6 @@
 </li>
                                     
 <li>
-    <a href="../issue-queues/" class="dropdown-item">Issue Queues</a>
-</li>
-                                    
-<li>
     <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
@@ -324,7 +320,7 @@
 <p>Some development testing is easier with FarmOS behind an https endpoint. A separate <a href="https://www.nginx.com/">NGINX</a> reverse proxy provides a simple way to configure an https endpoint without any changes to the Apache2 configuration which FarmOS/Drual is running on.</p>
 <h2 id="example-configuration">Example Configuration<a class="headerlink" href="#example-configuration" title="Permanent link">&para;</a></h2>
 <p><strong>docker-compose.yml</strong></p>
-<pre><code class="yaml">version: '2'
+<pre><code class="language-yaml">version: '2'
 services:
   db:
     image: mariadb:latest
@@ -362,7 +358,6 @@ services:
       - '443:443'
 
 </code></pre>
-
 <p><strong>nginx.conf</strong></p>
 <pre><code>events {
 
@@ -401,28 +396,22 @@ http {
 }
 
 </code></pre>
-
 <p><strong>Generate certificates with <a href="https://github.com/FiloSottile/mkcert">mkcert</a></strong></p>
-<pre><code class="sh">mkdir devcerts &amp;&amp; mkcert -key-file devcerts/key.pem -cert-file devcerts/cert.pem farmos.local *.farmos.local
+<pre><code class="language-sh">mkdir devcerts &amp;&amp; mkcert -key-file devcerts/key.pem -cert-file devcerts/cert.pem farmos.local *.farmos.local
 </code></pre>
-
 <p><strong>Start containers</strong></p>
-<pre><code class="sh">docker-compose up
+<pre><code class="language-sh">docker-compose up
 </code></pre>
-
 <p><strong>Add fake domain to /etc/hosts</strong></p>
-<pre><code class="sh">echo &quot;127.0.0.1 farmos.local&quot; &gt;&gt; /etc/hosts
+<pre><code class="language-sh">echo &quot;127.0.0.1 farmos.local&quot; &gt;&gt; /etc/hosts
 </code></pre>
-
-<pre><code class="sh">alias drush=&quot;docker-compose exec www drush&quot;
+<pre><code class="language-sh">alias drush=&quot;docker-compose exec www drush&quot;
 drush site-install farm --locale=us --db-url=mysql://farm:farm@db/farm --site-name=Test0 --account-name=root --account-pass=test install_configure_form.update_status_module='array(FALSE,FALSE)'
 </code></pre>
-
 <p><em>Note: It is advisable to update the command above with a better password than 'test' before running it.</em></p>
 <p><strong>Enable reverse proxy settings in sites/default/settings.php (simplified from <a href="https://drupal.stackexchange.com/a/257399">this SO answer</a>)</strong></p>
-<pre><code class="sh">sudo sh -c &quot;printf \&quot;\n\n\\\$conf['reverse_proxy'] = TRUE;\n\\\$conf['reverse_proxy_addresses'] = [@\\\$_SERVER['REMOTE_ADDR']];\n\\\$base_url = \\\$_SERVER['HTTP_X_FORWARDED_PROTO'] . '://' . \\\$_SERVER['SERVER_NAME'];\n\&quot; &gt;&gt; www/sites/default/settings.php&quot;
+<pre><code class="language-sh">sudo sh -c &quot;printf \&quot;\n\n\\\$conf['reverse_proxy'] = TRUE;\n\\\$conf['reverse_proxy_addresses'] = [@\\\$_SERVER['REMOTE_ADDR']];\n\\\$base_url = \\\$_SERVER['HTTP_X_FORWARDED_PROTO'] . '://' . \\\$_SERVER['SERVER_NAME'];\n\&quot; &gt;&gt; www/sites/default/settings.php&quot;
 </code></pre>
-
 <p>This yields a FarmOS installation which can be accessed via https://farmos.local with a user named 'root' and a password of 'test' - or the better password that you wisely substituted above.</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/30754460/71647994-35b45400-2cb3-11ea-8702-b44c2fcebe66.png" /></p></div>
             </div>

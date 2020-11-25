@@ -202,10 +202,6 @@
 </li>
                                     
 <li>
-    <a href="../../development/issue-queues/" class="dropdown-item">Issue Queues</a>
-</li>
-                                    
-<li>
     <a href="../../development/architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
@@ -385,15 +381,13 @@ farmOS.</p>
 size limit. This can be easily accomplished via a custom php.ini file mounted in
 the farmOS docker container.</p>
 <p><strong>docker-compose.yml</strong></p>
-<pre><code class="yaml">volumes:
+<pre><code class="language-yaml">volumes:
   - './php-custom.ini:/usr/local/etc/php/conf.d/php-custom.ini'
 </code></pre>
-
 <p><strong>php-custom.ini</strong></p>
-<pre><code class="ini">upload_max_filesize = 10M
+<pre><code class="language-ini">upload_max_filesize = 10M
 post_max_size = 10M
 </code></pre>
-
 <p><em>See the <a href="https://www.php.net/manual/en/configuration.file.php">PHP configuration file</a> documentation for more details on php.ini
 files.</em></p></div>
             </div>
