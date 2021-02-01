@@ -450,14 +450,32 @@ is also how your database and files are persisted when the containers are
 destroyed and rebuilt.</p>
 <h3 id="file-ownership">File ownership<a class="headerlink" href="#file-ownership" title="Permanent link">&para;</a></h3>
 <p>On a Linux host, all the files in <code>www</code> will have an owner and group of
-<code>www-data</code>. For development purposes, it is recommended that you change the
-owner of everything in the <code>www</code> container to your local user. This can be done
-with the following command:</p>
+<code>www-data</code>. As of farmOS 7.x-1.7 the <code>www-data</code> user and group id of the dev docker
+image are set to <code>1000</code> by default. On most single-user systems this matches the
+user and group ID of the primary user and everything should just work - the docker
+container and your user will both have normal read/write access to the files.</p>
+<p>If you encounter permissions issues, you can check your user/group ids with the
+following commands;</p>
+<pre><code>id -u
+id -g
+</code></pre>
+<p>If those don't return a value of <code>1000</code>, there are two main strategies.</p>
+<h4 id="one-off-ownership-modification">One-off ownership modification<a class="headerlink" href="#one-off-ownership-modification" title="Permanent link">&para;</a></h4>
+<p>You can change the owner of everything in the <code>www</code> container to your local user.
+This can be done with the following command:</p>
 <pre><code>sudo chown -R ${USER} www
 </code></pre>
 <p>This changes the owner of <em>everything</em> in /var/www/html to the currently logged
 in user on the host. But it leaves the group alone (<code>www-data</code>). Just make sure
 to do this <em>after</em> installation has completed.</p>
+<h4 id="building-a-custom-dev-docker-image">Building a custom dev docker image<a class="headerlink" href="#building-a-custom-dev-docker-image" title="Permanent link">&para;</a></h4>
+<p>The dev image also accepts the <code>WWW_DATA_ID</code> build parameter which the build
+process will use as the ID of the www-data user and group inside the image.</p>
+<p>Setting this to the ID of the developer's user on the host machine allows files
+created and/or owned by www-data inside the container be editable by the developer
+outside of the container.</p>
+<p>If your user ID is not <code>1000</code> (as determined above), build the image with: 
+<code>--build-arg WWW_DATA_ID=$(id -u)</code>.</p>
 <h2 id="updating-farmos">Updating farmOS<a class="headerlink" href="#updating-farmos" title="Permanent link">&para;</a></h2>
 <p><strong>Important</strong>: these instructions are for updating a <em>development</em> environment
 hosted with Docker. If you are running a production environment, see
