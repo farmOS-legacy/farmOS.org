@@ -128,3 +128,17 @@ This yields a FarmOS installation which can be accessed via https://farmos.local
 [NGINX]: https://www.nginx.com/
 [mkcert]: https://github.com/FiloSottile/mkcert
 
+
+## Apache Configuration
+A simple suggestion how to setup an Apache server after the docker container is up and running
+
+**httpd.conf**
+```
+<VirtualHost *:80>
+ServerName MyServerName.se (Your webpage adress)
+ProxyPreserveHost On
+ProxyPass / http://172.24.0.3/ (The ip adress from the docker) 
+ProxyPassReverse / http://172.24.0.3/ (The ip adress from the docker)
+DocumentRoot /var/farmOS/www/ (www folder in your farmOS folder)
+</VirtualHost>
+```
