@@ -92,6 +92,7 @@ Visit the IP address in a browser - you should see the Drupal/farmOS installer.
 
 In the "Set up database" step of installation, use the following values:
 
+* Database type: 'PostgreSQL'
 * Database name: `farm`
 * Database username: `farm`
 * Database password: `farm`
