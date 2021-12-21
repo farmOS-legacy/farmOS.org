@@ -1,7 +1,7 @@
-# farmOS.org
+# v1.farmOS.org
 
 This repository contains all the code and content used to build
-[http://farmOS.org](http://farmOS.org).
+[http://v1.farmOS.org](http://v1.farmOS.org).
 
 It uses [mkdocs](http://www.mkdocs.org) to convert simple markdown files into
 static HTML files.
